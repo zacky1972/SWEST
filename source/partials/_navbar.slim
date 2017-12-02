@@ -1,0 +1,17 @@
+/! navbar
+nav.navbar.navbar-expand-lg.navbar-light.bg-light
+	h1
+		a.navbar-brand href="#{site_url}" #{site_name}
+	button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+		span.navbar-toggler-icon
+	#navbarSupportedContent.collapse.navbar-collapse
+		ul.navbar-nav.mr-auto
+			- items.each do |item|
+				li.nav-item
+					- if item[:dropdown].nil?
+						= link_to item[:name], item[:url], :class => 'nav-link'
+					- else
+						= link_to item[:name], item[:url], :class => 'nav-link dropdown-toggle', :id => "navbarDropdown#{item[:label]}", :role => 'button', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' =>'false'
+						.dropdown-menu aria-labelledby="navbarDropdown#{item[:label]}"
+							- item[:dropdown].each do |d_item|
+								= link_to d_item[:name], d_item[:url], :class => 'dropdown-item'
