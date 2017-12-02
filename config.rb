@@ -50,7 +50,7 @@ $navigation = {
 		}, {
 			:name => 'プログラム',
 			:label => 'Program',
-			:url => '/SWEST19/program/'
+			:url => '/SWEST19/program/',
 		}, {
 			:name => '協賛のご案内',
 			:label => 'Sponsor',

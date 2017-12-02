@@ -5,8 +5,45 @@
 $base-color: #fff;
 $text-color: #444;
 $main-color: #87cefa;
+$main-color-dark: #00bfff;
+$title-color: #fff;
+
+/*-----------------------------------------------------------------------
+  base
+-----------------------------------------------------------------------*/
+
+.margin-top {
+	margin-top: 20px;
+}
+
+.center {
+	text-align: center;
+}
 
 /*-----------------------------------------------------------------------
   navigation tag
 -----------------------------------------------------------------------*/
 
+.navbar-light {
+  background: -webkit-linear-gradient(to bottom, $main-color 0%, $main-color-dark 100%);
+  background: linear-gradient(to bottom, $main-color 0%, $main-color-dark 100%);
+  border-color: $main-color;
+}
+
+h1.navbar-brand {
+	color: $title-color;
+	font-size: 25px;
+	@include media-breakpoint-up(md) {
+		font-size: 48px;
+	}
+	font-weight: 800;
+	a {
+		color: $title-color;
+		text-decoration: none;
+	}
+}
+
+a.nav-link {
+	color: $title-color !important;
+	text-decoration: none;
+}
