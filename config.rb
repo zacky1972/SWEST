@@ -150,6 +150,17 @@ page '/*.txt', layout: false
 # Helpers
 ###
 
+helpers do
+  def nav_add navigation, name, tag, value
+  	nav = Marshal.load(Marshal.dump(navigation))
+  	i = nav[:items].find{|item| item[:label].eql? name}
+  	unless i.nil?
+  		i[tag] = value
+  	end
+  	nav
+  end
+end
+
 # Reload the browser automatically whenever files change
 # configure :development do
 #   activate :livereload

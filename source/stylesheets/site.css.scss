@@ -47,3 +47,10 @@ a.nav-link {
 	color: $title-color !important;
 	text-decoration: none;
 }
+
+li.nav-item.active {
+	background-color: $title-color !important;
+	a {
+		color: $main-color !important;
+	}
+}

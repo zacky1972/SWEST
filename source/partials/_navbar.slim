@@ -7,7 +7,7 @@ nav#nav.navbar.navbar-expand-lg.navbar-light.bg-light
 	#navbarSupportedContent.collapse.navbar-collapse
 		ul.navbar-nav.mr-auto
 			- items.each do |item|
-				li.nav-item
+				li.nav-item class=(item[:active].nil? ? '' : 'active')
 					- if item[:dropdown].nil?
 						= link_to item[:name], $site_url + item[:url], :class => 'nav-link'
 					- else

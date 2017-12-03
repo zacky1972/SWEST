@@ -3,7 +3,6 @@ title: SWEST19プログラム
 ---
 
 .container
-	= partial 'partials/navbar', :locals => $navigation
-
+	= partial 'partials/navbar', :locals => nav_add($navigation, 'Program', :active, true)
 .container
 	h2.center.margin-top SWEST19 タイムテーブル
