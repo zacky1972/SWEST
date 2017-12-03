@@ -9,9 +9,9 @@ nav#nav.navbar.navbar-expand-lg.navbar-light.bg-light
 			- items.each do |item|
 				li.nav-item
 					- if item[:dropdown].nil?
-						= link_to item[:name], item[:url], :class => 'nav-link'
+						= link_to item[:name], $site_url + item[:url], :class => 'nav-link'
 					- else
-						= link_to item[:name], item[:url], :class => 'nav-link dropdown-toggle', :id => "navbarDropdown#{item[:label]}", :role => 'button', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' =>'false'
+						= link_to item[:name], $site_url + item[:url], :class => 'nav-link dropdown-toggle', :id => "navbarDropdown#{item[:label]}", :role => 'button', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' =>'false'
 						.dropdown-menu aria-labelledby="navbarDropdown#{item[:label]}"
 							- item[:dropdown].each do |d_item|
-								= link_to d_item[:name], d_item[:url], :class => 'dropdown-item'
+								= link_to d_item[:name], $site_url + d_item[:url], :class => 'dropdown-item'

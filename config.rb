@@ -2,6 +2,8 @@ require 'slim'
 
 # constants
 
+$site_url = ''
+
 $navigation = {
 	:site_url => '/',
 	:site_name => 'SWEST',
@@ -148,12 +150,6 @@ page '/*.txt', layout: false
 # Helpers
 ###
 
-helpers do
-	def hostUrl link
-		'https://zacky1972.github.io/SWEST' + link
-	end
-end
-
 # Reload the browser automatically whenever files change
 # configure :development do
 #   activate :livereload
@@ -176,6 +172,7 @@ configure :build do
 
   activate :asset_hash
   activate :asset_host, :host => 'https://zacky1972.github.io/SWEST'
+  $site_url = '/SWEST'
 end
 
 activate :deploy do |deploy|
