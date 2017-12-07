@@ -3,13 +3,14 @@
 ## インストール
 
 ```
+$ brew install yarn
 $ rbenv install 2.4.2
 $ rbenv global 2.4.2
 $ gem install middleman
 $ git clone git@github.com:zacky1972/SWEST.git
 $ cd SWEST
 $ bundle install
-$ npm install
+$ yarn install
 ```
 
 
