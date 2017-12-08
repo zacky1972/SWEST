@@ -117,8 +117,6 @@ $navigation = {
 	]
 }
 
-# webpack
-
 activate :relative_assets
 
 activate :external_pipeline, {
