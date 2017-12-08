@@ -1,4 +1,5 @@
 require 'slim'
+require 'csv'
 
 # constants
 
@@ -118,14 +119,100 @@ $navigation = {
 
 # webpack
 
+activate :relative_assets
+
 activate :external_pipeline, {
-	name: :webpack,
-	command: build? ?
-		"NODE_ENV=production yarn run build" :
-		"NODE_ENV=develop yarn run develop",
+	name: :parcel,
+	command: "parcel build source/javascripts/site.js --out-dir build/javascripts/",
 	source: "./build",
 	latency: 1
 }
+
+activate :external_pipeline, {
+	name: :gulp,
+	command: "gulp build:sass",
+	source: "./build",
+	latency: 1
+}
+
+
+# CSV モジュールにモンキーパッチを当てて Shift JIS の CSV を読み書きできるようにする
+
+module CSVEncodingExtension
+  def initialize(data, options = Hash.new)
+    options.delete(:replace)
+    options.delete(:undef)
+    super
+  end
+end
+
+CSV.send(:prepend, CSVEncodingExtension)
+
+# lecture フォルダのデータ
+
+$files = "lecture/logs/{keynote,s{1,2,3,4,5}*}.dat"
+
+# セッションデータ
+
+$sessions = {
+	icebreak: {
+		date: "8/24(木)",
+		time: "12:50～13:00",
+	},
+	opening: {
+		date: "8/24(木)",
+		time: "13:00～13:20",
+	},
+	keynote: {
+		date: "8/24(木)",
+		time: "13:20～14:40",
+	},
+	shortPresentation: {
+		date: "8/24(木)",
+		time: "13:20～14:40",
+	},
+  interactive: {
+    date: "8/24(木)",
+    time: "15:00〜17:30",
+  },
+  dinner: {
+    date: "8/24(木)",
+    time: "18:30〜20:30",
+  },
+  s1: {
+    date: "8/24(木)",
+    time: "21:00〜22:30",
+  },
+  s2: {
+    date: "8/25(金)",
+    time: "9:00～10:10",
+  },
+  s3: {
+    date: "8/25(金)",
+    time: "10:30～11:40",
+  },
+  lunch: {
+    date: "8/25(金)",
+    time: "11:40〜13:00",
+  },
+  s4: {
+    date: "8/25(金)",
+    time: "13:00～13:10",
+  },
+  s5: {
+    date: "8/25(金)",
+    time: "14:30～15:40",
+  },
+  closing: {
+    date: "8/25(金)",
+    time: "15:45〜16:30",
+  }
+}
+
+Dir.glob($files).each do |path|
+  id = path.match(/.*\/([^\/].*)\.dat/)[1]
+end
+
 
 ###
 # Page options, layouts, aliases and proxies
