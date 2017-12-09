@@ -4,6 +4,8 @@
 
 ```
 $ brew install yarn
+$ yarn global add parcel-bundler
+$ yarn global add gulp
 $ rbenv install 2.4.2
 $ rbenv global 2.4.2
 $ gem install middleman
@@ -25,6 +27,7 @@ $ middleman serve
 ## GitHub Pages へのデプロイ
 
 ```
+$ rm -rf build
 $ middleman deploy
 ```
 
