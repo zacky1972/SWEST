@@ -133,6 +133,7 @@ activate :external_pipeline, {
 	latency: 1
 }
 
+activate :livereload
 
 # CSV モジュールにモンキーパッチを当てて Shift JIS の CSV を読み書きできるようにする
 
@@ -148,68 +149,169 @@ CSV.send(:prepend, CSVEncodingExtension)
 
 # lecture フォルダのデータ
 
-$files = "lecture/logs/{keynote,s{1,2,3,4,5}*}.dat"
+$files = {
+  SWEST19: "lecture/logs/{keynote,s{1,2,3,4,5}*}.dat"
+}
 
 # セッションデータ
 
 $sessions = {
-	icebreak: {
-		date: "8/24(木)",
-		time: "12:50～13:00",
-	},
-	opening: {
-		date: "8/24(木)",
-		time: "13:00～13:20",
-	},
-	keynote: {
-		date: "8/24(木)",
-		time: "13:20～14:40",
-	},
-	shortPresentation: {
-		date: "8/24(木)",
-		time: "13:20～14:40",
-	},
-  interactive: {
-    date: "8/24(木)",
-    time: "15:00〜17:30",
-  },
-  dinner: {
-    date: "8/24(木)",
-    time: "18:30〜20:30",
-  },
-  s1: {
-    date: "8/24(木)",
-    time: "21:00〜22:30",
-  },
-  s2: {
-    date: "8/25(金)",
-    time: "9:00～10:10",
-  },
-  s3: {
-    date: "8/25(金)",
-    time: "10:30～11:40",
-  },
-  lunch: {
-    date: "8/25(金)",
-    time: "11:40〜13:00",
-  },
-  s4: {
-    date: "8/25(金)",
-    time: "13:00～13:10",
-  },
-  s5: {
-    date: "8/25(金)",
-    time: "14:30～15:40",
-  },
-  closing: {
-    date: "8/25(金)",
-    time: "15:45〜16:30",
+  SWEST19: {
+    icebreak: {
+      date: "8/24(木)",
+      time: "12:50～13:00",
+      name: "アイスブレイク",
+      title: "アイスブレイク",
+      fullTitle: "アイスブレイク",
+    },
+    opening: {
+      date: "8/24(木)",
+      time: "13:00～13:20",
+      name: "オープニング",
+      title: "オープニング",
+      fullTitle: "オープニング",
+    },
+    keynote: {
+      date: "8/24(木)",
+      time: "13:20～14:40",
+      name: "基調講演",
+    },
+    shortPresentation: {
+      date: "8/24(木)",
+      time: "13:20～14:40",
+      name: "ショートプレゼンテーション",
+      title: "ショートプレゼンテーション",
+      fullTitle: "ショートプレゼンテーション",
+    },
+    interactive: {
+      date: "8/24(木)",
+      time: "15:00〜17:30",
+      id: "interactive",
+      name: "インタクティブセッション",
+      title: "インタラクティブセッション",
+      fullTitle: "インタラクティブセッション",
+      abst: "研究発表・プロジェクト紹介・自由工作発表・協賛企業デモ展示をポスター形式で行います。"
+    },
+    dinner: {
+      date: "8/24(木)",
+      time: "18:30〜20:30",
+      name: "懇親会",
+      title: "懇親会",
+      fullTitle: "懇親会",
+    },
+    s1: {
+      date: "8/24(木)",
+      time: "21:00〜22:30",
+      name: "セッションS1",
+      title: "夜の分科会",
+    },
+    s2: {
+      date: "8/25(金)",
+      time: "9:00～10:10",
+      name: "セッションS2(70分)",
+    },
+    s3: {
+      date: "8/25(金)",
+      time: "10:30～11:40",
+      name: "セッションS3(70分)",
+    },
+    lunch: {
+      date: "8/25(金)",
+      time: "11:40〜13:00",
+      name: "昼食",
+      title: "昼食",
+      fullTitle: "昼食",
+    },
+    s4: {
+      date: "8/25(金)",
+      time: "13:00～13:10",
+      name: "セッションS4(70分)",
+    },
+    s5: {
+      date: "8/25(金)",
+      time: "14:30～15:40",
+      name: "セッションS5(70分)",
+    },
+    closing: {
+      date: "8/25(金)",
+      time: "15:45〜16:30",
+      name: "クロージング",
+      title: "クロージング",
+      fullTitle: "クロージング",
+    },
+    mokumoku: {
+      id: "mokumoku",
+      name: "カーネルもくもく会",
+      date: "8/25(金)",
+      time: "9:00～15:40",
+      title: "カーネルもくもく会",
+      fullTitle: "カーネルもくもく会",
+    }
   }
 }
 
-Dir.glob($files).each do |path|
-  id = path.match(/.*\/([^\/].*)\.dat/)[1]
+# セッションデータの読み込み
+
+$files.each do |key, value|
+  Dir.glob(value).each do |path|
+    begin
+      id = path.match(/.*\/([^\/].*)\.dat/)[1]
+      id_s = id.to_sym
+      unless id_s == :keynote then
+        name = 'セッション' + id
+        match = id.match(/(?<session>s[1-5])(?<room>.*)/)
+        session = match[:session]
+        session_s = session.to_sym
+        $sessions[key][id_s] = $sessions[key][session_s].dup
+        $sessions[key][id_s][:name] = name
+      end
+      File.open(path) do |file|
+        file.read.split("\n").each do |line|
+          tmp = line.split('=', 2)
+          $sessions[key][id_s][tmp[0].strip.to_sym] = tmp[1].strip
+        end
+      end
+    rescue SystemCallError => e
+      puts %Q(class=[#{e.class}] message=[#{e.message}])
+    rescue IOError => e
+      puts %Q(class=[#{e.class}] message=[#{e.message}])
+    end
+  end
 end
+
+$sessions[:SWEST19][:mokumoku][:abst] = $sessions[:SWEST19][:s1d][:abst]
+$sessions[:SWEST19][:mokumoku][:recommend] = $sessions[:SWEST19][:s1d][:recommend]
+$sessions[:SWEST19][:mokumoku][:name1] = $sessions[:SWEST19][:s1d][:name1]
+$sessions[:SWEST19][:mokumoku][:filepath_pic1] = $sessions[:SWEST19][:s1d][:filepath_pic1]
+$sessions[:SWEST19][:mokumoku][:affi1] = $sessions[:SWEST19][:s1d][:affi1]
+$sessions[:SWEST19][:mokumoku][:name2] = $sessions[:SWEST19][:s1d][:name2]
+$sessions[:SWEST19][:mokumoku][:filepath_pic2] = $sessions[:SWEST19][:s1d][:filepath_pic2]
+$sessions[:SWEST19][:mokumoku][:affi2] = $sessions[:SWEST19][:s1d][:affi2]
+
+$sessions.each do |key, value|
+  value.each_key do |id_s|
+    name = $sessions[key][id_s][:name]
+    title = $sessions[key][id_s][:title]
+    unless name.nil? then
+      if $sessions[key][id_s][:fullTitle].nil?
+        if title.nil? then
+          $sessions[key][id_s][:fullTitle] = name
+        else
+          $sessions[key][id_s][:fullTitle] = name + ": " + title
+        end
+      end
+    end 
+  end
+end
+
+
+# インタラクティブセッションの読み込み
+
+$interactive = Hash.new
+if File.exists?("interactive-printable.csv") then
+  $interactive[:SWEST19] = CSV.read("interactive-printable.csv", headers: false, encoding: "Shift_JIS:UTF-8")
+end
+
 
 
 ###

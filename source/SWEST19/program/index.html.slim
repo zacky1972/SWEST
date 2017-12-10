@@ -1,7 +1,6 @@
 ---
 title: SWEST19 プログラム
 ---
-.container
-	= partial 'partials/navbar', :locals => nav_add($navigation, 'Program', :active, true)
-.container
-	h2.center.margin-top SWEST19 タイムテーブル
+= partial 'partials/navbar', :locals => nav_add($navigation, 'Program', :active, true)
+= partial 'partials/timetable', :locals => { number: 19, sessions: $sessions[:SWEST19]}
+

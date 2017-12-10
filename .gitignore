@@ -22,3 +22,6 @@ node_modules/
 
 # Ignore lecture directory
 /lecture
+
+# Ignore interactive-printable.csv
+interactive-printable.csv

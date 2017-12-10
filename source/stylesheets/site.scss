@@ -7,6 +7,7 @@ $text-color: #444;
 $main-color: #87cefa;
 $main-color-dark: #00bfff;
 $title-color: #fff;
+$sub-color: #ccc;
 
 /*-----------------------------------------------------------------------
   base
@@ -53,4 +54,17 @@ li.nav-item.active {
 	a {
 		color: $main-color !important;
 	}
+}
+
+/*-----------------------------------------------------------------------
+  time table
+-----------------------------------------------------------------------*/
+
+.session-heading {
+	padding-top: .5em;
+	border-top: 1px solid $sub-color;
+}
+
+.day-section-heading {
+	margin: .375em 0;
 }

@@ -1,0 +1,34 @@
+.container
+  h2.center.margin-top SWEST#{number} タイムテーブル
+  .timetable
+    = link_to :name => 'ESS', :href => ''
+    .day-section-heading.session-heading
+      .row
+        = link_to 'ESSのプログラムはこちらを参照ください。', "http://www.sigemb.jp/ESS/2017/組込みシステムシンポジウム2017論文募集/プログラム/"
+    .day-heading
+      h3 8/24(木)
+    = partial 'partials/day-section-heading', :locals => { name: 'icebreak', sessions: sessions}
+    = partial 'partials/day-section-heading', :locals => { name: 'opening', sessions: sessions}
+    = partial 'partials/day-section-heading', :locals => { name: 'keynote', sessions: sessions}
+    = partial 'partials/day-section-heading', :locals => { name: 'shortPresentation', sessions: sessions}
+    = partial 'partials/day-section-heading', :locals => { name: 'interactive', sessions: sessions}
+    = partial 'partials/day-section-heading', :locals => { name: 'dinner', sessions: sessions}
+    = partial 'partials/day-section-heading', :locals => { name: 's1', sessions: sessions}
+    = partial 'partials/day-section-content', :locals => { name: 's1', sessions: sessions}
+    .day-heading
+      h3 8/25(金)
+    = partial 'partials/day-section-heading', :locals => { name: 'mokumoku', sessions: sessions}
+    = partial 'partials/day-section-heading', :locals => { name: 's2', sessions: sessions}
+    = partial 'partials/day-section-content', :locals => { name: 's2', sessions: sessions}
+    .day-heading
+    = partial 'partials/day-section-heading', :locals => { name: 's3', sessions: sessions}
+    = partial 'partials/day-section-content', :locals => { name: 's3', sessions: sessions}
+    .day-heading
+    = partial 'partials/day-section-heading', :locals => { name: 'lunch', sessions: sessions}
+    = partial 'partials/day-section-heading', :locals => { name: 's4', sessions: sessions}
+    = partial 'partials/day-section-content', :locals => { name: 's4', sessions: sessions}
+    .day-heading
+    = partial 'partials/day-section-heading', :locals => { name: 's5', sessions: sessions}
+    = partial 'partials/day-section-content', :locals => { name: 's5', sessions: sessions}
+    .day-heading
+    = partial 'partials/day-section-heading', :locals => { name: 'closing', sessions: sessions}
