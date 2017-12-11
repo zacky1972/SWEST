@@ -116,3 +116,24 @@ a .session-section-content {
 .session-introduction {
 	font-weight: bold;
 }
+
+.session-section-title {
+	border-bottom: solid 3px $sub-color;
+	margin-bottom: 2em;
+}
+
+/*-----------------------------------------------------------------------
+  interactive session
+-----------------------------------------------------------------------*/
+
+.session-interactive-title {
+	border-bottom: solid 3px $sub-color;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	font-weight: bold;
+}
+
+.session-poster {
+	border-bottom: solid 1px $sub-color;
+}
+
