@@ -1,0 +1,24 @@
+= link_to "./#{name}.html##{name}" do
+  .session-section-content
+    .session-date-time #{[sessions[name.to_sym][:date], sessions[name.to_sym][:time],  sessions[name.to_sym][:name]].join(' ')}
+    .session-section-title #{sessions[name.to_sym][:title].presence || '企画中'}
+    .session-presenters
+      ol
+        - (1..5).map do |number|
+          - if sessions[name.to_sym][('name' + number.to_s).to_sym].present?
+            li
+              .session-presenter
+                .session-presenter-picture
+                  - if sessions[name.to_sym][('filepath_pic' + number.to_s).to_sym].blank?
+                    img src="/images/empty.jpg"
+                  - else
+                    img src="/images/#{sessions[name.to_sym][('filepath_pic' + number.to_s).to_sym]}"
+                div
+                  p
+                    .session-presenter-name #{sessions[name.to_sym][('name' + number.to_s).to_sym]}
+                  p
+                    .session-presenter-affiliation #{sessions[name.to_sym][('affi' + number.to_s).to_sym]}
+        .session-abstract #{url2link((sessions[name.to_sym][:abst].presence || '企画中').gsub(/<<enter>>/, "<br/>"))}
+        - if sessions[name.to_sym][:recommend].present?
+          .session-introduction-title 実行委員からの推薦文:
+          .session-introduction #{url2link(sessions[name.to_sym][:recommend].gsub(/<<enter>>/, "<br/>"))}

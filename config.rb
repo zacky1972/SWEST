@@ -128,7 +128,7 @@ activate :external_pipeline, {
 
 activate :external_pipeline, {
 	name: :gulp,
-	command: "gulp build:sass",
+	command: "gulp build",
 	source: "./build",
 	latency: 1
 }
@@ -345,6 +345,13 @@ helpers do
   		i[tag] = value
   	end
   	nav
+  end
+
+  def url2link text
+    pattern = "https?://[a-zA-Z0-9.]{2,}(:[0-9]+)?(/[-_.!~*a-zA-Z0-9;/?:@&=+$,%#]+)?"
+    /#{pattern}/ =~ text
+    # $&という変数に格納されるので、それを利用してgsubメソッドで変換する
+    text.gsub(/#{pattern}/,"<a href="+$&.to_s+">"+$&.to_s+"</a>")
   end
 end
 

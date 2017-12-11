@@ -68,3 +68,51 @@ li.nav-item.active {
 .day-section-heading {
 	margin: .375em 0;
 }
+
+/*-----------------------------------------------------------------------
+  section content
+-----------------------------------------------------------------------*/
+
+.session-section-content {
+	border: 4px double $sub-color;
+	margin: 5em 0;
+	padding: 2em;
+	font-size: 15px;
+	p {
+		font-size: 15px;
+	}
+}
+
+a .session-section-content {
+	color: $text-color;
+}
+
+.session-presenters ol {
+	list-style: none;
+	li {
+		border: 1px solid $sub-color;
+		text-align: center;
+	}
+}
+
+.session-presenter div {
+	display: table-cell;
+}
+
+.session-presenter-picture img {
+	max-width: 100px;
+	max-height: 100px;
+	vertical-align: middle;
+}
+
+.session-presenter-name {
+	font-size: 15px;
+}
+
+.session-presenter-affiliation {
+	font-size: 12px;
+}
+
+.session-introduction {
+	font-weight: bold;
+}
