@@ -382,6 +382,12 @@ configure :build do
   # Minify Javascript on build
   activate :minify_javascript
 
+  # Minify Image
+  activate :imageoptim do |options|
+    options.pngout = false
+    options.svgo =false
+  end
+
   activate :asset_hash
   activate :asset_host, :host => 'https://zacky1972.github.io/SWEST'
   $site_url = '/SWEST'

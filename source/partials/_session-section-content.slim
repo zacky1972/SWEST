@@ -33,3 +33,11 @@
         .session-introduction-title 実行委員からの推薦文:
         .session-introduction
         	p #{url2link(sessions[name.to_sym][:recommend].gsub(/<<enter>>/, "<br/>").gsub(/<<equal>>/, "="))}
+      - unless sessions[name.to_sym][:publish].nil?
+        - if sessions[name.to_sym][:publish].eql?('予稿集用ファイルを公開')
+          = link_to "公開PDFをダウンロード", "/pdfs/#{name}_proceeding.pdf"
+        - elsif sessions[name.to_sym][:publish].eql?('一般公開用ファイルを公開')
+          = link_to "公開PDFをダウンロード", "/pdfs/#{name}_public.pdf"
+      span &nbsp;
+      - unless sessions[name.to_sym][:filepath_minute].nil?
+        = link_to "議事録", "/txts/#{name}_minute.txt", encoding: "UTF-8"
