@@ -369,6 +369,13 @@ end
 
 # Build-specific configuration
 configure :build do
+  # Autoprefixer
+  activate :autoprefixer do |config|
+    config.cascade = false
+    config.inline = true
+    config.ignore = ['/common']
+  end
+
   # Minify CSS on build
   # activate :minify_css
 
@@ -378,6 +385,7 @@ configure :build do
   activate :asset_hash
   activate :asset_host, :host => 'https://zacky1972.github.io/SWEST'
   $site_url = '/SWEST'
+
 end
 
 activate :deploy do |deploy|
