@@ -377,10 +377,10 @@ configure :build do
   end
 
   # Minify CSS on build
-  # activate :minify_css
+  activate :minify_css
 
   # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_javascript
 
   activate :asset_hash
   activate :asset_host, :host => 'https://zacky1972.github.io/SWEST'
