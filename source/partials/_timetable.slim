@@ -12,25 +12,71 @@
     = partial 'partials/day-section-heading', :locals => { name: 'icebreak', sessions: sessions}
     = partial 'partials/day-section-heading', :locals => { name: 'opening', sessions: sessions}
     = partial 'partials/day-section-heading', :locals => { name: 'keynote', sessions: sessions}
+    - if session == :keynote
+        = partial 'partials/session-section-content', :locals => { name: 'keynote', sessions: sessions, interactive: interactive}
     = partial 'partials/day-section-heading', :locals => { name: 'shortPresentation', sessions: sessions}
     = partial 'partials/day-section-heading', :locals => { name: 'interactive', sessions: sessions}
+    - if session == :interactive
+        = partial 'partials/session-section-content', :locals => { name: 'interactive', sessions: sessions, interactive: interactive}
     = partial 'partials/day-section-heading', :locals => { name: 'dinner', sessions: sessions}
     = partial 'partials/day-section-heading', :locals => { name: 's1', sessions: sessions}
     = partial 'partials/day-section-content', :locals => { name: 's1', sessions: sessions}
     .day-heading
-      h3 8/25(金)
+    - if session == :s1a
+        = partial 'partials/session-section-content', :locals => { name: 's1a', sessions: sessions, interactive: interactive}
+    - elsif session == :s1b
+        = partial 'partials/session-section-content', :locals => { name: 's1b', sessions: sessions, interactive: interactive}
+    - elsif session == :s1c
+        = partial 'partials/session-section-content', :locals => { name: 's1c', sessions: sessions, interactive: interactive}
+    - elsif session == :s1d
+        = partial 'partials/session-section-content', :locals => { name: 's1d', sessions: sessions, interactive: interactive}
+    h3 8/25(金)
     = partial 'partials/day-section-heading', :locals => { name: 'mokumoku', sessions: sessions}
+    - if session == :mokumoku
+        = partial 'partials/session-section-content', :locals => { name: 'mokumoku', sessions: sessions, interactive: interactive}
     = partial 'partials/day-section-heading', :locals => { name: 's2', sessions: sessions}
     = partial 'partials/day-section-content', :locals => { name: 's2', sessions: sessions}
     .day-heading
+    - if session == :s2a
+        = partial 'partials/session-section-content', :locals => { name: 's2a', sessions: sessions, interactive: interactive}
+    - elsif session == :s2b
+        = partial 'partials/session-section-content', :locals => { name: 's2b', sessions: sessions, interactive: interactive}
+    - elsif session == :s2c
+        = partial 'partials/session-section-content', :locals => { name: 's2c', sessions: sessions, interactive: interactive}
+    - elsif session == :s2d
+        = partial 'partials/session-section-content', :locals => { name: 's2d', sessions: sessions, interactive: interactive}
     = partial 'partials/day-section-heading', :locals => { name: 's3', sessions: sessions}
     = partial 'partials/day-section-content', :locals => { name: 's3', sessions: sessions}
     .day-heading
+    - if session == :s3a
+        = partial 'partials/session-section-content', :locals => { name: 's3a', sessions: sessions, interactive: interactive}
+    - elsif session == :s3b
+        = partial 'partials/session-section-content', :locals => { name: 's3b', sessions: sessions, interactive: interactive}
+    - elsif session == :s3c
+        = partial 'partials/session-section-content', :locals => { name: 's3c', sessions: sessions, interactive: interactive}
+    - elsif session == :s3d
+        = partial 'partials/session-section-content', :locals => { name: 's3d', sessions: sessions, interactive: interactive}
     = partial 'partials/day-section-heading', :locals => { name: 'lunch', sessions: sessions}
     = partial 'partials/day-section-heading', :locals => { name: 's4', sessions: sessions}
     = partial 'partials/day-section-content', :locals => { name: 's4', sessions: sessions}
     .day-heading
+    - if session == :s4a
+        = partial 'partials/session-section-content', :locals => { name: 's4a', sessions: sessions, interactive: interactive}
+    - elsif session == :s4b
+        = partial 'partials/session-section-content', :locals => { name: 's4b', sessions: sessions, interactive: interactive}
+    - elsif session == :s4c
+        = partial 'partials/session-section-content', :locals => { name: 's4c', sessions: sessions, interactive: interactive}
+    - elsif session == :s4d
+        = partial 'partials/session-section-content', :locals => { name: 's4d', sessions: sessions, interactive: interactive}
     = partial 'partials/day-section-heading', :locals => { name: 's5', sessions: sessions}
     = partial 'partials/day-section-content', :locals => { name: 's5', sessions: sessions}
     .day-heading
+    - if session == :s5a
+        = partial 'partials/session-section-content', :locals => { name: 's5a', sessions: sessions, interactive: interactive}
+    - elsif session == :s5b
+        = partial 'partials/session-section-content', :locals => { name: 's5b', sessions: sessions, interactive: interactive}
+    - elsif session == :s5c
+        = partial 'partials/session-section-content', :locals => { name: 's5c', sessions: sessions, interactive: interactive}
+    - elsif session == :s5d
+        = partial 'partials/session-section-content', :locals => { name: 's5d', sessions: sessions, interactive: interactive}
     = partial 'partials/day-section-heading', :locals => { name: 'closing', sessions: sessions}

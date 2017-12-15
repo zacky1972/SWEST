@@ -2,4 +2,8 @@
 .day-section-heading.session-heading
   .row
     .col-5.col-md-3.time #{sessions[name.to_sym][:time]}
-    .col-7.col-md-9.section-title #{sessions[name.to_sym][:fullTitle]}
+    .col-7.col-md-9.section-title
+    	- if sessions[:page].include?(name)
+		    = link_to sessions[name.to_sym][:fullTitle], "#{name}.html##{name}"
+		- else
+			| #{sessions[name.to_sym][:fullTitle]}

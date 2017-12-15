@@ -157,6 +157,17 @@ $files = {
 
 $sessions = {
   SWEST19: {
+    page: [
+      'index', 
+      'keynote', 
+      'interactive', 
+      'mokumoku', 
+      's1a', 's1b', 's1c', 's1d', 
+      's2a', 's2b', 's2c', 's2d', 
+      's3a', 's3b', 's3c', 's3d', 
+      's4a', 's4b', 's4c', 's4d', 
+      's5a', 's5b', 's5c', 's5d'
+    ],
     icebreak: {
       date: "8/24(木)",
       time: "12:50～13:00",
@@ -290,14 +301,16 @@ $sessions[:SWEST19][:mokumoku][:affi2] = $sessions[:SWEST19][:s1d][:affi2]
 
 $sessions.each do |key, value|
   value.each_key do |id_s|
-    name = $sessions[key][id_s][:name]
-    title = $sessions[key][id_s][:title]
-    unless name.nil? then
-      if $sessions[key][id_s][:fullTitle].nil?
-        if title.nil? then
-          $sessions[key][id_s][:fullTitle] = name
-        else
-          $sessions[key][id_s][:fullTitle] = name + ": " + title
+    unless id_s == :page then
+      name = $sessions[key][id_s][:name]
+      title = $sessions[key][id_s][:title]
+      unless name.nil? then
+        if $sessions[key][id_s][:fullTitle].nil?
+          if title.nil? then
+            $sessions[key][id_s][:fullTitle] = name
+          else
+            $sessions[key][id_s][:fullTitle] = name + ": " + title
+          end
         end
       end
     end 
@@ -312,7 +325,14 @@ if File.exists?("interactive-printable.csv") then
   $interactive[:SWEST19] = CSV.read("interactive-printable.csv", headers: false, encoding: "Shift_JIS:UTF-8")
 end
 
+# 動的ページの作成
 
+[19].each do |number|
+  swest = "SWEST#{number.to_s}"
+  $sessions[swest.to_sym][:page].each do |name|
+    proxy "/#{swest}/program/#{name}.html", "/templates/timetable.html", locals: { session: name }, ignore: true
+  end
+end
 
 ###
 # Page options, layouts, aliases and proxies
