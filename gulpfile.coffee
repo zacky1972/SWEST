@@ -1,14 +1,23 @@
 gulp = require 'gulp'
 sass = require 'gulp-sass'
+rename = require 'gulp-rename'
 
 gulp.task 'build:sass', () ->
   gulp.src 'source/stylesheets/**/*.scss'
     .pipe sass()
     .pipe gulp.dest('build/stylesheets/')
 
-gulp.task 'build:images', () ->
-  gulp.src 'lecture/data/img/**/*'
+gulp.task 'build:jpg', () ->
+  gulp.src 'lecture/data/img/**/*.{jpg,JPG,jpeg,JPEG}'
+  	.pipe rename({extname: '.jpg'})
     .pipe gulp.dest('build/images/')
+
+gulp.task 'build:png', () ->
+  gulp.src 'lecture/data/img/**/*.{png,PNG}'
+    .pipe rename({extname: '.png'})
+    .pipe gulp.dest('build/images/')
+
+gulp.task 'build:images', ['build:jpg', 'build:png']
 
 gulp.task 'build:pdfs', () ->
   gulp.src 'lecture/data/**/*.pdf'
