@@ -39,9 +39,9 @@
         	p #{url2link(sessions[name.to_sym][:recommend].gsub(/<<enter>>/, "<br/>").gsub(/<<equal>>/, "="))}
       - unless sessions[name.to_sym][:publish].nil?
         - if sessions[name.to_sym][:publish].eql?('予稿集用ファイルを公開')
-          = link_to "セッション資料", "/pdfs/#{name}_proceeding.pdf", class: "btn btn-primary"
+          = link_to "セッション資料", $site_url + "/pdfs/#{name}_proceeding.pdf", class: "btn btn-primary"
         - elsif sessions[name.to_sym][:publish].eql?('一般公開用ファイルを公開')
-          = link_to "セッション資料", "/pdfs/#{name}_public.pdf", class: "btn btn-primary"
+          = link_to "セッション資料", $site_url + "/pdfs/#{name}_public.pdf", class: "btn btn-primary"
       span &nbsp;
       - unless sessions[name.to_sym][:filepath_minute].nil?
-        = link_to "議事録", "/txts/#{name}_minute.txt", encoding: "UTF-8", class: "btn btn-primary"
+        = link_to "議事録", $site_url + "/txts/#{name}_minute.txt", encoding: "UTF-8", class: "btn btn-primary"

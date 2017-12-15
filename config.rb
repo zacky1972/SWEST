@@ -3,7 +3,7 @@ require 'csv'
 
 # constants
 
-$site_url = ''
+$site_url = '/'
 
 $navigation = {
 	:site_url => '/',
@@ -410,7 +410,7 @@ configure :build do
 
   activate :asset_hash
   activate :asset_host, :host => 'https://zacky1972.github.io/SWEST'
-  $site_url = '/SWEST'
+  $site_url = '/SWEST/'
 
 end
 
