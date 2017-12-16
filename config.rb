@@ -334,6 +334,16 @@ end
   end
 end
 
+# OGP
+
+activate :ogp do |ogp|
+  ogp.namespaces = {
+    fb: data.ogp.fb,
+    og: data.ogp.og
+  }
+  ogp.base_url = 'https://swest.toppers.jp'
+end
+
 ###
 # Page options, layouts, aliases and proxies
 ###

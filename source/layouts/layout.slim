@@ -5,7 +5,11 @@ html lang="ja-jp"
     meta charset="utf-8"
     meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"
 
-    title = current_page.data.title || "SWEST"
+    title = current_page.data.title || yield_content(:title) || "SWEST"
+
+    - ogp_tags do |name, value|
+        meta property=name content=value
+    meta property="og:description" content=yield_content(:description) || "SWEST プログラムページです。"
 
     link href='//fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'
 
