@@ -3,7 +3,7 @@ require 'csv'
 
 # constants
 
-$site_url = '/'
+$site_url = 'http://localhost:4567/'
 
 $navigation = {
 	:site_url => '/',
