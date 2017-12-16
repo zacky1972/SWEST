@@ -18,14 +18,7 @@
               li
                 .session-presenter
                   .session-presenter-picture
-                    - if sessions[name.to_sym][('filepath_pic' + number.to_s).to_sym].blank?
-                      img src="/images/empty.jpg"
-                    - elsif /\.(jpg|JPG|jpeg|JPEG)/.match(Pathname(sessions[name.to_sym][('filepath_pic' + number.to_s).to_sym]).extname)
-                      img src="/images/#{Pathname(sessions[name.to_sym][('filepath_pic' + number.to_s).to_sym]).sub_ext(".jpg").to_s}"
-                    - elsif /\.(png|PNG)/.match(Pathname(sessions[name.to_sym][('filepath_pic' + number.to_s).to_sym]).extname)
-                      img src="/images/#{Pathname(sessions[name.to_sym][('filepath_pic' + number.to_s).to_sym]).sub_ext(".png").to_s}"
-                    - else
-                      img src="/images/#{sessions[name.to_sym][('filepath_pic' + number.to_s).to_sym]}"
+                    = image_tag "images/#{sessions[name.to_sym]["filepath_pic#{number.to_s}".to_sym]}"
                   div
                     p
                       .session-presenter-name #{sessions[name.to_sym][('name' + number.to_s).to_sym]}

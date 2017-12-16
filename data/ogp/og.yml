@@ -1,9 +1,3 @@
-description: 'SWEST:「組込みシステム技術に関するサマーワークショップ」'
-image:
-  '': 'images/swestlogo.png'
-  type: 'image/png'
-  width: 221
-  height: 221
 locale:
   '': ja_jp
   alternate:

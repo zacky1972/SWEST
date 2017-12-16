@@ -313,6 +313,26 @@ $sessions.each do |key, value|
           end
         end
       end
+      (1..5).each do |number|
+        if $sessions[key][id_s]["name#{number.to_s}".to_sym].present? then
+          image = $sessions[key][id_s]["filepath_pic#{number.to_s}".to_sym]
+          ogp_image = image
+          if image.blank? then
+            image = 'empty.jpg'
+            ogp_image = 'swestlogo.png'
+          elsif /\.(jpg|JPG|jpeg|JPEG)/.match(Pathname(image).extname)
+            image = Pathname(image).sub_ext('.jpg').to_s
+            ogp_image = image
+          elsif /\.(png|PNG)/.match(Pathname(image).extname)
+            image = Pathname(image).sub_ext('.png').to_s
+            ogp_image = image
+          end
+          $sessions[key][id_s]["filepath_pic#{number.to_s}".to_sym] = image
+          if number == 1 then
+            $sessions[key][id_s][:ogp_image] = ogp_image
+          end
+        end
+      end
     end 
   end
 end
@@ -342,6 +362,7 @@ activate :ogp do |ogp|
     og: data.ogp.og
   }
   ogp.base_url = 'https://swest.toppers.jp'
+  ogp.blog = true
 end
 
 ###

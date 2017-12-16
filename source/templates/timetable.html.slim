@@ -1,5 +1,6 @@
 - content_for(:title, session.to_sym == :index ? 'SWEST19 プログラム' : "SWEST19 #{$sessions[:SWEST19][session.to_sym][:fullTitle].presence || ''}")
 - content_for(:description, session.to_sym == :index ? 'SWEST19 のプログラムページです。' : ($sessions[:SWEST19][session.to_sym][:recommend].presence || $sessions[:SWEST19][session.to_sym][:abst].presence || '(企画中)').gsub(/<<enter>>/, "<br/>").gsub(/<<equal>>/, "="))
+- content_for(:image, session.to_sym == :index ? (url_for 'images/swestlogo.png') : (url_for "images/#{$sessions[:SWEST19][session.to_sym][:ogp_image]}"))
 = partial 'partials/navbar', :locals => nav_add($navigation, 'Program', :active, true)
 = partial 'partials/timetable', :locals => { number: 19, sessions: $sessions[:SWEST19], interactive: $interactive[:SWEST19], session: session.to_sym}
 = partial 'partials/session-contents', :locals => { number: 19, sessions: $sessions[:SWEST19], interactive: $interactive[:SWEST19]}
