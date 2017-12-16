@@ -9,7 +9,12 @@ html lang="ja-jp"
 
     - ogp_tags do |name, value|
         meta property=name content=value
-    meta property="og:description" content=yield_content(:description) || "SWEST プログラムページです。"
+    meta property="og:description" content=yield_content(:description)
+
+    link href="#{$site_url}/images/swestlogo.png" rel='icon' sizes='32x32'
+    link href="#{$site_url}/images/swestlogo.png" rel='icon' sizes='192x192'
+    link href="#{$site_url}/images/swestlogo.png" rel='apple-touch-icon-precomposed'
+    meta content="#{$site_url}/images/swestlogo.png" name='msapplication-TileImage'
 
     link href='//fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'
 
