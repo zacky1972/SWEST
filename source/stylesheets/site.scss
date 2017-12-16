@@ -26,9 +26,9 @@ $sub-color: #ccc;
 -----------------------------------------------------------------------*/
 
 .navbar-light {
-  background: -webkit-linear-gradient(to bottom, $main-color 0%, $main-color-dark 100%);
-  background: linear-gradient(to bottom, $main-color 0%, $main-color-dark 100%);
-  border-color: $main-color;
+	background: -webkit-linear-gradient(to bottom, $main-color 0%, $main-color-dark 100%);
+	background: linear-gradient(to bottom, $main-color 0%, $main-color-dark 100%);
+	border-color: $main-color;
 }
 
 h1.navbar-brand {
@@ -141,3 +141,13 @@ a .session-section-content {
 	border-bottom: solid 1px $sub-color;
 }
 
+/*-----------------------------------------------------------------------
+  footer
+-----------------------------------------------------------------------*/
+
+footer {
+	background: -webkit-linear-gradient(to bottom, $main-color 0%, $main-color-dark 100%);
+	background: linear-gradient(to bottom, $main-color 0%, $main-color-dark 100%);
+	border-color: $main-color;
+	color: $title-color;
+}

@@ -4,3 +4,6 @@ title: SWEST19 プログラム
 = partial 'partials/navbar', :locals => nav_add($navigation, 'Program', :active, true)
 = partial 'partials/timetable', :locals => { number: 19, sessions: $sessions[:SWEST19], interactive: $interactive[:SWEST19], session: session.to_sym}
 = partial 'partials/session-contents', :locals => { number: 19, sessions: $sessions[:SWEST19], interactive: $interactive[:SWEST19]}
+footer
+  .container
+    small &copy; 1999 SWEST commitee 
