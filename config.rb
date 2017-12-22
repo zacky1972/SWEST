@@ -121,14 +121,14 @@ activate :relative_assets
 
 activate :external_pipeline, {
 	name: :parcel,
-	command: "parcel build source/javascripts/site.js --out-dir build/javascripts/",
+	command: "parcel source/javascripts/site.js --out-dir build/javascripts/",
 	source: "./build",
 	latency: 1
 }
 
 activate :external_pipeline, {
 	name: :gulp,
-	command: "gulp build",
+	command: build? ? "gulp build" : 'gulp watch',
 	source: "./build",
 	latency: 1
 }

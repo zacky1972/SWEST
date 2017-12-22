@@ -7,25 +7,45 @@ gulp.task 'build:sass', () ->
     .pipe sass()
     .pipe gulp.dest('build/stylesheets/')
 
+gulp.task 'watch:sass', () ->
+  gulp.watch ['source/stylesheets/**/*.scss'], ['build:sass']
+
 gulp.task 'build:jpg', () ->
   gulp.src 'lecture/data/img/**/*.{jpg,JPG,jpeg,JPEG}'
   	.pipe rename({extname: '.jpg'})
     .pipe gulp.dest('build/images/')
+
+gulp.task 'watch:jpg', () ->
+  gulp.watch ['lecture/data/img/**/*.{jpg,JPG,jpeg,JPEG}'], ['build:jpg']
 
 gulp.task 'build:png', () ->
   gulp.src 'lecture/data/img/**/*.{png,PNG}'
     .pipe rename({extname: '.png'})
     .pipe gulp.dest('build/images/')
 
+gulp.task 'watch:png', () ->
+  gulp.watch ['lecture/data/img/**/*.{png,PNG}'], ['build:png']
+
 gulp.task 'build:images', ['build:jpg', 'build:png']
+
+gulp.task 'watch:images', ['watch:jpg', 'watch:png']
 
 gulp.task 'build:pdfs', () ->
   gulp.src 'lecture/data/**/*.pdf'
     .pipe gulp.dest('build/pdfs/')
 
+gulp.task 'watch:pdfs', () ->
+  gulp.watch ['lecture/data/img/**/*.pdf'], ['build:pdfs']
+
 gulp.task 'build:txts', () ->
   gulp.src 'lecture/data/**/*.txt'
     .pipe gulp.dest('build/txts/')
 
+gulp.task 'watch:txts', () ->
+  gulp.watch ['lecture/data/img/**/*.txt'], ['build:txts']
+
 
 gulp.task 'build', ['build:sass', 'build:images', 'build:pdfs', 'build:txts']
+
+gulp.task 'watch', ['watch:sass', 'watch:images', 'watch:pdfs', 'watch:txts']
+
