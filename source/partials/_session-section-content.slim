@@ -18,7 +18,8 @@
               li
                 .session-presenter
                   .session-presenter-picture
-                    = image_tag "images/#{sessions[name.to_sym]["filepath_pic#{number.to_s}".to_sym]}"
+                    img src="#{image_path(addSize2Pathname(sessions[name.to_sym]["filepath_pic#{number.to_s}".to_sym],100))}" srcset=("#{image_path(addSize2Pathname(sessions[name.to_sym]["filepath_pic#{number.to_s}".to_sym],300))} 3x, #{image_path(addSize2Pathname(sessions[name.to_sym]["filepath_pic#{number.to_s}".to_sym],200))} 2x, #{image_path(addSize2Pathname(sessions[name.to_sym]["filepath_pic#{number.to_s}".to_sym],100))} 1x")
+
                   div
                     p
                       .session-presenter-name #{sessions[name.to_sym][('name' + number.to_s).to_sym]}

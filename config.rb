@@ -404,6 +404,10 @@ helpers do
     # $&という変数に格納されるので、それを利用してgsubメソッドで変換する
     text.gsub(/#{pattern}/,"<a href="+$&.to_s+">"+$&.to_s+"</a>")
   end
+
+  def addSize2Pathname path, size
+    "#{Pathname(path).basename('.*')}.#{size.to_s}#{Pathname(path).extname}"
+  end
 end
 
 # Reload the browser automatically whenever files change
