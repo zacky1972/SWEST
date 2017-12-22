@@ -440,23 +440,23 @@ configure :build do
   end
 
   activate :asset_hash
-#  activate :asset_host, :host => 'https://zacky1972.github.io/SWEST'
-#  $site_url = '/SWEST/'
-  activate :asset_host, :host => 'https://swest.toppers.jp'
-  $site_url = 'https://swest.toppers.jp/'
+  activate :asset_host, :host => 'https://zacky1972.github.io/SWEST'
+  $site_url = '/SWEST/'
+#  activate :asset_host, :host => 'https://swest.toppers.jp'
+#  $site_url = 'https://swest.toppers.jp/'
 
 end
 
 activate :deploy do |deploy|
 # for GitHub Pages
-#	deploy.build_before = true
-#	deploy.deploy_method = :git
-#	deploy.branch = 'gh-pages'
+  deploy.build_before = true
+  deploy.deploy_method = :git
+  deploy.branch = 'gh-pages'
 
 # for swest.topper.jp
-  deploy.build_before = true
-  deploy.deploy_method = :rsync
-  deploy.host = 'swest.toppers.jp'
-  deploy.path = '/var/www/html/'
-  deploy.clean = false
+#  deploy.build_before = true
+#  deploy.deploy_method = :rsync
+#  deploy.host = 'swest.toppers.jp'
+#  deploy.path = '/var/www/html/'
+#  deploy.clean = false
 end
