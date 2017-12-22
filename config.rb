@@ -452,6 +452,8 @@ configure :build do
     options.nice = true
     options.threads = true
 
+    options.allow_lossy = true
+
     # Image extensions to attempt to compress
     options.image_extensions = %w(.png .jpg .gif .svg)
 
