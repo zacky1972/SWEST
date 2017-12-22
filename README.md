@@ -19,7 +19,7 @@ $ yarn install
 ## ローカルプレビュー
 
 ```
-$ middleman serve
+$ bundle exec middleman serve
 ```
 
 その後，[http://localhost:4567/](http://localhost:4567/) にアクセス
@@ -28,7 +28,8 @@ $ middleman serve
 
 ```
 $ rm -rf build
-$ middleman deploy
+$ bundle exec middleman deploy
 ```
 
 その後，[https://zacky1972.github.io/SWEST/](https://zacky1972.github.io/SWEST/) にアクセス
+(deploy 先を swest.topper.jp にしている場合は，[https://swest.toppers.jp](https://swest.toppers.jp)にアクセス)
