@@ -488,7 +488,7 @@ configure :build do
   end
 
   # キャッシュ対策のため，ファイル名にハッシュをつける。ただし，すでにハッシュが付与されているファイルを除く
-  activate :asset_hash, :ignore => %r{.*-[0-9a-f]{8,8}\..}
+  activate :asset_hash, :ignore => %r{.*-[0-9a-f]{8,8}\..*}
   activate :asset_host, :host => 'https://zacky1972.github.io/SWEST'
   $site_url = '/SWEST/'
 #  activate :asset_host, :host => 'https://swest.toppers.jp'

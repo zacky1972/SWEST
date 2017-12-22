@@ -21,7 +21,6 @@ $ bundle exec middleman serve
 ## GitHub Pages へのデプロイ
 
 ```
-$ rm -rf build
 $ bundle exec middleman deploy
 ```
 
