@@ -3,6 +3,7 @@
 ## インストール
 
 ```
+$ brew install imagemagick
 $ brew install yarn
 $ yarn global add parcel-bundler
 $ yarn global add gulp
