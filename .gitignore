@@ -25,3 +25,6 @@ node_modules/
 
 # Ignore interactive-printable.csv
 interactive-printable.csv
+
+# Ignore bin
+/bin

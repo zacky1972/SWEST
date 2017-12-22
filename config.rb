@@ -439,6 +439,24 @@ configure :build do
     options.svgo =false
   end
 
+  # favicon-maker
+  activate :favicon_maker do |f|
+    f.template_dir  = 'source/images'
+    f.icons = {
+      "swestlogo.png" => [
+        { icon: "apple-touch-icon-180x180-precomposed.png" },
+        { icon: "apple-touch-icon-152x152-precomposed.png" },
+        { icon: "apple-touch-icon-144x144-precomposed.png" },
+        { icon: "apple-touch-icon-114x114-precomposed.png" },
+        { icon: "apple-touch-icon-72x72-precomposed.png" },
+        { icon: "apple-touch-icon-precomposed.png", size: "60x60" },
+        { icon: "mstile-144x144", format: :png },
+        { icon: "favicon.png", size: "16x16" },
+        { icon: "favicon.ico", size: "64x64,32x32,24x24,16x16" },
+      ]
+    }
+  end
+
   activate :asset_hash
   activate :asset_host, :host => 'https://zacky1972.github.io/SWEST'
   $site_url = '/SWEST/'
