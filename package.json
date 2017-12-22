@@ -18,10 +18,13 @@
     "global": "^4.3.2",
     "gulp": "^3.9.1",
     "gulp-coffee": "^2.3.5",
+    "gulp-image-resize": "^0.13.0",
+    "gulp-imagemin": "^4.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "jquery": "^3.2.1",
     "node-sass": "^4.7.2",
-    "popper.js": "^1.12.9"
+    "popper.js": "^1.12.9",
+    "svgo": "^1.0.3"
   }
 }

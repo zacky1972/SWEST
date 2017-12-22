@@ -1,6 +1,21 @@
 gulp = require 'gulp'
 sass = require 'gulp-sass'
 rename = require 'gulp-rename'
+imageResize = require 'gulp-image-resize'
+imagemin    = require 'gulp-imagemin'
+
+resizeOptions = {
+  width : 200,
+  height : 200,
+  gravity : 'Center',
+  crop : true,
+  upscale : false,
+  imageMagick : true,
+}
+
+imageminOptions = {
+    optimizationLevel: 7
+}
 
 gulp.task 'build:sass', () ->
   gulp.src 'source/stylesheets/**/*.scss'
@@ -13,6 +28,8 @@ gulp.task 'watch:sass', ['build:sass'], () ->
 gulp.task 'build:jpg', () ->
   gulp.src 'lecture/data/img/**/*.{jpg,JPG,jpeg,JPEG}'
   	.pipe rename({extname: '.jpg'})
+    .pipe imageResize(resizeOptions)
+    .pipe imagemin(imageminOptions)
     .pipe gulp.dest('build/images/')
 
 gulp.task 'watch:jpg', ['build:jpg'], () ->
@@ -21,6 +38,8 @@ gulp.task 'watch:jpg', ['build:jpg'], () ->
 gulp.task 'build:png', () ->
   gulp.src 'lecture/data/img/**/*.{png,PNG}'
     .pipe rename({extname: '.png'})
+    .pipe imageResize(resizeOptions)
+    .pipe imagemin(imageminOptions)
     .pipe gulp.dest('build/images/')
 
 gulp.task 'watch:png', ['build:png'], () ->
