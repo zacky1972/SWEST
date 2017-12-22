@@ -121,7 +121,7 @@ activate :relative_assets
 
 activate :external_pipeline, {
 	name: :parcel,
-	command: "parcel source/javascripts/site.js --out-dir build/javascripts/",
+	command: build? ? "parcel build source/javascripts/site.js --out-dir build/javascripts/" : "parcel source/javascripts/site.js --out-dir build/javascripts/",
 	source: "./build",
 	latency: 1
 }
