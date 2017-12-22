@@ -7,7 +7,7 @@ gulp.task 'build:sass', () ->
     .pipe sass()
     .pipe gulp.dest('build/stylesheets/')
 
-gulp.task 'watch:sass', () ->
+gulp.task 'watch:sass', ['build:sass'], () ->
   gulp.watch ['source/stylesheets/**/*.scss'], ['build:sass']
 
 gulp.task 'build:jpg', () ->
@@ -15,7 +15,7 @@ gulp.task 'build:jpg', () ->
   	.pipe rename({extname: '.jpg'})
     .pipe gulp.dest('build/images/')
 
-gulp.task 'watch:jpg', () ->
+gulp.task 'watch:jpg', ['build:jpg'], () ->
   gulp.watch ['lecture/data/img/**/*.{jpg,JPG,jpeg,JPEG}'], ['build:jpg']
 
 gulp.task 'build:png', () ->
@@ -23,7 +23,7 @@ gulp.task 'build:png', () ->
     .pipe rename({extname: '.png'})
     .pipe gulp.dest('build/images/')
 
-gulp.task 'watch:png', () ->
+gulp.task 'watch:png', ['build:png'], () ->
   gulp.watch ['lecture/data/img/**/*.{png,PNG}'], ['build:png']
 
 gulp.task 'build:images', ['build:jpg', 'build:png']
@@ -34,14 +34,14 @@ gulp.task 'build:pdfs', () ->
   gulp.src 'lecture/data/**/*.pdf'
     .pipe gulp.dest('build/pdfs/')
 
-gulp.task 'watch:pdfs', () ->
+gulp.task 'watch:pdfs', ['build:pdfs'], () ->
   gulp.watch ['lecture/data/img/**/*.pdf'], ['build:pdfs']
 
 gulp.task 'build:txts', () ->
   gulp.src 'lecture/data/**/*.txt'
     .pipe gulp.dest('build/txts/')
 
-gulp.task 'watch:txts', () ->
+gulp.task 'watch:txts', ['build:txts'], () ->
   gulp.watch ['lecture/data/img/**/*.txt'], ['build:txts']
 
 
