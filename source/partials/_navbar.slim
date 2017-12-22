@@ -15,5 +15,6 @@ header#header
               - else
                 = link_to item[:name], $site_url + item[:url], :class => 'nav-link dropdown-toggle', :id => "navbarDropdown#{item[:label]}", :role => 'button', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' =>'false'
                 .dropdown-menu aria-labelledby="navbarDropdown#{item[:label]}"
+                  = link_to item[:name], $site_url + item[:url], :class => 'dropdown-item'
                   - item[:dropdown].each do |d_item|
                     = link_to d_item[:name], $site_url + d_item[:url], :class => 'dropdown-item'
