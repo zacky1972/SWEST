@@ -119,12 +119,12 @@ $navigation = {
 
 activate :relative_assets
 
-activate :external_pipeline, {
-	name: :parcel,
-	command: build? ? "parcel build source/javascripts/site.js --out-dir build/javascripts/" : "parcel watch source/javascripts/site.js --out-dir build/javascripts/",
-	source: "./build",
-	latency: 1
-}
+#activate :external_pipeline, {
+#	name: :parcel,
+#	command: build? ? "parcel build source/javascripts/site.js --out-dir build/javascripts/" : "parcel watch source/javascripts/site.js --out-dir build/javascripts/",
+#	source: "./build",
+#	latency: 1
+#}
 
 activate :external_pipeline, {
 	name: :gulp,

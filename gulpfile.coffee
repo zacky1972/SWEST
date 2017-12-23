@@ -3,6 +3,7 @@ sass = require 'gulp-sass'
 rename = require 'gulp-rename'
 imageResize = require 'gulp-image-resize'
 imagemin    = require 'gulp-imagemin'
+parcel = require 'gulp-parcel'
 
 resizeOptions300 = {
   width : 300,
@@ -139,8 +140,17 @@ gulp.task 'build:txts', () ->
 gulp.task 'watch:txts', ['build:txts'], () ->
   gulp.watch ['lecture/data/img/**/*.txt'], ['build:txts']
 
+gulp.task 'build:js', () ->
+  gulp.src 'source/javascripts/site.js', {read:false}
+    .pipe parcel(['build'])
+    .pipe gulp.dest('build/javascripts/')
 
-gulp.task 'build', ['build:sass', 'build:images', 'build:pdfs', 'build:txts']
+gulp.task 'watch:js', () ->
+  gulp.src 'source/javascripts/site.js', {read:false}
+    .pipe parcel(['watch'])
+    .pipe gulp.dest('build/javascripts/')  
 
-gulp.task 'watch', ['watch:sass', 'watch:images', 'watch:pdfs', 'watch:txts']
+gulp.task 'build', ['build:js', 'build:sass', 'build:images', 'build:pdfs', 'build:txts']
+
+gulp.task 'watch', ['watch:js', 'watch:sass', 'watch:images', 'watch:pdfs', 'watch:txts']
 
