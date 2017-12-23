@@ -16,103 +16,103 @@ $navigation = {
 			:dropdown => [
 				{
 					:name => 'SWEST開催概要',
-					:url => '/#abst'
+					:url => '#abst'
 				}, {
 					:name => 'SWESTとは？',
-					:url => '/#whatis'
+					:url => '#whatis'
 				}, {
 					:name => 'お問い合わせ',
-					:url => '/#contact'
+					:url => '#contact'
 				}
 			]
 		}, {
 			:name => '開催案内',
 			:label => 'Guide',
-			:url => '/guide',
+			:url => 'guide',
 			:dropdown => [
 				{
 					:name => '会場・日時',
-					:url => '/guide#date'
+					:url => 'guide#date'
 				}, {
 					:name => 'メインテーマ',
-					:url => '/guide#theme'
+					:url => 'guide#theme'
 				}, {
 					:name => '企画内容',
-					:url => '/guide#abst'
+					:url => 'guide#abst'
 				}, {
 					:name => '主催・共催・後援・協賛',
-					:url => '/guide#org'
+					:url => 'guide#org'
 				}, {
 					:name => 'ちらし',
-					:url => '/guide#phamplet'
+					:url => 'guide#phamplet'
 				}, {
 					:name => '会場アクセス',
-					:url => '/guide#venue'
+					:url => 'guide#venue'
 				}
 			]
 		}, {
 			:name => 'プログラム',
 			:label => 'Program',
-			:url => '/SWEST19/program/',
+			:url => 'SWEST19/program/',
 		}, {
 			:name => '協賛のご案内',
 			:label => 'Sponsor',
-			:url => '/sponsor',
+			:url => 'sponsor',
 			:dropdown => [
 				{
 					:name => 'ご案内と協賛のメリット',
-					:url => '/sponsor#guide'
+					:url => 'sponsor#guide'
 				}, {
 					:name => 'お申し込み方法',
-					:url => '/sponsor#appl'
+					:url => 'sponsor#appl'
 				}
 			]
 		}, {
 			:name => 'コミュニティ',
 			:label => 'Community',
-			:url => '/community',
+			:url => 'community',
 			:dropdown => [
 				{
 					:name => 'メーリングリスト',
-					:url => '/community#ml'
+					:url => 'community#ml'
 				}, {
 					:name => 'SNS',
-					:url => '/community#sns'
+					:url => 'community#sns'
 				}
 			]
 		}, {
 			:name => '問合わせ先・運営組織',
 			:label => 'Members',
-			:url => '/members',
+			:url => 'members',
 			:dropdown => [
 				{
 					:name => '問合わせ先',
-					:url => '/members#contact'
+					:url => 'members#contact'
 				}, {
 					:name => '運営組織',
-					:url => '/members#org'
+					:url => 'members#org'
 				}
 			]
 		}, {
 			:name => '過去のSWEST',
 			:label => 'Old-report',
-			:url => '/old-report',
+			:url => 'old-report',
 			:dropdown => [
 				{
 					:name => '実施報告書',
-					:url => '/old-report#report'
+					:url => 'old-report#report'
 				}, {
 					:name => 'プログラム・議事録・実施風景',
-					:url => '/old-report#program'
+					:url => 'old-report#program'
 				}, {
 					:name => '参加者のみなさまのレポート',
-					:url => '/old-report#part'
+					:url => 'old-report#part'
 				}
 			]
 		}, {
 			:name => '情報公開ガイドライン',
 			:label => 'Guideline',
-			:url => '/guideline'
+			:url => 'guideline'
 		}
 	]
 }
@@ -490,7 +490,7 @@ configure :build do
   # キャッシュ対策のため，ファイル名にハッシュをつける。ただし，すでにハッシュが付与されているファイルを除く
   # activate :asset_hash, :ignore => /^.*\-[0-9a-f]{8}\..*/
   activate :asset_host, :host => 'https://zacky1972.github.io/SWEST'
-  $site_url = '/SWEST/'
+  $site_url = 'https://zacky1972.github.io/SWEST/'
 #  activate :asset_host, :host => 'https://swest.toppers.jp'
 #  $site_url = 'https://swest.toppers.jp/'
 
