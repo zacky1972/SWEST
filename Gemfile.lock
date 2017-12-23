@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/zacky1972/middleman-iepab.git
+  revision: 7d12baf4988992d6645b37a2b73f7590df778d7c
+  specs:
+    middleman-iepab (0.0.1)
+      middleman-core (>= 4.2.1)
+
+GIT
   remote: https://github.com/plasticine/middleman-imageoptim
   revision: a539caef0d2f9a23704ed36cf36c7945d2282c62
   branch: master
@@ -160,6 +167,7 @@ DEPENDENCIES
   middleman-autoprefixer
   middleman-deploy (~> 2.0.0.pre.alpha)
   middleman-favicon-maker (~> 4.1)
+  middleman-iepab!
   middleman-imageoptim!
   middleman-livereload
   middleman-ogp

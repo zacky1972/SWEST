@@ -494,6 +494,12 @@ configure :build do
 #  activate :asset_host, :host => 'https://swest.toppers.jp'
 #  $site_url = 'https://swest.toppers.jp/'
 
+  activate :iepab, {
+    name: :gulpRevReplace,
+    command: "gulp rev:replace",
+    source: "./build",
+    latency: 100
+  }
 end
 
 activate :deploy do |deploy|

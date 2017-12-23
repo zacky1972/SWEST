@@ -18,3 +18,5 @@ gem 'middleman-autoprefixer'
 gem 'middleman-imageoptim', :git => "https://github.com/plasticine/middleman-imageoptim", :branch => "master"
 gem 'middleman-ogp'
 gem "middleman-favicon-maker", "~> 4.1"
+
+gem 'middleman-iepab', :github => 'zacky1972/middleman-iepab'

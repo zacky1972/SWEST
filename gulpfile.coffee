@@ -2,8 +2,17 @@ gulp = require 'gulp'
 sass = require 'gulp-sass'
 rename = require 'gulp-rename'
 imageResize = require 'gulp-image-resize'
-imagemin    = require 'gulp-imagemin'
+imagemin = require 'gulp-imagemin'
 parcel = require 'gulp-parcel'
+rev = require 'gulp-rev'
+revReplace = require 'gulp-rev-replace'
+revDel = require 'rev-del'
+sequence = require 'run-sequence'
+del = require 'del'
+vinylPaths = require 'vinyl-paths'
+
+# filesInStream = require 'gulp-filesinstream'
+# chalk = require 'chalk'
 
 resizeOptions300 = {
   width : 300,
@@ -150,7 +159,26 @@ gulp.task 'watch:js', () ->
     .pipe parcel(['watch'])
     .pipe gulp.dest('build/javascripts/')  
 
-gulp.task 'build', ['build:js', 'build:sass', 'build:images', 'build:pdfs', 'build:txts']
+gulp.task 'build', ['build:js', 'build:sass', 'build:images', 'build:pdfs', 'build:txts'], () ->
+  sequence 'rev', 'rev:clean'
+
 
 gulp.task 'watch', ['watch:js', 'watch:sass', 'watch:images', 'watch:pdfs', 'watch:txts']
 
+gulp.task 'rev', () ->
+  gulp.src ['build/**/*.+(js|css|png|gif|jpg|jpeg|svg|woff|ico)', '!build/**/*-[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]*.+(js|css|png|gif|jpg|jpeg|svg|woff|ico)']
+    .pipe rev()
+    .pipe gulp.dest 'build/'
+    .pipe rev.manifest('manifest.json')
+    .pipe revDel({ dest: 'build/'})
+    .pipe gulp.dest('build/')
+
+gulp.task 'rev:replace', () ->
+  manifest = gulp.src 'build/manifest.json'
+  gulp.src 'build/**/*.+(html|css|js)'
+    .pipe revReplace(manifest: manifest)
+    .pipe gulp.dest('build/')
+
+gulp.task 'rev:clean', () ->
+  gulp.src ['build/**/*.+(js|css|png|gif|jpg|jpeg|svg|woff|ico)', '!build/**/*-[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]*.+(js|css|png|gif|jpg|jpeg|svg|woff|ico)']
+    .pipe(vinylPaths(del))
