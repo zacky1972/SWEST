@@ -438,36 +438,36 @@ configure :build do
   activate :minify_javascript
 
   # Minify Image
-  activate :imageoptim do |options|
+  #activate :imageoptim do |options|
     # Use a build manifest to prevent re-compressing images between builds
-    options.manifest = true
+  #  options.manifest = true
 
     # Silence problematic image_optim workers
-    options.skip_missing_workers = false
+  #  options.skip_missing_workers = false
 
     # Cause image_optim to be in shouty-mode
-    options.verbose = false
+  #  options.verbose = false
 
     # Setting these to true or nil will let options determine them (recommended)
-    options.nice = true
-    options.threads = 4
+  #  options.nice = true
+  #  options.threads = 4
 
-    options.allow_lossy = true
+  #  options.allow_lossy = true
 
     # Image extensions to attempt to compress
-    options.image_extensions = %w(.png .jpg .gif .svg)
+  #  options.image_extensions = %w(.png .jpg .gif .svg)
 
     # Compressor worker options, individual optimisers can be disabled by passing
     # false instead of a hash
-    options.advpng    = { :level => 4 }
-    options.gifsicle  = { :interlace => false }
-    options.jpegoptim = { :strip => ['all'], :max_quality => 80 }
-    options.jpegtran  = { :copy_chunks => false, :progressive => true, :jpegrescan => true }
-    options.optipng   = { :level => 6, :interlace => false }
-    options.pngcrush  = { :chunks => ['alla'], :fix => false, :brute => false }
-    options.pngout    = { :copy_chunks => false, :strategy => 0 }
-    options.svgo      = {}
-  end
+  #  options.advpng    = { :level => 4 }
+  #  options.gifsicle  = { :interlace => false }
+  #  options.jpegoptim = { :strip => ['all'], :max_quality => 80 }
+  #  options.jpegtran  = { :copy_chunks => false, :progressive => true, :jpegrescan => true }
+  #  options.optipng   = { :level => 6, :interlace => false }
+  #  options.pngcrush  = { :chunks => ['alla'], :fix => false, :brute => false }
+  #  options.pngout    = { :copy_chunks => false, :strategy => 0 }
+  #  options.svgo      = {}
+  #end
 
   # favicon-maker
   activate :favicon_maker do |f|
@@ -498,7 +498,14 @@ configure :build do
     name: :gulpRevReplace,
     command: "gulp rev:replace",
     source: "./build",
-    latency: 100
+    latency: 1
+  }
+
+  activate :iepab, {
+    name: :parcelIndex,
+    command: "cd build; parcel build SWEST19/program/index.html",
+    source: "./build",
+    latency: 10
   }
 end
 

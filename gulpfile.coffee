@@ -151,12 +151,16 @@ gulp.task 'watch:txts', ['build:txts'], () ->
 
 gulp.task 'build:js', () ->
   gulp.src 'source/javascripts/site.js', {read:false}
-    .pipe parcel(['build'])
+    .pipe parcel(['build'], [] , {
+      wd: './source'
+    })
     .pipe gulp.dest('build/javascripts/')
 
 gulp.task 'watch:js', () ->
   gulp.src 'source/javascripts/site.js', {read:false}
-    .pipe parcel(['watch'])
+    .pipe parcel(['watch'], [] , {
+      wd: './source'
+    })
     .pipe gulp.dest('build/javascripts/')  
 
 gulp.task 'build', ['build:js', 'build:sass', 'build:images', 'build:pdfs', 'build:txts'], () ->

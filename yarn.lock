@@ -1668,9 +1668,9 @@ gulp-imagemin@^4.0.0:
     imagemin-optipng "^5.2.1"
     imagemin-svgo "^6.0.0"
 
-gulp-parcel@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/gulp-parcel/-/gulp-parcel-0.0.3.tgz#b18d050a980c1880111420629d6f174add62ba2c"
+gulp-parcel@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/gulp-parcel/-/gulp-parcel-0.1.0.tgz#8f79240d1ef55ae152907aaabdb8a2a7d7e45497"
   dependencies:
     gulp-util "^3.0.8"
     through2 "^2.0.3"
@@ -1679,9 +1679,9 @@ gulp-rename@^1.2.0, gulp-rename@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/gulp-rename/-/gulp-rename-1.2.2.tgz#3ad4428763f05e2764dec1c67d868db275687817"
 
-gulp-rev-replace@^0.4.3:
+gulp-rev-replace@zacky1972/gulp-rev-replace#master:
   version "0.4.3"
-  resolved "https://registry.yarnpkg.com/gulp-rev-replace/-/gulp-rev-replace-0.4.3.tgz#72b51848f5f093ad4b77b1d2411081eb78acd46e"
+  resolved "https://codeload.github.com/zacky1972/gulp-rev-replace/tar.gz/606d56669352a46f0b2733b59557d10ef42e785b"
   dependencies:
     gulp-util "^3.0.7"
     through2 "^2.0.0"

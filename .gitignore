@@ -28,3 +28,9 @@ interactive-printable.csv
 
 # Ignore bin
 /bin
+
+# Ignore yarn-error.log
+yarn-error.log
+
+# Ignore .cache
+.cache/
