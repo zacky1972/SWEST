@@ -151,15 +151,13 @@ gulp.task 'watch:txts', ['build:txts'], () ->
 
 gulp.task 'build:js', () ->
   gulp.src 'source/javascripts/site.js', {read:false}
-    .pipe parcel(['build'], [] , {
-      wd: './source'
-    })
+    .pipe parcel()
     .pipe gulp.dest('build/javascripts/')
 
 gulp.task 'watch:js', () ->
   gulp.src 'source/javascripts/site.js', {read:false}
-    .pipe parcel(['watch'], [] , {
-      wd: './source'
+    .pipe parcel({
+      watch: true
     })
     .pipe gulp.dest('build/javascripts/')  
 
@@ -186,3 +184,12 @@ gulp.task 'rev:replace', () ->
 gulp.task 'rev:clean', () ->
   gulp.src ['build/**/*.+(js|css|png|gif|jpg|jpeg|svg|woff|ico)', '!build/**/*-[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]*.+(js|css|png|gif|jpg|jpeg|svg|woff|ico)']
     .pipe(vinylPaths(del))
+
+gulp.task 'parcel', () ->
+  gulp.src 'build/**/*.html', {read:false}
+    .pipe parcel()
+    .pipe gulp.dest('build/')
+
+gulp.task 'post', () -> 
+  sequence 'rev:replace'
+

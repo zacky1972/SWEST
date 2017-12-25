@@ -450,7 +450,7 @@ configure :build do
 
     # Setting these to true or nil will let options determine them (recommended)
     options.nice = true
-    options.threads = 4
+    options.threads = 8
 
     options.allow_lossy = true
 
@@ -495,17 +495,10 @@ configure :build do
 #  $site_url = 'https://swest.toppers.jp/'
 
   activate :iepab, {
-    name: :gulpRevReplace,
-    command: "gulp rev:replace",
+    name: :gulpPost,
+    command: "gulp post",
     source: "./build",
     latency: 1
-  }
-
-  activate :iepab, {
-    name: :parcelIndex,
-    command: "cd build; parcel build SWEST19/program/index.html",
-    source: "./build",
-    latency: 10
   }
 end
 
