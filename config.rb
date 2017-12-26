@@ -416,8 +416,12 @@ helpers do
     sid = "#{name}#{id}"
     sids = sid.to_sym
     if defined?(sessions) && defined?(sessions[sids]) && defined?(sessions[sids][:title]) then
-      link_to sessions[sids][:title], "#{site_url}SWEST#{number}/program/#{sid}.html##{name}"
+      link_to sessions[sids][:title], "#{$site_url}SWEST#{number}/program/#{sid}.html##{name}"
     end 
+  end
+
+  def getSession sessions, name
+    sessions[name.to_sym]
   end
 end
 
