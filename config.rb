@@ -290,14 +290,17 @@ $files.each do |key, value|
   end
 end
 
-$sessions[:SWEST19][:mokumoku][:abst] = $sessions[:SWEST19][:s1d][:abst]
-$sessions[:SWEST19][:mokumoku][:recommend] = $sessions[:SWEST19][:s1d][:recommend]
-$sessions[:SWEST19][:mokumoku][:name1] = $sessions[:SWEST19][:s1d][:name1]
-$sessions[:SWEST19][:mokumoku][:filepath_pic1] = $sessions[:SWEST19][:s1d][:filepath_pic1]
-$sessions[:SWEST19][:mokumoku][:affi1] = $sessions[:SWEST19][:s1d][:affi1]
-$sessions[:SWEST19][:mokumoku][:name2] = $sessions[:SWEST19][:s1d][:name2]
-$sessions[:SWEST19][:mokumoku][:filepath_pic2] = $sessions[:SWEST19][:s1d][:filepath_pic2]
-$sessions[:SWEST19][:mokumoku][:affi2] = $sessions[:SWEST19][:s1d][:affi2]
+if(defined? $sessions && defined? $sessions[:SWEST19] && defined? $sessions[:SWEST19][:mokumoku] && defined? $sessions[:SWEST19][:s1d]) then
+  s1d = $sessions[:SWEST19][:s1d]
+  $sessions[:SWEST19][:mokumoku][:abst] = s1d[:abst] if defined? s1d[:abst]
+  $sessions[:SWEST19][:mokumoku][:recommend] = s1d[:recommend] if defined? s1d[:recommend]
+  $sessions[:SWEST19][:mokumoku][:name1] = s1d[:name1] if defined? s1d[:name1]
+  $sessions[:SWEST19][:mokumoku][:filepath_pic1] = s1d[:filepath_pic1] if defined? s1d[:filepath_pic1]
+  $sessions[:SWEST19][:mokumoku][:affi1] = s1d[:affi1] if defined? s1d[:affi1]
+  $sessions[:SWEST19][:mokumoku][:name2] = s1d[:name2] if defined? s1d[:name2]
+  $sessions[:SWEST19][:mokumoku][:filepath_pic2] = s1d[:filepath_pic2] if defined? s1d[:filepath_pic2]
+  $sessions[:SWEST19][:mokumoku][:affi2] = s1d[:affi2] if defined? s1d[:affi2]
+end
 
 $sessions.each do |key, value|
   value.each_key do |id_s|
