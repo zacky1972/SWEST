@@ -10,6 +10,13 @@ $ ./setup.sh
 $ ./download-lecture.sh
 ```
 
+## アップグレード
+
+```
+$ ./upgrade.sh
+$ ./download-lecture.sh
+```
+
 
 ## ローカルプレビュー
 

@@ -2336,7 +2336,7 @@ gulp-imagemin@^4.0.0:
 
 gulp-parcel@zacky1972/gulp-parcel#v0.2.0:
   version "0.2.0"
-  resolved "https://codeload.github.com/zacky1972/gulp-parcel/tar.gz/43ad177a242bb72017b48520124dddf838470475"
+  resolved "https://codeload.github.com/zacky1972/gulp-parcel/tar.gz/c0dafb183d7fd4a427ba481b854a49d1a4845de2"
   dependencies:
     gulp-util "^3.0.8"
     parcel-bundler zacky1972/parcel#master
