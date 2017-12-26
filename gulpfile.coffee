@@ -140,7 +140,7 @@ gulp.task 'build', ['build:js', 'build:sass', 'build:images', 'build:pdfs', 'bui
 gulp.task 'watch', ['build'], () ->
   gulp.watch [
     'source/stylesheets/**/*.scss',
-    'lecture/data/img/**/*',
+    # 'lecture/data/img/**/*',
     'source/javascripts/site.js'
     ], ['build']
 
