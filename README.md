@@ -7,14 +7,14 @@ $ git clone git@github.com:zacky1972/SWEST.git
 $ cd SWEST
 $ ./install.sh
 $ ./setup.sh
-$ ./download-lecture.sh
+$ ./download.sh
 ```
 
 ## アップグレード
 
 ```
 $ ./upgrade.sh
-$ ./download-lecture.sh
+$ ./download.sh
 ```
 
 
