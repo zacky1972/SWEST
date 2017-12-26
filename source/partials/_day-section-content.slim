@@ -1,10 +1,10 @@
 .day-section-content
   .row
     .session-box.col-12.col-md-3
-    	= link_to sessions["#{name}a".to_sym][:title], $site_url + "SWEST#{number}/program/#{name}a.html##{name}"
+    	= link2SessionTitle sessions, name, 'a', number
     .session-box.col-12.col-md-3
-    	= link_to sessions["#{name}b".to_sym][:title], $site_url + "SWEST#{number}/program/#{name}b.html##{name}"
+    	= link2SessionTitle sessions, name, 'b', number
     .session-box.col-12.col-md-3
-    	= link_to sessions["#{name}c".to_sym][:title], $site_url + "SWEST#{number}/program/#{name}c.html##{name}"
+    	= link2SessionTitle sessions, name, 'c', number
     .session-box.col-12.col-md-3
-    	= link_to sessions["#{name}d".to_sym][:title], $site_url + "SWEST#{number}/program/#{name}d.html##{name}"
+    	= link2SessionTitle sessions, name, 'd', number
