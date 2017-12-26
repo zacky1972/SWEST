@@ -1,10 +1,5 @@
 .day-section-content
   .row
-    .session-box.col-12.col-md-3
-    	= link2SessionTitle sessions, name, 'a', number
-    .session-box.col-12.col-md-3
-    	= link2SessionTitle sessions, name, 'b', number
-    .session-box.col-12.col-md-3
-    	= link2SessionTitle sessions, name, 'c', number
-    .session-box.col-12.col-md-3
-    	= link2SessionTitle sessions, name, 'd', number
+  	- 'abcd'.chars.each do |id|
+	    .session-box.col-12.col-md-3
+    		= link2SessionTitle sessions, name, id, number
