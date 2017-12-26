@@ -489,10 +489,10 @@ configure :build do
 
   # キャッシュ対策のため，ファイル名にハッシュをつける。ただし，すでにハッシュが付与されているファイルを除く
   # activate :asset_hash, :ignore => /^.*\-[0-9a-f]{8}\..*/
-#  activate :asset_host, :host => 'https://zacky1972.github.io/SWEST'
-#  $site_url = 'https://zacky1972.github.io/SWEST/'
-  activate :asset_host, :host => 'https://swest.toppers.jp'
-  $site_url = 'https://swest.toppers.jp/'
+  activate :asset_host, :host => 'https://zacky1972.github.io/SWEST'
+  $site_url = 'https://zacky1972.github.io/SWEST/'
+#  activate :asset_host, :host => 'https://swest.toppers.jp'
+#  $site_url = 'https://swest.toppers.jp/'
 
   activate :iepab, {
     name: :gulpPost,
@@ -504,14 +504,14 @@ end
 
 activate :deploy do |deploy|
 # for GitHub Pages
-#  deploy.build_before = true
-#  deploy.deploy_method = :git
-#  deploy.branch = 'gh-pages'
+  deploy.build_before = true
+  deploy.deploy_method = :git
+  deploy.branch = 'gh-pages'
 
 # for swest.topper.jp
-  deploy.build_before = true
-  deploy.deploy_method = :rsync
-  deploy.host = 'swest.toppers.jp'
-  deploy.path = '/var/www/html/'
-  deploy.clean = false
+#  deploy.build_before = true
+#  deploy.deploy_method = :rsync
+#  deploy.host = 'swest.toppers.jp'
+#  deploy.path = '/var/www/html/'
+#  deploy.clean = false
 end
