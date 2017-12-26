@@ -1,0 +1,8 @@
+.session-section-content
+  .session-date-time #{[session[:date], session[:time],  session[:name]].join(' ')}   .session-section-title #{session[:title].presence || '企画中'}
+  - if name.to_sym == :interactive
+  	= partial 'partials/interactive-content', :locals => { interactive: interactive }
+  - else
+  	= partial 'partials/session-presenters', :locals => { name: name, sessions: sessions, session: getSession(sessions, name) }
+  	= partial 'partials/session-abstract', :locals => { name: name, sessions: sessions, session: getSession(sessions, name) }
+  	= partial 'partials/session-section-content-sub', :locals => { name: name, sessions: sessions, session: getSession(sessions, name) }

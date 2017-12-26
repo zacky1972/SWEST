@@ -423,6 +423,14 @@ helpers do
   def getSession sessions, name
     sessions[name.to_sym]
   end
+
+  def nilOrEmpty? poster
+    poster.nil? || poster.empty?
+  end
+
+  def unlessNilOrEmpty messeage, poster
+    messeage unless nilOrEmpty?(poster)
+  end
 end
 
 # Reload the browser automatically whenever files change
