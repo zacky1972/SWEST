@@ -5,9 +5,9 @@
         li
           .session-presenter
             .session-presenter-picture
-              img src="#{image_path(addSize2Pathname(session["filepath_pic#{number.to_s}".to_sym],100))}" srcset=("#{image_path(addSize2Pathname(session["filepath_pic#{number.to_s}".to_sym],300))} 3x, #{image_path(addSize2Pathname(session["filepath_pic#{number.to_s}".to_sym],200))} 2x, #{image_path(addSize2Pathname(session["filepath_pic#{number.to_s}".to_sym],100))} 1x")
+              img src="#{presenterPicture(session, picNumber(number), 100)}" srcset=("#{srcsetPresenter(session, picNumber(number))}")
             div
               p
-                .session-presenter-name #{session[('name' + number.to_s).to_sym]}
+                .session-presenter-name #{session[symAdd('name', number)]}
               p
-                .session-presenter-affiliation #{session[('affi' + number.to_s).to_sym]}
+                .session-presenter-affiliation #{session[symAdd('affi', number)]}

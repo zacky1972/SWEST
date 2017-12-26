@@ -431,6 +431,32 @@ helpers do
   def unlessNilOrEmpty messeage, poster
     messeage unless nilOrEmpty?(poster)
   end
+
+  def picNumber number
+    "filepath_pic#{number.to_s}".to_sym
+  end
+
+  def presenterPicture session, picNumber, size
+    image_path(addSize2Pathname(session[picNumber], size))
+  end
+
+  def srcsetPresenter session, picNumber
+    (3..1).map { |factor|
+      "#{presenterPicture(session, picNumber, "#{factor}00".to_i)} #{factor}x"
+    }.join(', ')
+  end
+
+  def symAdd string, number
+    "#{string}#{number.to_s}".to_sym
+  end
+
+  def presenceNowPlanning message
+    message.presence || '企画中'
+  end
+
+  def textConvert message
+    url2link(message.gsub(/<<enter>>/, "<br/>").gsub(/<<equal>>/, "="))
+  end
 end
 
 # Reload the browser automatically whenever files change

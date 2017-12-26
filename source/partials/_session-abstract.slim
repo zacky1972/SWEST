@@ -1,6 +1,6 @@
 .session-abstract
-  p #{url2link((session[:abst].presence || '企画中').gsub(/<<enter>>/, "<br/>").gsub(/<<equal>>/, "="))}
+  p #{textConvert(presenceNowPlanning(session[:abst]))}
 - if session[:recommend].present?
   .session-introduction-title 実行委員からの推薦文:
   .session-introduction
-    p #{url2link(session[:recommend].gsub(/<<enter>>/, "<br/>").gsub(/<<equal>>/, "="))}
+    p #{textConvert(session[:recommend])}

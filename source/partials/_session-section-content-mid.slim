@@ -1,5 +1,5 @@
 .session-section-content
-  .session-date-time #{[session[:date], session[:time],  session[:name]].join(' ')}   .session-section-title #{session[:title].presence || '企画中'}
+  .session-date-time #{[session[:date], session[:time],  session[:name]].join(' ')}   .session-section-title #{presenceNowPlanning(session[:title])}
   - if name.to_sym == :interactive
   	= partial 'partials/interactive-content', :locals => { interactive: interactive }
   - else
