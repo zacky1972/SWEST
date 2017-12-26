@@ -50,9 +50,6 @@ gulp.task 'build:sass', () ->
     .pipe sass()
     .pipe gulp.dest('build/stylesheets/')
 
-gulp.task 'watch:sass', ['build:sass'], () ->
-  gulp.watch ['source/stylesheets/**/*.scss'], ['build:sass']
-
 gulp.task 'build:jpg300', () ->
   gulp.src 'lecture/data/img/**/*.{jpg,JPG,jpeg,JPEG}'
     .pipe rename({extname: '.300.jpg'})
@@ -75,9 +72,6 @@ gulp.task 'build:jpg100', () ->
     .pipe gulp.dest('build/images/')
 
 gulp.task 'build:jpg', ['build:jpg300', 'build:jpg200', 'build:jpg100']
-
-gulp.task 'watch:jpg', ['build:jpg'], () ->
-  gulp.watch ['lecture/data/img/**/*.{jpg,JPG,jpeg,JPEG}'], ['build:jpg']
 
 gulp.task 'build:png300', () ->
   gulp.src 'lecture/data/img/**/*.{png,PNG}'
@@ -102,9 +96,6 @@ gulp.task 'build:png100', () ->
 
 gulp.task 'build:png', ['build:png300', 'build:png200', 'build:png100']
 
-gulp.task 'watch:png', ['build:png'], () ->
-  gulp.watch ['lecture/data/img/**/*.{png,PNG}'], ['build:png']
-
 gulp.task 'build:empty300', () ->
   gulp.src 'source/images/empty.jpg'
     .pipe rename({extname: '.300.jpg'})
@@ -128,44 +119,30 @@ gulp.task 'build:empty100', () ->
 
 gulp.task 'build:empty', ['build:empty300', 'build:empty200', 'build:empty100']
 
-gulp.task 'watch:empty', ['build:empty'], () ->
-  gulp.watch ['source/images/empty.jpg'], ['build:empty']
-
 gulp.task 'build:images', ['build:empty', 'build:jpg', 'build:png']
-
-gulp.task 'watch:images', ['watch:empty', 'watch:jpg', 'watch:png']
 
 gulp.task 'build:pdfs', () ->
   gulp.src 'lecture/data/**/*.pdf'
     .pipe gulp.dest('build/pdfs/')
 
-gulp.task 'watch:pdfs', ['build:pdfs'], () ->
-  gulp.watch ['lecture/data/img/**/*.pdf'], ['build:pdfs']
-
 gulp.task 'build:txts', () ->
   gulp.src 'lecture/data/**/*.txt'
     .pipe gulp.dest('build/txts/')
-
-gulp.task 'watch:txts', ['build:txts'], () ->
-  gulp.watch ['lecture/data/img/**/*.txt'], ['build:txts']
 
 gulp.task 'build:js', () ->
   gulp.src 'source/javascripts/site.js', {read:false}
     .pipe parcel()
     .pipe gulp.dest('build/javascripts/')
 
-gulp.task 'watch:js', () ->
-  gulp.src 'source/javascripts/site.js', {read:false}
-    .pipe parcel({
-      watch: true
-    })
-    .pipe gulp.dest('build/javascripts/')  
-
-gulp.task 'build', ['build:js', 'build:sass', 'build:images', 'build:pdfs', 'build:txts'], () ->
-  sequence 'rev', 'rev:clean'
+gulp.task 'build', ['build:js', 'build:sass', 'build:images', 'build:pdfs', 'build:txts']
 
 
-gulp.task 'watch', ['watch:js', 'watch:sass', 'watch:images', 'watch:pdfs', 'watch:txts']
+gulp.task 'watch', ['build'], () ->
+  gulp.watch [
+    'source/stylesheets/**/*.scss',
+    'lecture/data/img/**/*',
+    'source/javascripts/site.js'
+    ], ['build']
 
 gulp.task 'rev', () ->
   gulp.src ['build/**/*.+(js|css|png|gif|jpg|jpeg|svg|woff|ico)', '!build/**/*-[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]*.+(js|css|png|gif|jpg|jpeg|svg|woff|ico)']
@@ -191,5 +168,5 @@ gulp.task 'parcel', () ->
     .pipe gulp.dest('build/')
 
 gulp.task 'post', () -> 
-  sequence 'rev:replace'
+  sequence 'rev', 'rev:replace', 'rev:clean'
 
