@@ -5,7 +5,7 @@ require 'csv'
 
 $site_url = 'http://localhost:4567/'
 
-$navigation = {
+$navigation_old = {
 	:site_url => '/',
 	:site_name => 'SWEST',
 	:items => [
@@ -117,14 +117,48 @@ $navigation = {
 	]
 }
 
-activate :relative_assets
+$navigation = {
+	:site_url => '/',
+	:site_name => 'SWEST',
+	:items => [
+		{
+			:name => 'SWEST20について',
+			:label => 'SWEST20',
+			:url => ''
+		}, {
+			:name => 'SWESTとは',
+			:label => 'About',
+			:url => 'about'
+		}, {
+			:name => '開催案内',
+			:label => 'Guide',
+			:url => 'guide'
+		}, {
+			:name => 'プログラム',
+			:label => 'Program',
+			:url => 'SWEST20/program/',
+		}, {
+			:name => 'メーリングリスト',
+			:label => 'Community',
+			:url => 'community'
+		}, {
+			:name => '協賛のご案内',
+			:label => 'Sponsor',
+			:url => 'sponsor'
+		}, {
+			:name => '過去のSWEST',
+			:label => 'Old-report',
+			:url => 'old-report'
+		}, {
+			:name => '情報公開ガイドライン',
+			:label => 'Guideline',
+			:url => 'guideline'
+		}
+	]
+}
 
-#activate :external_pipeline, {
-#	name: :parcel,
-#	command: build? ? "parcel build source/javascripts/site.js --out-dir build/javascripts/" : "parcel watch source/javascripts/site.js --out-dir build/javascripts/",
-#	source: "./build",
-#	latency: 1
-#}
+
+activate :relative_assets
 
 activate :external_pipeline, {
 	name: :gulp,
@@ -134,6 +168,11 @@ activate :external_pipeline, {
 }
 
 activate :livereload
+
+## GitHub Flavored Markdown
+set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true
+set :markdown_engine, :redcarpet
+
 
 # CSV モジュールにモンキーパッチを当てて Shift JIS の CSV を読み書きできるようにする
 

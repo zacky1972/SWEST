@@ -20,3 +20,5 @@ gem 'middleman-ogp'
 gem "middleman-favicon-maker", "~> 4.1"
 
 gem 'middleman-iepab'
+
+gem 'redcarpet'
