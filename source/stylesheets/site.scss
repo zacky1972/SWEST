@@ -73,4 +73,10 @@ footer {
 	background: linear-gradient(to bottom, $main-color 0%, $main-color-dark 100%);
 	border-color: $main-color;
 	color: $title-color;
+	a {
+		color: $title-color;
+	}
+	p {
+		margin: 0px;
+	}
 }

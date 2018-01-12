@@ -38,6 +38,4 @@ html lang="ja-jp"
       = partial 'partials/navbar', :locals => nav_add($navigation, current_page.data.navigation, :active, true)
     .container
       == yield
-    footer
-      .container
-        small &copy; 1999 SWEST commitee 
+      = partial 'partials/footnote'
