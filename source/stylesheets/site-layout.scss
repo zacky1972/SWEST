@@ -11,13 +11,15 @@ body {
 	font-size: 13px;
 }
 
-h1 {
+h1:not(.navbar-brand) {
 	border-bottom: solid 2px $main-color;
 	font-size: 22px;
 	font-weight: bold;
 	margin-top: 15px;
 	margin-bottom: 0;
 }
+
+
 
 h2 {
 	border-bottom: solid 1px $main-color;

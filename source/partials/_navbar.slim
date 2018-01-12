@@ -1,6 +1,7 @@
 /! header
 header#header
-  nav#nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  .col-sm-3.col-md-2.d-none.d-sm-block.bg-light
+  nav#nav.navbar.navbar-expand-md.navbar-light.fixed-top.bg-dark.col-sm-9.ml-sm-auto.col-md-10.pt-3
     .container
       h1.navbar-brand
         a href="#{$site_url}" #{site_name}
@@ -8,13 +9,7 @@ header#header
         span.navbar-toggler-icon
       #navbarSupportedContent.collapse.navbar-collapse
         ul.navbar-nav.mr-auto
-          - items.each do |item|
-            li.nav-item class=(item[:active].nil? ? '' : 'active')
-              - if item[:dropdown].nil?
-                = link_to item[:name], $site_url + item[:url], :class => 'nav-link'
-              - else
-                = link_to item[:name], $site_url + item[:url], :class => 'nav-link dropdown-toggle', :id => "navbarDropdown#{item[:label]}", :role => 'button', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' =>'false'
-                .dropdown-menu aria-labelledby="navbarDropdown#{item[:label]}"
-                  = link_to item[:name], $site_url + item[:url], :class => 'dropdown-item'
-                  - item[:dropdown].each do |d_item|
-                    = link_to d_item[:name], $site_url + d_item[:url], :class => 'dropdown-item'
+          li.nav-item
+            = link_to 'Facebook @swestjp', 'https://www.facebook.com/swestjp', :class => 'nav-link'
+          li.nav-item
+            = link_to 'Twitter @SWEST_JP', 'https://twitter.com/SWEST_JP', :class => 'nav-link'

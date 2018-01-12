@@ -13,6 +13,11 @@ $sub-color: #ccc;
   base
 -----------------------------------------------------------------------*/
 
+body {
+	background-color: $main-color;
+	border-color: $main-color;
+}
+
 .margin-top {
 	margin-top: 20px;
 }
@@ -62,6 +67,30 @@ li.nav-item.active {
 
 .dropdown-menu {
 	position: static !important;
+}
+
+/*-----------------------------------------------------------------------
+  sidebar
+-----------------------------------------------------------------------*/
+
+.sidebar {
+	background: -webkit-linear-gradient(to bottom, $main-color 0%, $main-color-dark 100%);
+	background: linear-gradient(to bottom, $main-color 0%, $main-color-dark 100%);
+	border-color: $main-color;	
+	position: fixed;
+	background-color: $main-color;
+	top: 88px;
+	bottom: 0;
+	left: 0;
+	z-index: 1000;
+	padding: 20px 0;
+	overflow-x: hidden;
+	overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+main {
+	padding-left: 0 !important;
+	background-color: $base-color;
 }
 
 /*-----------------------------------------------------------------------
