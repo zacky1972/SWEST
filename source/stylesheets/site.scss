@@ -16,7 +16,7 @@ $sub-color: #ccc;
 body {
 	background-color: $main-color;
 	border-color: $main-color;
-	font-size: 13px;
+	font-size: 14px;
 }
 
 .margin-top {
@@ -81,7 +81,7 @@ footer {
 h1.navbar-brand {
 	color: $title-color;
 	font-size: 25px;
-	@include media-breakpoint-up(md) {
+	@include media-breakpoint-up(sm) {
 		font-size: 48px;
 	}
 	font-weight: 800;
@@ -133,6 +133,8 @@ li.nav-item.active {
 main {
 	padding-left: 0 !important;
 	background-color: $base-color;
+	bottom: 30px;
+	padding-bottom: 30px;
 	top: 100px;
 }
 
