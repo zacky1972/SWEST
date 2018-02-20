@@ -26,7 +26,7 @@ navigation: Old-report
 
 ## プログラム・議事録・実施風景
 
-* SWEST19
+* [SWEST19](../SWEST19/program)
 * SWEST18
 * SWEST17
 * SWEST16
@@ -50,3 +50,6 @@ navigation: Old-report
 
 * リンク集
 
+## アルバム
+
+* SWEST19

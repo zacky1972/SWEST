@@ -138,10 +138,6 @@ $navigation = {
 			:label => 'Program',
 			:url => 'SWEST20/program/',
 		}, {
-			:name => 'メーリングリスト',
-			:label => 'Community',
-			:url => 'community'
-		}, {
 			:name => '協賛のご案内',
 			:label => 'Sponsor',
 			:url => 'sponsor'
@@ -150,10 +146,10 @@ $navigation = {
 			:label => 'Old-report',
 			:url => 'old-report'
 		}, {
-			:name => '情報公開ガイドライン',
-			:label => 'Guideline',
-			:url => 'guideline'
-		}
+      :name => '申込み',
+      :label => 'Regist',
+      :url => 'regist'
+    }
 	]
 }
 
@@ -167,7 +163,7 @@ activate :external_pipeline, {
 	latency: 1
 }
 
-activate :livereload
+# activate :livereload
 
 ## GitHub Flavored Markdown
 set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true
@@ -197,14 +193,14 @@ $files = {
 $sessions = {
   SWEST19: {
     page: [
-      'index', 
-      'keynote', 
-      'interactive', 
-      'mokumoku', 
-      's1a', 's1b', 's1c', 's1d', 
-      's2a', 's2b', 's2c', 's2d', 
-      's3a', 's3b', 's3c', 's3d', 
-      's4a', 's4b', 's4c', 's4d', 
+      'index',
+      'keynote',
+      'interactive',
+      'mokumoku',
+      's1a', 's1b', 's1c', 's1d',
+      's2a', 's2b', 's2c', 's2d',
+      's3a', 's3b', 's3c', 's3d',
+      's4a', 's4b', 's4c', 's4d',
       's5a', 's5b', 's5c', 's5d'
     ],
     icebreak: {
@@ -375,7 +371,7 @@ $sessions.each do |key, value|
           end
         end
       end
-    end 
+    end
   end
 end
 
@@ -456,7 +452,7 @@ helpers do
     sids = sid.to_sym
     if defined?(sessions) && defined?(sessions[sids]) && defined?(sessions[sids][:title]) then
       link_to sessions[sids][:title], "#{$site_url}SWEST#{number}/program/#{sid}.html##{name}"
-    end 
+    end
   end
 
   def getSession sessions, name

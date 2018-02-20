@@ -13,12 +13,59 @@ $sub-color: #ccc;
   base
 -----------------------------------------------------------------------*/
 
+body {
+	background-color: $main-color;
+	border-color: $main-color;
+	font-size: 14px;
+}
+
 .margin-top {
 	margin-top: 20px;
 }
 
 .center {
 	text-align: center;
+}
+
+h1:not(.navbar-brand) {
+	border-bottom: solid 2px $main-color;
+	font-size: 22px;
+	font-weight: bold;
+	margin-top: 15px;
+	margin-bottom: 0;
+}
+
+h2 {
+	border-bottom: solid 1px $main-color;
+	border-left: solid 10px $main-color;
+	border-right: solid 1px $main-color;
+	border-top: solid 1px $main-color;
+	font-size: 16px;
+	font-weight: bold;
+	margin-top: 15px;
+	margin-bottom: 0;
+	padding: 5px 10px;
+}
+
+h3, h4, h5, h6 {
+	font-size: 14px;
+	font-weight: bold;
+	margin-top: 15px;
+	margin-bottom: 0;
+}
+
+p {
+	margin-top: 15px;
+	margin-bottom: 0;
+}
+
+ul:not(.navbar-nav), ol {
+	margin-top: 15px;
+	margin-bottom: 0;
+}
+
+footer {
+	margin-top: 15px;
 }
 
 /*-----------------------------------------------------------------------
@@ -34,7 +81,7 @@ $sub-color: #ccc;
 h1.navbar-brand {
 	color: $title-color;
 	font-size: 25px;
-	@include media-breakpoint-up(md) {
+	@include media-breakpoint-up(sm) {
 		font-size: 48px;
 	}
 	font-weight: 800;
@@ -65,6 +112,33 @@ li.nav-item.active {
 }
 
 /*-----------------------------------------------------------------------
+  sidebar
+-----------------------------------------------------------------------*/
+
+.sidebar {
+	background: -webkit-linear-gradient(to bottom, $main-color 0%, $main-color-dark 100%);
+	background: linear-gradient(to bottom, $main-color 0%, $main-color-dark 100%);
+	border-color: $main-color;	
+	position: fixed;
+	background-color: $main-color;
+	top: 79px;
+	bottom: 0;
+	left: 0;
+	z-index: 1000;
+	padding: 20px 0;
+	overflow-x: hidden;
+	overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+main {
+	padding-left: 0 !important;
+	background-color: $base-color;
+	bottom: 30px;
+	padding-bottom: 30px;
+	top: 100px;
+}
+
+/*-----------------------------------------------------------------------
   footer
 -----------------------------------------------------------------------*/
 
@@ -73,4 +147,91 @@ footer {
 	background: linear-gradient(to bottom, $main-color 0%, $main-color-dark 100%);
 	border-color: $main-color;
 	color: $title-color;
+	a {
+		color: $title-color;
+	}
+	p {
+		margin: 0px;
+	}
+}
+
+/*-----------------------------------------------------------------------
+  time table
+-----------------------------------------------------------------------*/
+
+.session-heading {
+	padding-top: .5em;
+	border-top: 1px solid $sub-color;
+}
+
+.day-section-heading {
+	margin: .375em 0;
+}
+
+/*-----------------------------------------------------------------------
+  section content
+-----------------------------------------------------------------------*/
+
+.session-section-content {
+	border: 4px double $sub-color;
+	margin: 5em 0;
+	padding: 2em;
+	font-size: 15px;
+	p {
+		font-size: 15px;
+	}
+}
+
+a .session-section-content {
+	color: $text-color;
+}
+
+.session-presenters ol {
+	list-style: none;
+	li {
+		border: 1px solid $sub-color;
+		text-align: center;
+	}
+}
+
+.session-presenter div {
+	display: table-cell;
+}
+
+.session-presenter-picture img {
+	max-width: 100px;
+	max-height: 100px;
+	vertical-align: middle;
+}
+
+.session-presenter-name {
+	font-size: 15px;
+}
+
+.session-presenter-affiliation {
+	font-size: 12px;
+}
+
+.session-introduction {
+	font-weight: bold;
+}
+
+.session-section-title {
+	border-bottom: solid 3px $sub-color;
+	margin-bottom: 2em;
+}
+
+/*-----------------------------------------------------------------------
+  interactive session
+-----------------------------------------------------------------------*/
+
+.session-interactive-title {
+	border-bottom: solid 3px $sub-color;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	font-weight: bold;
+}
+
+.session-poster {
+	border-bottom: solid 1px $sub-color;
 }

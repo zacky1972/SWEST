@@ -28,16 +28,24 @@ html lang="ja-jp"
 
     link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'
 
-    == stylesheet_link_tag 'site-layout'
+    == stylesheet_link_tag :site
     == javascript_include_tag  :site, async: 'async'
 
   body class="#{page_classes}"
     - if current_page.data.navigation.nil?
       = partial 'partials/navbar', :locals => $navigation
+      .container-fluid
+        .row
+          = partial 'partials/sidebar', :locals => $navigation
+          main.col-sm-9.ml-sm-auto.col-md-10.pt-3 role="main"
+            == yield
+            = partial 'partials/footnote'
     - else
       = partial 'partials/navbar', :locals => nav_add($navigation, current_page.data.navigation, :active, true)
-    .container
-      == yield
-    footer
-      .container
-        small &copy; 1999 SWEST commitee 
+      .container-fluid
+        .row
+          = partial 'partials/sidebar', :locals => nav_add($navigation, current_page.data.navigation, :active, true)
+          main.col-sm-9.ml-sm-auto.col-md-10.pt-3 role="main"
+            .container
+              == yield
+            = partial 'partials/footnote'
