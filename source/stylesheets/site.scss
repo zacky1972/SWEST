@@ -4,8 +4,8 @@
 
 $base-color: #fff;
 $text-color: #444;
-$main-color: #87cefa;
-$main-color-dark: #00bfff;
+$main-color: darken(#87cefa, 20%);
+$main-color-dark: darken(#00bfff, 20%);
 $title-color: #fff;
 $sub-color: #ccc;
 
@@ -64,18 +64,18 @@ ul:not(.navbar-nav), ol {
 	margin-bottom: 0;
 }
 
-footer {
-	margin-top: 15px;
-}
-
 /*-----------------------------------------------------------------------
   navigation tag
 -----------------------------------------------------------------------*/
 
 .navbar-light {
+	background-color: $main-color !important;
+	border-color: $main-color;
+	/*
 	background: -webkit-linear-gradient(to bottom, $main-color 0%, $main-color-dark 100%);
 	background: linear-gradient(to bottom, $main-color 0%, $main-color-dark 100%);
 	border-color: $main-color;
+	*/
 }
 
 h1.navbar-brand {
@@ -88,6 +88,17 @@ h1.navbar-brand {
 	a {
 		color: $title-color;
 		text-decoration: none;
+	}
+	img {
+		height: auto;
+		@include media-breakpoint-up(sm) {
+			width: 150px;
+			margin-right: 70px;
+		}
+		@include media-breakpoint-down(sm) {
+			width: 75px;
+			margin-right: 10px;
+		}
 	}
 }
 
@@ -116,12 +127,16 @@ li.nav-item.active {
 -----------------------------------------------------------------------*/
 
 .sidebar {
+	background-color: $main-color !important;
+	border-color: $main-color;
+/*
 	background: -webkit-linear-gradient(to bottom, $main-color 0%, $main-color-dark 100%);
 	background: linear-gradient(to bottom, $main-color 0%, $main-color-dark 100%);
-	border-color: $main-color;	
+	border-color: $main-color;
+*/
 	position: fixed;
 	background-color: $main-color;
-	top: 79px;
+	top: 157px;
 	bottom: 0;
 	left: 0;
 	z-index: 1000;
@@ -134,8 +149,7 @@ main {
 	padding-left: 0 !important;
 	background-color: $base-color;
 	bottom: 30px;
-	padding-bottom: 30px;
-	top: 100px;
+	top: 177px;
 }
 
 /*-----------------------------------------------------------------------
@@ -147,6 +161,7 @@ footer {
 	background: linear-gradient(to bottom, $main-color 0%, $main-color-dark 100%);
 	border-color: $main-color;
 	color: $title-color;
+	margin-top: 15px;
 	a {
 		color: $title-color;
 	}

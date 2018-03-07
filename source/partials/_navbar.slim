@@ -1,10 +1,10 @@
 /! header
 header#header
-  .col-sm-3.col-md-2.d-none.d-sm-block.bg-light
-  nav#nav.navbar.navbar-expand-sm.navbar-light.fixed-top.bg-dark.col-sm-9.ml-sm-auto.col-md-10.pt-3
+  nav#nav.navbar.navbar-expand-sm.navbar-light.fixed-top.bg-dark.pt-3
     .container
       h1.navbar-brand
-        a href="#{$site_url}" #{site_name}
+        = link_to image_tag("#{logo}"), "#{$site_url}"
+        = link_to "SWEST"
       button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
         span.navbar-toggler-icon
       #navbarSupportedContent.collapse.navbar-collapse
