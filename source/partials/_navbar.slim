@@ -3,7 +3,7 @@ header#header
   nav#nav.navbar.navbar-expand-sm.navbar-light.fixed-top.bg-dark.pt-3
     .container
       h1.navbar-brand
-        = link_to image_tag("#{logo}"), "#{$site_url}"
+        = link_to image_tag("#{logo}", :alt => 'SWEST'), "#{$site_url}"
         = link_to "SWEST"
       button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
         span.navbar-toggler-icon

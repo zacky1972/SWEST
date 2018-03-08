@@ -39,7 +39,7 @@ html lang="ja-jp"
           = partial 'partials/sidebar', :locals => $navigation
           main.col-sm-9.ml-sm-auto.col-md-9.pt-3 role="main"
             == yield
-            = partial 'partials/footnote'
+            = partial 'partials/footnote', :locals => $navigation
     - else
       = partial 'partials/navbar', :locals => nav_add($navigation, current_page.data.navigation, :active, true)
       .container-fluid
@@ -48,4 +48,4 @@ html lang="ja-jp"
           main.col-sm-9.ml-sm-auto.col-md-9.pt-3 role="main"
             .container
               == yield
-            = partial 'partials/footnote'
+            = partial 'partials/footnote', :locals => nav_add($navigation, current_page.data.navigation, :active, true)
