@@ -64,6 +64,13 @@ ul:not(.navbar-nav), ol {
 	margin-bottom: 0;
 }
 
+main img {
+	max-width: 1024px;
+	@include media-breakpoint-down(sm) {
+		max-width: 300px;
+	}
+}
+
 /*-----------------------------------------------------------------------
   navigation tag
 -----------------------------------------------------------------------*/
