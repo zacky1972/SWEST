@@ -165,10 +165,10 @@ $navigation = {
 activate :relative_assets
 
 activate :external_pipeline, {
-	name: :gulp,
-	command: build? ? "gulp build" : 'gulp watch',
-	source: "./build",
-	latency: 1
+  name: :yarn,
+  command: build? ? "yarn build" : "yarn watch",
+  source: "./build",
+  latency: 1
 }
 
 # activate :livereload

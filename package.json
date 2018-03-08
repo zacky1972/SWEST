@@ -35,5 +35,12 @@
     "run-sequence": "^2.2.0",
     "svgo": "^1.0.3",
     "vinyl-paths": "^2.1.0"
+  },
+  "scripts": {
+    "build": "yarn text && yarn gulp build",
+    "watch": "yarn text && yarn gulp watch",
+    "text": "yarn sec && yarn discuss",
+    "sec": "./secretariat.sh",
+    "discuss": "convert source/images/blank.jpg +antialias -font ArialUnicode -pointsize 24 -gravity Center -annotate +0+0 \"swest-discuss@swest.toppers.jp\" source/images/discuss.jpg"
   }
 }
