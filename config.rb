@@ -125,7 +125,7 @@ $navigation_old = {
 }
 
 $navigation = {
-  :logo => 'logo/SWEST_logo-01-20180307.jpg',
+  :logo => 'logo/SWEST_logo.svg',
 	:site_url => '/',
 	:site_name => 'SWEST',
 	:items => [
@@ -400,13 +400,14 @@ end
   end
 end
 
-{
-  'logo1': 'logo/SWEST_logo-01-20180307.jpg',
-  'logow': 'logo/SWEST_logo_WHITE.png'
-}.each do |l_id, logo|
-  $navigation = change_logo($navigation, logo)
-  proxy "#{l_id}/index.html", "/index.html"
-end
+
+#{
+#  'logo1': 'logo/SWEST_logo-01-20180307.jpg',
+#  'logow': 'logo/SWEST_logo_WHITE.png'
+#}.each do |l_id, logo|
+#  $navigation = change_logo($navigation, logo)
+#  proxy "#{l_id}/index.html", "/index.html"
+#end
 
 # OGP
 
