@@ -154,9 +154,20 @@ $navigation = {
 			:label => 'Old-report',
 			:url => 'old-report'
 		}, {
-      :name => '申込み',
+      :name => '討議テーマ・セッション募集',
+      :label => 'Session',
+      :url => 'session',
+      :regist => true
+    }, {
+      :name => 'インタラクティブセッション募集',
+      :label => 'Interactive',
+      :url => 'interactive',
+      :regist => true
+    }, {
+      :name => '参加申込み',
       :label => 'Regist',
-      :url => 'regist'
+      :url => 'regist',
+      :regist => true
     }
 	]
 }
@@ -400,6 +411,48 @@ end
   end
 end
 
+options_hash = {
+  "p0-s0-i0-r0-R0-S0": {
+      program: :none,
+      session: :disable,
+      interactive: :disable,
+      regist: :disable,
+      registOption: :onlyDuring,
+      submenu: :disable
+    },
+  "p0-s1-i0-r0-R0-S0": {
+      program: :none,
+      session: :enable,
+      interactive: :disable,
+      regist: :disable,
+      registOption: :onlyDuring,
+      submenu: :disable
+    },
+  "p0-s0-i0-r0-R1-S0": {
+      program: :none,
+      session: :enable,
+      interactive: :enable,
+      regist: :enable,
+      registOption: :always,
+      submenu: :disable
+    },
+}
+
+files = [
+  "index.html",           # 生成する html ファイルを配列としてリストアップする
+  "about/index.html",     # 実際にはファイルシステムから読み込んで自動生成する
+]
+
+
+options_hash.each do |path, options|
+  $navigation.each do |key, value|
+    options[key] = value
+  end
+  options[:rootURL] = path
+  files.each do |file|
+    proxy "#{path}/#{file}", "/#{file}", :locals => {locals: options}
+  end
+end
 
 #{
 #  'logo1': 'logo/SWEST_logo-01-20180307.jpg',
