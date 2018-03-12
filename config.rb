@@ -412,7 +412,7 @@ end
 end
 
 options_hash = {
-  "p0-s0-i0-r0-R0-S0": {
+  "p0-s0-i0-r0-R0-S0" => {
       program: :none,
       session: :disable,
       interactive: :disable,
@@ -420,7 +420,7 @@ options_hash = {
       registOption: :onlyDuring,
       submenu: :disable
     },
-  "p0-s1-i0-r0-R0-S0": {
+  "p0-s1-i0-r0-R0-S0" => {
       program: :none,
       session: :enable,
       interactive: :disable,
@@ -428,7 +428,7 @@ options_hash = {
       registOption: :onlyDuring,
       submenu: :disable
     },
-  "p0-s0-i0-r0-R1-S0": {
+  "p0-s0-i0-r0-R1-S0" => {
       program: :none,
       session: :enable,
       interactive: :enable,
@@ -438,11 +438,13 @@ options_hash = {
     },
 }
 
-files = [
-  "index.html",           # 生成する html ファイルを配列としてリストアップする
-  "about/index.html",     # 実際にはファイルシステムから読み込んで自動生成する
-]
+options_hash[""] = options_hash["p0-s0-i0-r0-R0-S0"]
 
+files = []
+Dir.glob('source/src/**/*.html*') do |file|
+  file = file.match(%r{^source/src/(.+\.html).*})[1]
+  files.push(file)
+end
 
 options_hash.each do |path, options|
   $navigation.each do |key, value|
@@ -450,7 +452,7 @@ options_hash.each do |path, options|
   end
   options[:rootURL] = path
   files.each do |file|
-    proxy "#{path}/#{file}", "/#{file}", :locals => {locals: options}
+    proxy "#{path}/#{file}", "src/#{file}", :locals => {locals: options}, ignore: true
   end
 end
 
