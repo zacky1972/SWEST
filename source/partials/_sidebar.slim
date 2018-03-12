@@ -4,13 +4,13 @@
           li.nav-item class=(item[:active].nil? ? '' : 'active')
             - if item[:dropdown].nil?
               - if registOption == :always || item[:label] !~ /Session|Interactive|Regist/ || (item[:label].eql?('Session') && session == :enable) || (item[:label].eql?('Interactive') && interactive == :enable) || (item[:label].eql?('Regist') && regist == :enable)
-                = link_to item[:name], $site_url + item[:url], :class => 'nav-link'
+                = link_to item[:name], $site_url + rootURL + item[:url], :class => 'nav-link'
             - else
               - if registOption == :always || item[:label] !~ /Session|Interactive|Regist/ || (item[:label].eql?('Session') && session == :enable) || (item[:label].eql?('Interactive') && interactive == :enable) || (item[:label].eql?('Regist') && regist == :enable)
-                = link_to item[:name], $site_url + item[:url], :class => 'nav-link dropdown-toggle', :id => "navbarDropdown#{item[:label]}", :role => 'button', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' =>'false'
+                = link_to item[:name], $site_url + rootURL + item[:url], :class => 'nav-link dropdown-toggle', :id => "navbarDropdown#{item[:label]}", :role => 'button', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' =>'false'
                 .dropdown-menu aria-labelledby="navbarDropdown#{item[:label]}"
-                  = link_to item[:name], $site_url + item[:url], :class => 'dropdown-item'
+                  = link_to item[:name], $site_url + rootURL + item[:url], :class => 'dropdown-item'
                   - item[:dropdown].each do |d_item|
-                    = link_to d_item[:name], $site_url + d_item[:url], :class => 'dropdown-item'
+                    = link_to d_item[:name], $site_url + rootURL + d_item[:url], :class => 'dropdown-item'
 
 

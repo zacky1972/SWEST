@@ -2,6 +2,10 @@ require 'slim'
 require 'csv'
 
 
+preview = true
+
+allOptions = preview
+
 def change_logo navigation, logo
   nav = Marshal.load(Marshal.dump(navigation))
   i = nav[:logo] = logo
@@ -447,12 +451,14 @@ Dir.glob('source/src/**/*.html*') do |file|
 end
 
 options_hash.each do |path, options|
-  $navigation.each do |key, value|
-    options[key] = value
-  end
-  options[:rootURL] = path
-  files.each do |file|
-    proxy "#{path}/#{file}", "src/#{file}", :locals => {locals: options}, ignore: true
+  if allOptions || path == '' then
+    $navigation.each do |key, value|
+      options[key] = value
+    end
+    options[:rootURL] = path + '/'
+    files.each do |file|
+      proxy "#{path}/#{file}", "src/#{file}", :locals => {locals: options}, ignore: true
+    end
   end
 end
 
@@ -660,15 +666,17 @@ configure :build do
 end
 
 activate :deploy do |deploy|
-# for GitHub Pages
-  deploy.build_before = true
-  deploy.deploy_method = :git
-  deploy.branch = 'gh-pages'
-
-# for swest.topper.jp
-#  deploy.build_before = true
-#  deploy.deploy_method = :rsync
-#  deploy.host = 'swest.toppers.jp'
-#  deploy.path = '/var/www/html/'
-#  deploy.clean = false
+  if preview then
+  # for GitHub Pages
+    deploy.build_before = true
+    deploy.deploy_method = :git
+    deploy.branch = 'gh-pages'
+  else 
+  # for swest.topper.jp
+    deploy.build_before = true
+    deploy.deploy_method = :rsync
+    deploy.host = 'swest.toppers.jp'
+    deploy.path = '/var/www/html/'
+    deploy.clean = false
+  end
 end
