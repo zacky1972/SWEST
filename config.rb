@@ -415,32 +415,88 @@ end
   end
 end
 
-options_hash = {
-  "p0-s0-i0-r0-R0-S0" => {
-      program: :none,
-      session: :disable,
-      interactive: :disable,
-      regist: :disable,
-      registOption: :onlyDuring,
-      submenu: :disable
-    },
-  "p0-s1-i0-r0-R0-S0" => {
-      program: :none,
-      session: :enable,
-      interactive: :disable,
-      regist: :disable,
-      registOption: :onlyDuring,
-      submenu: :disable
-    },
-  "p0-s0-i0-r0-R1-S0" => {
-      program: :none,
-      session: :enable,
-      interactive: :enable,
-      regist: :enable,
-      registOption: :always,
-      submenu: :disable
-    },
-}
+option_table = [
+  {
+    id: :program,
+    abbreviation: 'p',
+    table: {
+      "0" => :none,
+      "1" => :pre,
+      "2" => :session,
+      "3" => :all
+    }
+  },
+  {
+    id: :session,
+    abbreviation: 's',
+    :table => {
+      "0" => :disable,
+      "1" => :enable
+    }
+  },
+  {
+    id: :interactive,
+    abbreviation: 'i',
+    :table => {
+      "0" => :disable,
+      "1" => :enable
+    }
+  },
+  {
+    id: :regist,
+    abbreviation: 'r',
+    :table => {
+      "0" => :disable,
+      "1" => :enable
+    }
+  },
+  {
+    id: :registOption,
+    abbreviation: 'R',
+    :table => {
+      "0" => :onlyDuring,
+      "1" => :always
+    }
+  },
+  {
+    id: :submenu,
+    abbreviation: 'S',
+    :table => {
+      "0" => :disable,
+      "1" => :enable
+    }
+  }
+]
+
+def getOptionsSingle hash
+  a = hash[:abbreviation]
+  options = {}
+  hash[:table].each do |key, value|
+    options["#{a}#{key}"] = {hash[:id] => value}
+  end
+  options
+end
+
+def defOptionsHash table
+  h1 = {"" => {}}
+  table.each do |original|
+    o = getOptionsSingle(original)
+    h2 = {}
+    h1.each do |key1, value1|
+      o.each do |key2, value2|
+        key = "#{key1}-#{key2}"
+        key.slice!(/^-/)
+        value = value1.merge(value2)
+        h2[key] = value
+      end
+    end
+    h1 = h2
+  end
+  h1
+end
+
+
+options_hash = defOptionsHash(option_table)
 
 options_hash[""] = options_hash["p0-s0-i0-r0-R0-S0"]
 
