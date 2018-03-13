@@ -6,6 +6,8 @@ preview = true
 
 allOptions = preview
 
+defaultOptions = "p0-s0-i0-r0-R0-S0"
+
 def change_logo navigation, logo
   nav = Marshal.load(Marshal.dump(navigation))
   i = nav[:logo] = logo
@@ -498,7 +500,7 @@ end
 
 options_hash = defOptionsHash(option_table)
 
-options_hash[""] = options_hash["p0-s0-i0-r0-R0-S0"]
+options_hash[""] = options_hash[defaultOptions]
 
 files = []
 Dir.glob('source/src/**/*.html*') do |file|
