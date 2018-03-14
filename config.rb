@@ -738,12 +738,12 @@ end
 activate :deploy do |deploy|
   if preview then
   # for GitHub Pages
-    deploy.build_before = false
+    deploy.build_before = true
     deploy.deploy_method = :git
     deploy.branch = 'gh-pages'
   else 
   # for swest.topper.jp
-    deploy.build_before = false
+    deploy.build_before = true
     deploy.deploy_method = :rsync
     deploy.host = 'swest.toppers.jp'
     deploy.path = '/var/www/html/'
