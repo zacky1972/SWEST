@@ -4,9 +4,9 @@ require 'csv'
 
 preview = true
 
-allOptions = false
+allOptions = preview
 
-defaultOptions = "p0-s0-i0-r0-R0-S0"
+defaultOptions = "p0-s0-i0-r0-R1-S0"
 
 def change_logo navigation, logo
   nav = Marshal.load(Marshal.dump(navigation))
