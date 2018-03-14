@@ -161,8 +161,8 @@ $navigation = {
 			:url => 'old-report'
 		}, {
       :name => '討議テーマ・セッション募集',
-      :label => 'Session',
-      :url => 'session',
+      :label => 'Proposal',
+      :url => 'proposal',
       :regist => true
     }, {
       :name => 'インタラクティブセッション募集',
@@ -420,7 +420,7 @@ option_table = [
     }
   },
   {
-    id: :session,
+    id: :proposal,
     abbreviation: 's',
     :table => {
       "0" => :disable,
