@@ -2,6 +2,12 @@ require 'slim'
 require 'csv'
 
 
+preview = true
+
+allOptions = false
+
+defaultOptions = "p0-s0-i0-r0-R0-S0"
+
 def change_logo navigation, logo
   nav = Marshal.load(Marshal.dump(navigation))
   i = nav[:logo] = logo
@@ -154,9 +160,20 @@ $navigation = {
 			:label => 'Old-report',
 			:url => 'old-report'
 		}, {
-      :name => '申込み',
+      :name => '討議テーマ・セッション募集',
+      :label => 'Session',
+      :url => 'session',
+      :regist => true
+    }, {
+      :name => 'インタラクティブセッション募集',
+      :label => 'Interactive',
+      :url => 'interactive',
+      :regist => true
+    }, {
+      :name => '参加申込み',
       :label => 'Regist',
-      :url => 'regist'
+      :url => 'regist',
+      :regist => true
     }
 	]
 }
@@ -400,6 +417,108 @@ end
   end
 end
 
+option_table = [
+  {
+    id: :program,
+    abbreviation: 'p',
+    table: {
+      "0" => :none,
+      "1" => :pre,
+      "2" => :session,
+      "3" => :all
+    }
+  },
+  {
+    id: :session,
+    abbreviation: 's',
+    :table => {
+      "0" => :disable,
+      "1" => :enable
+    }
+  },
+  {
+    id: :interactive,
+    abbreviation: 'i',
+    :table => {
+      "0" => :disable,
+      "1" => :enable
+    }
+  },
+  {
+    id: :regist,
+    abbreviation: 'r',
+    :table => {
+      "0" => :disable,
+      "1" => :enable
+    }
+  },
+  {
+    id: :registOption,
+    abbreviation: 'R',
+    :table => {
+      "0" => :onlyDuring,
+      "1" => :always
+    }
+  },
+  {
+    id: :submenu,
+    abbreviation: 'S',
+    :table => {
+      "0" => :disable,
+      "1" => :enable
+    }
+  }
+]
+
+def getOptionsSingle hash
+  a = hash[:abbreviation]
+  options = {}
+  hash[:table].each do |key, value|
+    options["#{a}#{key}"] = {hash[:id] => value}
+  end
+  options
+end
+
+def defOptionsHash table
+  h1 = {"" => {}}
+  table.each do |original|
+    o = getOptionsSingle(original)
+    h2 = {}
+    h1.each do |key1, value1|
+      o.each do |key2, value2|
+        key = "#{key1}-#{key2}"
+        key.slice!(/^-/)
+        value = value1.merge(value2)
+        h2[key] = value
+      end
+    end
+    h1 = h2
+  end
+  h1
+end
+
+
+options_hash = defOptionsHash(option_table)
+
+options_hash[""] = options_hash[defaultOptions]
+
+files = []
+Dir.glob('source/src/**/*.html*') do |file|
+  file = file.match(%r{^source/src/(.+\.html).*})[1]
+  files.push(file)
+end
+
+options_hash.each do |path, options|
+  if allOptions || path == '' then
+    $navigation.each do |key, value|
+      options[key] = value
+    end
+    options[:rootURL] = path.eql?('') ? '' : path + '/'
+    files.each do |file|
+      proxy "#{path}/#{file}", "src/#{file}", :locals => {locals: options}, ignore: true
+    end
+  end
+end
 
 #{
 #  'logo1': 'logo/SWEST_logo-01-20180307.jpg',
@@ -605,15 +724,17 @@ configure :build do
 end
 
 activate :deploy do |deploy|
-# for GitHub Pages
-  deploy.build_before = true
-  deploy.deploy_method = :git
-  deploy.branch = 'gh-pages'
-
-# for swest.topper.jp
-#  deploy.build_before = true
-#  deploy.deploy_method = :rsync
-#  deploy.host = 'swest.toppers.jp'
-#  deploy.path = '/var/www/html/'
-#  deploy.clean = false
+  if preview then
+  # for GitHub Pages
+    deploy.build_before = false
+    deploy.deploy_method = :git
+    deploy.branch = 'gh-pages'
+  else 
+  # for swest.topper.jp
+    deploy.build_before = false
+    deploy.deploy_method = :rsync
+    deploy.host = 'swest.toppers.jp'
+    deploy.path = '/var/www/html/'
+    deploy.clean = false
+  end
 end

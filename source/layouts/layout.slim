@@ -33,19 +33,19 @@ html lang="ja-jp"
 
   body class="#{page_classes}"
     - if current_page.data.navigation.nil?
-      = partial 'partials/navbar', :locals => $navigation
+      = partial 'partials/navbar', :locals => locals
       .container-fluid
         .row
-          = partial 'partials/sidebar', :locals => $navigation
+          = partial 'partials/sidebar', :locals => locals
           main.col-sm-9.ml-sm-auto.col-md-9.pt-3 role="main"
             == yield
-            = partial 'partials/footnote', :locals => $navigation
+            = partial 'partials/footnote', :locals => locals
     - else
-      = partial 'partials/navbar', :locals => nav_add($navigation, current_page.data.navigation, :active, true)
+      = partial 'partials/navbar', :locals => nav_add(locals, current_page.data.navigation, :active, true)
       .container-fluid
         .row
-          = partial 'partials/sidebar', :locals => nav_add($navigation, current_page.data.navigation, :active, true)
+          = partial 'partials/sidebar', :locals => nav_add(locals, current_page.data.navigation, :active, true)
           main.col-sm-9.ml-sm-auto.col-md-9.pt-3 role="main"
             .container
               == yield
-            = partial 'partials/footnote', :locals => nav_add($navigation, current_page.data.navigation, :active, true)
+            = partial 'partials/footnote', :locals => nav_add(locals, current_page.data.navigation, :active, true)
