@@ -2,13 +2,13 @@
 .container
   .day-heading
     h3 8/24(木)
-  = partial 'partials/session-section-content', :locals => { name: 'keynote', sessions: sessions, interactive: interactive}
-  = partial 'partials/session-section-content', :locals => { name: 'interactive', sessions: sessions, interactive: interactive}
+  = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 'keynote', sessions: sessions, interactive: interactive})
+  = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 'interactive', sessions: sessions, interactive: interactive})
   - [1].each do |i|
   	- (0..3).each do |j|
-		  = partial 'partials/session-section-content', :locals => { name: "s#{i}#{'abcd'.slice(j)}", sessions: sessions, interactive: interactive}
+		  = partial 'partials/session-section-content', :locals => $navigation.merge({ name: "s#{i}#{'abcd'.slice(j)}", sessions: sessions, interactive: interactive})
   .day-heading
     h3 8/25(金)
   - (2..5).each do |i|
   	- (0..3).each do |j|
-		  = partial 'partials/session-section-content', :locals => { name: "s#{i}#{'abcd'.slice(j)}", sessions: sessions, interactive: interactive}
+		  = partial 'partials/session-section-content', :locals => $navigation.merge({ name: "s#{i}#{'abcd'.slice(j)}", sessions: sessions, interactive: interactive})

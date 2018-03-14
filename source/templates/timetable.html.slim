@@ -10,6 +10,6 @@ layout: program
     = partial 'partials/sidebar', :locals => nav_add($navigation, 'Program', :active, true)
     main.col-sm-9.ml-sm-auto.col-md-9.pt-3 role="main"
       .container
-        = partial 'partials/timetable', :locals => { number: 19, sessions: $sessions[:SWEST19], interactive: $interactive[:SWEST19], session: session.to_sym}
-        = partial 'partials/session-contents', :locals => { number: 19, sessions: $sessions[:SWEST19], interactive: $interactive[:SWEST19]}
+        = partial 'partials/timetable', :locals => $navigation.merge({ number: 19, sessions: $sessions[:SWEST19], interactive: $interactive[:SWEST19], session: session.to_sym})
+        = partial 'partials/session-contents', :locals => $navigation.merge({ number: 19, sessions: $sessions[:SWEST19], interactive: $interactive[:SWEST19]})
       = partial 'partials/footnote', :locals => $navigation

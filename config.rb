@@ -408,15 +408,6 @@ if File.exists?("interactive-printable.csv") then
   $interactive[:SWEST19] = CSV.read("interactive-printable.csv", headers: false, encoding: "Shift_JIS:UTF-8")
 end
 
-# 動的ページの作成
-
-[19].each do |number|
-  swest = "SWEST#{number.to_s}"
-  $sessions[swest.to_sym][:page].each do |name|
-    proxy "/#{swest}/program/#{name}.html", "/templates/timetable.html", locals: { session: name }, ignore: true
-  end
-end
-
 option_table = [
   {
     id: :program,
@@ -500,7 +491,17 @@ end
 
 options_hash = defOptionsHash(option_table)
 
+options_hash.each do |path, options|
+  options[:rootURL] = path + '/'
+end
+
+
 options_hash[""] = options_hash[defaultOptions]
+options_hash[""][:rootURL] = ''
+
+options_hash[""].each do |key, value|
+  $navigation[key] = value
+end
 
 files = []
 Dir.glob('source/src/**/*.html*') do |file|
@@ -511,14 +512,25 @@ end
 options_hash.each do |path, options|
   if allOptions || path == '' then
     $navigation.each do |key, value|
-      options[key] = value
+      if options[key].nil? then
+        options[key] = value
+      end
     end
-    options[:rootURL] = path.eql?('') ? '' : path + '/'
     files.each do |file|
       proxy "#{path}/#{file}", "src/#{file}", :locals => {locals: options}, ignore: true
     end
   end
 end
+
+# 動的ページの作成
+
+[19].each do |number|
+  swest = "SWEST#{number.to_s}"
+  $sessions[swest.to_sym][:page].each do |name|
+    proxy "/#{swest}/program/#{name}.html", "/templates/timetable.html", locals: { session: name }, ignore: true
+  end
+end
+
 
 #{
 #  'logo1': 'logo/SWEST_logo-01-20180307.jpg',
