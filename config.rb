@@ -1,6 +1,13 @@
 require 'slim'
 require 'csv'
 
+
+def change_logo navigation, logo
+  nav = Marshal.load(Marshal.dump(navigation))
+  i = nav[:logo] = logo
+  nav
+end
+
 # constants
 
 $site_url = 'http://localhost:4567/'
@@ -118,6 +125,7 @@ $navigation_old = {
 }
 
 $navigation = {
+  :logo => 'logo/SWEST_logo.svg',
 	:site_url => '/',
 	:site_name => 'SWEST',
 	:items => [
@@ -157,10 +165,10 @@ $navigation = {
 activate :relative_assets
 
 activate :external_pipeline, {
-	name: :gulp,
-	command: build? ? "gulp build" : 'gulp watch',
-	source: "./build",
-	latency: 1
+  name: :yarn,
+  command: build? ? "yarn build" : "yarn watch",
+  source: "./build",
+  latency: 1
 }
 
 # activate :livereload
@@ -392,6 +400,15 @@ end
   end
 end
 
+
+#{
+#  'logo1': 'logo/SWEST_logo-01-20180307.jpg',
+#  'logow': 'logo/SWEST_logo_WHITE.png'
+#}.each do |l_id, logo|
+#  $navigation = change_logo($navigation, logo)
+#  proxy "#{l_id}/index.html", "/index.html"
+#end
+
 # OGP
 
 activate :ogp do |ogp|
@@ -435,6 +452,7 @@ helpers do
   	end
   	nav
   end
+
 
   def url2link text
     pattern = "https?://[a-zA-Z0-9.]{2,}(:[0-9]+)?(/[-_.!~*a-zA-Z0-9;/?:@&=+$,%#]+)?"

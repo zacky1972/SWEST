@@ -37,15 +37,15 @@ html lang="ja-jp"
       .container-fluid
         .row
           = partial 'partials/sidebar', :locals => $navigation
-          main.col-sm-9.ml-sm-auto.col-md-10.pt-3 role="main"
+          main.col-sm-9.ml-sm-auto.col-md-9.pt-3 role="main"
             == yield
-            = partial 'partials/footnote'
+            = partial 'partials/footnote', :locals => $navigation
     - else
       = partial 'partials/navbar', :locals => nav_add($navigation, current_page.data.navigation, :active, true)
       .container-fluid
         .row
           = partial 'partials/sidebar', :locals => nav_add($navigation, current_page.data.navigation, :active, true)
-          main.col-sm-9.ml-sm-auto.col-md-10.pt-3 role="main"
+          main.col-sm-9.ml-sm-auto.col-md-9.pt-3 role="main"
             .container
               == yield
-            = partial 'partials/footnote'
+            = partial 'partials/footnote', :locals => nav_add($navigation, current_page.data.navigation, :active, true)
