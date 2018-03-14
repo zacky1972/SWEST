@@ -8,6 +8,7 @@ $main-color: darken(#87cefa, 20%);
 $main-color-dark: darken(#00bfff, 20%);
 $title-color: #fff;
 $sub-color: #ccc;
+$accent-color: #FF9F80;
 
 /*-----------------------------------------------------------------------
   base
@@ -126,6 +127,24 @@ li.nav-item.active {
 	background-color: $title-color !important;
 	a {
 		color: $main-color !important;
+	}
+}
+
+li.nav-item.new {
+	a {
+		white-space: pre;
+	}
+	a:before {
+		background: $accent-color;
+		border-radius: 5px;
+		color: $title-color;
+		content: "New!";
+		font-size: .75em;
+		font-weight: bold;
+		display: inline-block;
+		padding: 3px 3px 2px;
+		margin-right: 5px;
+		text-align: center;
 	}
 }
 

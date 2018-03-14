@@ -15,12 +15,12 @@ header#header
             = link_to 'Twitter @SWEST_JP', 'https://twitter.com/SWEST_JP', :class => 'nav-link'
         ul.navbar-nav.mr-auto.d-block.d-sm-none
           - items.each do |item|
-            li.nav-item class=(item[:active].nil? ? '' : 'active')
-            - if item[:dropdown].nil?
-              - if registOption == :always || item[:label] !~ /Proposal|Interactive|Regist/ || (item[:label].eql?('Proposal') && proposal == :enable) || (item[:label].eql?('Interactive') && interactive == :enable) || (item[:label].eql?('Regist') && regist == :enable)
+            li.nav-item class="#{(item[:active].nil? ? '' : 'active')} #{((item[:label].eql?('Proposal') && proposal == :enable) || (item[:label].eql?('Interactive') && interactive == :enable) || (item[:label].eql?('Regist') && regist == :enable)) ? 'new' : ''}"
+              - if item[:dropdown].nil?
+                - if registOption == :always || item[:label] !~ /Proposal|Interactive|Regist/ || (item[:label].eql?('Proposal') && proposal == :enable) || (item[:label].eql?('Interactive') && interactive == :enable) || (item[:label].eql?('Regist') && regist == :enable)
                 = link_to item[:name], $site_url + rootURL + item[:url], :class => 'nav-link'
-            - else
-              - if registOption == :always || item[:label] !~ /Proposal|Interactive|Regist/ || (item[:label].eql?('Proposal') && proposal == :enable) || (item[:label].eql?('Interactive') && interactive == :enable) || (item[:label].eql?('Regist') && regist == :enable)
+              - else
+                - if registOption == :always || item[:label] !~ /Proposal|Interactive|Regist/ || (item[:label].eql?('Proposal') && proposal == :enable) || (item[:label].eql?('Interactive') && interactive == :enable) || (item[:label].eql?('Regist') && regist == :enable)
                 = link_to item[:name], $site_url + rootURL + item[:url], :class => 'nav-link dropdown-toggle', :id => "navbarDropdown#{item[:label]}", :role => 'button', 'data-toggle' => 'dropdown', 'aria-haspopup' => 'true', 'aria-expanded' =>'false'
                 .dropdown-menu aria-labelledby="navbarDropdown#{item[:label]}"
                   = link_to item[:name], $site_url + rootURL + item[:url], :class => 'dropdown-item'
