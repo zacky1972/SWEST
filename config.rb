@@ -4,7 +4,7 @@ require 'csv'
 
 preview = true
 
-allOptions = preview
+allOptions = false
 
 defaultOptions = "p0-s0-i0-r0-R0-S0"
 
@@ -513,7 +513,7 @@ options_hash.each do |path, options|
     $navigation.each do |key, value|
       options[key] = value
     end
-    options[:rootURL] = path + '/'
+    options[:rootURL] = path.eql?('') ? '' : path + '/'
     files.each do |file|
       proxy "#{path}/#{file}", "src/#{file}", :locals => {locals: options}, ignore: true
     end
