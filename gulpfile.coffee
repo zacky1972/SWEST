@@ -50,74 +50,84 @@ gulp.task 'build:sass', () ->
     .pipe sass()
     .pipe gulp.dest('build/stylesheets/')
 
-gulp.task 'build:jpg300', () ->
+gulp.task 'pre:jpg300', () ->
   gulp.src 'program-data/SWEST*/lecture/data/img/**/*.{jpg,JPG,jpeg,JPEG}'
     .pipe rename({extname: '.300.jpg'})
     .pipe imageResize(resizeOptions300)
     .pipe imagemin(imageminOptions)
-    .pipe gulp.dest('build/images/')
+    .pipe gulp.dest('program-data/images/')
 
-gulp.task 'build:jpg200', () ->
+gulp.task 'pre:jpg200', () ->
   gulp.src 'program-data/SWEST*/lecture/data/img/**/*.{jpg,JPG,jpeg,JPEG}'
   	.pipe rename({extname: '.200.jpg'})
     .pipe imageResize(resizeOptions200)
     .pipe imagemin(imageminOptions)
-    .pipe gulp.dest('build/images/')
+    .pipe gulp.dest('program-data/images/')
 
-gulp.task 'build:jpg100', () ->
+gulp.task 'pre:jpg100', () ->
   gulp.src 'program-data/SWEST*/lecture/data/img/**/*.{jpg,JPG,jpeg,JPEG}'
     .pipe rename({extname: '.100.jpg'})
     .pipe imageResize(resizeOptions100)
     .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/')
+
+gulp.task 'pre:jpg', ['pre:jpg300', 'pre:jpg200', 'pre:jpg100']
+
+gulp.task 'build:jpg', () ->
+  gulp.src 'program-data/images/*.{jpg,JPG,jpeg,JPEG}'
     .pipe gulp.dest('build/images/')
 
-gulp.task 'build:jpg', ['build:jpg300', 'build:jpg200', 'build:jpg100']
-
-gulp.task 'build:png300', () ->
+gulp.task 'pre:png300', () ->
   gulp.src 'program-data/SWEST*/lecture/data/img/**/*.{png,PNG}'
     .pipe rename({extname: '.300.png'})
     .pipe imageResize(resizeOptions300)
     .pipe imagemin(imageminOptions)
-    .pipe gulp.dest('build/images/')
+    .pipe gulp.dest('program-data/images/')
 
-gulp.task 'build:png200', () ->
+gulp.task 'pre:png200', () ->
   gulp.src 'program-data/SWEST*/lecture/data/img/**/*.{png,PNG}'
     .pipe rename({extname: '.200.png'})
     .pipe imageResize(resizeOptions200)
     .pipe imagemin(imageminOptions)
-    .pipe gulp.dest('build/images/')
+    .pipe gulp.dest('program-data/images/')
 
-gulp.task 'build:png100', () ->
+gulp.task 'pre:png100', () ->
   gulp.src 'program-data/SWEST*/lecture/data/img/**/*.{png,PNG}'
     .pipe rename({extname: '.100.png'})
     .pipe imageResize(resizeOptions100)
     .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/')
+
+gulp.task 'pre:png', ['pre:png300', 'pre:png200', 'pre:png100']
+
+gulp.task 'build:png', () ->
+  gulp.src 'program-data/images/*.{png,PNG}'
     .pipe gulp.dest('build/images/')
 
-gulp.task 'build:png', ['build:png300', 'build:png200', 'build:png100']
-
-gulp.task 'build:empty300', () ->
+gulp.task 'pre:empty300', () ->
   gulp.src 'source/images/empty.jpg'
     .pipe rename({extname: '.300.jpg'})
     .pipe imageResize(resizeOptions300)
     .pipe imagemin(imageminOptions)
-    .pipe gulp.dest('build/images/')
+    .pipe gulp.dest('program-data/images/')
 
-gulp.task 'build:empty200', () ->
+gulp.task 'pre:empty200', () ->
   gulp.src 'source/images/empty.jpg'
     .pipe rename({extname: '.200.jpg'})
     .pipe imageResize(resizeOptions200)
     .pipe imagemin(imageminOptions)
-    .pipe gulp.dest('build/images/')
+    .pipe gulp.dest('program-data/images/')
 
-gulp.task 'build:empty100', () ->
+gulp.task 'pre:empty100', () ->
   gulp.src 'source/images/empty.jpg'
     .pipe rename({extname: '.100.jpg'})
     .pipe imageResize(resizeOptions100)
     .pipe imagemin(imageminOptions)
-    .pipe gulp.dest('build/images/')
+    .pipe gulp.dest('program-data/images/')
 
-gulp.task 'build:empty', ['build:empty300', 'build:empty200', 'build:empty100']
+gulp.task 'pre:empty', ['pre:empty300', 'pre:empty200', 'pre:empty100']
+
+gulp.task 'pre:images', ['pre:empty', 'pre:jpg', 'pre:png']
 
 gulp.task 'build:images', ['build:empty', 'build:jpg', 'build:png']
 
@@ -134,8 +144,9 @@ gulp.task 'build:js', () ->
     .pipe parcel()
     .pipe gulp.dest('build/javascripts/')
 
-gulp.task 'build', ['build:js', 'build:sass', 'build:images', 'build:pdfs', 'build:txts']
+gulp.task 'pre', ['pre:images']
 
+gulp.task 'build', ['build:js', 'build:sass', 'build:images', 'build:pdfs', 'build:txts']
 
 gulp.task 'watch', ['build'], () ->
   gulp.watch [
