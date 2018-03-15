@@ -52,21 +52,21 @@ gulp.task 'build:sass', () ->
 
 gulp.task 'pre:jpg300', () ->
   gulp.src 'program-data/SWEST*/lecture/data/img/**/*.{jpg,JPG,jpeg,JPEG}'
-    .pipe rename({extname: '.300.jpg'})
+    .pipe rename({extname: '.300.jpg', dirname:''})
     .pipe imageResize(resizeOptions300)
     .pipe imagemin(imageminOptions)
     .pipe gulp.dest('program-data/images/')
 
 gulp.task 'pre:jpg200', () ->
   gulp.src 'program-data/SWEST*/lecture/data/img/**/*.{jpg,JPG,jpeg,JPEG}'
-  	.pipe rename({extname: '.200.jpg'})
+  	.pipe rename({extname: '.200.jpg', dirname:''})
     .pipe imageResize(resizeOptions200)
     .pipe imagemin(imageminOptions)
     .pipe gulp.dest('program-data/images/')
 
 gulp.task 'pre:jpg100', () ->
   gulp.src 'program-data/SWEST*/lecture/data/img/**/*.{jpg,JPG,jpeg,JPEG}'
-    .pipe rename({extname: '.100.jpg'})
+    .pipe rename({extname: '.100.jpg', dirname:''})
     .pipe imageResize(resizeOptions100)
     .pipe imagemin(imageminOptions)
     .pipe gulp.dest('program-data/images/')
@@ -79,21 +79,21 @@ gulp.task 'build:jpg', () ->
 
 gulp.task 'pre:png300', () ->
   gulp.src 'program-data/SWEST*/lecture/data/img/**/*.{png,PNG}'
-    .pipe rename({extname: '.300.png'})
+    .pipe rename({extname: '.300.png', dirname:''})
     .pipe imageResize(resizeOptions300)
     .pipe imagemin(imageminOptions)
     .pipe gulp.dest('program-data/images/')
 
 gulp.task 'pre:png200', () ->
   gulp.src 'program-data/SWEST*/lecture/data/img/**/*.{png,PNG}'
-    .pipe rename({extname: '.200.png'})
+    .pipe rename({extname: '.200.png', dirname:''})
     .pipe imageResize(resizeOptions200)
     .pipe imagemin(imageminOptions)
     .pipe gulp.dest('program-data/images/')
 
 gulp.task 'pre:png100', () ->
   gulp.src 'program-data/SWEST*/lecture/data/img/**/*.{png,PNG}'
-    .pipe rename({extname: '.100.png'})
+    .pipe rename({extname: '.100.png', dirname:''})
     .pipe imageResize(resizeOptions100)
     .pipe imagemin(imageminOptions)
     .pipe gulp.dest('program-data/images/')
@@ -106,21 +106,21 @@ gulp.task 'build:png', () ->
 
 gulp.task 'pre:empty300', () ->
   gulp.src 'source/images/empty.jpg'
-    .pipe rename({extname: '.300.jpg'})
+    .pipe rename({extname: '.300.jpg', dirname:''})
     .pipe imageResize(resizeOptions300)
     .pipe imagemin(imageminOptions)
     .pipe gulp.dest('program-data/images/')
 
 gulp.task 'pre:empty200', () ->
   gulp.src 'source/images/empty.jpg'
-    .pipe rename({extname: '.200.jpg'})
+    .pipe rename({extname: '.200.jpg', dirname:''})
     .pipe imageResize(resizeOptions200)
     .pipe imagemin(imageminOptions)
     .pipe gulp.dest('program-data/images/')
 
 gulp.task 'pre:empty100', () ->
   gulp.src 'source/images/empty.jpg'
-    .pipe rename({extname: '.100.jpg'})
+    .pipe rename({extname: '.100.jpg', dirname:''})
     .pipe imageResize(resizeOptions100)
     .pipe imagemin(imageminOptions)
     .pipe gulp.dest('program-data/images/')
