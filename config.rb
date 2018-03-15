@@ -210,7 +210,7 @@ CSV.send(:prepend, CSVEncodingExtension)
 # lecture フォルダのデータ
 
 $files = {
-  SWEST19: "lecture/logs/{keynote,s{1,2,3,4,5}*}.dat"
+  SWEST19: "program-data/SWEST19/lecture/logs/{keynote,s{1,2,3,4,5}*}.dat"
 }
 
 # セッションデータ
@@ -404,8 +404,8 @@ end
 # インタラクティブセッションの読み込み
 
 $interactive = Hash.new
-if File.exists?("interactive-printable.csv") then
-  $interactive[:SWEST19] = CSV.read("interactive-printable.csv", headers: false, encoding: "Shift_JIS:UTF-8")
+if File.exists?("./program-data/SWEST19/interactive-printable.csv") then
+  $interactive[:SWEST19] = CSV.read("./program-data/SWEST19/interactive-printable.csv", headers: false, encoding: "Shift_JIS:UTF-8")
 end
 
 option_table = [

@@ -20,12 +20,6 @@
 # Ignore node_modules
 node_modules/
 
-# Ignore lecture directory
-/lecture
-
-# Ignore interactive-printable.csv
-interactive-printable.csv
-
 # Ignore bin
 /bin
 

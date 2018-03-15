@@ -51,21 +51,21 @@ gulp.task 'build:sass', () ->
     .pipe gulp.dest('build/stylesheets/')
 
 gulp.task 'build:jpg300', () ->
-  gulp.src 'lecture/data/img/**/*.{jpg,JPG,jpeg,JPEG}'
+  gulp.src 'program-data/SWEST*/lecture/data/img/**/*.{jpg,JPG,jpeg,JPEG}'
     .pipe rename({extname: '.300.jpg'})
     .pipe imageResize(resizeOptions300)
     .pipe imagemin(imageminOptions)
     .pipe gulp.dest('build/images/')
 
 gulp.task 'build:jpg200', () ->
-  gulp.src 'lecture/data/img/**/*.{jpg,JPG,jpeg,JPEG}'
+  gulp.src 'program-data/SWEST*/lecture/data/img/**/*.{jpg,JPG,jpeg,JPEG}'
   	.pipe rename({extname: '.200.jpg'})
     .pipe imageResize(resizeOptions200)
     .pipe imagemin(imageminOptions)
     .pipe gulp.dest('build/images/')
 
 gulp.task 'build:jpg100', () ->
-  gulp.src 'lecture/data/img/**/*.{jpg,JPG,jpeg,JPEG}'
+  gulp.src 'program-data/SWEST*/lecture/data/img/**/*.{jpg,JPG,jpeg,JPEG}'
     .pipe rename({extname: '.100.jpg'})
     .pipe imageResize(resizeOptions100)
     .pipe imagemin(imageminOptions)
@@ -74,21 +74,21 @@ gulp.task 'build:jpg100', () ->
 gulp.task 'build:jpg', ['build:jpg300', 'build:jpg200', 'build:jpg100']
 
 gulp.task 'build:png300', () ->
-  gulp.src 'lecture/data/img/**/*.{png,PNG}'
+  gulp.src 'program-data/SWEST*/lecture/data/img/**/*.{png,PNG}'
     .pipe rename({extname: '.300.png'})
     .pipe imageResize(resizeOptions300)
     .pipe imagemin(imageminOptions)
     .pipe gulp.dest('build/images/')
 
 gulp.task 'build:png200', () ->
-  gulp.src 'lecture/data/img/**/*.{png,PNG}'
+  gulp.src 'program-data/SWEST*/lecture/data/img/**/*.{png,PNG}'
     .pipe rename({extname: '.200.png'})
     .pipe imageResize(resizeOptions200)
     .pipe imagemin(imageminOptions)
     .pipe gulp.dest('build/images/')
 
 gulp.task 'build:png100', () ->
-  gulp.src 'lecture/data/img/**/*.{png,PNG}'
+  gulp.src 'program-data/SWEST*/lecture/data/img/**/*.{png,PNG}'
     .pipe rename({extname: '.100.png'})
     .pipe imageResize(resizeOptions100)
     .pipe imagemin(imageminOptions)
@@ -122,11 +122,11 @@ gulp.task 'build:empty', ['build:empty300', 'build:empty200', 'build:empty100']
 gulp.task 'build:images', ['build:empty', 'build:jpg', 'build:png']
 
 gulp.task 'build:pdfs', () ->
-  gulp.src 'lecture/data/**/*.pdf'
+  gulp.src 'program-data/SWEST*/lecture/data/**/*.pdf'
     .pipe gulp.dest('build/pdfs/')
 
 gulp.task 'build:txts', () ->
-  gulp.src 'lecture/data/**/*.txt'
+  gulp.src 'program-data/SWEST*/lecture/data/**/*.txt'
     .pipe gulp.dest('build/txts/')
 
 gulp.task 'build:js', () ->
