@@ -129,7 +129,7 @@ gulp.task 'pre:empty', ['pre:empty300', 'pre:empty200', 'pre:empty100']
 
 gulp.task 'pre:images', ['pre:empty', 'pre:jpg', 'pre:png']
 
-gulp.task 'build:images', ['build:empty', 'build:jpg', 'build:png']
+gulp.task 'build:images', ['build:jpg', 'build:png']
 
 gulp.task 'build:pdfs', () ->
   gulp.src 'program-data/SWEST*/lecture/data/**/*.pdf'
