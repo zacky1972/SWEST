@@ -449,7 +449,7 @@ option_table = [
     id: :registOption,
     abbreviation: 'R',
     :table => {
-      "0" => :onlyDuring,
+      # "0" => :onlyDuring,
       "1" => :always
     }
   },
@@ -458,7 +458,7 @@ option_table = [
     abbreviation: 'S',
     :table => {
       "0" => :disable,
-      "1" => :enable
+      # "1" => :enable
     }
   }
 ]

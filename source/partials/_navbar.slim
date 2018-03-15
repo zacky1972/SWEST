@@ -10,9 +10,9 @@ header#header
       #navbarSupportedContent.collapse.navbar-collapse
         ul.navbar-nav.mr-auto.d-none.d-md-block
           li.nav-item
-            = link_to 'Facebook @swestjp', 'https://www.facebook.com/swestjp', :class => 'nav-link'
+            = link_to image_tag('FB_logo.svg', :alt => 'Facebook @swestjp'), 'https://www.facebook.com/swestjp', :class => 'nav-link'
           li.nav-item
-            = link_to 'Twitter @SWEST_JP', 'https://twitter.com/SWEST_JP', :class => 'nav-link'
+            = link_to image_tag('Twitter_logo.svg', :alt => 'Twitter @SWEST_JP'), 'https://twitter.com/SWEST_JP', :class => 'nav-link'
         ul.navbar-nav.mr-auto.d-block.d-sm-none
           - items.each do |item|
             li.nav-item class="#{(item[:active].nil? ? '' : 'active')} #{((item[:label].eql?('Proposal') && proposal == :enable) || (item[:label].eql?('Interactive') && interactive == :enable) || (item[:label].eql?('Regist') && regist == :enable)) ? 'new' : ''}"
