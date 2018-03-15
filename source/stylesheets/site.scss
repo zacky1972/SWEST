@@ -93,7 +93,7 @@ main img {
 h1.navbar-brand {
 	color: $title-color;
 	font-size: 25px;
-	@include media-breakpoint-up(sm) {
+	@include media-breakpoint-up(md) {
 		font-size: 48px;
 	}
 	font-weight: 800;
@@ -104,7 +104,7 @@ h1.navbar-brand {
 	img {
 		height: auto;
 		margin-right: 0;
-		@include media-breakpoint-up(sm) {
+		@include media-breakpoint-up(md) {
 			height: 100px;
 		}
 		@include media-breakpoint-down(sm) {
@@ -193,7 +193,7 @@ main {
 	background-color: $base-color;
 	border-color: $main-color;
 	bottom: 30px;
-	@include media-breakpoint-up(sm) {
+	@include media-breakpoint-up(md) {
 		top: 127px;
 	}
 	@include media-breakpoint-down(sm) {
