@@ -133,10 +133,12 @@ gulp.task 'build:images', ['build:jpg', 'build:png']
 
 gulp.task 'build:pdfs', () ->
   gulp.src 'program-data/SWEST*/lecture/data/**/*.pdf'
+    .pipe rename({dirname:''})
     .pipe gulp.dest('build/pdfs/')
 
 gulp.task 'build:txts', () ->
   gulp.src 'program-data/SWEST*/lecture/data/**/*.txt'
+    .pipe rename({dirname:''})
     .pipe gulp.dest('build/txts/')
 
 gulp.task 'build:js', () ->
