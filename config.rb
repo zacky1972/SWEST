@@ -8,7 +8,7 @@ allOptions = preview
 
 defaultOptions = "p0-s0-i0-r0-R1-S0"
 
-buildBefore = true
+buildBeforeDeploy = true
 
 def change_logo navigation, logo
   nav = Marshal.load(Marshal.dump(navigation))
@@ -740,12 +740,12 @@ end
 activate :deploy do |deploy|
   if preview then
   # for GitHub Pages
-    deploy.build_before = buildBefore
+    deploy.build_before = buildBeforeDeploy
     deploy.deploy_method = :git
     deploy.branch = 'gh-pages'
   else 
   # for swest.topper.jp
-    deploy.build_before = buildBefore
+    deploy.build_before = buildBeforeDeploy
     deploy.deploy_method = :rsync
     deploy.host = 'swest.toppers.jp'
     deploy.path = '/var/www/html/'
