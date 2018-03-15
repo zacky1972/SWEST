@@ -103,13 +103,26 @@ h1.navbar-brand {
 	}
 	img {
 		height: auto;
+		margin-right: 0;
 		@include media-breakpoint-up(sm) {
-			width: 150px;
-			margin-right: 70px;
+			height: 100px;
 		}
 		@include media-breakpoint-down(sm) {
-			width: 75px;
-			margin-right: 10px;
+			height: 30px;
+		}
+	}
+	span {
+		margin-left: 1em;
+		a {
+			display: inline;
+			padding: 0;
+			img {
+				width: 0.5em;
+				height: auto;
+				margin-left: 0.2em;
+				margin-right: 0.2em;
+				padding: 0;
+			}
 		}
 	}
 }
@@ -148,10 +161,6 @@ li.nav-item.new {
 	}
 }
 
-li.nav-item a img {
-	width: 1.5em;
-}
-
 .dropdown-menu {
 	position: static !important;
 }
@@ -170,7 +179,7 @@ li.nav-item a img {
 */
 	position: fixed;
 	background-color: $main-color;
-	top: 157px;
+	top: 107px;
 	bottom: 0;
 	left: 0;
 	z-index: 1000;
@@ -184,7 +193,12 @@ main {
 	background-color: $base-color;
 	border-color: $main-color;
 	bottom: 30px;
-	top: 177px;
+	@include media-breakpoint-up(sm) {
+		top: 127px;
+	}
+	@include media-breakpoint-down(sm) {
+		top: 100px;
+	}
 }
 
 /*-----------------------------------------------------------------------
@@ -203,12 +217,15 @@ footer {
 	a {
 		color: $title-color;
 	}
+	small {
+		margin-left: 4em;
+	}
 	p {
 		margin: 0px;
 	}
 	img.icon {
-		max-height: 50px;
-		max-width: 96px;
+		max-height: 2ex;
+		max-width: 7.5em;
 	}
 }
 
