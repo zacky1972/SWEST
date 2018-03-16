@@ -101,14 +101,18 @@ h1.navbar-brand {
 		color: $title-color;
 		text-decoration: none;
 	}
-	img {
+	img.logo {
 		height: auto;
 		margin-right: 0;
 		@include media-breakpoint-up(lg) {
-			height: 100px;
+			height: 60px;
+			
 		}
 		@include media-breakpoint-down(md) {
-			height: 30px;
+			height: 40px;
+			position: absolute;
+			top: 10px;
+			left: 10px;
 		}
 	}
 	span {
@@ -175,6 +179,12 @@ li.nav-item.new {
 	}
 }
 
+.navbar {
+	@include media-breakpoint-down(md) {
+		padding: 0.25rem 0.25rem 0.5rem 0.5rem !important;
+	}	
+}
+
 /*-----------------------------------------------------------------------
   sidebar
 -----------------------------------------------------------------------*/
@@ -209,7 +219,7 @@ main {
 	}
 	*/
 	@include media-breakpoint-down(md) {
-		top: 100px;
+		top: 50px;
 	}
 }
 

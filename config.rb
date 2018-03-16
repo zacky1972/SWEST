@@ -4,7 +4,8 @@ require 'csv'
 
 preview = true
 
-allOptions = preview
+# allOptions = preview
+allOptions = false
 
 defaultOptions = "p0-s0-i0-r0-R1-S0"
 
