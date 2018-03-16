@@ -198,11 +198,11 @@ li.nav-item.new {
 	border-color: $main-color;
 */
 	background-color: $main-color;
-	top: 107px;
+	top: 99px;
 	bottom: 0;
 	left: 0;
 	z-index: 1000;
-	padding: 20px 0;
+	padding: 0;
 	overflow-x: hidden;
 	overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 }
@@ -218,6 +218,9 @@ main {
 		top: 127px;
 	}
 	*/
+	@include media-breakpoint-up(lg) {
+		top: 0;
+	}
 	@include media-breakpoint-down(md) {
 		top: 50px;
 	}
