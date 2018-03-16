@@ -45,7 +45,7 @@ html lang="ja-jp"
       .container-fluid
         .row
           = partial 'partials/sidebar', :locals => nav_add(locals, current_page.data.navigation, :active, true)
-          main.col-sm-9.ml-sm-auto.col-md-9.pt-3 role="main"
+          main.col-12.col-lg-9.pt-3 role="main"
             .container
               == yield
             = partial 'partials/footnote', :locals => nav_add(locals, current_page.data.navigation, :active, true)
