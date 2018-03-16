@@ -10,7 +10,7 @@ header#header
       button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
         span.navbar-toggler-icon
       #navbarSupportedContent.collapse.navbar-collapse
-        ul.navbar-nav.mr-auto.d-block.d-sm-none
+        ul.navbar-nav.mr-auto.d-block.d-md-none
           - items.each do |item|
             li.nav-item class="#{(item[:active].nil? ? '' : 'active')} #{((item[:label].eql?('Proposal') && proposal == :enable) || (item[:label].eql?('Interactive') && interactive == :enable) || (item[:label].eql?('Regist') && regist == :enable)) ? 'new' : ''}"
               - if item[:dropdown].nil?
