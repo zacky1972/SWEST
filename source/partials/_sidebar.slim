@@ -1,4 +1,4 @@
-    nav.col-lg-3.d-none.d-md-block.bg-light.sidebar
+    nav.col-lg-3.d-none.d-lg-block.bg-light.sidebar.position-fixed
       ul.nav.nav-pills.flex-column
         - items.each do |item|
           li.nav-item class="#{(item[:active].nil? ? '' : 'active')} #{((item[:label].eql?('Proposal') && proposal == :enable) || (item[:label].eql?('Interactive') && interactive == :enable) || (item[:label].eql?('Regist') && regist == :enable)) ? 'new' : ''}"
