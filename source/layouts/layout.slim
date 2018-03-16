@@ -37,7 +37,7 @@ html lang="ja-jp"
       .container-fluid
         .row
           = partial 'partials/sidebar', :locals => locals
-          main.col-sm-9.ml-sm-auto.col-md-9.pt-3 role="main"
+          main.col-12.col-lg-9.pt-3 role="main"
             == yield
             = partial 'partials/footnote', :locals => locals
     - else

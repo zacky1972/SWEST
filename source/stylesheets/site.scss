@@ -67,7 +67,7 @@ ul:not(.navbar-nav), ol {
 
 main img {
 	max-width: 1024px;
-	@include media-breakpoint-down(sm) {
+	@include media-breakpoint-down(md) {
 		max-width: 300px;
 	}
 }
@@ -93,7 +93,7 @@ main img {
 h1.navbar-brand {
 	color: $title-color;
 	font-size: 25px;
-	@include media-breakpoint-up(md) {
+	@include media-breakpoint-up(lg) {
 		font-size: 48px;
 	}
 	font-weight: 800;
@@ -104,10 +104,10 @@ h1.navbar-brand {
 	img {
 		height: auto;
 		margin-right: 0;
-		@include media-breakpoint-up(md) {
+		@include media-breakpoint-up(lg) {
 			height: 100px;
 		}
-		@include media-breakpoint-down(sm) {
+		@include media-breakpoint-down(md) {
 			height: 30px;
 		}
 	}
@@ -193,10 +193,10 @@ main {
 	background-color: $base-color;
 	border-color: $main-color;
 	bottom: 30px;
-	@include media-breakpoint-up(md) {
+	@include media-breakpoint-up(lg) {
 		top: 127px;
 	}
-	@include media-breakpoint-down(sm) {
+	@include media-breakpoint-down(md) {
 		top: 100px;
 	}
 }
