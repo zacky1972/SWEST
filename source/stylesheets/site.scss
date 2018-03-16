@@ -219,17 +219,14 @@ main {
 	padding-left: 0 !important;
 	background-color: $base-color;
 	border-color: $main-color;
-	/* enable if fixed-top when PC(up to lg) */
-	/*
-	@include media-breakpoint-up(lg) {
-		top: 127px;
-	}
-	*/
+
 	@include media-breakpoint-up(lg) {
 		top: -29px;
+		bottom: 0;
 	}
 	@include media-breakpoint-down(md) {
 		top: 50px;
+		bottom: 30px;
 	}
 }
 
