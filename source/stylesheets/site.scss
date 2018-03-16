@@ -165,6 +165,15 @@ li.nav-item.new {
 	position: static !important;
 }
 
+.fixed-top-md-down {
+	@include media-breakpoint-down(md) {
+		position: fixed;
+		top: 0;
+		right: 0;
+		left: 0;
+		z-index: 1030;
+	}
+}
 
 /*-----------------------------------------------------------------------
   sidebar
@@ -193,9 +202,12 @@ main {
 	background-color: $base-color;
 	border-color: $main-color;
 	bottom: 30px;
+	/* enable if fixed-top when PC(up to lg) */
+	/*
 	@include media-breakpoint-up(lg) {
 		top: 127px;
 	}
+	*/
 	@include media-breakpoint-down(md) {
 		top: 100px;
 	}
