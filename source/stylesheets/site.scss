@@ -76,6 +76,13 @@ main img {
 	color: red;
 }
 
+code {
+	display: inline-block;
+	font-weight: bold;
+	font-size: 1.25em;
+	color: $accent-color;
+}
+
 /*-----------------------------------------------------------------------
   navigation tag
 -----------------------------------------------------------------------*/
@@ -190,7 +197,7 @@ li.nav-item.new {
 .navbar {
 	@include media-breakpoint-down(md) {
 		padding: 0.25rem 0.25rem 0.5rem 0.5rem !important;
-	}	
+	}
 }
 
 /*-----------------------------------------------------------------------
