@@ -143,7 +143,7 @@ $navigation = {
 			:label => 'SWEST20',
 			:url => ''
 		}, {
-			:name => 'SWESTとは',
+			:name => 'SWEST(エスウエスト)とは',
 			:label => 'About',
 			:url => 'about'
 		}, {
@@ -744,7 +744,7 @@ activate :deploy do |deploy|
     deploy.build_before = buildBeforeDeploy
     deploy.deploy_method = :git
     deploy.branch = 'gh-pages'
-  else 
+  else
   # for swest.topper.jp
     deploy.build_before = buildBeforeDeploy
     deploy.deploy_method = :rsync
