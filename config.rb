@@ -2,7 +2,7 @@ require 'slim'
 require 'csv'
 
 
-preview = true
+preview = false
 
 # allOptions = preview
 allOptions = false
@@ -691,7 +691,7 @@ configure :build do
     options.allow_lossy = true
 
     # Image extensions to attempt to compress
-    options.image_extensions = %w(.png .jpg .gif .svg)
+    options.image_extensions = %w(.jpg)
 
     # Compressor worker options, individual optimisers can be disabled by passing
     # false instead of a hash
@@ -725,10 +725,10 @@ configure :build do
 
   # キャッシュ対策のため，ファイル名にハッシュをつける。ただし，すでにハッシュが付与されているファイルを除く
   # activate :asset_hash, :ignore => /^.*\-[0-9a-f]{8}\..*/
-  activate :asset_host, :host => 'https://zacky1972.github.io/SWEST'
-  $site_url = 'https://zacky1972.github.io/SWEST/'
-#  activate :asset_host, :host => 'https://swest.toppers.jp'
-#  $site_url = 'https://swest.toppers.jp/'
+#  activate :asset_host, :host => 'https://zacky1972.github.io/SWEST'
+#  $site_url = 'https://zacky1972.github.io/SWEST/'
+  activate :asset_host, :host => 'https://swest.toppers.jp'
+  $site_url = 'https://swest.toppers.jp/'
 
   activate :iepab, {
     name: :gulpPost,
@@ -751,5 +751,7 @@ activate :deploy do |deploy|
     deploy.host = 'swest.toppers.jp'
     deploy.path = '/var/www/html/'
     deploy.clean = false
+    deploy.user = 'ec2-user'
+    deploy.flags = '-rlOtcvz'
   end
 end

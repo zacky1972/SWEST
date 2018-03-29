@@ -7,14 +7,16 @@ html lang="ja-jp"
 
     title = "#{current_page.data.title} | SWEST「組込みシステム技術に関するサマーワークショップ」" || "SWEST"
 
-    / - ogp_tags do |name, value|
-    /     meta property=name content=value
-    / meta property="og:description" content=yield_content(:description)
-    / meta property="og:image" content=yield_content(:image)
-    / meta property="og:type" content='article'
+    - ogp_tags do |name, value|
+      meta property=name content=value
+    - if defined? current_page.data.image
+      meta property="og:image" content="#{current_page.data.image}"
+    - else
+      meta property="og:image" content="#{image_path('SWEST_logo_Facebook.png')}"    
+    meta property="og:type" content='website'
 
-    / meta content='summary_large_image' name='twitter:card'
-    / meta content='@SWEST_JP' name='twitter:site'
+    meta content='summary_large_image' name='twitter:card'
+    meta content='@SWEST_JP' name='twitter:site'
 
     link href=url_for('apple-touch-icon-180x180-precomposed.png') rel='apple-touch-icon' sizes='180x180' /
     link href=url_for('apple-touch-icon-152x152-precomposed.png') rel='apple-touch-icon' sizes='152x152' /
