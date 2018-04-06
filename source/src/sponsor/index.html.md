@@ -15,7 +15,7 @@ description: "2018年8月30日(木)〜31日(金)に、第20回 組込みシス�
 
 SWEST20は、情報処理学会組込みシステムシンポジウム2018（ESS2018）と同時開催します。組込みシステム分野における研究動向の最前線を調査することができます。  
 また、例年好評を博しております、初学者向け短期合宿型教育実習「LED-Camp6」を今年もSWESTと連続日程で連携開催します。  
-ESS2018: http://www.sigemb.jp/ESS/2018/  
+ESS2018: http://www.sigemb.jp/ESS/
 LED-Camp6: http://swest.toppers.jp/LED-Camp/
 
 今年のSWESTも、益々盛り上げていく所存でございます。
