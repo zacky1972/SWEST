@@ -28,7 +28,7 @@ $ bundle exec middleman serve
 
 その後，[http://localhost:4567/](http://localhost:4567/) にアクセス
 
-## GitHub Pages へのデプロイ＆プレビュー
+### GitHub Pages へのデプロイ＆プレビュー
 
 config.rb 10行目のpreviewをtrueに変更する
 ```
