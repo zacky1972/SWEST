@@ -68,7 +68,7 @@ config.rb 10行目のdefaultOptionにて，各ページの表示を変更でき�
 defaultOptions = "p0-s0-i0-r0-R1-S0"
 ```
 
-- p,s: 未実装
+- p: 未実装
 - s: [討議テーマ・セッション募集](https://swest.toppers.jp/proposal)ページの遷移（0:募集前 1:募集中）
 - i: [インタラクティブセッション募集](https://swest.toppers.jp/interactive)ページの遷移（0:募集前 1:募集中）
 - r: [参加申込み](https://swest.toppers.jp/regist)ページの遷移（0:募集前 1:募集中）
