@@ -753,5 +753,6 @@ activate :deploy do |deploy|
     deploy.clean = false
     deploy.user = 'ec2-user'
     deploy.flags = '-rlOtcvz'
+    deploy.port = '60022'
   end
 end
