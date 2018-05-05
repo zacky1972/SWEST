@@ -27,7 +27,7 @@ description: "SWEST20開催概要: 開催日程: 2018年8月29日(水)〜31日(�
 ## 会場
 
 * 会場: 下呂温泉 水明館(岐阜県下呂市幸田1268)
-  * 交通案内等の詳細は[こちら](https://www.suimeikan.co.jp)をご参照ください。 
+  * 交通案内等の詳細は[こちら](https://www.suimeikan.co.jp/access/)をご参照ください。 
 
 ## ちらし
 
