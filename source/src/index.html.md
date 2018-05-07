@@ -52,29 +52,33 @@ description: "SWEST20開催概要: 開催日程: 2018年8月29日(水)〜31日(�
 ## 主催・共催・後援団体および協賛団体
 
 * 主催: 組込みシステム技術に関するサマーワークショップ 実行委員会
+
 * 共催
-  * 一般社団法人 情報処理学会 組込みシステム研究会(SIGEMB)
-  * 組込みシステム開発技術研究会(CEST)
-  * NPO法人 組込みソフトウェア管理者・技術者育成研究会(SESSAME)
-  * NPO法人 TOPPERSプロジェクト
-* 後援 (依頼予定)
-  * 一般財団法人 日本科学技術連盟
-  * 一般社団法人 組込みシステム技術協会(JASA)
-  * 一般社団法人 情報処理学会 システムとLSIの設計技術研究会(SLDM)
-  * 一般社団法人 電子情報通信学会
+  * [一般社団法人 情報処理学会 組込みシステム研究会(SIGEMB)](http://www.sigemb.jp/)
+  * [組込みシステム開発技術研究会(CEST)](http://www.ertl.jp/CEST/)
+  * [NPO法人 組込みソフトウェア管理者・技術者育成研究会(SESSAME)](http://www.sessame.jp/)
+  * [NPO法人 TOPPERSプロジェクト](http://toppers.jp/)
+
+* 後援 (一部依頼中)
+  * [一般財団法人 日本科学技術連盟](http://www.juse.or.jp/)
+  * [一般社団法人 組込みシステム技術協会(JASA)](http://www.jasa.or.jp/TOP/)
+  * [一般社団法人 情報処理学会 システムとLSIの設計技術研究会(SLDM)](http://www.sig-sldm.org/)
+  * [一般社団法人 電子情報通信学会](http://www.ieice.org/jpn/)
   * 下呂市コンベンションビューロー
-  * ソフトウェア技術者協会（SEA）
-  * システム開発文書品質研究会（ASDoQ）
-  * NPO法人 軽量Rubyフォーラム
-  * NPO法人 ソフトウェアテスト技術振興協会(ASTER)
-  * 派生開発推進協議会(AFFORDD)
-  * 車載組込みシステムフォーラム(ASIF)
+  * [ソフトウェア技術者協会（SEA）](http://sea.jp/)
+  * [システム開発文書品質研究会（ASDoQ）](https://asdoq.jp/)
+  * [NPO法人 軽量Rubyフォーラム](http://forum.mruby.org/)
+  * [NPO法人 ソフトウェアテスト技術振興協会(ASTER)](http://aster.or.jp/)
+  * [派生開発推進協議会(AFFORDD)](http://affordd.jp/)
+  * [車載組込みシステムフォーラム(ASIF)](http://www.as-if.jp/)
 
-<!--
-* 協賛企業(口数順／五十音順)
--->
+* 協賛企業 (口数順／五十音順)
+  * [アイシン・コムクルーズ株式会社](https://www.aisin-comcruise.com/)
+  * [APTJ株式会社](http://www.aptj.co.jp/)
+  * [エプソンアヴァシス株式会社](http://avasys.jp/)
+  * [ダッソー・システムズ株式会社](https://www.3ds.com/ja/)
 
-(2018年3月19日現在)
+(2018年5月7日現在)
 
 SWEST実行委員会では、組込みシステム分野で活躍されている企業などに、SWESTへの協賛をお願いしています。組込みシステム業界全体の発展に寄与するというお気持ちでご協賛いただければ幸いです。
 
