@@ -155,7 +155,7 @@ $navigation = {
 			:label => 'Program',
 			:url => 'SWEST20/program/',
 		}, {
-			:name => '20周年特別企画(水曜)',
+			:name => '20周年特別企画＠水曜',
 			:label => 'Wednesday',
 			:url => 'wednesday'
 		}, {
