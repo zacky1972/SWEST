@@ -18,7 +18,8 @@ description: "SWEST20開催概要: 開催日程: 2018年8月29日(水)〜31日(�
 
 ## Topics (最新情報)
 
-* 2018年5月08日: 討議テーマ・セッション提案の募集を締め切りました
+* 2018年5月08日: [SWEST20基調パネルセッション](./SWEST20/program/#panel)の情報を掲載しました
+* 2018年5月07日: 討議テーマ・セッション提案の募集を締め切りました
 * 2018年4月06日: [SWEST20協賛のご案内](./sponsor)を更新しました
 * 2018年4月05日: [SWEST20の運営組織](./about#swest-org)を更新しました
 * 2018年3月19日: ホームページをリニューアルしました
@@ -64,7 +65,7 @@ description: "SWEST20開催概要: 開催日程: 2018年8月29日(水)〜31日(�
   * [一般社団法人 組込みシステム技術協会(JASA)](http://www.jasa.or.jp/TOP/)
   * [一般社団法人 情報処理学会 システムとLSIの設計技術研究会(SLDM)](http://www.sig-sldm.org/)
   * [一般社団法人 電子情報通信学会](http://www.ieice.org/jpn/)
-  * 下呂市コンベンションビューロー
+  * [下呂市コンベンションビューロー](http://hida-gero.jp/)
   * [ソフトウェア技術者協会（SEA）](http://sea.jp/)
   * [システム開発文書品質研究会（ASDoQ）](https://asdoq.jp/)
   * [NPO法人 軽量Rubyフォーラム](http://forum.mruby.org/)
@@ -77,6 +78,62 @@ description: "SWEST20開催概要: 開催日程: 2018年8月29日(水)〜31日(�
   * [APTJ株式会社](http://www.aptj.co.jp/)
   * [エプソンアヴァシス株式会社](http://avasys.jp/)
   * [ダッソー・システムズ株式会社](https://www.3ds.com/ja/)
+
+
+<!-- ロゴ画像 -->
+<TABLE width="100%" style="width:100%; background-color:#ffffff; text-align:center; border-style:none;">
+<!-- <hr/> -->
+<TR style="border-style:none"><TD colspan=2 width="100%" style="border-style:none; text-align:center; ">
+<IMG alt="----" style="border-radius: none; box-shadow: none; " src="https://swest.toppers.jp/company/gradation440.png" />
+</TD></TR>
+
+<!-- 2口協賛 -->
+<!-- readme
+widthは見た目の面積がだいたい同じになるように調整する
+最大でも440pxとする
+-->
+<TR style="border-style:none"><TD colspan=2 width="100%" style="padding:8px 0 8px; border-style:none; text-align:center; ">
+<a href="https://www.aisin-comcruise.com/" target="_blank"><img style="width: 260px; border-radius: none; box-shadow: none; " src="https://swest.toppers.jp/company/aisin.jpg" alt="アイシン・コムクルーズ株式会社"></a>
+</TD></TR>
+<TR style="border-style:none"><TD colspan=2 width="100%" style="border-style:none; text-align:center; ">
+<IMG alt="----" style="border-radius: none; box-shadow: none; " src="https://swest.toppers.jp/company/gradation440.png" />
+</TD></TR>
+
+
+<!-- 1口協賛 -->
+<!-- readme
+widthは見た目の面積がだいたい同じになるように調整する
+最大でも200pxとする
+-->
+<TR style="border-style:none;">
+
+<TR style="border-style:none;">
+<TD width="50%" style="padding:8px 0 8px; border-style:none; text-align:center;">
+<a href="http://www.aptj.co.jp/" target="_blank"><img style="width:200px; border-radius: none; box-shadow: none; " src="https://swest.toppers.jp/company/APTJ_logo.jpg" alt="APTJ株式会社" /></a>
+</TD>
+<TD width="50%" style="padding:8px 0 8px; border-style:none; text-align:center;">
+<a href="http://avasys.jp/" target="_blank"><img style="width:200px; border-radius: none; box-shadow: none; " src="https://swest.toppers.jp/company/avasys.png" alt="エプソンアヴァシス株式会社" /></a>
+</TD>
+
+</TR><TR style="border-style:none">
+<TD width="50%" style="border-style:none; text-align:center;"><IMG alt="----" src="https://swest.toppers.jp/company/gradation200.png" style="border-radius: none; box-shadow: none; " /></TD>
+<TD width="50%" style="border-style:none; text-align:center;"><IMG alt="----" src="https://swest.toppers.jp/company/gradation200.png" style="border-radius: none; box-shadow: none; " /></TD>
+</TR>
+
+<TR style="border-style:none;">
+<TD width="50%" style="padding:8px 0 8px; border-style:none; text-align:center;">
+<a href="https://www.3ds.com/ja/" target="_blank"><img style="width:200px; border-radius: none; box-shadow: none; " src="https://swest.toppers.jp/company/dassault.jpg" alt="ダッソー・システムズ株式会社" /></a>
+</TD>
+<TD width="50%" style="padding:8px 0 8px; border-style:none; text-align:center;">
+</TD>
+
+</TR><TR style="border-style:none">
+<TD width="50%" style="border-style:none; text-align:center;"><IMG alt="----" src="https://swest.toppers.jp/company/gradation200.png" style="border-radius: none; box-shadow: none; " /></TD>
+</TR>
+
+</TR>
+</TABLE>
+
 
 (2018年5月7日現在)
 
