@@ -34,6 +34,17 @@ description: "SWEST20開催概要: 開催日程: 2018年8月29日(水)〜31日(�
 ## メインテーマ
 ![SWEST20メインテーマ](../images/swest20_theme.png)
 
+<a name="flyer"></a>
 ## ちらし
 
-5月ごろまでに公開予定です！ 追ってアナウンスします。
+SWEST20のちらしを用意しました。A4版両面です。  
+社内掲示や回覧などにご活用いただけますと幸いです。
+
+* [SWEST20ちらし（PDF・2018年5月8日版）](../images/flyer/SWEST20-flyer_rev1.pdf)
+
+
+<img src="../images/flyer/SWEST20-flyer_rev1-omote.jpg" alt="SWEST20ちらし表面" width=300>
+<img src="../images/flyer/SWEST20-flyer_rev1-ura.jpg" alt="SWEST20ちらし裏面" width=300>
+
+
+
