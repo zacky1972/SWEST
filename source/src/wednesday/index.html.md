@@ -49,7 +49,7 @@ SWESTの20年は、システム開発においてモデリングが実用へ向�
 </ul>
 </TD>
 <TD width="20%" style="padding:8px 0 8px; border-style:none; text-align:center;">
-<!--<img src="../images/SWEST20/nishi.jpg" width="100">-->
+<img src="../images/SWEST20/nishi.png" width="100">
 </TD>
 </TR>
 </TABLE>
