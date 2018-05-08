@@ -20,17 +20,39 @@ description: "SWEST20開催概要: 開催日程: 2018年8月29日(水)〜31日(�
 
 ### テーマ１「モデリングの歴史と展望：これからの開発における役割を模索しよう」
 
-* ファシリテータ：久保秋 真（株式会社チェンジビジョン シニア・コンサルタント）
-* 参加希望者へのメッセージ：  
-SWESTの20年は、システム開発においてモデリングが実用へ向かった時代と重なります。その間、われわれはどんな手法と出会い、それらは自分たちの開発に何をもたらしたのでしょうか。みなさんの取り組みを振り返り、モデリングからみた自分たちの開発の歴史を整理してみましょう。  
-そして、まとめからみた、5〜20年後のモデリングのありようについて、展望、妄想、期待を議論し、まとめてみたいと思っています。
+<TABLE width="100%" style="width:100%; background-color:#ffffff; text-align:center; border-style:none;">
+<TR style="border-style:none;">
+<TD width="80%" style="padding:8px 0 8px; border-style:none; text-align:left;">
+<ul>
+<li>ファシリテータ：久保秋 真（株式会社チェンジビジョン シニア・コンサルタント）
+<li>参加希望者へのメッセージ：<br>
+SWESTの20年は、システム開発においてモデリングが実用へ向かった時代と重なります。その間、われわれはどんな手法と出会い、それらは自分たちの開発に何をもたらしたのでしょうか。みなさんの取り組みを振り返り、モデリングからみた自分たちの開発の歴史を整理してみましょう。<br>
+そして、そこから5〜20年後のモデリングのありようについて、展望、妄想、期待を議論し、まとめてみたいと思っています。
+</ul>
+</TD>
+<TD width="20%" style="padding:8px 0 8px; border-style:none; text-align:center;">
+<img src="../images/SWEST20/kuboaki.jpg" width="100">
+</TD>
+</TR>
+</TABLE>
 
 
 ### テーマ２「これまでの組込みシステムの品質保証じゃダメだ、と語り合う会」
 
-* ファシリテータ：西 康晴（電気通信大学）
-* 参加希望者へのメッセージ：  
+<TABLE width="100%" style="width:100%; background-color:#ffffff; text-align:center; border-style:none;">
+<TR style="border-style:none;">
+<TD width="80%" style="padding:8px 0 8px; border-style:none; text-align:left;">
+<ul>
+<li>ファシリテータ：西 康晴（電気通信大学）
+<li>参加希望者へのメッセージ：<br>
 組込みシステムの開発は20年以上発展し、多くの製品が品質保証され出荷されてきました。しかし本当に、きちんと品質保証はできていたのでしょうか。そしてソフトウェアの開発技術や要素技術が進化し、製品そのものがメカエレソフトオプトケミカルなど多様な要素技術を含むようになり、サービス化も進む中で、これまでの品質保証を漫然と続けていってよいのでしょうか。存分に語り合いたいと思います。
+</ul>
+</TD>
+<TD width="20%" style="padding:8px 0 8px; border-style:none; text-align:center;">
+<!--<img src="../images/SWEST20/nishi.jpg" width="100">-->
+</TD>
+</TR>
+</TABLE>
 
 
 ## スケジュール(予定)
