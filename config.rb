@@ -2,7 +2,7 @@ require 'slim'
 require 'csv'
 
 
-preview = false
+preview = true
 
 # allOptions = preview
 allOptions = false
@@ -154,6 +154,10 @@ $navigation = {
 			:name => 'プログラム',
 			:label => 'Program',
 			:url => 'SWEST20/program/',
+		}, {
+			:name => '20周年特別企画＠水曜',
+			:label => 'Wednesday',
+			:url => 'wednesday'
 		}, {
 			:name => '協賛のご案内',
 			:label => 'Sponsor',
