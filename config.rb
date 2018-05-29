@@ -731,10 +731,14 @@ configure :build do
 
   # キャッシュ対策のため，ファイル名にハッシュをつける。ただし，すでにハッシュが付与されているファイルを除く
   # activate :asset_hash, :ignore => /^.*\-[0-9a-f]{8}\..*/
-#  activate :asset_host, :host => 'https://zacky1972.github.io/SWEST'
-#  $site_url = 'https://zacky1972.github.io/SWEST/'
-  activate :asset_host, :host => 'https://swest.toppers.jp'
-  $site_url = 'https://swest.toppers.jp/'
+
+  if preview then
+    activate :asset_host, :host => 'https://zacky1972.github.io/SWEST'
+    $site_url = 'https://zacky1972.github.io/SWEST/'
+  else
+    activate :asset_host, :host => 'https://swest.toppers.jp'
+    $site_url = 'https://swest.toppers.jp/'
+  end
 
   activate :iepab, {
     name: :gulpPost,
