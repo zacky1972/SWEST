@@ -79,6 +79,7 @@ description: "SWEST20開催概要: 開催日程: 2018年8月29日(水)〜31日(�
 
 * 協賛企業 (口数順／五十音順)
   * [アイシン・コムクルーズ株式会社](https://www.aisin-comcruise.com/)
+  * [株式会社アルファプロジェクト](http://www.apnet.co.jp/)
   * [APTJ株式会社](http://www.aptj.co.jp/)
   * [エプソンアヴァシス株式会社](http://avasys.jp/)
   * [ダッソー・システムズ株式会社](https://www.3ds.com/ja/)
@@ -98,6 +99,12 @@ widthは見た目の面積がだいたい同じになるように調整する
 -->
 <TR style="border-style:none"><TD colspan=2 width="100%" style="padding:8px 0 8px; border-style:none; text-align:center; ">
 <a href="https://www.aisin-comcruise.com/" target="_blank"><img style="width: 260px; border-radius: none; box-shadow: none; " src="https://swest.toppers.jp/company/aisin.jpg" alt="アイシン・コムクルーズ株式会社"></a>
+</TD></TR>
+<TR style="border-style:none"><TD colspan=2 width="100%" style="border-style:none; text-align:center; ">
+<IMG alt="----" style="border-radius: none; box-shadow: none; " src="https://swest.toppers.jp/company/gradation440.png" />
+</TD></TR>
+<TR style="border-style:none"><TD colspan=2 width="100%" style="padding:8px 0 8px; border-style:none; text-align:center; ">
+<a href="http://www.apnet.co.jp/" target="_blank"><img style="width: 260px; border-radius: none; box-shadow: none; " src="https://swest.toppers.jp/company/alphaproject.png" alt="株式会社アルファプロジェクト"></a>
 </TD></TR>
 <TR style="border-style:none"><TD colspan=2 width="100%" style="border-style:none; text-align:center; ">
 <IMG alt="----" style="border-radius: none; box-shadow: none; " src="https://swest.toppers.jp/company/gradation440.png" />
