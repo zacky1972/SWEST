@@ -420,7 +420,7 @@ $sessions = {
     ss: {
       date: "8/31(金)",
       time: "14:30～15:40",
-      name: "特別講演",
+      name: "セッションSS: 特別講演",
     }
     closing: {
       date: "8/31(金)",
