@@ -437,6 +437,115 @@ $sessions = {
       title: "カーネルもくもく会",
       fullTitle: "カーネルもくもく会",
     }
+  }, 
+  SWEST20: {
+    page: [
+      'index',
+      'keynote',
+      'interactive',
+      'mokumoku',
+      's1a', 's1b', 's1c', 's1d',
+      's2a', 's2b', 's2c', 's2d',
+      's3a', 's3b', 's3c', 's3d',
+      's4a', 's4b', 's4c', 's4d',
+      's5a', 's5b', 's5c', 's5d',
+      'ss'
+    ],
+    icebreak: {
+      date: "8/30(木)",
+      time: "12:50～13:00",
+      name: "アイスブレイク",
+      title: "アイスブレイク",
+      fullTitle: "アイスブレイク",
+    },
+    opening: {
+      date: "8/30(木)",
+      time: "13:00～13:20",
+      name: "オープニング",
+      title: "オープニング",
+      fullTitle: "オープニング",
+    },
+    keynote: {
+      date: "8/30(木)",
+      time: "13:20～14:50",
+      name: "基調パネルセッション",
+    },
+    shortPresentation: {
+      date: "8/30(木)",
+      time: "14:50～15:00",
+      name: "ショートプレゼンテーション",
+      title: "ショートプレゼンテーション",
+      fullTitle: "ショートプレゼンテーション",
+    },
+    interactive: {
+      date: "8/30(木)",
+      time: "15:00〜17:30",
+      id: "interactive",
+      name: "インタクティブセッション",
+      title: "インタラクティブセッション",
+      fullTitle: "インタラクティブセッション",
+      abst: "研究発表・プロジェクト紹介・自由工作発表・協賛企業デモ展示をポスター形式で行います。"
+    },
+    dinner: {
+      date: "8/30(木)",
+      time: "18:30〜20:30",
+      name: "懇親会",
+      title: "懇親会",
+      fullTitle: "懇親会",
+    },
+    s1: {
+      date: "8/30(木)",
+      time: "21:00〜22:30",
+      name: "セッションS1",
+      title: "夜の分科会",
+    },
+    s2: {
+      date: "8/31(金)",
+      time: "9:00～10:10",
+      name: "セッションS2(70分)",
+    },
+    s3: {
+      date: "8/31(金)",
+      time: "10:25～11:15",
+      name: "セッションS3(50分)",
+    },
+    s4: {
+      date: "8/31(金)",
+      time: "11:30～12:20",
+      name: "セッションS4(50分)",
+    },
+    lunch: {
+      date: "8/31(金)",
+      time: "12:20〜13:00",
+      name: "昼食",
+      title: "昼食",
+      fullTitle: "昼食",
+    },
+    s5: {
+      date: "8/31(金)",
+      time: "13:00～14:10",
+      name: "セッションS5(70分)",
+    },
+    ss: {
+      date: "8/31(金)",
+      time: "14:30～15:40",
+      name: "特別講演",
+    }
+    closing: {
+      date: "8/31(金)",
+      time: "15:45〜16:30",
+      name: "クロージング",
+      title: "クロージング",
+      fullTitle: "クロージング",
+    },
+    mokumoku: {
+      id: "mokumoku",
+      name: "もくもく会",
+      date: "8/31(金)",
+      time: "9:00～15:40",
+      title: "カーネルもくもく会",
+      fullTitle: "カーネルもくもく会",
+    }
   }
 }
 
