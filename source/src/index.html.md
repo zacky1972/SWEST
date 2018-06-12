@@ -55,6 +55,8 @@ description: "SWEST20開催概要: 開催日程: 2018年8月29日(水)〜31日(�
 
 * 日時：2018年8月30日(木) 13:20-14:50
 
+[詳しくはこちら](./SWEST20/program/keynote.html#keynote)
+
 <a name="ss"></a>
 ### 特別講演
 
