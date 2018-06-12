@@ -1,8 +1,11 @@
 .session-section-content
-  .session-date-time #{[session[:date], session[:time],  session[:name]].join(' ')}   .session-section-title #{presenceNowPlanning(session[:title])}
-  - if name.to_sym == :interactive
-  	= partial 'partials/interactive-content', :locals => $navigation.merge({ interactive: interactive })
+  - if session.nil?
   - else
-  	= partial 'partials/session-presenters', :locals => $navigation.merge({ name: name, sessions: sessions, session: getSession(sessions, name) })
-  	= partial 'partials/session-abstract', :locals => $navigation.merge({ name: name, sessions: sessions, session: getSession(sessions, name) })
-  	= partial 'partials/session-section-content-sub', :locals => $navigation.merge({ name: name, sessions: sessions, session: getSession(sessions, name) })
+    .session-date-time #{[session[:date], session[:time],  session[:name]].join(' ')}
+    .session-section-title #{presenceNowPlanning(session[:title])}
+    - if name.to_sym == :interactive && interactive == :enable
+  	  = partial 'partials/interactive-content', :locals => $navigation.merge({ interactive: interactive })
+    - else
+  	  = partial 'partials/session-presenters', :locals => $navigation.merge({ name: name, sessions: sessions, session: getSession(sessions, name) })
+  	  = partial 'partials/session-abstract', :locals => $navigation.merge({ name: name, sessions: sessions, session: getSession(sessions, name) })
+  	  = partial 'partials/session-section-content-sub', :locals => $navigation.merge({ name: name, sessions: sessions, session: getSession(sessions, name) })

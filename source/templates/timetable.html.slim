@@ -1,15 +1,15 @@
 ---
 layout: program
 ---
-- content_for(:title, session.to_sym == :index ? 'SWEST19 プログラム' : "SWEST19 #{$sessions[:SWEST19][session.to_sym][:fullTitle].presence || ''}")
-- content_for(:description, session.to_sym == :index ? 'SWEST19 のプログラムページです。' : ($sessions[:SWEST19][session.to_sym][:recommend].presence || $sessions[:SWEST19][session.to_sym][:abst].presence || '(企画中)').gsub(/<<enter>>/, "<br/>").gsub(/<<equal>>/, "="))
-- content_for(:image, session.to_sym == :index ? (url_for 'images/swestlogo.png') : (url_for "images/#{$sessions[:SWEST19][session.to_sym][:ogp_image]}"))
+- content_for(:title, session.to_sym == :index ? "#{swest} プログラム" : "#{swest} #{$sessions[swest.to_sym][session.to_sym][:fullTitle].presence || ''}")
+- content_for(:description, session.to_sym == :index ? "#{swest} のプログラムページです。" : ($sessions[swest.to_sym][session.to_sym][:recommend].presence || $sessions[swest.to_sym][session.to_sym][:abst].presence || '(企画中)').gsub(/<<enter>>/, "<br/>").gsub(/<<equal>>/, "="))
+- content_for(:image, session.to_sym == :index ? (url_for 'images/swestlogo.png') : (url_for "images/#{$sessions[swest.to_sym][session.to_sym][:ogp_image]}"))
 = partial 'partials/navbar', :locals => nav_add($navigation, 'Program', :active, true)
 .container-fluid
   .row
     = partial 'partials/sidebar', :locals => nav_add($navigation, 'Program', :active, true)
     main.col-12.col-lg-9.pt-3.ml-auto role="main"
       .container
-        = partial 'partials/timetable', :locals => $navigation.merge({ number: 19, sessions: $sessions[:SWEST19], interactive: $interactive[:SWEST19], session: session.to_sym})
-        = partial 'partials/session-contents', :locals => $navigation.merge({ number: 19, sessions: $sessions[:SWEST19], interactive: $interactive[:SWEST19]})
+        = partial 'partials/timetable', :locals => $navigation.merge({ number: number, sessions: $sessions[swest.to_sym], interactive: $interactive[swest.to_sym], session: session.to_sym})
+        = partial 'partials/session-contents', :locals => $navigation.merge({ number: number, sessions: $sessions[swest.to_sym], interactive: $interactive[swest.to_sym]})
       = partial 'partials/footnote', :locals => $navigation
