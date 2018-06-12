@@ -1,7 +1,7 @@
 ---
-title: SWEST20基調パネル
+title: SWEST20プログラム
 navigation: Program
-description: "SWEST20基調パネル: future = SWEST(&you) + dream; ＝＋回目の開催となるSWESTを記念して、これまで基調講演いただいた方々をパネラとしてお招きし、参加者の皆さまと組込みのこれまでとこれからについて、徹底的に議論します！"
+description: "SWEST20開催概要: 開催日程: 2018年8月29日(水)〜31日(金)，開催場所: 下呂温泉 水明館，メインテーマ:　future = SWEST(&you) + dream; 大学の研究者や学生、企業の技術者や管理者、その他、組込みシステムに関わる全ての人達が、徹底的に議論できる場を提供することを主な目的とした合宿型のワークショップです。"
 ---
 # SWEST20 プログラム
 
@@ -40,7 +40,7 @@ description: "SWEST20基調パネル: future = SWEST(&you) + dream; ＝＋回目
 </ul>
 </TD>
 <TD width="20%" style="padding:8px 0 8px; border-style:none; text-align:center;">
-<img src="../images/SWEST20/Takahiro_Nakamura.jpg" width="150">
+<img src="../../images/SWEST20/Takahiro_Nakamura.jpg" width="150">
 </TD>
 </TR>
 </TABLE>
