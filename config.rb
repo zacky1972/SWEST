@@ -310,7 +310,7 @@ $sessions = {
       date: "8/31(金)",
       time: "14:30～15:40",
       name: "セッションSS: 特別講演",
-    }
+    },
     closing: {
       date: "8/31(金)",
       time: "15:45〜16:30",
@@ -447,7 +447,7 @@ $files.each do |key, value|
       id_s = id.to_sym
       unless id_s == :keynote then
         name = 'セッション' + id
-        match = id.match(/(?<session>s[1-5])(?<room>.*)/)
+        match = id.match(/(?<session>s[1-5s])(?<room>.*)/)
         session = match[:session]
         session_s = session.to_sym
         $sessions[key][id_s] = $sessions[key][session_s].dup
