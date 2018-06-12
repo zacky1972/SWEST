@@ -4,11 +4,16 @@
   .timetable
     = link_to :name => 'ESS', :href => ''
     .day-section-heading.session-heading
-      .row
+      /.row
         / = link_to 'ESSのプログラムはこちらを参照ください。', "http://www.sigemb.jp/ESS/2017/組込みシステムシンポジウム2017論文募集/プログラム/"
-        = link_to 'アルバムのページはこちらです。', "https://swest.toppers.jp/SWEST19/album/"
+        / = link_to 'アルバムのページはこちらです。', "https://swest.toppers.jp/SWEST19/album/"
+    - if number == 20
+      .day-heading
+        h3 8/29(水)
+      = link_to '20周年特別企画', $site_url + rootURL + 'wednesday'
     .day-heading
-      h3 8/24(木)
+      h3
+        = sessions[:date][0]
     = partial 'partials/day-section-heading', :locals => $navigation.merge({ name: 'icebreak', sessions: sessions, number: number})
     = partial 'partials/day-section-heading', :locals => $navigation.merge({ name: 'opening', sessions: sessions, number: number})
     = partial 'partials/day-section-heading', :locals => $navigation.merge({ name: 'keynote', sessions: sessions, number: number})
@@ -30,7 +35,8 @@
         = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 's1c', sessions: sessions, interactive: interactive, number: number})
     - elsif session == :s1d
         = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 's1d', sessions: sessions, interactive: interactive, number: number})
-    h3 8/25(金)
+    h3
+      = sessions[:date][1]
     = partial 'partials/day-section-heading', :locals => $navigation.merge({ name: 'mokumoku', sessions: sessions, number: number})
     - if session == :mokumoku
         = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 'mokumoku', sessions: sessions, interactive: interactive, number: number})

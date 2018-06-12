@@ -116,6 +116,10 @@ $files = {
 
 $sessions = {
   SWEST19: {
+    date: [
+      "8/24(木)",
+      "8/25(金)",
+    ],
     page: [
       'index',
       'keynote',
@@ -217,8 +221,12 @@ $sessions = {
       title: "カーネルもくもく会",
       fullTitle: "カーネルもくもく会",
     }
-  }, 
+  },
   SWEST20: {
+    date: [
+      "8/30(木)",
+      "8/31(金)",
+    ],
     page: [
       'index',
       'keynote',
@@ -432,8 +440,8 @@ $sessions = {
       name: "もくもく会",
       date: "8/31(金)",
       time: "9:00～15:40",
-      title: "カーネルもくもく会",
-      fullTitle: "カーネルもくもく会",
+      title: "もくもく会",
+      fullTitle: "もくもく会",
     }
   }
 }
@@ -481,7 +489,7 @@ end
 
 $sessions.each do |key, value|
   value.each_key do |id_s|
-    unless id_s == :page then
+    unless id_s == :page || id_s == :date then
       name = $sessions[key][id_s][:name]
       title = $sessions[key][id_s][:title]
       unless name.nil? then
