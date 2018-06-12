@@ -108,7 +108,8 @@ CSV.send(:prepend, CSVEncodingExtension)
 # lecture フォルダのデータ
 
 $files = {
-  SWEST19: "program-data/SWEST19/lecture/logs/{keynote,s{1,2,3,4,5}*}.dat"
+  SWEST19: "program-data/SWEST19/lecture/logs/{keynote,s{1,2,3,4,5}*}.dat",
+  SWEST20: "program-data/SWEST20/lecture/logs/{keynote,s{1,2,3,4,5,s}*}.dat"
 }
 
 # セッションデータ
