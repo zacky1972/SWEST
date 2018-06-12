@@ -259,7 +259,7 @@ $sessions = {
     },
     shortPresentation: {
       date: "8/24(木)",
-      time: "13:20～14:40",
+      time: "14:40～15:00",
       name: "ショートプレゼンテーション",
       title: "ショートプレゼンテーション",
       fullTitle: "ショートプレゼンテーション",
