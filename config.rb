@@ -2,7 +2,7 @@ require 'slim'
 require 'csv'
 
 
-preview = false
+preview = true
 
 # allOptions = preview
 allOptions = false
@@ -643,10 +643,10 @@ end
 
 # 動的ページの作成
 
-[19].each do |number|
+[19, 20].each do |number|
   swest = "SWEST#{number.to_s}"
   $sessions[swest.to_sym][:page].each do |name|
-    proxy "/#{swest}/program/#{name}.html", "/templates/timetable.html", locals: { session: name }, ignore: true
+    proxy "/#{swest}/program/#{name}.html", "/templates/timetable.html", locals: { session: name,  swest: swest, number: number}, ignore: true
   end
 end
 
