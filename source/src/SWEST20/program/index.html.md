@@ -45,7 +45,7 @@ description: "SWEST20基調パネル: future = SWEST(&you) + dream; ＝＋回目
 </TR>
 </TABLE>
 
-<p> </p>
+<p>&nbsp;</p>
 
 <a name="early"></a>
 # チュートリアル・分科会(早期版)
