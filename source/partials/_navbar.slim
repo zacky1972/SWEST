@@ -18,7 +18,7 @@ header#header
           ul.navbar-nav.mr-auto.d-block.d-lg-none
             .row
               - items.each do |item|
-                li.nav-item.col-sm-6 class="#{(item[:active].nil? ? '' : 'active')} #{(item[:new] || (item[:label].eql?('Proposal') && proposal == :enable) || (item[:label].eql?('Interactive') && interactive == :enable) || (item[:label].eql?('Regist') && regist == :enable)) ? 'new' : ''}"
+                li.nav-item.col-sm-6 class="#{(item[:active].nil? ? '' : 'active')} #{item[:new] ? 'new' : ''}"
                   - if item[:dropdown].nil?
                     - if registOption == :always || item[:label] !~ /Proposal|Interactive|Regist/ || (item[:label].eql?('Proposal') && proposal == :enable) || (item[:label].eql?('Interactive') && interactive == :enable) || (item[:label].eql?('Regist') && regist == :enable)
                     = link_to item[:name], $site_url + rootURL + item[:url], :class => 'nav-link'

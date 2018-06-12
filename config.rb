@@ -2,7 +2,7 @@ require 'slim'
 require 'csv'
 
 
-preview = true
+preview = false
 
 # allOptions = preview
 allOptions = false
