@@ -2,12 +2,12 @@ require 'slim'
 require 'csv'
 
 
-preview = false
+preview = true
 
 # allOptions = preview
 allOptions = false
 
-defaultOptions = "p0-s2-i1-r0-R1-S0"
+defaultOptions = "p1-s2-i1-r0-R1-S0"
 
 buildBeforeDeploy = true
 
@@ -154,10 +154,12 @@ $navigation = {
 			:name => 'プログラム',
 			:label => 'Program',
 			:url => 'SWEST20/program/',
+      :new => true,
 		}, {
 			:name => '20周年特別企画＠水曜',
 			:label => 'Wednesday',
-			:url => 'wednesday'
+			:url => 'wednesday',
+      :new => true,
 		}, {
 			:name => '協賛のご案内',
 			:label => 'Sponsor',
@@ -175,7 +177,8 @@ $navigation = {
       :name => 'インタラクティブセッション募集',
       :label => 'Interactive',
       :url => 'interactive',
-      :regist => true
+      :regist => true,
+      :new => true,
     }, {
       :name => '参加申込み',
       :label => 'Regist',
