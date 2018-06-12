@@ -23,8 +23,29 @@ description: "SWEST20基調パネル: future = SWEST(&you) + dream; ＝＋回目
 
 * 日時：2018年8月30日(木) 13:20-14:50
 
-![SWEST20メインテーマ](../images/swest20_theme.png)
+<a name="ss"></a>
+## 特別講演
 
+月面探査コンテストGoogle Lunar XPRIZEに挑戦されたHAKUTOの運営母体である株式会社ispaceの中村貴裕様をお招きし、月面探査への挑戦の経験談とその探査機の開発話、宇宙ビジネスの今後の展望と組込みシステム分野への期待を語っていただきます！
+
+<TABLE width="100%" style="width:100%; background-color:#ffffff; text-align:center; border-style:none;">
+<TR style="border-style:none;">
+<TD width="80%" style="padding:8px 0 8px; border-style:none; text-align:left;">
+<ul>
+<li>タイトル：宇宙を人類の生活圏に 〜日本発の民間月面探査への挑戦〜
+<li>講演者　：中村 貴裕（株式会社ispace 取締役＆COO）
+<li>概要：<br>
+「Expand our planet. Expand our future. 〜人類の生活圏を宇宙に広げ、持続性のある世界へ〜」をビジョンに掲げる宇宙スタートアップ企業ispaceの月面資源開発への取組をご紹介します。
+<li>日時：2018年8月31日(金) 14:30-15:40
+</ul>
+</TD>
+<TD width="20%" style="padding:8px 0 8px; border-style:none; text-align:center;">
+<img src="../images/SWEST20/Takahiro_Nakamura.jpg" width="150">
+</TD>
+</TR>
+</TABLE>
+
+<p> </p>
 
 <a name="early"></a>
 # チュートリアル・分科会(早期版)
