@@ -359,7 +359,7 @@ $sessions = {
     keynote: {
       date: "8/30(木)",
       time: "13:20～14:50",
-      name: "基調パネルセッション",
+      name: "基調パネル",
     },
     shortPresentation: {
       date: "8/30(木)",
