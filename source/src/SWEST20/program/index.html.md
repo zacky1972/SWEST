@@ -11,17 +11,21 @@ description: "SWEST20開催概要: 開催日程: 2018年8月29日(水)〜31日(�
 * **テーマ:** `future = SWEST(&you) + dream;`  
 **“組込み”**の関数定義と機能を議論して、**“あなた”**が抱く**“夢”**とともに語り合うと、どのような**“未来”**を拓けるでしょう？  
 ＝＋回目の開催となるSWESTを記念して、これまで基調講演いただいた方々をパネラとしてお招きし、参加者の皆さまと組込みのこれまでとこれからについて、徹底的に議論します！
-
 * パネラ
   * 平鍋 健児（永和システムマネジメント、チェンジビジョン）
   * 高田 広章（名古屋大学）
   * まつもと ゆきひろ（Rubyアソシエーション）
   * 木谷 友哉（静岡大学）
-
 * コーディネータ
   * 高瀬 英希（京都大学）
-
 * 日時：2018年8月30日(木) 13:20-14:50
+
+<img src="../../images/SWEST20/hiranabe.png" width="150">
+<img src="../../images/SWEST20/hiro.jpg" width="150">
+<img src="../../images/SWEST20/matz.jpg" width="150">
+<img src="../../images/SWEST20/kitani.jpg" width="150">
+<img src="../../images/SWEST20/takase.jpg" width="150">
+
 
 <a name="ss"></a>
 ## 特別講演
