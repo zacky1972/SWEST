@@ -29,6 +29,12 @@ description: "SWEST20開催概要: 開催日程: 2018年8月29日(水)〜31日(�
 
 * 日時：2018年8月30日(木) 13:20-14:50
 
+<img src="../../images/SWEST20/hiranabe.png" width="150">
+<img src="../../images/SWEST20/hiro.jpg" width="150">
+<img src="../../images/SWEST20/matz.jpg" width="150">
+<img src="../../images/SWEST20/kitani.jpg" width="150">
+<img src="../../images/SWEST20/takase.jpg" width="150">
+
 [詳しくはこちら](./SWEST20/program/keynote.html#keynote)
 
 <a name="ss"></a>
