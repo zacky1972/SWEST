@@ -74,7 +74,7 @@ gulp.task 'pre:jpg100', () ->
 gulp.task 'pre:jpg', ['pre:jpg300', 'pre:jpg200', 'pre:jpg100']
 
 gulp.task 'build:jpg', () ->
-  gulp.src 'program-data/images/*.{jpg,JPG,jpeg,JPEG}'
+  gulp.src 'program-data/images/**/*.{jpg,JPG,jpeg,JPEG}'
     .pipe gulp.dest('build/images/')
 
 gulp.task 'pre:png300', () ->
@@ -101,7 +101,7 @@ gulp.task 'pre:png100', () ->
 gulp.task 'pre:png', ['pre:png300', 'pre:png200', 'pre:png100']
 
 gulp.task 'build:png', () ->
-  gulp.src 'program-data/images/*.{png,PNG}'
+  gulp.src 'program-data/images/**/*.{png,PNG}'
     .pipe gulp.dest('build/images/')
 
 gulp.task 'pre:empty300', () ->
@@ -127,7 +127,52 @@ gulp.task 'pre:empty100', () ->
 
 gulp.task 'pre:empty', ['pre:empty300', 'pre:empty200', 'pre:empty100']
 
-gulp.task 'pre:images', ['pre:empty', 'pre:jpg', 'pre:png']
+gulp.task 'pre:SWEST20-jpg300', () ->
+  gulp.src 'source/images/SWEST20/*.{jpg,JPG,jpeg,JPEG}'
+    .pipe rename({extname: '.300.jpg', dirname:''})
+    .pipe imageResize(resizeOptions300)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWEST20/')
+
+gulp.task 'pre:SWEST20-jpg200', () ->
+  gulp.src 'source/images/SWEST20/*.{jpg,JPG,jpeg,JPEG}'
+    .pipe rename({extname: '.200.jpg', dirname:''})
+    .pipe imageResize(resizeOptions200)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWEST20/')
+
+gulp.task 'pre:SWEST20-jpg100', () ->
+  gulp.src 'source/images/SWEST20/*.{jpg,JPG,jpeg,JPEG}'
+    .pipe rename({extname: '.100.jpg', dirname:''})
+    .pipe imageResize(resizeOptions100)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWEST20/')
+
+gulp.task 'pre:SWEST20-png300', () ->
+  gulp.src 'source/images/SWEST20/*.{png,PNG}'
+    .pipe rename({extname: '.300.png', dirname:''})
+    .pipe imageResize(resizeOptions300)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWEST20/')
+
+gulp.task 'pre:SWEST20-png200', () ->
+  gulp.src 'source/images/SWEST20/*.{png,PNG}'
+    .pipe rename({extname: '.200.png', dirname:''})
+    .pipe imageResize(resizeOptions300)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWEST20/')
+
+gulp.task 'pre:SWEST20-png100', () ->
+  gulp.src 'source/images/SWEST20/*.{png,PNG}'
+    .pipe rename({extname: '.100.png', dirname:''})
+    .pipe imageResize(resizeOptions100)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWEST20/')
+
+gulp.task 'pre:SWEST20', ['pre:SWEST20-jpg100', 'pre:SWEST20-jpg200', 'pre:SWEST20-jpg300', 'pre:SWEST20-png100', 'pre:SWEST20-png200', 'pre:SWEST20-png300']
+
+gulp.task 'pre:images', ['pre:empty', 'pre:jpg', 'pre:png', 'pre:SWEST20']
+
 
 gulp.task 'build:images', ['build:jpg', 'build:png']
 

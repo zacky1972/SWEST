@@ -1,6 +1,6 @@
 require 'slim'
 require 'csv'
-
+require 'redcarpet'
 
 preview = true
 
@@ -720,7 +720,8 @@ helpers do
   end
 
   def addSize2Pathname path, size
-    "#{Pathname(path).basename('.*')}.#{size.to_s}#{Pathname(path).extname}"
+    p = Pathname(path)
+    "#{p.dirname}/#{p.basename('.*')}.#{size.to_s}#{p.extname}"
   end
 
   def link2SessionTitle sessions, name, id, number
@@ -752,8 +753,14 @@ helpers do
   end
 
   def srcsetPresenter session, picNumber
-    (3..1).map { |factor|
+    (1..3).to_a.reverse.map { |factor|
       "#{presenterPicture(session, picNumber, "#{factor}00".to_i)} #{factor}x"
+    }.join(', ')
+  end
+
+  def srcsetKeyface image
+    (1..3).to_a.reverse.map { |factor|
+      "#{addSize2Pathname(image_path(image), "#{factor}00".to_i)} #{factor}x"
     }.join(', ')
   end
 
