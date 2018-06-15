@@ -1,13 +1,15 @@
 .session-presenters
   ol
-    - (1..5).map do |number|
-      - if session[('name' + number.to_s).to_sym].present?
+    - (1..5).map do |num|
+      - if session[('name' + num.to_s).to_sym].present?
         li
           .session-presenter
             .session-presenter-picture
-              img src="#{presenterPicture(session, picNumber(number), 100)}" srcset=("#{srcsetPresenter(session, picNumber(number))}")
+              img src="#{presenterPicture(session, picNumber(num), 100)}" srcset=("#{srcsetPresenter(session, picNumber(num))}")
             div
               p
-                .session-presenter-name #{session[symAdd('name', number)]}
+                - if number >= 20
+                  .session-presenter-kind #{session[symAdd('inst_kind', num)]} &nbsp;
+                .session-presenter-name #{session[symAdd('name', num)]}
               p
-                .session-presenter-affiliation #{session[symAdd('affi', number)]}
+                .session-presenter-affiliation #{session[symAdd('affi', num)]}
