@@ -130,36 +130,20 @@ markdown:
 
 .row.align-items-center
   .col-1.col-lg-2
-  .col-10.col-lg-8
-    .img-logo
-      = image_tag("https://swest.toppers.jp/company/gradation440.png", {width: "100%"})
-      = link_to image_tag("https://swest.toppers.jp/company/aisin.jpg", {width: "100%", alt: "アイシン・コムクルーズ株式会社"}), "https://www.aisin-comcruise.com/", {target: "_blank"}
-      = image_tag("https://swest.toppers.jp/company/gradation440.png", {width: "100%"})
+  = partial 'partials/logo-2', :locals => { image: "https://swest.toppers.jp/company/aisin.jpg", text: "アイシン・コムクルーズ株式会社", url: "https://www.aisin-comcruise.com/" }
   .col-1.col-lg-2
 .row.align-items-center
   .col-1.col-lg-2
-  .col-10.col-lg-8
-    .img-logo
-      = link_to image_tag("https://swest.toppers.jp/company/alphaproject.png", {width: "100%", alt: "株式会社アルファプロジェクト"}), "http://www.apnet.co.jp/", {target: "_blank"}
-      = image_tag("https://swest.toppers.jp/company/gradation440.png", {width: "100%"})
+  = partial 'partials/logo-2', :locals => { image: "https://swest.toppers.jp/company/alphaproject.png", text: "株式会社アルファプロジェクト", url: "http://www.apnet.co.jp/" }
   .col-1.col-lg-2
 .row.align-items-center
   .col-1.col-lg-2
-  .col-5.col-lg-4
-    .img-logo
-      = link_to image_tag("https://swest.toppers.jp/company/APTJ_logo.jpg", {width: "100%", alt: "APTJ株式会社"}), "http://www.aptj.co.jp/", {target: "_blank"}
-      = image_tag("https://swest.toppers.jp/company/gradation440.png", {width: "100%"})
-  .col-5.col-lg-4
-    .img-logo
-      = link_to image_tag("https://swest.toppers.jp/company/avasys.png", {width: "100%", alt: "エプソンアヴァシス株式会社"}), "http://avasys.jp/", {target: "_blank"}
-      = image_tag("https://swest.toppers.jp/company/gradation440.png", {width: "100%"})
+  = partial 'partials/logo-1', :locals => { image: "https://swest.toppers.jp/company/APTJ_logo.jpg", text: "APTJ株式会社", url: "http://www.aptj.co.jp/" }
+  = partial 'partials/logo-1', :locals => { image: "https://swest.toppers.jp/company/avasys.png", text: "エプソンアヴァシス株式会社", url: "http://avasys.jp/" }
   .col-1.col-lg-2
 .row.align-items-center
   .col-1.col-lg-2
-  .col-5.col-lg-4
-    .img-logo
-      = link_to image_tag("https://swest.toppers.jp/company/dassault.jpg", {width: "100%", alt: "ダッソー・システムズ株式会社"}), "https://www.3ds.com/ja/", {target: "_blank"}
-      = image_tag("https://swest.toppers.jp/company/gradation440.png", {width: "100%"})
+  = partial 'partials/logo-1', :locals => { image: "https://swest.toppers.jp/company/dassault.jpg", text: "ダッソー・システムズ株式会社", url: "https://www.3ds.com/ja/" }
   .col-1.col-lg-2
 
 markdown:
