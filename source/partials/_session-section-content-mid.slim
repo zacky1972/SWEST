@@ -7,6 +7,7 @@
   	  = partial 'partials/interactive-content', :locals => $navigation.merge({ interactive: interactive })
     - else
   	  = partial 'partials/session-presenters', :locals => $navigation.merge({ name: name, sessions: sessions, session: getSession(sessions, name) })
+      p &nbsp;
   	  = partial 'partials/session-abstract', :locals => $navigation.merge({ name: name, sessions: sessions, session: getSession(sessions, name) })
       p &nbsp;
   	  = partial 'partials/session-section-content-sub', :locals => $navigation.merge({ name: name, sessions: sessions, session: getSession(sessions, name) })
