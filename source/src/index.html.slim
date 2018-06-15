@@ -8,10 +8,6 @@ markdown:
 
   ## 企画内容
 
-  ### 20周年特別企画
-
-  20周年特別企画を8月29日(水)に開催します。詳しくは[SWEST20特別企画(水曜)](./wednesday)をご覧ください。
-
 a name="panel"
 markdown:
   ### 基調パネルセッション
@@ -33,11 +29,11 @@ markdown:
 
 
 .row
-  = partial 'partials/keyface', :locals => { image: 'SWEST20/hiranabe.png' }
-  = partial 'partials/keyface', :locals => { image: 'SWEST20/hiro.jpg' }
-  = partial 'partials/keyface', :locals => { image: 'SWEST20/matz.jpg' }
-  = partial 'partials/keyface', :locals => { image: 'SWEST20/kitani.jpg' }
-  = partial 'partials/keyface', :locals => { image: 'SWEST20/takase.jpg' }
+  = partial 'partials/keyface', :locals => { image: 'SWEST20/hiranabe.png', text: '平鍋 健児（永和システムマネジメント、チェンジビジョン）'}
+  = partial 'partials/keyface', :locals => { image: 'SWEST20/hiro.jpg', text: '高田 広章（名古屋大学）' }
+  = partial 'partials/keyface', :locals => { image: 'SWEST20/matz.jpg', text: 'まつもと ゆきひろ（Rubyアソシエーション）' }
+  = partial 'partials/keyface', :locals => { image: 'SWEST20/kitani.jpg', text: '木谷 友哉（静岡大学）' }
+  = partial 'partials/keyface', :locals => { image: 'SWEST20/takase.jpg', text: '高瀬 英希（京都大学）' }
 
 p
   = link_to '詳しくはこちら', $site_url + "SWEST20/program/keynote.html#keynote"
@@ -58,7 +54,16 @@ p 月面探査コンテストGoogle Lunar XPRIZEに挑戦されたHAKUTOの運�
           br
           span 「Expand our planet. Expand our future. 〜人類の生活圏を宇宙に広げ、持続性のある世界へ〜」をビジョンに掲げる宇宙スタートアップ企業ispaceの月面資源開発への取組をご紹介します。
         li 日時：2018年8月31日(金) 14:30-15:40
-  = partial 'partials/keyface', :locals => { image: 'SWEST20/Takahiro_Nakamura.jpg' }
+  = partial 'partials/keyface', :locals => { image: 'SWEST20/Takahiro_Nakamura.jpg', text: '中村 貴裕（株式会社ispace 取締役＆COO）' }
+
+markdown:
+  ### 20周年特別企画＠水曜
+
+  20回目のSWEST開催を記念した特別企画として、8月29日(水)に「○○のこれまでとこれからを語り合う会」を開催します。詳しくは[SWEST20特別企画(水曜)](./wednesday)をご覧ください。
+
+.row
+  = partial 'partials/keyface', :locals => { image: 'SWEST20/kuboaki.jpg', text: '久保秋 真（株式会社チェンジビジョン シニア・コンサルタント）' }
+  = partial 'partials/keyface', :locals => { image: 'SWEST20/nishi.png', text: '西 康晴（電気通信大学）' }
 
 markdown:
   ## SWEST20開催概要
