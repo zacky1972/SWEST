@@ -85,4 +85,8 @@
         = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 's5c', sessions: sessions, interactive: interactive, number: number})
     - elsif session == :s5d
         = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 's5d', sessions: sessions, interactive: interactive, number: number})
+    - if number == 20
+      = partial 'partials/day-section-heading', :locals => $navigation.merge({ name: 'ss', sessions: sessions, number: number})
+      - if session == :ss
+        = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 'ss', sessions: sessions, interactive: interactive, number: number})        
     = partial 'partials/day-section-heading', :locals => $navigation.merge({ name: 'closing', sessions: sessions, number: number})
