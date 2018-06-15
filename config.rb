@@ -319,7 +319,7 @@ $sessions = {
     ss: {
       date: "8/31(金)",
       time: "14:30～15:40",
-      name: "セッションSS: 特別講演",
+      name: "特別講演",
     },
     closing: {
       date: "8/31(金)",
@@ -335,6 +335,7 @@ $sessions = {
       time: "9:00～15:40",
       title: "もくもく会",
       fullTitle: "もくもく会",
+      abst: "SWESTの2日目にもくもく部屋を用意しています．<br/>使い方は自由です．<br/>セッションのハンズオン実習で進みきれなかったところや延長戦をやりたい！とか，インタラクティブセッションの自由工作品を見て開発意欲が湧いてきたからひたすら開発に励みたい！とか，もくもくとは言ってるけどフリーな議論で盛り上がりたい！も大歓迎です．"
     }
   }
 }
@@ -346,7 +347,7 @@ $files.each do |key, value|
     begin
       id = path.match(/.*\/([^\/].*)\.dat/)[1]
       id_s = id.to_sym
-      unless id_s == :keynote then
+      unless id_s == :keynote || id_s == :ss then
         name = 'セッション' + id
         match = id.match(/(?<session>s[1-5s])(?<room>.*)/)
         session = match[:session]
