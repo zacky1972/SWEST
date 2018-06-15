@@ -112,6 +112,8 @@ $files = {
   SWEST20: "program-data/SWEST20/lecture/logs/{keynote,s{1,2,3,4,5,s}*}.dat"
 }
 
+$current = 20
+
 # セッションデータ
 
 $sessions = {
