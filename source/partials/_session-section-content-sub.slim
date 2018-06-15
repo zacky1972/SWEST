@@ -1,5 +1,6 @@
 - unless number == $current
   - unless session[:publish].nil?
+    p &nbsp;
     - if session[:publish].eql?('予稿集用ファイルを公開')
       = link_to "セッション資料", $site_url + rootURL + "/pdfs/#{name}_proceeding.pdf", class: "btn btn-primary"
     - elsif session[:publish].eql?('一般公開用ファイルを公開')
