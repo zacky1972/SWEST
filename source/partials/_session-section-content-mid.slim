@@ -1,5 +1,6 @@
 .session-section-content
-  .session-date-time #{[session[:date], session[:time],  session[:name]].join(' ')}   .session-section-title #{presenceNowPlanning(session[:title])}
+  .session-date-time #{[session[:date], session[:time],  session[:name]].join(' ')}
+  .session-section-title #{presenceNowPlanning(session[:title])}
   - if name.to_sym == :interactive
   	= partial 'partials/interactive-content', :locals => $navigation.merge({ interactive: interactive })
   - else
