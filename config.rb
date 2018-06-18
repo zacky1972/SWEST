@@ -667,7 +667,7 @@ helpers do
   end
 
   def textConvert message
-    url2link(message.gsub(/<<enter>>/, "<br/>").gsub(/<<equal>>/, "="))
+    url2link(message.gsub(/<<enter>>/, "<br/>").gsub(/<<equal>>/, "=").gsub(/<<squot>>/, "&#39;").gusb(/<<dquot>>/, "&quot;"))
   end
 end
 
