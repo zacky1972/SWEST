@@ -82,7 +82,9 @@ description: "SWEST20開催概要: 開催日程: 2018年8月29日(水)〜31日(�
 * 協賛企業 (口数順／五十音順)
   * [アイシン・コムクルーズ株式会社](https://www.aisin-comcruise.com/)
   * [株式会社アルファプロジェクト](http://www.apnet.co.jp/)
+  * [株式会社ヴィッツ](http://www.witz-inc.co.jp/)
   * [APTJ株式会社](http://www.aptj.co.jp/)
+  * [wolfSSL Inc,](https://www.wolfssl.com/)
   * [エプソンアヴァシス株式会社](http://avasys.jp/)
   * [ダッソー・システムズ株式会社](https://www.3ds.com/ja/)
 
@@ -111,6 +113,12 @@ widthは見た目の面積がだいたい同じになるように調整する
 <TR style="border-style:none"><TD colspan=2 width="100%" style="border-style:none; text-align:center; ">
 <IMG alt="----" style="border-radius: none; box-shadow: none; " src="https://swest.toppers.jp/company/gradation440.png" />
 </TD></TR>
+<TR style="border-style:none"><TD colspan=2 width="100%" style="padding:8px 0 8px; border-style:none; text-align:center; ">
+<a href="http://www.witz-inc.co.jp/" target="_blank"><img style="width: 260px; border-radius: none; box-shadow: none; " src="https://swest.toppers.jp/company/witz.jpg" alt="株式会社ヴィッツ"></a>
+</TD></TR>
+<TR style="border-style:none"><TD colspan=2 width="100%" style="border-style:none; text-align:center; ">
+<IMG alt="----" style="border-radius: none; box-shadow: none; " src="https://swest.toppers.jp/company/gradation440.png" />
+</TD></TR>
 
 
 <!-- 1口協賛 -->
@@ -124,8 +132,8 @@ widthは見た目の面積がだいたい同じになるように調整する
 <TD width="50%" style="padding:8px 0 8px; border-style:none; text-align:center;">
 <a href="http://www.aptj.co.jp/" target="_blank"><img style="width:200px; border-radius: none; box-shadow: none; " src="https://swest.toppers.jp/company/APTJ_logo.jpg" alt="APTJ株式会社" /></a>
 </TD>
-<TD width="50%" style="padding:8px 0 8px; border-style:none; text-align:center;">
-<a href="http://avasys.jp/" target="_blank"><img style="width:200px; border-radius: none; box-shadow: none; " src="https://swest.toppers.jp/company/avasys.png" alt="エプソンアヴァシス株式会社" /></a>
+<TD width="40%" style="padding:8px 0 8px; border-style:none; text-align:center;">
+<a href="https://wolfssl.com/" target="_blank"><img style="width:200px; border-radius: none; box-shadow: none; " src="https://swest.toppers.jp/company/wolfssl.jpg" alt="wolfSSL Inc." /></a>
 </TD>
 
 </TR><TR style="border-style:none">
@@ -135,6 +143,9 @@ widthは見た目の面積がだいたい同じになるように調整する
 
 <TR style="border-style:none;">
 <TD width="50%" style="padding:8px 0 8px; border-style:none; text-align:center;">
+<a href="http://avasys.jp/" target="_blank"><img style="width:200px; border-radius: none; box-shadow: none; " src="https://swest.toppers.jp/company/avasys.png" alt="エプソンアヴァシス株式会社" /></a>
+</TD>
+<TD width="50%" style="padding:8px 0 8px; border-style:none; text-align:center;">
 <a href="https://www.3ds.com/ja/" target="_blank"><img style="width:200px; border-radius: none; box-shadow: none; " src="https://swest.toppers.jp/company/dassault.jpg" alt="ダッソー・システムズ株式会社" /></a>
 </TD>
 <TD width="50%" style="padding:8px 0 8px; border-style:none; text-align:center;">
@@ -142,13 +153,14 @@ widthは見た目の面積がだいたい同じになるように調整する
 
 </TR><TR style="border-style:none">
 <TD width="50%" style="border-style:none; text-align:center;"><IMG alt="----" src="https://swest.toppers.jp/company/gradation200.png" style="border-radius: none; box-shadow: none; " /></TD>
+<TD width="50%" style="border-style:none; text-align:center;"><IMG alt="----" src="https://swest.toppers.jp/company/gradation200.png" style="border-radius: none; box-shadow: none; " /></TD>
 </TR>
 
 </TR>
 </TABLE>
 
 
-(2018年6月4日現在)
+(2018年6月20日現在)
 
 SWEST実行委員会では、組込みシステム分野で活躍されている企業などに、SWESTへの協賛をお願いしています。組込みシステム業界全体の発展に寄与するというお気持ちでご協賛いただければ幸いです。
 
