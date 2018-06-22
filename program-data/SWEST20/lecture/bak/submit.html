@@ -1,0 +1,588 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta http-equiv="pragma" content="non-cache">
+<meta http-equiv="cache-control" content="non-cache">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="Content-Type" content="text/html; charset = UTF-8" />
+<link rel="StyleSheet" href="./default.css" type="text/css">
+<script type="text/javascript" src="./submit.js"></script>
+<title>SWEST プログラム管理フォーム</title>
+<style>
+/* body { -->
+<!-- overflow: hidden; -->
+<!-- background-color: #000000; -->
+<!-- } -->*/
+.msg {
+  display: none;
+  background-color: #fdd;
+  padding: 3px 10px;
+  vertical-align: baseline;
+  color: #f00;
+}
+.msg:before {
+  content: '[!] ';
+}
+</style>
+</head> 
+
+<script type="text/javascript">
+</script>
+
+<body onLoad="init();return treeFunc('instructor1')">
+
+<h2 class="title">SWEST20 プログラム管理フォーム</h2>
+
+<div id="wrap">
+<div id="sideWrap">
+<div align="center">
+  <font size=2>
+  右クリックから"リンク先を保存"<br>
+  </font>
+  <a href="./logs/download.csv" >一括ダウンロード</a><br><br>
+  <a href="./logs/secretary.csv" >事務局用ダウンロード</a><br><br>
+  編集する情報を選択 <br>
+  <!--サイドメニューを追加するだけで、プログラムは自動的に追加されます-->
+  S1: 基調講演<br>
+  <a href="#keynote" onclick="return send_get_fname('keynote')">基調講演の編集</a><br>
+  S1: 夜の分科会<br>
+  <a href="#s1a" onclick="return send_get_fname('s1a')">s1aの編集</a><br>
+  <a href="#s1b" onclick="return send_get_fname('s1b')">s1bの編集</a><br>
+  <a href="#s1c" onclick="return send_get_fname('s1c')">s1cの編集</a><br>
+  <a href="#s1d" onclick="return send_get_fname('s1d')">s1dの編集</a><br>
+  S2: 午前1のセッション<br>
+  <a href="#s2a" onclick="return send_get_fname('s2a')">s2aの編集</a><br>
+  <a href="#s2b" onclick="return send_get_fname('s2b')">s2bの編集</a><br>
+  <a href="#s2c" onclick="return send_get_fname('s2c')">s2cの編集</a><br>
+  <a href="#s2d" onclick="return send_get_fname('s2d')">s2dの編集</a><br>
+  S3: 午前2のセッション<br>
+  <a href="#s3a" onclick="return send_get_fname('s3a')">s3aの編集</a><br>
+  <a href="#s3b" onclick="return send_get_fname('s3b')">s3bの編集</a><br>
+  <a href="#s3c" onclick="return send_get_fname('s3c')">s3cの編集</a><br>
+  <a href="#s3d" onclick="return send_get_fname('s3d')">s3dの編集</a><br>
+  S4: 午前3のセッション<br>
+  <a href="#s4a" onclick="return send_get_fname('s4a')">s4aの編集</a><br>
+  <a href="#s4b" onclick="return send_get_fname('s4b')">s4bの編集</a><br>
+  <a href="#s4c" onclick="return send_get_fname('s4c')">s4cの編集</a><br>
+  <a href="#s4d" onclick="return send_get_fname('s4d')">s4dの編集</a><br>
+  S5: 午後1のセッション<br>
+  <a href="#s5a" onclick="return send_get_fname('s5a')">s5aの編集</a><br>
+  <a href="#s5b" onclick="return send_get_fname('s5b')">s5bの編集</a><br>
+  <a href="#s5c" onclick="return send_get_fname('s5c')">s5cの編集</a><br>
+  <a href="#s5d" onclick="return send_get_fname('s5d')">s5dの編集</a><br>
+  SS: 特別講演<br>
+  <a href="#sss" onclick="return send_get_fname('sss')">sssの編集</a><br>
+  <br>
+  <br>
+</div><!-- center -->
+</div><!-- sideWrap -->
+
+<div id="mainWrap">
+<form name="submit">
+  <h2><p id="displayName" float="left">未選択</p></h2>
+
+  <!-- 保存ボタン -->
+  <table border="0" cellpadding="0" cellspacing="0" align="center">
+  <tr><td align="center">
+    <input type="button" value="保存" onclick="return mysubmit()" style="WIDTH: 200px; HEIGHT: 20px"><span class="msg"></span>
+  </td></tr>
+  </table>
+  <br>
+
+  <table border="0" width="600" align="center">
+  <table border="0" cellpadding="0" cellspacing="0" align="center">
+  <tr><td bgcolor="#000000">
+    <table border="0" cellpadding="4" cellspacing="1"><!-- width="600" --> 
+    <tr>
+      <td class="itemkey" align="right">タイトル</td>
+      <td class="itemval"><input type="text" name="title" value="" size="72"></td>
+    </tr>
+    <tr>
+      <td class="itemkey" align="right">発表概要</td>
+      <td class="itemval">
+      <textarea name="abst" cols="60" rows="7"></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td class="itemkey" align="right">推薦文</td>
+      <td class="itemval">
+        <textarea name="recommend" cols="40" rows="3"></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td class="itemkey" align="right">twitter用告知文（100字程度）</td>
+      <td class="itemval">
+        <textarea name="twitter" cols="40" rows="3"></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td class="itemkey" align="right">予稿集用ファイル</td>
+      <td class="itemval">
+      <span class="notice">（PDFのみ対応）</span><br>
+      <input type="file" name="upfile_proceeding" size="40">
+      <div id="filelink_proceeding" float="left"></div><!--保存したファイルのリンクを表示-->
+      </td>
+    </tr>
+    <tr>
+      <td class="itemkey" align="right">一般公開用ファイル</td>  
+      <td class="itemval">
+      <input type="radio" name="publish" checked="checked" value="未確認" onchange="return upfile_public_check()">未確認
+      <input type="radio" name="publish" value="予稿集用ファイルを公開" onchange="return upfile_public_check()">予稿集用ファイル
+      <input type="radio" name="publish" value="一般公開用ファイルを公開" onchange="return upfile_public_check()">一般公開用ファイル
+      <input type="radio" name="publish" value="不可" onchange="return upfile_public_check()">不可
+      <br>
+      <div id="upfile_public_div">
+      <span class="notice">ファイル①（PDFのみ対応）</span><br>
+      <input type="file" name="upfile_public" size="40">
+      <div id="filelink_public" float="left"></div><!--保存したファイルのリンクを表示-->
+      <div id="upfile_public_div">
+      <span class="notice">ファイル②（PDFのみ対応）</span><br>
+      <input type="file" name="upfile_public2" size="40">
+      <div id="filelink_public2" float="left"></div><!--保存したファイルのリンクを表示-->
+      </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="itemkey" align="right">議事録ファイル</td>
+      <td class="itemval">
+      <span class="notice">（txtのみ対応）</span><br>
+      <input type="file" name="upfile_minute" size="40">
+      <div id="filelink_minute" float="left"></div><!--保存したファイルのリンクを表示-->
+      </td>
+    </tr>
+    <tr>
+      <td class="itemkey" align="right">録音の確認（議事録用）</td>
+      <td class="itemval">
+      <input type="radio" name="rokuon_radio" value="確認済み">確認済み
+      <input type="radio" name="rokuon_radio" checked="checked" value="未確認">未確認
+      </td>
+    </tr>
+    <tr>
+      <td class="itemkey" align="right">謝金の合計</td>
+      <td class="itemval">
+      <input type="button" value="再計算" onclick="calTotalReward();"/><br>
+      <input type="checkbox" id="check_ok" value="承認済み">承認済み<br>
+
+      <div id="totalRewardDisplay" float="left"></div><!--保存したファイルのリンクを表示-->
+      </td>
+    </tr>
+    <tr>
+      <td class="itemkey" align="right">机の配置</td>
+      <td class="itemval">
+      <input type="radio" name="table_radio" checked="checked" value="スクール">スクール
+      <input type="radio" name="table_radio" value="ワーク">ワーク
+      <input type="radio" name="table_radio" value="その他">その他
+      <input type="text" name="table" value="" size="30">
+      </td>
+    </tr>
+    <tr>
+      <td class="itemkey" align="right">プロジェクタ</td>
+      <td class="itemval">
+      <input type="radio" name="projector_radio" value="不要">不要
+      <input type="radio" name="projector_radio" checked="checked" value="必要">必要
+      </td>
+    </tr>
+    <tr>
+      <td class="itemkey" align="right">スクリーン</td>
+      <td class="itemval">
+      <input type="radio" name="screen_radio" value="不要">不要
+      <input type="radio" name="screen_radio" checked="checked" value="必要">必要
+      </td>
+    </tr>
+    <tr>
+      <td class="itemkey" align="right">ホワイトボード</td>
+      <td class="itemval">
+      <input type="radio" name="wboard_radio" checked="checked" value="不要">不要
+      <input type="radio" name="wboard_radio" value="必要">必要
+      <input type="text" name="wboard" value="" size="20">
+      </td>
+    </tr>
+    <tr>
+      <td class="itemkey" align="right">マイク</td>
+      <td class="itemval">
+      <input type="radio" name="microphone_radio" value="不要">不要
+      <input type="radio" name="microphone_radio" checked="checked" value="必要">必要
+      <input type="text" name="microphone" value="1" size="20">
+      </td>
+    </tr>
+    <tr>
+      <td class="itemkey" align="right">ポインタ</td>
+      <td class="itemval">
+      <input type="radio" name="pointer_radio" value="不要">不要
+      <input type="radio" name="pointer_radio" checked="checked" value="必要">必要
+      <input type="text" name="pointer" value="1" size="20">
+      </td>
+    </tr>
+    <tr>
+      <td class="itemkey" align="right">その他の備品</td>
+      <td class="itemval">
+      <input type="text" name="other" value="なし" size="50"><br>
+      </td>
+    </tr>    
+    </table>  
+  </tr></td>
+  </table>
+</table>
+<br>
+
+<div Align="center"><a href="#" onclick="return treeFunc('instructor1')">講師1の情報入力</a></div>
+<div class="titem" id="instructor1">
+  <table border="0" width="600" align="center">
+  <table border="0" cellpadding="0" cellspacing="0" align="center">
+    <tr><td bgcolor="#000000">
+    <table border="0" cellpadding="4" cellspacing="1"><!-- width="600" -->
+      <tr>
+      <td class="itemkey" align="right">名前</td>
+      <td class="itemval"><input type="text" name="name1" value="" size="30"></td>
+      </tr>
+            <tr>
+      <td class="itemkey" align-"right">顔写真<br>(200x200以上推奨)</td>
+      <td class="itemval"><img src="img/dummy.png" id="filepath_pic1__img" width="100px"/>
+      <input type="file" name="pic1" value="" size="">
+                        <input type="hidden" name="filepath_pic1" value="">
+      </td>
+      </tr>
+      <tr>
+      <td class="itemkey" align="right">所属</td>
+      <td class="itemval"><input type="text" name="affi1" value="" size="30"></td>
+      </tr>
+      <tr>
+      <td class="itemkey" align="right">連絡先(e-mail)</td>
+      <td class="itemval"><input type="text" name="email1" value="" size="30"></td>
+      </tr>
+      <tr>
+      <td class="itemkey" align="right">謝礼</td>
+      <td class="itemval">
+<!--        <input type="radio" name="reward1_radio" id="reward1_no" value="不要">不要(実行委員及び、謝礼辞退者)<br>
+        <input type="radio" name="reward1_radio" checked="checked" id="reward1_unconfirm" value="未確認">未確認<br>
+        <input type="radio" name="reward1_radio" id="reward1_money" value="謝金">謝金
+        <input type="text" name="reward1_money" id="reward1_money_id" value="0" size="30"><br>
+        <input type="radio" name="reward1_radio" id="reward1_freefee" value="参加費無料">参加費無料(14250円)+交通費<input type="text" name="reward1_travel" id="reward1_travel_id" value="0" size="30">
+ -->
+<!-- -->
+      <input type="checkbox" name="reward1_no" id="reward1_no" value="不要">不要 (実行委員または謝礼辞退者)<br>
+      <input type="hidden" name="reward1_no" value="必要" />
+      <input type="checkbox" name="reward1_unconfirm" id="reward1_unconfirm" value="未確認">未確認<br>
+      <input type="hidden" name="reward1_unconfirm" value="確認済み" />
+      <input type="checkbox" name="reward1_money" id="reward1_money" value="謝金">謝金
+      <input type="hidden" name="reward1_money" value="不要" />
+      <input type="textbox" name="reward1_money_id" id="reward1_money_id" value="0" size="30"><br>
+      <input type="checkbox" name="reward1_freefee" id="reward1_freefee" value="参加費無料">参加費無料(14250円)<br>
+      <input type="hidden" name="reward1_freefee" value="要参加費" />
+      <input type="checkbox" name="reward1_travel"  id="reward1_travel" value="支給">交通費(概算)
+      <input type="hidden" name="reward1_travel" value="不要" />
+      <input type="textbox" name="reward1_travel_id" id="reward1_travel_id" value="0"><br>
+<!-- -->
+      </td>
+      </tr>
+      <!--<tr>
+      <td class="itemkey" align="right">推薦文</td>
+      <td class="itemval">
+        <textarea name="recommend1" cols="40" rows="3"></textarea>
+      </td>
+      </tr>-->
+      <tr>
+      <td class="itemkey" align="right">備考</td>
+      <td class="itemval">
+        <textarea name="bikou1" cols="40" rows="3"></textarea>
+      </td>
+      </tr>
+    </table>  
+    </tr></td>
+  </table>
+  </table>
+  <br>
+</div>
+
+<div Align="center"><a href="#" onclick="return treeFunc('instructor2')">講師2の情報入力</a></div>
+<div class="titem" id="instructor2">
+  <table border="0" width="600" align="center">
+  <table border="0" cellpadding="0" cellspacing="0" align="center">
+    <tr><td bgcolor="#000000">
+    <table border="0" cellpadding="4" cellspacing="1"><!-- width="600" -->
+      <tr>
+      <td class="itemkey" align="right">名前</td>
+      <td class="itemval"><input type="text" name="name2" value="" size="30"></td>
+      </tr>
+            <tr>
+      <td class="itemkey" align-"right">顔写真<br>(200x200以上推奨)</td>
+      <td class="itemval"><img src="img/dummy.png" id="filepath_pic2__img" width="100px"/>
+      <input type="file" name="pic2" value="" size="">
+                        <input type="hidden" name="filepath_pic2" value="">
+      </td>
+      </tr>
+      <tr>
+      <td class="itemkey" align="right">所属</td>
+      <td class="itemval"><input type="text" name="affi2" value="" size="30"></td>
+      </tr>
+      <tr>
+      <td class="itemkey" align="right">連絡先(e-mail)</td>
+      <td class="itemval"><input type="text" name="email2" value="" size="30"></td>
+      </tr>
+      <tr>
+      <td class="itemkey" align="right">謝礼</td>
+      <td class="itemval">
+<!--        <input type="radio" name="reward2_radio" id="reward2_no" value="不要">不要(実行委員及び、謝礼辞退者)<br>
+        <input type="radio" name="reward2_radio" id="reward2_unconfirm" checked="checked" value="未確認">未確認<br>
+        <input type="radio" name="reward2_radio" id="reward2_money" value="謝金">謝金
+        <input type="text" name="reward2_money" id="reward2_money_id" value="0" size="30"><br>
+        <input type="radio" name="reward2_radio" id="reward2_freefee" value="参加費無料">参加費無料(14250円)+交通費<input type="text" name="reward2_travel" id="reward2_travel_id" value="0" size="30">
+
+-->
+
+      <input type="checkbox" name="reward2_no" id="reward2_no" value="不要">不要 (実行委員または謝礼辞退者)<br>
+      <input type="hidden" name="reward2_no" value="必要" />
+      <input type="checkbox" name="reward2_unconfirm" id="reward2_unconfirm" value="未確認">未確認<br>
+      <input type="hidden" name="reward2_unconfirm" value="確認済み" />
+      <input type="checkbox" name="reward2_money" id="reward2_money" value="謝金">謝金
+      <input type="hidden" name="reward2_money" value="不要" />
+      <input type="textbox" name="reward2_money_id" id="reward2_money_id" value="0" size="30"><br>
+      <input type="checkbox" name="reward2_freefee" id="reward2_freefee" value="参加費無料">参加費無料(14250円)<br>
+      <input type="hidden" name="reward2_freefee" value="要参加費" />
+      <input type="checkbox" name="reward2_travel"  id="reward2_travel" value="支給">交通費(概算)
+      <input type="hidden" name="reward2_travel" value="不要" />
+      <input type="textbox" name="reward2_travel_id" id="reward2_travel_id" value="0"><br>
+
+      </td>
+      </tr>
+      <!--<tr>
+      <td class="itemkey" align="right">推薦文</td>
+      <td class="itemval">
+        <textarea name="recommend2" cols="40" rows="3"></textarea>
+      </td>
+      </tr>-->
+      <tr>
+      <td class="itemkey" align="right">備考</td>
+      <td class="itemval">
+        <textarea name="bikou2" cols="40" rows="3"></textarea>
+      </td>
+      </tr>
+    </table>  
+    </tr></td>
+  </table>
+  </table>
+  <br>
+</div>
+
+<div Align="center"><a href="#" onclick="return treeFunc('instructor3')">講師3の情報入力</a></div>
+<div class="titem" id="instructor3">
+  <table border="0" width="600" align="center">
+  <table border="0" cellpadding="0" cellspacing="0" align="center">
+    <tr><td bgcolor="#000000">
+    <table border="0" cellpadding="4" cellspacing="1"><!-- width="600" -->
+      <tr>
+      <td class="itemkey" align="right">名前</td>
+      <td class="itemval"><input type="text" name="name3" value="" size="30"></td>
+      </tr>
+            <tr>
+      <td class="itemkey" align-"right">顔写真<br>(200x200以上推奨)</td>
+      <td class="itemval"><img src="img/dummy.png" id="filepath_pic3__img" width="100px"/>
+                        <input type="file" name="pic3" value="" size="">
+                        <input type="hidden" name="filepath_pic3" value="">
+      </td>
+      </tr>
+      <tr>
+      <td class="itemkey" align="right">所属</td>
+      <td class="itemval"><input type="text" name="affi3" value="" size="30"></td>
+      </tr>
+      <tr>
+      <td class="itemkey" align="right">連絡先(e-mail)</td>
+      <td class="itemval"><input type="text" name="email3" value="" size="30"></td>
+      </tr>
+      <tr>
+      <td class="itemkey" align="right">謝礼</td>
+      <td class="itemval">
+<!--        <input type="radio" name="reward3_radio" id="reward3_no" value="不要">不要(実行委員及び、謝礼辞退者)<br>
+        <input type="radio" name="reward3_radio" checked="checked" id="reward3_unconfirm" value="未確認">未確認<br>
+        <input type="radio" name="reward3_radio" id="reward3_money" value="謝金">謝金
+        <input type="text" name="reward3_money" id="reward3_money_id" value="0" size="30"><br>
+        <input type="radio" name="reward3_radio" id="reward3_freefee" value="参加費無料">参加費無料(14250円)+交通費<input type="text" name="reward3_travel" id="reward3_travel_id" value="0" size="30">
+-->
+      <input type="checkbox" name="reward3_no" id="reward3_no" value="不要">不要 (実行委員または謝礼辞退者)<br>
+      <input type="hidden" name="reward3_no" value="必要" />
+      <input type="checkbox" name="reward3_unconfirm" id="reward3_unconfirm" value="未確認">未確認<br>
+      <input type="hidden" name="reward3_unconfirm" value="確認済み" />
+      <input type="checkbox" name="reward3_money" id="reward3_money" value="謝金">謝金
+      <input type="hidden" name="reward3_money" value="不要" />
+      <input type="textbox" name="reward3_money_id" id="reward3_money_id" value="0" size="30"><br>
+      <input type="checkbox" name="reward3_freefee" id="reward3_freefee" value="参加費無料">参加費無料(14250円)<br>
+      <input type="hidden" name="reward3_freefee" value="要参加費" />
+      <input type="checkbox" name="reward3_travel"  id="reward3_travel" value="支給">交通費(概算)
+      <input type="hidden" name="reward3_travel" value="不要" />
+      <input type="textbox" name="reward3_travel_id" id="reward3_travel_id" value="0"><br>
+
+      </td>
+      </tr>
+      <!--<tr>
+      <td class="itemkey" align="right">推薦文</td>
+      <td class="itemval">
+        <textarea name="recommend3" cols="40" rows="3"></textarea>
+      </td>
+      </tr>-->
+      <tr>
+      <td class="itemkey" align="right">備考</td>
+      <td class="itemval">
+        <textarea name="bikou3" cols="40" rows="3"></textarea>
+      </td>
+      </tr>
+    </table>  
+    </tr></td>
+  </table>
+  </table>
+  <br>
+</div>
+
+<div Align="center"><a href="#" onclick="return treeFunc('instructor4')">講師4の情報入力</a></div>
+<div class="titem" id="instructor4">
+  <table border="0" width="600" align="center">
+  <table border="0" cellpadding="0" cellspacing="0" align="center">
+    <tr><td bgcolor="#000000">
+    <table border="0" cellpadding="4" cellspacing="1"><!-- width="600" -->
+      <tr>
+      <td class="itemkey" align="right">名前</td>
+      <td class="itemval"><input type="text" name="name4" value="" size="30"></td>
+      </tr>
+            <tr>
+      <td class="itemkey" align-"right">顔写真<br>(200x200以上推奨)</td>
+                        <td class="itemval"><img src="img/dummy.png" id="filepath_pic4__img" width="100px"/>
+      <input type="file" name="pic4" value="" size="">
+                        <input type="hidden" name="filepath_pic4" value="">
+      </td>
+      </tr>
+      <tr>
+      <td class="itemkey" align="right">所属</td>
+      <td class="itemval"><input type="text" name="affi4" value="" size="30"></td>
+      </tr>
+      <tr>
+      <td class="itemkey" align="right">連絡先(e-mail)</td>
+      <td class="itemval"><input type="text" name="email4" value="" size="30"></td>
+      </tr>      
+      <tr>
+      <td class="itemkey" align="right">謝礼</td>
+      <td class="itemval">
+<!--        <input type="radio" name="reward4_radio" id="reward4_no" value="不要">不要(実行委員及び、謝礼辞退者)<br>
+        <input type="radio" name="reward4_radio" checked="checked" id="reward4_unconfirm" value="未確認">未確認 <br>
+        <input type="radio" name="reward4_radio" id="reward4_money" value="謝金">謝金
+        <input type="text" name="reward4_money" id="reward4_money_id" value="0" size="30"><br>
+        <input type="radio" name="reward4_radio" id="reward4_freefee" value="参加費無料">参加費無料(14250円)+交通費<input type="text" name="reward4_travel" id="reward4_travel_id" value="0" size="30">
+-->
+
+      <input type="checkbox" name="reward4_no" id="reward4_no" value="不要">不要 (実行委員または謝礼辞退者)<br>
+      <input type="hidden" name="reward4_no" value="必要" />
+      <input type="checkbox" name="reward4_unconfirm" id="reward4_unconfirm" value="未確認">未確認<br>
+      <input type="hidden" name="reward4_unconfirm" value="確認済み" />
+      <input type="checkbox" name="reward4_money" id="reward4_money" value="謝金">謝金
+      <input type="hidden" name="reward4_money" value="不要" />
+      <input type="textbox" name="reward4_money_id" id="reward4_money_id" value="0" size="30"><br>
+      <input type="checkbox" name="reward4_freefee" id="reward4_freefee" value="参加費無料">参加費無料(14250円)<br>
+      <input type="hidden" name="reward4_freefee" value="要参加費" />
+      <input type="checkbox" name="reward4_travel"  id="reward4_travel" value="支給">交通費(概算)
+      <input type="hidden" name="reward4_travel" value="不要" />
+      <input type="textbox" name="reward4_travel_id" id="reward4_travel_id" value="0"><br>
+
+
+      </td>
+      </tr>
+      <!--<tr>
+      <td class="itemkey" align="right">推薦文</td>
+      <td class="itemval">
+        <textarea name="recommend4" cols="40" rows="3"></textarea>
+      </td>
+      </tr>-->
+      <tr>
+      <td class="itemkey" align="right">備考</td>
+      <td class="itemval">
+        <textarea name="bikou4" cols="40" rows="3"></textarea>
+      </td>
+      </tr>
+    </table>  
+    </tr></td>
+  </table>
+  </table>
+  <br>
+</div>
+
+<div Align="center"><a href="#" onclick="return treeFunc('instructor5')">講師5の情報入力</a></div>
+<div class="titem" id="instructor5">
+  <table border="0" width="600" align="center">
+  <table border="0" cellpadding="0" cellspacing="0" align="center">
+    <tr><td bgcolor="#000000">
+    <table border="0" cellpadding="4" cellspacing="1"><!-- width="600" -->
+      <tr>
+      <td class="itemkey" align="right">名前</td>
+      <td class="itemval"><input type="text" name="name5" value="" size="30"></td>
+      </tr>
+            <tr>
+      <td class="itemkey" align-"right">顔写真<br>(200x200以上推奨)</td>
+                        <td class="itemval"><img src="img/dummy.png" id="filepath_pic5__img" width="100px"/>
+      <input type="file" name="pic5" value="" size="">
+                        <input type="hidden" name="filepath_pic5" value="">
+      </td>
+      </tr>
+      <tr>
+      <td class="itemkey" align="right">所属</td>
+      <td class="itemval"><input type="text" name="affi5" value="" size="30"></td>
+      </tr>
+      <tr>
+      <td class="itemkey" align="right">連絡先(e-mail)</td>
+      <td class="itemval"><input type="text" name="email5" value="" size="30"></td>
+      </tr>
+      <tr>
+      <td class="itemkey" align="right">謝礼</td>
+      <td class="itemval">
+<!--
+        <input type="radio" name="reward5_radio" id="reward5_no" value="不要">不要(実行委員及び、謝礼辞退者)<br>
+        <input type="radio" name="reward5_radio" checked="checked" id="reward5_money" value="謝金">謝金
+        <input type="text" name="reward5_money" id="reward5_money_id" value="0" size="30"><br>
+        <input type="radio" name="reward5_radio" id="reward5_freefee" value="参加費無料">参加費無料(14250円)+交通費<input type="text" name="reward5_travel" id="reward5_travel_id" value="0" size="30">
+-->
+
+      <input type="checkbox" name="reward5_no" id="reward5_no" value="不要">不要 (実行委員または謝礼辞退者)<br>
+      <input type="hidden" name="reward5_no" value="必要" />
+      <input type="checkbox" name="reward5_unconfirm" id="reward5_unconfirm" value="未確認">未確認<br>
+      <input type="hidden" name="reward5_unconfirm" value="確認済み" />
+      <input type="checkbox" name="reward5_money" id="reward5_money" value="謝金">謝金
+      <input type="hidden" name="reward5_money" value="不要" />
+      <input type="textbox" name="reward5_money_id" id="reward5_money_id" value="0" size="30"><br>
+      <input type="checkbox" name="reward5_freefee" id="reward5_freefee" value="参加費無料">参加費無料(14250円)<br>
+      <input type="hidden" name="reward5_freefee" value="要参加費" />
+      <input type="checkbox" name="reward5_travel"  id="reward5_travel" value="支給">交通費(概算)
+      <input type="hidden" name="reward5_travel" value="不要" />
+      <input type="textbox" name="reward5_travel_id" id="reward5_travel_id" value="0"><br>
+      </td>
+      </tr>
+      <!--<tr>
+      <td class="itemkey" align="right">推薦文</td>
+      <td class="itemval">
+        <textarea name="recommend5" cols="40" rows="3"></textarea>
+      </td>
+      </tr>-->
+      <tr>
+      <td class="itemkey" align="right">備考</td>
+      <td class="itemval">
+        <textarea name="bikou5" cols="40" rows="3"></textarea>
+      </td>
+      </tr>
+    </table>  
+    </tr></td>
+  </table>
+  </table>
+</div>
+<br>
+<br>
+<br>
+
+<!-- 隠し要素 -->
+<td class="itemval"><input type="hidden" id="session_name" name="session_name" value="" size="30"></td>
+<td class="itemval"><input type="hidden" id="totalReward" name="totalReward" value="" size="30"></td>
+<td class="itemval"><input type="hidden" id="filepath_proceeding" name="filepath_proceeding" value="" size="30"></td>
+<td class="itemval"><input type="hidden" id="filepath_public" name="filepath_public" value="" size="30"></td>
+<td class="itemval"><input type="hidden" id="filepath_minute" name="filepath_minute" value="" size="30"></td>
+</form>
+</div><!-- mainWrap -->
+</div><!-- wrap -->
+
+</body>
+</html>

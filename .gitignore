@@ -30,4 +30,4 @@ yarn-error.log
 .cache/
 
 # Ignore program-data　(プログラムページのコンテンツアップロードが完成したらコメントアウトして git add -A する)
-program-data/
+# program-data/
