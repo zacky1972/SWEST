@@ -1,7 +1,7 @@
 title=mruby/cによるマルチプログラミングの提案
 abst=組込ソフトを効率よく開発することを目指してmrubyが開発された。より小さなデバイスでの利用のため、mrubyのコンパクトかつ、マルチプログラミングができるmruby/cを実装した。mruby/cによるマルチプログラミングの仕組み、排他制御について実装方法を紹介する。
 recommend=
-twitter=
+twitter=mruby/cによるマルチプログラミングの仕組み、排他制御について実装方法を紹介します。
 publish=未確認
 rokuon_radio=確認済み
 table_radio=スクール
@@ -83,3 +83,5 @@ reward5_travel_id=0
 bikou5=
 session_name=s1d
 totalReward=0
+filepath_proceeding=./data/s3b_proceeding.pdf
+filepath_minute=./data/s3b_minute.txt
