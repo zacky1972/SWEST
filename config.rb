@@ -2,12 +2,12 @@ require 'slim'
 require 'csv'
 require 'redcarpet'
 
-preview = false
+preview = true
 
 # allOptions = preview
 allOptions = false
 
-defaultOptions = "p1-s2-i1-r0-R1-S0"
+defaultOptions = "p1-s2-i1-r1-R1-S0"
 
 buildBeforeDeploy = true
 
@@ -71,7 +71,8 @@ $navigation = {
       :name => '参加申込み',
       :label => 'Regist',
       :url => 'regist',
-      :regist => true
+      :regist => true,
+      :new => true,
     }
 	]
 }
@@ -461,7 +462,8 @@ option_table = [
     abbreviation: 'r',
     :table => {
       "0" => :disable,
-      "1" => :enable
+      "1" => :enable,
+      "2" => :finish
     }
   },
   {
