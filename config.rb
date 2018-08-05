@@ -551,7 +551,6 @@ end
 [19, 20].each do |number|
   swest = "SWEST#{number.to_s}"
   $sessions[swest.to_sym][:page].each do |name|
-    puts $interactive[swest.to_sym]
     proxy "/#{swest}/program/#{name}.html", "/templates/timetable.html", locals: { session: name,  swest: swest, number: number, interactive: $interactive[swest.to_sym]}, ignore: true
   end
 end
