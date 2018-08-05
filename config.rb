@@ -2,12 +2,12 @@ require 'slim'
 require 'csv'
 require 'redcarpet'
 
-preview = false
+preview = true
 
 # allOptions = preview
 allOptions = false
 
-defaultOptions = "p1-s2-i1-r1-R1-S0"
+defaultOptions = "p1-s2-i2-r1-R1-S0"
 
 buildBeforeDeploy = true
 
@@ -551,7 +551,8 @@ end
 [19, 20].each do |number|
   swest = "SWEST#{number.to_s}"
   $sessions[swest.to_sym][:page].each do |name|
-    proxy "/#{swest}/program/#{name}.html", "/templates/timetable.html", locals: { session: name,  swest: swest, number: number}, ignore: true
+    puts $interactive[swest.to_sym]
+    proxy "/#{swest}/program/#{name}.html", "/templates/timetable.html", locals: { session: name,  swest: swest, number: number, interactive: $interactive[swest.to_sym]}, ignore: true
   end
 end
 
