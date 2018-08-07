@@ -1,7 +1,7 @@
 title=IoT を支える様々なLPWA・セルラー通信技術とIoT実践ハンズオン 〜デバイスからクラウドまでを一気通貫で学ぶ〜
 abst=IoTにおいて「無線ネットワーク」は欠かすことのできない要素です。大容量・低遅延を4G/5Gといったセルラー通信が主流ですが、一方で小容量・長距離・省電力といった用途に合わせた<<dquot>>LPWA<<dquot>> も注目を集めています。<<enter>>本セッションでは各々の通信技術の基礎と実例から見る利用の仕方を紹介するほか、LTE Cat.1 モデム搭載マイコン「Wio LTE」とクラウド連携を達成するハンズオンを通じて、IoTにおける「モノ」「無線ネットワーク」そして「クラウド」という３つの要素を学ぶことができるセッションです。
 recommend=IoTと言う言葉は良く聞くようになりましたが、実際に試してみた方というのは意外と少ないのではないでしょうか。<<enter>>本セッションではソラコムの松下様にIoTハンズオンをお願いしました。<<enter>>マイコンとクラウドの連携を実際に体験することができます。<<enter>>IoTに興味があるけど何処から手を付けたらよいかわからない、そんな方はぜひご参加ください。<<enter>>
-twitter=
+twitter=IoTを実際に試すことができるハンズオンセッションです。ソラコム社提供の環境でIoTに入門してみませんか?
 publish=未確認
 rokuon_radio=未確認
 table_radio=スクール
@@ -85,3 +85,5 @@ session_name=s2d
 totalReward=24250
 filepath_proceeding=./data/s3b_proceeding.pdf
 filepath_minute=./data/s3b_minute.txt
+filepath_proceeding=./data/s2d_proceeding.pdf
+filedata_proceeding=2018/8/1
