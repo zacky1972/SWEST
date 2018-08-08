@@ -2,7 +2,7 @@ require 'slim'
 require 'csv'
 require 'redcarpet'
 
-preview = true
+preview = false
 
 # allOptions = preview
 allOptions = false
@@ -47,7 +47,6 @@ $navigation = {
 			:name => '20周年特別企画＠水曜',
 			:label => 'Wednesday',
 			:url => 'wednesday',
-      :new => true,
 		}, {
 			:name => '協賛のご案内',
 			:label => 'Sponsor',
@@ -66,13 +65,11 @@ $navigation = {
       :label => 'Interactive',
       :url => 'interactive',
       :regist => true,
-      :new => true,
     }, {
       :name => '参加申込み',
       :label => 'Regist',
       :url => 'regist',
       :regist => true,
-      :new => true,
     }
 	]
 }
