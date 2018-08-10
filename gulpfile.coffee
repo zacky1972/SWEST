@@ -176,15 +176,19 @@ gulp.task 'pre:images', ['pre:empty', 'pre:jpg', 'pre:png', 'pre:SWEST20']
 
 gulp.task 'build:images', ['build:jpg', 'build:png']
 
-gulp.task 'build:pdfs', () ->
-  gulp.src 'program-data/SWEST*/lecture/data/**/*.pdf'
+gulp.task 'build:pdfs:19', () ->
+  gulp.src 'program-data/SWEST19/lecture/data/*.pdf'
     .pipe rename({dirname:''})
-    .pipe gulp.dest('build/pdfs/')
+    .pipe gulp.dest('build/pdfs/SWEST19/')
 
-gulp.task 'build:txts', () ->
-  gulp.src 'program-data/SWEST*/lecture/data/**/*.txt'
+gulp.task 'build:pdfs', ['build:pdfs:19']
+
+gulp.task 'build:txts:19', () ->
+  gulp.src 'program-data/SWEST19/lecture/data/*.txt'
     .pipe rename({dirname:''})
-    .pipe gulp.dest('build/txts/')
+    .pipe gulp.dest('build/txts/SWEST19/')
+
+gulp.task 'build:txts', ['build:txts:19']
 
 gulp.task 'build:js', () ->
   gulp.src 'source/javascripts/site.js', {read:false}
