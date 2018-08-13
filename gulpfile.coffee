@@ -179,14 +179,14 @@ gulp.task 'build:images', ['build:jpg', 'build:png']
 gulp.task 'build:pdfs:19', () ->
   gulp.src 'program-data/SWEST19/lecture/data/*.pdf'
     .pipe rename({dirname:''})
-    .pipe gulp.dest('build/pdfs/SWEST19/')
+    .pipe gulp.dest('build/SWEST19/program/pdfs/')
 
 gulp.task 'build:pdfs', ['build:pdfs:19']
 
 gulp.task 'build:txts:19', () ->
   gulp.src 'program-data/SWEST19/lecture/data/*.txt'
     .pipe rename({dirname:''})
-    .pipe gulp.dest('build/txts/SWEST19/')
+    .pipe gulp.dest('build/SWEST19/program/txt/')
 
 gulp.task 'build:txts', ['build:txts:19']
 
