@@ -85,4 +85,5 @@ session_name=s4a
 totalReward=23780
 filepath_proceeding=./data/s4a_proceeding.pdf
 filepath_minute=./data/s4a_minute.pdf
-filedata_minute=2018/8/2
+filepath_proceeding=./data/s4a_proceeding.pdf
+filedata_proceeding=2018/8/23

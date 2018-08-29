@@ -83,3 +83,5 @@ reward5_travel_id=0
 bikou5=
 session_name=s2b
 totalReward=20000
+filepath_proceeding=./data/s2b_proceeding.pdf
+filedata_proceeding=2018/8/23

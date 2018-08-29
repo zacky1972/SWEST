@@ -85,3 +85,5 @@ session_name=s5c
 totalReward=100250
 filepath_proceeding=./data/s5c_proceeding.pdf
 filepath_minute=./data/s3b_minute.txt
+filepath_proceeding=./data/s5c_proceeding.pdf
+filedata_proceeding=2018/8/22
