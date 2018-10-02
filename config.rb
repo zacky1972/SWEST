@@ -423,6 +423,8 @@ end
 $interactive = Hash.new
 if File.exists?("./program-data/SWEST19/interactive-printable.csv") then
   $interactive[:SWEST19] = CSV.read("./program-data/SWEST19/interactive-printable.csv", headers: false, encoding: "Shift_JIS:UTF-8")
+end
+if File.exists?("./program-data/SWEST20/interactive-printable.csv") then
   $interactive[:SWEST20] = CSV.read("./program-data/SWEST20/interactive-printable.csv", headers: false, encoding: "Shift_JIS:UTF-8") 
 end
 
