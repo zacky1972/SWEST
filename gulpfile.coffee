@@ -190,12 +190,12 @@ gulp.task 'build:pdfs:20', () ->
 gulp.task 'build:pdfs', ['build:pdfs:19', 'build:pdfs:20']
 
 gulp.task 'build:txts:19', () ->
-  gulp.src 'program-data/SWEST19/lecture/data/*.txt'
+  gulp.src 'program-data/SWEST19/lecture/data/*.html'
     .pipe rename({dirname:''})
     .pipe gulp.dest('build/SWEST19/program/txt/')
 
 gulp.task 'build:txts:20', () ->
-  gulp.src 'program-data/SWEST20/lecture/data/*.txt'
+  gulp.src 'program-data/SWEST20/lecture/data/*.html'
     .pipe rename({dirname:''})
     .pipe gulp.dest('build/SWEST20/program/txt/')
 
