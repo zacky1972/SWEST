@@ -423,11 +423,12 @@ end
 $interactive = Hash.new
 (19..20).each do |number|
   SWEST = "SWEST#{number}"
-  if File.exists?("./program-data/#{SWEST}/interactive-printable.csv") then
+  csv_file = "./program-data/#{SWEST}/interactive-printable.csv"
+  if File.exists?(csv_file) then
     begin
-      $interactive[SWEST.to_sym] = CSV.read("./program-data/#{SWEST}/interactive-printable.csv", headers: false)
+      $interactive[SWEST.to_sym] = CSV.read(csv_file, headers: false)
     rescue ArgumentError => ex  
-      $interactive[SWEST.to_sym] = CSV.read("./program-data/#{SWEST}/interactive-printable.csv", headers: false, encoding: "Shift_JIS:UTF-8")
+      $interactive[SWEST.to_sym] = CSV.read(csv_file, headers: false, encoding: "Shift_JIS:UTF-8")
     end
   end
 end
