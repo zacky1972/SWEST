@@ -171,7 +171,7 @@ gulp.task 'pre:SWEST20-png100', () ->
 
 gulp.task 'pre:SWEST20', ['pre:SWEST20-jpg100', 'pre:SWEST20-jpg200', 'pre:SWEST20-jpg300', 'pre:SWEST20-png100', 'pre:SWEST20-png200', 'pre:SWEST20-png300']
 
-gulp.task 'pre:images', ['pre:empty', 'pre:jpg', 'pre:png', 'pre:SWEST20']
+gulp.task 'pre:images', [] # 'pre:empty', 'pre:jpg', 'pre:png', 'pre:SWEST20'
 
 
 gulp.task 'build:images', ['build:jpg', 'build:png']
