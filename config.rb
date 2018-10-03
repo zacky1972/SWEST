@@ -2,7 +2,7 @@ require 'slim'
 require 'csv'
 require 'redcarpet'
 
-preview = true
+preview = false
 
 # allOptions = preview
 allOptions = false
