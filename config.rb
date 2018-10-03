@@ -421,11 +421,15 @@ end
 # インタラクティブセッションの読み込み
 
 $interactive = Hash.new
-if File.exists?("./program-data/SWEST19/interactive-printable.csv") then
-  $interactive[:SWEST19] = CSV.read("./program-data/SWEST19/interactive-printable.csv", headers: false, encoding: "Shift_JIS:UTF-8")
-end
-if File.exists?("./program-data/SWEST20/interactive-printable.csv") then
-  $interactive[:SWEST20] = CSV.read("./program-data/SWEST20/interactive-printable.csv", headers: false, encoding: "Shift_JIS:UTF-8") 
+(19..20).each do |number|
+  SWEST = "SWEST#{number}"
+  if File.exists?("./program-data/#{SWEST}/interactive-printable.csv") then
+    begin
+      $interactive[SWEST.to_sym] = CSV.read("./program-data/#{SWEST}/interactive-printable.csv", headers: false)
+    rescue ArgumentError => ex  
+      $interactive[SWEST.to_sym] = CSV.read("./program-data/#{SWEST}/interactive-printable.csv", headers: false, encoding: "Shift_JIS:UTF-8")
+    end
+  end
 end
 
 option_table = [
