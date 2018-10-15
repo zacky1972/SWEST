@@ -1,0 +1,432 @@
+<!DOCTYPE html><head><meta charset="UTF-8"><title>s3d_minute</title></head><body><p>
+**********************************************************************
+<br/>
+ワーク S2-d
+<br/>
+テーマ：IoT を支える様々なLPWA・セルラー通信技術とIoT実践ハンズオン
+<br/>
+		 〜デバイスからクラウドまでを一気通貫で学ぶ〜
+<br/>
+講師：松下享平 株式会社ソラコム
+<br/>
+日時：2018/8/31 9:00～10:10
+<br/>
+参加人数：10名
+<br/>
+**********************************************************************
+<br/>
+
+<br/>
+・自己紹介
+<br/>
+	今日のスケジュール紹介
+<br/>
+		セミナー（６０分）
+<br/>
+		ハンズオン（７０分）
+<br/>
+		まとめ(5分)
+<br/>
+
+<br/>
+・IoTとは？
+<br/>
+	モノ
+<br/>
+		小型化、低コスト化している
+<br/>
+	クラウド
+<br/>
+		迅速なデータ処理ができるようになっている
+<br/>
+	ネットワーク（ここがセミナーのメイン）
+<br/>
+		モノ向けの通信なのか？
+<br/>
+		セキュリティー
+<br/>
+		従来の通信は人向けの通信
+<br/>
+		（料金、セキュリティーのアップデートなどの観点から）
+<br/>
+
+<br/>
+・SORACOMは独自のネットワークを提供している（１回十円～）
+<br/>
+	・お客様の事例（室町ケミカル株式会社）
+<br/>
+		カートリッジ式純粋気にIoTシステムを加えることでビジネスを変革
+<br/>
+		エンドユーザー管理であった水質管理を自社サービスとして提供し、
+<br/>
+		ユーザーの顧客満足度を向上
+<br/>
+	・お客様の事例（東急スポーツオアシス）
+<br/>
+		スポーツジム内のタオルの回収状況をリアルタイムで把握
+<br/>
+		”はかり”、”距離センサー”を用いてリアルタイムに在庫を把握、
+<br/>
+		関係者に通知を行い効率管理を実現
+<br/>
+	・お客様の事例（ハイク）
+<br/>
+		鳥獣対策向け自動撮影カメラ「ハイクカスタムSP4G」
+<br/>
+
+<br/>
+・通信の話
+<br/>
+	モノからの通信の種類２つ
+<br/>
+		近距離無線通信（Bluetooth、ZigBeeなど）
+<br/>
+		中・長距離無線通信
+<br/>
+
+<br/>
+・IoTを取り巻く通信の進化
+<br/>
+	RFID、NFC（通信距離~10m,消費電力~20mA）
+<br/>
+	PAN,BLE,ZigBee,Wi-SUM(10m~30m,20mA~100mA)
+<br/>
+	Wi-Fi
+<br/>
+	セルラー3G、LTE（4G）
+<br/>
+	LPWA,LoRaWAN,SigFox,Cat,M1,NB-IoT
+<br/>
+	5G
+<br/>
+
+<br/>
+・LPWA分類
+<br/>
+	LPWAは２つに分かれる
+<br/>
+	ライセンス系(ドコモ、KDDI、ソフトバンク)
+<br/>
+		LTE Cat.M1(LTE-M)
+<br/>
+		LTE Cat.NB1(NB-IoT)
+<br/>
+	アンライセンス系
+<br/>
+		LoRaWan
+<br/>
+
+<br/>
+・セルラー系LPWA
+<br/>
+	LTE Cat.1
+<br/>
+	LTE Cat.M1(LTE-M)
+<br/>
+	LTE Cat.NB1(NB-IoT)
+<br/>
+
+<br/>
+・アンライセンス系 LPWA 共通特徴
+<br/>
+	kmレンジの長距離通信
+<br/>
+	安価な通信音ジュール
+<br/>
+	低速度・低消費電力
+<br/>
+	LoRaトランシーバ 消費電離が良い20~30mA：発光ダイオードと同じくらい)
+<br/>
+
+<br/>
+・アンライセンス系、セルラー比較
+<br/>
+	データ量
+<br/>
+		アンライセンス：~12Byte
+<br/>
+		セルラー：MByte,GByte
+<br/>
+	通信頻度
+<br/>
+		１日数～数十回
+<br/>
+		常時・高頻度通信
+<br/>
+	消費電力
+<br/>
+		数か月、数年
+<br/>
+		短期の電池交換
+<br/>
+
+<br/>
+・IoTで求められるファームウェアの役割
+<br/>
+	無線モデムの制御が必要になってくる
+<br/>
+	クラウド通信処理（SDK）
+<br/>
+		バッファリング、再送時間
+<br/>
+		プロトコル処理、暗号化
+<br/>
+		接続先や認証情報の保管
+<br/>
+
+<br/>
+IoT時代におけるファームウェア開発の課題
+<br/>
+	リソース制約があるので、低級言語で記述
+<br/>
+	開発環境に起因する生産性の課題
+<br/>
+	ファームウェア更新の特殊性の課題
+<br/>
+	生産性の高い言語で開発しバンバン書き換えができないか？
+<br/>
+		→FOTA（Firmware on the air）
+<br/>
+	書き換えが不要なくらいシンプルにできないか？→クラウドの活用
+<br/>
+
+<br/>
+FOTA（Firmware on the air）
+<br/>
+	AWS Greengrass
+<br/>
+	Amazon FreeRTOS
+<br/>
+	Azure IoT edge
+<br/>
+
+<br/>
+・エッジデバイスでの実装
+<br/>
+	センサー制御
+<br/>
+	低レイテンシー応用
+<br/>
+	オフライン稼働
+<br/>
+
+<br/>
+・フルマネージド・サーブビスの活用
+<br/>
+
+<br/>
+
+<br/>
+
+<br/>
+
+<br/>
+■ハンズオン
+<br/>
+開発環境構築の手順
+<br/>
+Wio LTE を使うためには、開発環境の準備を行います
+<br/>
+
+<br/>
+	Virtual COM Port ドライバ
+<br/>
+	WinUSB ドライバ
+<br/>
+	TeraTerm
+<br/>
+	Arduino IDE
+<br/>
+	Wio LTE を扱えるようにする定義のインストール
+<br/>
+	Wio LTE ライブラリのインストール
+<br/>
+
+<br/>
+1. Virtual COM Port ドライバ
+<br/>
+	Wio LTE を通常モードで動作させた際に、Wio LTE にシリアルポートでアクセス
+<br/>
+	するためのドライバです
+<br/>
+
+<br/>
+	Virtual COM Port ドライバは 
+<br/>
+		Github: SeeedJP/WioLTEforArduino - InstallVCOMDriver-ja 
+<br/>
+	の手順に従ってファイルの入手とインストールを行ってください
+<br/>
+
+<br/>
+	確認方法
+<br/>
+		Wio LTE を PC と接続してみてください
+<br/>
+		その際デバイスマネージャ上で 
+<br/>
+			STMicroelectronics Virtual COM Port 
+<br/>
+		と表示されるようになれば、インストールに成功しています
+<br/>
+
+<br/>
+		Windows 通常モードの時のデバイスマネージャの表示
+<br/>
+
+<br/>
+2. WinUSB ドライバ
+<br/>
+	Wio LTE を DFU モード に切り替えてファイル書き込みを行う際に必要な
+<br/>
+	ドライバです
+<br/>
+
+<br/>
+	2-1. Zadigサイト の Download にある Zadig 2.3 をクリックして、
+<br/>
+		zadig-2.3.exeをダウンロードします
+<br/>
+	2-2. Wio LTE を DFUモード に切り替えます
+<br/>
+		DFUモードへの切り替え方は、このページの前半で確認してください
+<br/>
+	2-3. zadig-2.3.exe を起動する
+<br/>
+	2-4. zadig-2.3.exe の [Options] > [List All Devices]
+<br/>
+	2-5. STM32 BOOTLOADER を選んだ後、Driver欄の左を STTub30 、
+<br/>
+		右を WinUSB に変更してから、Replace Driverをクリックします
+<br/>
+
+<br/>
+
+<br/>
+	2-6. デバイスマネージャの ユニバーサル シリアル バス デバイス
+<br/>
+		(Windows 7 の場合は Universal Serial Bus Devices) 
+<br/>
+		の一覧に STM32 BOOTLOADER が表示されていれば成功です
+<br/>
+		Windows DFUモードの時のデバイスマネージャの表示
+<br/>
+
+<br/>
+3. TeraTerm
+<br/>
+	Wio LTE からのシリアルコンソールを読み書きするためのソフトウェアです
+<br/>
+	※Wio LTE 開発の際、Arduino IDE 標準搭載のシリアルモニターは動作が不安定に
+<br/>
+	なることがあるため、TeraTermを利用するようにしてください
+<br/>
+
+<br/>
+	検索エンジンで TeraTerm を探し、ダウンロードとインストールを行ってください
+<br/>
+
+<br/>
+4. Arduino IDE
+<br/>
+	Wio LTE の開発（ソースコード記述、コンパイル、バイナリファイル転送）には、
+<br/>
+	Arduino IDEを利用します。 
+<br/>
+	Arduino のサイトから Arduino IDE をダウンロードし、
+<br/>
+	表記に従ってインストールしてください
+<br/>
+
+<br/>
+	4-1. ダウンロード
+<br/>
+		download-arduino
+<br/>
+		arduino-ide-download-justdownload
+<br/>
+
+<br/>
+	4-2. インストール
+<br/>
+		ダウンロードした EXE ファイルをダブルクリックしてセットアップを開始
+<br/>
+		してください
+<br/>
+		※スタートメニュー内の Arduino が「Arduino IDE」です。
+<br/>
+		　これをダブルクリックで Arduino IDE を起動することになります
+<br/>
+
+<br/>
+5. ボード定義のインストール
+<br/>
+	Wio LTE を Arduino IDE で扱えるようにするための機能を追加します
+<br/>
+
+<br/>
+	5-1. Arduino IDE を起動する
+<br/>
+		スタートメニュー内の Arduino をダブルクリックします
+<br/>
+
+<br/>
+	5-2. Arduino IDE の [ファイル] > [環境設定]
+<br/>
+
+<br/>
+		下記URL (https:// から .json まで) を 設定タブ にある 追加のボードマネ
+<br/>
+		ージャのURL: へ入力して、保存をクリックします
+<br/>
+
+<br/>
+		https://raw.githubusercontent.com/Seeed-Studio/Seeed_Platform/master/package_seeeduino_boards_index.json
+<br/>
+		追加の様子
+<br/>
+
+<br/>
+	5-3. メニューの [ツール] > [ボード] > [ボードマネージャ]
+<br/>
+		一覧の中から Seeed STM32F4 Boards by Seeed Studio を選択しインストール
+<br/>
+		をクリックします
+<br/>
+		※ seeed stm32 で検索すると見つけやすいです
+<br/>
+
+<br/>
+6. Wio LTE ライブラリのインストール
+<br/>
+	実際のプログラム（Arduino では スケッチと称します）で Wio LTE が使えるよう
+<br/>
+	にするライブラリを追加します
+<br/>
+
+<br/>
+	6-1. Arduino IDE を起動する
+<br/>
+	6-2. Arduino IDE の
+<br/>
+		 [スケッチ] > [ライブラリをインクルード] > [ライブラリを管理…]
+<br/>
+		一覧の中から Wio LTE for Arduino を選択しインストールをクリックします
+<br/>
+		※ wio lte で検索すると見つけやすいです
+<br/>
+
+<br/>
+以上で環境構築は終了
+<br/>
+
+<br/>
+■まとめ
+<br/>
+　割愛
+<br/>
+
+<br/>
+以上。
+<br/>
+</p></body>
