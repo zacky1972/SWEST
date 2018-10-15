@@ -85,3 +85,5 @@ session_name=s1c
 totalReward=10000
 filepath_proceeding=./data/s1c_proceeding.pdf
 filepath_minute=./data/s3b_minute.txt
+filepath_minute=./data/s1c_minute.txt
+filedata_minute=2018/10/9
