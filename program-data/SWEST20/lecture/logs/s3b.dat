@@ -86,4 +86,4 @@ totalReward=10000
 filepath_proceeding=./data/s3b_proceeding.pdf
 filepath_minute=./data/s3b_minute.txt
 filepath_minute=./data/s3b_minute.txt
-filedata_minute=2018/10/8
+filedata_minute=2018/10/15
