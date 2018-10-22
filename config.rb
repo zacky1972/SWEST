@@ -7,7 +7,7 @@ preview = false
 # allOptions = preview
 allOptions = false
 
-defaultOptions = "p3-s2-i2-r1-R1-S0"
+defaultOptions = "p3-s0-i0-r0-R1-S0"
 
 buildBeforeDeploy = true
 
@@ -27,9 +27,10 @@ $navigation = {
 	:site_name => 'SWEST',
 	:items => [
 		{
-			:name => 'SWEST20について',
-			:label => 'SWEST20',
-			:url => ''
+			:name => 'SWEST21について',
+			:label => 'SWEST21',
+			:url => '',
+      :new => true,
 		}, {
 			:name => 'SWEST(エスウエスト)とは',
 			:label => 'About',
@@ -38,15 +39,14 @@ $navigation = {
 			:name => '開催案内',
 			:label => 'Guide',
 			:url => 'guide'
-		}, {
-			:name => 'プログラム',
-			:label => 'Program',
-			:url => 'SWEST20/program/',
-      :new => true,
-		}, {
-			:name => '20周年特別企画＠水曜',
-			:label => 'Wednesday',
-			:url => 'wednesday',
+#		}, {
+#			:name => 'プログラム',
+#			:label => 'Program',
+#			:url => 'SWEST20/program/',
+#		}, {
+#			:name => '20周年特別企画＠水曜',
+#			:label => 'Wednesday',
+#			:url => 'wednesday',
 		}, {
 			:name => '協賛のご案内',
 			:label => 'Sponsor',
