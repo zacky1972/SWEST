@@ -45,6 +45,7 @@ imageminOptions = {
     optimizationLevel: 7
 }
 
+
 gulp.task 'build:sass', () ->
   gulp.src 'source/stylesheets/**/*.scss'
     .pipe sass()
@@ -171,7 +172,7 @@ gulp.task 'pre:SWEST20-png100', () ->
 
 gulp.task 'pre:SWEST20', ['pre:SWEST20-jpg100', 'pre:SWEST20-jpg200', 'pre:SWEST20-jpg300', 'pre:SWEST20-png100', 'pre:SWEST20-png200', 'pre:SWEST20-png300']
 
-gulp.task 'pre:images', ['pre:empty', 'pre:jpg', 'pre:png', 'pre:SWEST20']
+gulp.task 'pre:images', [] # 'pre:empty', 'pre:jpg', 'pre:png', 'pre:SWEST20'
 
 
 gulp.task 'build:images', ['build:jpg', 'build:png']
@@ -181,14 +182,24 @@ gulp.task 'build:pdfs:19', () ->
     .pipe rename({dirname:''})
     .pipe gulp.dest('build/SWEST19/program/pdfs/')
 
-gulp.task 'build:pdfs', ['build:pdfs:19']
+gulp.task 'build:pdfs:20', () ->
+  gulp.src 'program-data/SWEST20/lecture/data/*.pdf'
+    .pipe rename({dirname:''})
+    .pipe gulp.dest('build/SWEST20/program/pdfs/')
+
+gulp.task 'build:pdfs', ['build:pdfs:19', 'build:pdfs:20']
 
 gulp.task 'build:txts:19', () ->
-  gulp.src 'program-data/SWEST19/lecture/data/*.txt'
+  gulp.src 'program-data/SWEST19/lecture/data/*.html'
     .pipe rename({dirname:''})
     .pipe gulp.dest('build/SWEST19/program/txt/')
 
-gulp.task 'build:txts', ['build:txts:19']
+gulp.task 'build:txts:20', () ->
+  gulp.src 'program-data/SWEST20/lecture/data/*.html'
+    .pipe rename({dirname:''})
+    .pipe gulp.dest('build/SWEST20/program/txt/')
+
+gulp.task 'build:txts', ['build:txts:19', 'build:txts:20']
 
 gulp.task 'build:js', () ->
   gulp.src 'source/javascripts/site.js', {read:false}

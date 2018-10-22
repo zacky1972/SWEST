@@ -84,4 +84,5 @@ bikou5=
 session_name=s5d
 totalReward=14250
 filepath_proceeding=./data/s5d_proceeding.pdf
-filedata_proceeding=2018/8/8
+filepath_minute=./data/s5d_minute.txt
+filedata_minute=2018/10/14

@@ -7,7 +7,7 @@ preview = false
 # allOptions = preview
 allOptions = false
 
-defaultOptions = "p1-s2-i2-r1-R1-S0"
+defaultOptions = "p3-s2-i2-r1-R1-S0"
 
 buildBeforeDeploy = true
 
@@ -421,9 +421,16 @@ end
 # インタラクティブセッションの読み込み
 
 $interactive = Hash.new
-if File.exists?("./program-data/SWEST19/interactive-printable.csv") then
-  $interactive[:SWEST19] = CSV.read("./program-data/SWEST19/interactive-printable.csv", headers: false, encoding: "Shift_JIS:UTF-8")
-  $interactive[:SWEST20] = CSV.read("./program-data/SWEST20/interactive-printable.csv", headers: false, encoding: "Shift_JIS:UTF-8") 
+(19..20).each do |number|
+  SWEST = "SWEST#{number}"
+  csv_file = "./program-data/#{SWEST}/interactive-printable.csv"
+  if File.exists?(csv_file) then
+    begin
+      $interactive[SWEST.to_sym] = CSV.read(csv_file, headers: false)
+    rescue ArgumentError => ex  
+      $interactive[SWEST.to_sym] = CSV.read(csv_file, headers: false, encoding: "Shift_JIS:UTF-8")
+    end
+  end
 end
 
 option_table = [
