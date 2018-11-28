@@ -1,3 +1,9 @@
+---
+title: SWEST18 実施報告書
+navigation: Old-report
+description: "SWESTとは、大学の研究者や学生、企業の技術者や管理者、その他、組込みシステムに関わる全ての人達が、徹底的に議論できる場を提供することを主な目的とした合宿型のワークショップです。"
+---
+
 # SWEST18 実施報告書
 
 <div style="text-align: right;">
