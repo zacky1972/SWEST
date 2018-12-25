@@ -7,9 +7,7 @@
             .session-presenter-picture
               img src="#{presenterPicture(session, picNumber(num), 100)}" srcset=("#{srcsetPresenter(session, picNumber(num))}")
             div
-              p
-                - if number >= 20
-                  .session-presenter-kind #{session[symAdd('inst_kind', num)]} &nbsp;
-                .session-presenter-name #{session[symAdd('name', num)]}
-              p
-                .session-presenter-affiliation #{session[symAdd('affi', num)]}
+              - if number >= 20
+                p.session-presenter-kind #{session[symAdd('inst_kind', num)]}
+              p.session-presenter-name #{session[symAdd('name', num)]}
+              p.session-presenter-affiliation #{session[symAdd('affi', num)]}

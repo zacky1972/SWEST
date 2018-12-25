@@ -2,13 +2,8 @@
 @import "normalize";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-$base-color: #fff;
-$text-color: #444;
-$main-color: darken(#87cefa, 20%);
-$main-color-dark: darken(#00bfff, 20%);
-$title-color: #fff;
-$sub-color: #ccc;
-$accent-color: #FF9F80;
+/* on branch 'report18to20-3' */
+@import "./variable";  /* Sass変数の設定を格納 */
 
 /*-----------------------------------------------------------------------
   base
@@ -300,9 +295,6 @@ footer {
 	margin: 5em 0;
 	padding: 2em;
 	font-size: 15px;
-	p {
-		font-size: 15px;
-	}
 }
 
 a .session-section-content {
@@ -313,31 +305,44 @@ a .session-section-content {
 	list-style: none;
 	li {
 		border: 1px solid $sub-color;
-		text-align: center;
+		margin-bottom: 3px;  /* 余白 */
+		font-size: 12px;  /* フォントサイズの基準 */
 	}
+}
+
+.session-presenter {
+	display: table;
+	line-height: 0;
 }
 
 .session-presenter div {
 	display: table-cell;
+	vertical-align: middle;
+	p {
+		line-height: 1.2;
+	}
+}
+
+.session-presenter-picture {
+	padding-right: 1em;  /* 画像の右側の余白 */
 }
 
 .session-presenter-picture img {
 	max-width: 100px;
 	max-height: 100px;
-	vertical-align: middle;
 }
 
 .session-presenter-kind {
-	font-size: 12px;
-	margin: 0;
+	font-size: 1.0em;
+	margin-bottom: -1.0em;
 }
 
 .session-presenter-name {
-	font-size: 15px;
+	font-size: 1.4em;
 }
 
 .session-presenter-affiliation {
-	font-size: 12px;
+	font-size: 1.0em;
 }
 
 .session-introduction {
