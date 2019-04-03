@@ -121,7 +121,7 @@ SWESTの目標を整理すると、次の通りになります。
 
 SWESTへのお問い合わせは、
 
-![事務局](../images/secretariat21.jpg)
+![事務局](../../images/secretariat21.jpg)
 
 までメールにてご連絡ください。
 
