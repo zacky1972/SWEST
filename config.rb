@@ -1,13 +1,14 @@
+# coding: utf-8
 require 'slim'
 require 'csv'
 require 'redcarpet'
 
-preview = false
+preview = true
 
 # allOptions = preview
 allOptions = false
 
-defaultOptions = "p3-s0-i0-r0-R1-S0"
+defaultOptions = "p3-s1-i0-r0-R1-S0"
 
 buildBeforeDeploy = true
 
@@ -30,11 +31,11 @@ $navigation = {
 			:name => 'SWEST21について',
 			:label => 'SWEST21',
 			:url => '',
-      :new => true,
 		}, {
 			:name => 'SWEST(エスウエスト)とは',
 			:label => 'About',
-			:url => 'about'
+			:url => 'about',
+                        :new => true,
 		}, {
 			:name => '開催案内',
 			:label => 'Guide',
@@ -59,7 +60,8 @@ $navigation = {
       :name => '討議テーマ・セッション募集',
       :label => 'Proposal',
       :url => 'proposal',
-      :regist => true
+      :regist => true,
+      :new => true,
     }, {
       :name => 'インタラクティブセッション募集',
       :label => 'Interactive',
