@@ -8,7 +8,7 @@ preview = true
 # allOptions = preview
 allOptions = false
 
-defaultOptions = "p3-s1-i0-r0-R1-S0"
+defaultOptions = "p3-s2-i0-r0-R1-S0"
 
 buildBeforeDeploy = true
 
@@ -35,7 +35,7 @@ $navigation = {
 			:name => 'SWEST(エスウエスト)とは',
 			:label => 'About',
 			:url => 'about',
-                        :new => true,
+#                        :new => true,
 		}, {
 			:name => '開催案内',
 			:label => 'Guide',
@@ -61,7 +61,7 @@ $navigation = {
       :label => 'Proposal',
       :url => 'proposal',
       :regist => true,
-      :new => true,
+#      :new => true,
     }, {
       :name => 'インタラクティブセッション募集',
       :label => 'Interactive',
