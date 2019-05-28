@@ -51,7 +51,8 @@ $navigation = {
 		}, {
 			:name => '協賛のご案内',
 			:label => 'Sponsor',
-			:url => 'sponsor'
+			:url => 'sponsor',
+                        :new => true,    
 		}, {
 			:name => '過去のSWEST',
 			:label => 'Old-report',
@@ -67,6 +68,10 @@ $navigation = {
       :label => 'Interactive',
       :url => 'interactive',
       :regist => true,
+<<<<<<< HEAD
+=======
+#      :new => true,
+>>>>>>> 06d8642... 協賛とメインテーマの更新
     }, {
       :name => '参加申込み',
       :label => 'Regist',
