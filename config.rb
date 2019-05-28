@@ -68,10 +68,7 @@ $navigation = {
       :label => 'Interactive',
       :url => 'interactive',
       :regist => true,
-<<<<<<< HEAD
-=======
 #      :new => true,
->>>>>>> 06d8642... 協賛とメインテーマの更新
     }, {
       :name => '参加申込み',
       :label => 'Regist',
