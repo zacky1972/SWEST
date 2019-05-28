@@ -8,7 +8,7 @@ preview = true
 # allOptions = preview
 allOptions = false
 
-defaultOptions = "p3-s2-i1-r0-R1-S0"
+defaultOptions = "p3-s2-i0-r0-R1-S0"
 
 buildBeforeDeploy = true
 
@@ -51,7 +51,8 @@ $navigation = {
 		}, {
 			:name => '協賛のご案内',
 			:label => 'Sponsor',
-			:url => 'sponsor'
+			:url => 'sponsor',
+                        :new => true,    
 		}, {
 			:name => '過去のSWEST',
 			:label => 'Old-report',
@@ -67,7 +68,7 @@ $navigation = {
       :label => 'Interactive',
       :url => 'interactive',
       :regist => true,
-      :new => true,
+#      :new => true,
     }, {
       :name => '参加申込み',
       :label => 'Regist',
