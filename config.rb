@@ -3,7 +3,7 @@ require 'slim'
 require 'csv'
 require 'redcarpet'
 
-preview = false
+preview = true
 
 # allOptions = preview
 allOptions = false
@@ -31,6 +31,7 @@ $navigation = {
 			:name => 'SWEST21について',
 			:label => 'SWEST21',
 			:url => '',
+#                        :new => true,
 		}, {
 			:name => 'SWEST(エスウエスト)とは',
 			:label => 'About',
