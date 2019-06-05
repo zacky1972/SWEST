@@ -5,12 +5,15 @@ html lang="ja-jp"
     meta charset="utf-8"
     meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"
 
-    title = "#{current_page.data.title} | SWEST「組込みシステム技術に関するサマーワークショップ」" || "SWEST"
+    - if defined? current_page.data.title
+      title = "#{current_page.data.title} | SWEST「組込みシステム技術に関するサマーワークショップ」"
+    - else
+      title = "SWEST「組込みシステム技術に関するサマーワークショップ」"
 
     - ogp_tags do |name, value|
       meta property=name content=value
     - if defined? current_page.data.image
-      meta property="og:image" content="#{current_page.data.image}"
+      meta property="og:image" content="#{image_path(current_page.data.image)}"
     - else
       meta property="og:image" content="#{image_path('SWEST_logo_Facebook.png')}"    
     meta property="og:type" content='website'
@@ -33,7 +36,6 @@ html lang="ja-jp"
     == stylesheet_link_tag :site
     == javascript_include_tag  :site, async: 'async'
 
-  body class="#{page_classes}"
     - if current_page.data.navigation.nil?
       = partial 'partials/navbar', :locals => locals
       .container-fluid
