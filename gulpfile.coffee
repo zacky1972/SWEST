@@ -172,7 +172,94 @@ gulp.task 'pre:SWEST20-png100', () ->
 
 gulp.task 'pre:SWEST20', ['pre:SWEST20-jpg100', 'pre:SWEST20-jpg200', 'pre:SWEST20-jpg300', 'pre:SWEST20-png100', 'pre:SWEST20-png200', 'pre:SWEST20-png300']
 
-gulp.task 'pre:images', [] # 'pre:empty', 'pre:jpg', 'pre:png', 'pre:SWEST20'
+gulp.task 'pre:SWEST21-jpg300', () ->
+  gulp.src 'source/images/SWEST21/*.{jpg,JPG,jpeg,JPEG}'
+    .pipe rename({extname: '.300.jpg', dirname:''})
+    .pipe imageResize(resizeOptions300)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWEST21/')
+
+gulp.task 'pre:SWEST21-jpg200', () ->
+  gulp.src 'source/images/SWEST21/*.{jpg,JPG,jpeg,JPEG}'
+    .pipe rename({extname: '.200.jpg', dirname:''})
+    .pipe imageResize(resizeOptions200)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWEST21/')
+
+gulp.task 'pre:SWEST21-jpg100', () ->
+  gulp.src 'source/images/SWEST21/*.{jpg,JPG,jpeg,JPEG}'
+    .pipe rename({extname: '.100.jpg', dirname:''})
+    .pipe imageResize(resizeOptions100)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWEST21/')
+
+gulp.task 'pre:SWEST21-jpg300-2', () ->
+  gulp.src 'program-data/SWEST21/lecture/data/img/*.{jpg,JPG,jpeg,JPEG}'
+    .pipe rename({extname: '.300.jpg', dirname:''})
+    .pipe imageResize(resizeOptions300)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWEST21/')
+
+gulp.task 'pre:SWEST21-jpg200-2', () ->
+  gulp.src 'program-data/SWEST21/lecture/data/img/*.{jpg,JPG,jpeg,JPEG}'
+    .pipe rename({extname: '.200.jpg', dirname:''})
+    .pipe imageResize(resizeOptions200)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWEST21/')
+
+gulp.task 'pre:SWEST21-jpg100-2', () ->
+  gulp.src 'program-data/SWEST21/lecture/data/img/*.{jpg,JPG,jpeg,JPEG}'
+    .pipe rename({extname: '.100.jpg', dirname:''})
+    .pipe imageResize(resizeOptions100)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWEST21/')
+
+gulp.task 'pre:SWEST21-png300', () ->
+  gulp.src 'source/images/SWEST21/*.{png,PNG}'
+    .pipe rename({extname: '.300.png', dirname:''})
+    .pipe imageResize(resizeOptions300)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWEST21/')
+
+gulp.task 'pre:SWEST21-png200', () ->
+  gulp.src 'source/images/SWEST21/*.{png,PNG}'
+    .pipe rename({extname: '.200.png', dirname:''})
+    .pipe imageResize(resizeOptions300)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWEST21/')
+
+gulp.task 'pre:SWEST21-png100', () ->
+  gulp.src 'source/images/SWEST21/*.{png,PNG}'
+    .pipe rename({extname: '.100.png', dirname:''})
+    .pipe imageResize(resizeOptions100)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWEST21/')
+
+gulp.task 'pre:SWEST21-png300-2', () ->
+  gulp.src 'program-data/SWEST21/lecture/data/img/*.{png,PNG}'
+    .pipe rename({extname: '.300.png', dirname:''})
+    .pipe imageResize(resizeOptions300)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWEST21')
+
+gulp.task 'pre:SWEST21-png200-2', () ->
+  gulp.src 'program-data/SWEST21/lecture/data/img/*.{png,PNG}'
+    .pipe rename({extname: '.200.png', dirname:''})
+    .pipe imageResize(resizeOptions200)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWEST21/')
+
+gulp.task 'pre:SWEST21-png100-2', () ->
+  gulp.src 'program-data/SWEST21/lecture/data/img/*.{png,PNG}'
+    .pipe rename({extname: '.100.png', dirname:''})
+    .pipe imageResize(resizeOptions100)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWESTS21/')
+
+
+gulp.task 'pre:SWEST21', ['pre:SWEST21-jpg100', 'pre:SWEST21-jpg200', 'pre:SWEST21-jpg300', 'pre:SWEST21-png100', 'pre:SWEST21-png200', 'pre:SWEST21-png300', 'pre:SWEST21-jpg100-2', 'pre:SWEST21-jpg200-2', 'pre:SWEST21-jpg300-2', 'pre:SWEST21-png100-2', 'pre:SWEST21-png200-2', 'pre:SWEST21-png300-2']
+
+gulp.task 'pre:images', ['pre:SWEST21'] # 'pre:empty', 'pre:jpg', 'pre:png', 'pre:SWEST20'
 
 
 gulp.task 'build:images', ['build:jpg', 'build:png']

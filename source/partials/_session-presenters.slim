@@ -5,7 +5,7 @@
         li
           .session-presenter
             .session-presenter-picture
-              img src="#{presenterPicture(session, picNumber(num), 100)}" srcset=("#{srcsetPresenter(session, picNumber(num))}")
+              img src="#{presenterPicture(session, picNumber(num), number, 100)}" srcset=("#{srcsetPresenter(session, picNumber(num), number)}")
             div
               - if number >= 20
                 p.session-presenter-kind #{session[symAdd('inst_kind', num)]}

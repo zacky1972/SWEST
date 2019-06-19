@@ -6,6 +6,6 @@
     - if name.to_sym == :interactive && !interactive.nil?
   	  = partial 'partials/interactive-content', :locals => $navigation.merge({ interactive: interactive })
     - else
-  	  = partial 'partials/session-presenters', :locals => $navigation.merge({ name: name, sessions: sessions, session: getSession(sessions, name) })
+  	  = partial 'partials/session-presenters', :locals => $navigation.merge({ name: name, sessions: sessions, session: getSession(sessions, name), number: number })
   	  = partial 'partials/session-abstract', :locals => $navigation.merge({ name: name, sessions: sessions, session: getSession(sessions, name) })
   	  = partial 'partials/session-section-content-sub', :locals => $navigation.merge({ name: name, sessions: sessions, session: getSession(sessions, name) })
