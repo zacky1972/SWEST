@@ -3,7 +3,7 @@ require 'slim'
 require 'csv'
 require 'redcarpet'
 
-preview = false
+preview = true
 
 # allOptions = preview
 allOptions = false
@@ -41,10 +41,11 @@ $navigation = {
 			:name => '開催案内',
 			:label => 'Guide',
 			:url => 'guide'
-#		}, {
-#			:name => 'プログラム',
-#			:label => 'Program',
-#			:url => 'SWEST20/program/',
+		}, {
+			:name => 'プログラム',
+			:label => 'Program',
+			:url => 'SWEST21/program/',
+      :new => true,
 #		}, {
 #			:name => '20周年特別企画＠水曜',
 #			:label => 'Wednesday',
@@ -112,10 +113,11 @@ CSV.send(:prepend, CSVEncodingExtension)
 
 $files = {
   SWEST19: "program-data/SWEST19/lecture/logs/{keynote,s{1,2,3,4,5}*}.dat",
-  SWEST20: "program-data/SWEST20/lecture/logs/{keynote,s{1,2,3,4,5,s}*}.dat"
+  SWEST20: "program-data/SWEST20/lecture/logs/{keynote,s{1,2,3,4,5,s}*}.dat",
+  SWEST21: "program-data/SWEST21/lecture/logs/{keynote,s{1,2,3,4,5}*}.dat"
 }
 
-$current = 20
+$current = 21
 
 # セッションデータ
 
@@ -203,7 +205,7 @@ $sessions = {
     },
     s4: {
       date: "8/25(金)",
-      time: "13:00～13:10",
+      time: "12:40～13:50",
       name: "セッションS4(70分)",
     },
     s5: {
@@ -340,7 +342,114 @@ $sessions = {
       fullTitle: "もくもく会",
       abst: "SWESTの2日目にもくもく部屋を用意しています．<br/>使い方は自由です．<br/>セッションのハンズオン実習で進みきれなかったところや延長戦をやりたい！とか，インタラクティブセッションの自由工作品を見て開発意欲が湧いてきたからひたすら開発に励みたい！とか，もくもくとは言ってるけどフリーな議論で盛り上がりたい！も大歓迎です．"
     }
-  }
+  },
+  SWEST21: {
+    date: [
+      "9/5(木)",
+      "9/6(金)",
+    ],
+    page: [
+      'index',
+      'keynote',
+      'interactive',
+      'mokumoku',
+      's1a', 's1b', 's1c', 's1d', 's1e',
+      's2a', 's2b', 's2c', 's2d',
+      's3a', 's3b', 's3c', 's3d',
+      's4a', 's4b', 's4c', 's4d',
+      's5a', 's5b', 's5c', 's5d'
+    ],
+    icebreak: {
+      date: "9/5(木)",
+      time: "12:50～13:00",
+      name: "アイスブレイク",
+      title: "アイスブレイク",
+      fullTitle: "アイスブレイク",
+    },
+    opening: {
+      date: "9/5(木)",
+      time: "13:00～13:20",
+      name: "オープニング",
+      title: "オープニング",
+      fullTitle: "オープニング",
+    },
+    keynote: {
+      date: "9/5(木)",
+      time: "13:20～14:40",
+      name: "基調講演",
+    },
+    shortPresentation: {
+      date: "9/5(木)",
+      time: "14:40～15:00",
+      name: "ショートプレゼンテーション",
+      title: "ショートプレゼンテーション",
+      fullTitle: "ショートプレゼンテーション",
+    },
+    interactive: {
+      date: "9/5(木)",
+      time: "15:00〜17:30",
+      id: "interactive",
+      name: "インタクティブセッション",
+      title: "インタラクティブセッション",
+      fullTitle: "インタラクティブセッション",
+      abst: "研究発表・プロジェクト紹介・自由工作発表・協賛企業デモ展示をポスター形式で行います。"
+    },
+    dinner: {
+      date: "9/5(木)",
+      time: "18:30〜20:30",
+      name: "懇親会",
+      title: "懇親会",
+      fullTitle: "懇親会",
+    },
+    s1: {
+      date: "9/5(木)",
+      time: "21:00〜22:30",
+      name: "セッションS1",
+      title: "夜の分科会",
+    },
+    s2: {
+      date: "9/6(金)",
+      time: "9:00～10:10",
+      name: "セッションS2(70分)",
+    },
+    s3: {
+      date: "9/6(金)",
+      time: "10:30～11:40",
+      name: "セッションS3(70分)",
+    },
+    lunch: {
+      date: "9/6(金)",
+      time: "11:40〜13:00",
+      name: "昼食",
+      title: "昼食",
+      fullTitle: "昼食",
+    },
+    s4: {
+      date: "9/6(金)",
+      time: "12:40～13:50",
+      name: "セッションS4(70分)",
+    },
+    s5: {
+      date: "9/6(金)",
+      time: "14:30～15:40",
+      name: "セッションS5(70分)",
+    },
+    closing: {
+      date: "9/6(金)",
+      time: "15:45〜16:30",
+      name: "クロージング",
+      title: "クロージング",
+      fullTitle: "クロージング",
+    },
+    mokumoku: {
+      id: "mokumoku",
+      name: "もくもく会",
+      date: "9/6(金)",
+      time: "9:00～15:40",
+      title: "もくもく会",
+      fullTitle: "もくもく会",
+    }
+  },
 }
 
 # セッションデータの読み込み
@@ -422,11 +531,10 @@ $sessions.each do |key, value|
   end
 end
 
-
 # インタラクティブセッションの読み込み
 
 $interactive = Hash.new
-(19..20).each do |number|
+(19..21).each do |number|
   SWEST = "SWEST#{number}"
   csv_file = "./program-data/#{SWEST}/interactive-printable.csv"
   if File.exists?(csv_file) then
@@ -564,6 +672,12 @@ end
   end
 end
 
+[21].each do |number|
+  swest = "SWEST#{number.to_s}"
+  $sessions[swest.to_sym][:page].each do |name|
+    proxy "/#{swest}/program/#{name}.html", "/templates/timetable-#{swest}.html", locals: { session: name,  swest: swest, number: number, interactive: $interactive[swest.to_sym]}, ignore: true
+  end
+end
 
 #{
 #  'logo1': 'logo/SWEST_logo-01-20180307.jpg',
@@ -625,9 +739,13 @@ helpers do
     text.gsub(/#{pattern}/,"<a href="+$&.to_s+">"+$&.to_s+"</a>")
   end
 
-  def addSize2Pathname path, size
+  def addSize2Pathname path, number, size
     p = Pathname(path)
-    "#{p.dirname}/#{p.basename('.*')}.#{size.to_s}#{p.extname}"
+    if number.nil? || number <= 20 || (p.basename('.*')).fnmatch("empty") then
+      "#{p.dirname}/#{p.basename('.*')}.#{size.to_s}#{p.extname}"
+    else
+      "#{p.dirname}/SWEST#{number}/#{p.basename('.*')}.#{size.to_s}#{p.extname}"
+    end
   end
 
   def link2SessionTitle sessions, name, id, number
@@ -654,19 +772,19 @@ helpers do
     "filepath_pic#{number.to_s}".to_sym
   end
 
-  def presenterPicture session, picNumber, size
-    image_path(addSize2Pathname(session[picNumber], size))
+  def presenterPicture session, picNumber, number, size
+    image_path(addSize2Pathname(session[picNumber], number, size))
   end
 
-  def srcsetPresenter session, picNumber
+  def srcsetPresenter session, picNumber, number
     (1..3).to_a.reverse.map { |factor|
-      "#{presenterPicture(session, picNumber, "#{factor}00".to_i)} #{factor}x"
+      "#{presenterPicture(session, picNumber, number, "#{factor}00".to_i)} #{factor}x"
     }.join(', ')
   end
 
-  def srcsetKeyface image
+  def srcsetKeyface image, number
     (1..3).to_a.reverse.map { |factor|
-      "#{addSize2Pathname(image_path(image), "#{factor}00".to_i)} #{factor}x"
+      "#{addSize2Pathname(image_path(image), number, "#{factor}00".to_i)} #{factor}x"
     }.join(', ')
   end
 
