@@ -254,7 +254,7 @@ gulp.task 'pre:SWEST21-png100-2', () ->
     .pipe rename({extname: '.100.png', dirname:''})
     .pipe imageResize(resizeOptions100)
     .pipe imagemin(imageminOptions)
-    .pipe gulp.dest('program-data/images/SWESTS21/')
+    .pipe gulp.dest('program-data/images/SWEST21/')
 
 
 gulp.task 'pre:SWEST21', ['pre:SWEST21-jpg100', 'pre:SWEST21-jpg200', 'pre:SWEST21-jpg300', 'pre:SWEST21-png100', 'pre:SWEST21-png200', 'pre:SWEST21-png300', 'pre:SWEST21-jpg100-2', 'pre:SWEST21-jpg200-2', 'pre:SWEST21-jpg300-2', 'pre:SWEST21-png100-2', 'pre:SWEST21-png200-2', 'pre:SWEST21-png300-2']
