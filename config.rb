@@ -54,7 +54,7 @@ $navigation = {
 			:name => '協賛のご案内',
 			:label => 'Sponsor',
 			:url => 'sponsor',
-#                        :new => true,    
+#                        :new => true,
 		}, {
 			:name => '過去のSWEST',
 			:label => 'Old-report',
@@ -389,10 +389,10 @@ $sessions = {
       date: "9/5(木)",
       time: "15:00〜17:30",
       id: "interactive",
-      name: "インタクティブセッション",
-      title: "インタラクティブセッション",
-      fullTitle: "インタラクティブセッション",
-      abst: "研究発表・プロジェクト紹介・自由工作発表・協賛企業デモ展示をポスター形式で行います。"
+      name: "インタクティブセッション ＆ EmbLT",
+      title: "インタラクティブセッション ＆ EmbLT",
+      fullTitle: "インタラクティブセッション ＆ EmbLT",
+      abst: "研究発表・プロジェクト紹介・自由工作発表・協賛企業デモ展示をポスター形式で行います。 EmbLTもやりますよ！"
     },
     dinner: {
       date: "9/5(木)",
@@ -540,7 +540,7 @@ $interactive = Hash.new
   if File.exists?(csv_file) then
     begin
       $interactive[SWEST.to_sym] = CSV.read(csv_file, headers: false)
-    rescue ArgumentError => ex  
+    rescue ArgumentError => ex
       $interactive[SWEST.to_sym] = CSV.read(csv_file, headers: false, encoding: "Shift_JIS:UTF-8")
     end
   end
