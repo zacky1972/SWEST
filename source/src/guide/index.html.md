@@ -41,19 +41,18 @@ description: "SWEST21開催概要: 開催日程: 2019年9月5日(木)〜6日(金
 * SWESTで得られる学びと経験、それらは実行してこそ身につきます。つまりランしてみましょう！！
 * SWESTで身につけた技術、その知見を発信して共有しませんか？つまりpushしていって、世界を変えていきましょう!!!
 
-<!---
 <a name="flyer"></a>
 ## ちらし
 
-SWEST20のちらしを用意しました。A4版両面です。  
+SWEST21のちらしを用意しました。A4版両面です。  
 社内掲示や回覧などにご活用いただけますと幸いです。
 
-* [SWEST20ちらし（PDF・2018年7月2日版）](../images/flyer/SWEST20-flyer_201807.pdf)
+* [SWEST21ちらし（PDF・2019年7月16日版）](../images/flyer/swest21-flyer.pdf)
 
 
-<img src="../images/flyer/SWEST20-flyer_201807-omote.jpg" alt="SWEST20ちらし表面" width=300>
-<img src="../images/flyer/SWEST20-flyer_201807-ura.jpg" alt="SWEST20ちらし裏面" width=300>
+<img src="../images/flyer/swest21-flyer_omote.jpg" alt="SWEST21ちらし表面" width=300>
+<img src="../images/flyer/swest21-flyer_ura.jpg" alt="SWEST21ちらし裏面" width=300>
 
--->
+
 
 
