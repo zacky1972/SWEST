@@ -7,14 +7,17 @@ description: "SWEST21開催概要: 開催日程: 2019年9月5日(木)〜6日(金
 
 * 会場: [下呂温泉 水明館](https://www.suimeikan.co.jp) (岐阜県下呂市幸田1268)
 * 日程: 2019年9月5日(木)〜6日(金)
-* 参加費: 未定
-* 参加募集期間: 未定
+* 参加費: 下記参照
+* 参加募集期間: 2019年7月1日(月)〜31日(水)
 * 問合せ・連絡先: ![事務局連絡先](../images/secretariat21.jpg)
 
 <a name="fee"></a>
-## 参加費について
-
+## 参加費について  
+  
+<!--
 * <font color="red">下表は2018年に開催したSWEST20の参加費です。SWEST21での参加費は未定です。</font>
+  -->
+
 
 |参加区分 |価格　　|
 |:-----|------:|
@@ -47,8 +50,7 @@ description: "SWEST21開催概要: 開催日程: 2019年9月5日(木)〜6日(金
 SWEST21のちらしを用意しました。A4版両面です。  
 社内掲示や回覧などにご活用いただけますと幸いです。
 
-* [SWEST21ちらし（PDF・2019年7月16日版）](../images/flyer/swest21-flyer.pdf)
-
+* [SWEST21ちらし（PDF・2019年7月16日版）](https://swest.toppers.jp/images/flyer/swest21-flyer.pdf)
 
 <img src="../images/flyer/swest21-flyer_omote.jpg" alt="SWEST21ちらし表面" width=300>
 <img src="../images/flyer/swest21-flyer_ura.jpg" alt="SWEST21ちらし裏面" width=300>
