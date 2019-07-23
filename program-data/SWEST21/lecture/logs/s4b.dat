@@ -1,7 +1,7 @@
 title=Azure IoT TechnologyとReButton
 abst=マイクロソフトがIoTに本気の取組みを始めて早5年、今年のde:codeでも多数の最新テクノロジーが発表されました。Azureがカバーする技術領域も、Azure IoTを使った実ソリューションの適用エリアも広がっています。<<enter>>本セッションでは、マイクロソフトがIoT向けに提供しているテクノロジー群全体と推奨アーキテクチャを紹介します。<<enter>>また、Azure IoTに接続するデバイス開発についてSeeed ReButtonを使って解説します。
-recommend=
-twitter=仮
+recommend=Azure IoTと，Azureと親和性の高いRebuttonをセッションです．<<enter>>IoTでデータを集めて，そのあとどうするの？IoTとその先を見据えたお話と，まずはRebuttonでIoTに<<enter>>お手軽にチャレンジしよう！といったテーマになると聞いています。<<enter>>Rebuttonについては，別途もくもく会を設けて実際に触って試せる場も企画中です．お楽しみに！
+twitter=IoTとその先を見据えたAzureIoT＋Rebuttonのセッションです．Rebuttonを用いたハンズオンも別途もくもく会として企画中！
 publish=未確認
 rokuon_radio=未確認
 table_radio=スクール
