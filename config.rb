@@ -8,7 +8,7 @@ preview = false
 # allOptions = preview
 allOptions = false
 
-defaultOptions = "p3-s2-i1-r2-R1-S0"
+defaultOptions = "p3-s2-i1-r3-R1-S0"
 
 buildBeforeDeploy = true
 
@@ -582,7 +582,8 @@ option_table = [
     :table => {
       "0" => :disable,
       "1" => :enable,
-      "2" => :finish
+      "2" => :ppOnly,
+      "3" => :finish,
     }
   },
   {

@@ -147,8 +147,8 @@ h1 SWEST21 参加申込み
   <li><a href="https://swest.toppers.jp/SamplePP/PPsample16.pdf" target="sample_box">「技術者教育」に思うこと</a></li>
   </ul>
 
-- else
-  / 参加申込みの終了表示
+- elsif locals[:regist] == :ppOnly
+  / 参加申込みの終了，ポジションペーパー表示
 
   p.red SWEST21の参加申込みは締め切りました。
 
@@ -247,3 +247,11 @@ h1 SWEST21 参加申込み
   <li><a href="https://swest.toppers.jp/SamplePP/PPsample15.pdf" target="sample_box">提案「夏の学校」</a></li>
   <li><a href="https://swest.toppers.jp/SamplePP/PPsample16.pdf" target="sample_box">「技術者教育」に思うこと</a></li>
   </ul>
+- else
+  / 参加申込みの終了表示
+
+  p.red SWEST21の参加申込み，ポジションペーパー投稿は締め切りました。
+
+  p 参加費の支払い方法に関するご質問や、申込確認メールが受信できていないなど、不明な点がありましたら下記までお問い合わせください。
+
+  = image_tag("secretariat21.jpg", :alt => "事務局")
