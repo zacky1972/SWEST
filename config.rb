@@ -45,7 +45,7 @@ $navigation = {
 			:name => 'プログラム',
 			:label => 'Program',
 			:url => 'SWEST21/program/',
-      :new => true,
+#      :new => true,
 #		}, {
 #			:name => '20周年特別企画＠水曜',
 #			:label => 'Wednesday',

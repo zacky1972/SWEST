@@ -5,9 +5,12 @@ description: "2019年9月5日(木)〜6日(金)に、第21回 組込みシステ�
 ---
 # 協賛のご案内
 
+<font color="Red">SWEST21は成功裏に終了しました。ありがとうございました。</font>  
+<font color="Red">次回SWEST22の開催情報は決定次第お知らせします。</font>
+
 <!---
 <font color="red">2019年9月5日(木)〜6日(金)に開催予定のSWEST21に関する協賛のご案内は準備中です。しばしお待ちください。</font>
--->
+<font color="Red">-->
 
 ## SWEST21の開催概要
 
