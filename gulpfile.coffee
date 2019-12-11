@@ -274,7 +274,13 @@ gulp.task 'build:pdfs:20', () ->
     .pipe rename({dirname:''})
     .pipe gulp.dest('build/SWEST20/program/pdfs/')
 
-gulp.task 'build:pdfs', ['build:pdfs:19', 'build:pdfs:20']
+gulp.task 'build:pdfs:21', () ->
+  gulp.src 'program-data/SWEST21/lecture/data/*.pdf'
+    .pipe rename({dirname:''})
+    .pipe gulp.dest('build/SWEST21/program/pdfs/')
+
+
+gulp.task 'build:pdfs', ['build:pdfs:19', 'build:pdfs:20', 'build:pdfs:21']
 
 gulp.task 'build:txts:19', () ->
   gulp.src 'program-data/SWEST19/lecture/data/*.html'
@@ -286,7 +292,12 @@ gulp.task 'build:txts:20', () ->
     .pipe rename({dirname:''})
     .pipe gulp.dest('build/SWEST20/program/txt/')
 
-gulp.task 'build:txts', ['build:txts:19', 'build:txts:20']
+gulp.task 'build:txts:21', () ->
+  gulp.src 'program-data/SWEST21/lecture/data/*.html'
+    .pipe rename({dirname:''})
+    .pipe gulp.dest('build/SWEST21/program/txt/')
+
+gulp.task 'build:txts', ['build:txts:19', 'build:txts:20', 'build:txts:21']
 
 gulp.task 'build:js', () ->
   gulp.src 'source/javascripts/site.js', {read:false}
