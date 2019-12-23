@@ -1,0 +1,81 @@
+**********************************************************************
+セッションS2d ワーク
+テーマ：Nerves Training: Elixir.Circuitsによる外部デバイスの制御
+コーディネータ：高瀬 英希 氏(京都大学/JSTさきがけ),
+                菊池 豊 氏(高知工科大学 地域連携機構)
+日時：2019/9/6(金) 9:00～10:10
+参加人数：21名
+**********************************************************************
+
+■概要
+  ・Nerves Trainingを行う
+  ・Elixir.Circuitsでデバイスを制御する(前半・本セッション)
+  ・mixでNervesアプリを開発する NervesHubでOTAを実行する(後半)
+
+■自己紹介(講師・TA)
+　・高瀬 英希 (京都大学/JSTさきがけ)
+　・菊池 豊 (高知工科大学 地域連携機構)
+　・山崎 進 (北九州市立大学 国際環境工学部)
+　・Justin Schneck (Nerves Project)
+
+■準備と概念の説明
+・Nerves Training：本家のTrainingは6時間掛かりのボリュームがある
+      今回は2.5時間しか無いため、Elixir.Circutsを使うところ、
+      mixコマンドでプロジェクトを開発してNervesHubでOTAデプロイを行うところまでを行う
+
+・資料：(一般には非公開)
+　・Google Spreadsheetで進捗を管理する
+
+・NervesKeyが取り付けられたラズパイ0をUSBケーブルでPCに接続する
+　ラズパイの外側のポートは使用しない
+　内側のGadget Portを使用
+
+・Host：開発用のPC
+・Target：ラズパイ
+・SDカードからファームをブートする
+
+・NervesHub：ネットワーク通信によりクラウド越しにHostとTargetを繋ぐ
+
+・Trainingのポリシー：極力コピペは控えて、コードやコマンドは手打ちすること。そのほうが実際の身につく
+
+■Nervesのブートとホストからの接続、実行
+
+・zipファイル内のnerves_training_id_rsaを~/.sshに配置しchmod 600で権限を付与
+
+・ラズパイをUSBケーブルでPCに接続して、ssh nerves.localでssh接続→iexが立ち上がる
+  iexはelixirのインタプリタで、通常Ctrl+Cを2回押すと終了するがラズパイ上で
+  起動しているiexはexitコマンドで終了することになっている
+
+  RingLogger.next：これまでのログを表示する
+  RingLogger.attach:これからシステムログを表示する
+  RingLogger.detach:システムログを表示しない
+ 
+◆トラブル：ssh接続できない
+  ・virtualboxの場合、拡張プラグインを入れる必要がある可能性がある
+    device usbをboxに全部渡さないとethernetが使えない
+  ・USBケーブルが壊れているorパワー不足が原因であることも多い
+
+
+■Elixir.Circuitsを使う
+・GPIOは簡単だが遅い
+  LEDやボタンを検知するには向いている(ので今回はCircuits.GPIOを使う)
+
+・Hex: Elixirのライブラリやパッケージを配布するシステム
+
+・GPIOの割り当て：ボタン2つ、方向キー５つ
+　・Circuits.GPIO.open関数でGPIOをopenしpin番号、inputかoutputか、pullupか
+　  pulldownかを指定する
+　・Circuits.GPIO.read関数でGPIOの状態を読むことができる
+　・Circuits.GPIO.set_interruptsでボタンの状態を表示する
+　　(ボタンを押すと0,離すと1)
+
+　・GenServer:Elixirの、プロセスを生成してこのプロセスにデータを送る、プロセス生成の機能
+
+  ・ボタンの値が変わればそれを表示する関数を持つモジュールを定義し、実行してみる
+
+・i2c：組み込みは色々な通信規格がある
+  i2cのライブラリ：Circuits.I2C・・・バスの名前を探すことなどができる
+
+
+(セッションS3dに続く)
+

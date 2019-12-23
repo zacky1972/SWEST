@@ -1,0 +1,70 @@
+**********************************************************************
+セッションS3d ワーク
+テーマ：Nerves Training: NervesHubによるOTAデプロイ
+コーディネータ：高瀬 英希 氏(京都大学/JSTさきがけ),
+                菊池 豊 氏(高知工科大学 地域連携機構)
+日時：2019/9/6(金) 10:30～11:40
+参加人数：19名
+**********************************************************************
+
+■概要
+  ・Nerves Trainingを行う
+  ・Elixir.Circuitsでデバイスを制御する(前半)
+  ・mixでNervesアプリを開発する NervesHubでOTAを実行する(後半・本セッション)
+
+(セッションS2dからの続き)
+
+■ホストで開発したファームウェアをUSB接続（ssh経由）でデプロイする
+
+・正解データのGitHubからのclone
+　https://github.com/nerves-training/nerves_team
+  ブランチが14まで切られており、適宜正解の挙動を確認できる
+
+・nerves_training\mynerves_teamに自分のプロジェクトを作る
+　・sshkeyをconfig/target.exsファイル内に書き込む
+　・export MIX_TARGET=rpi0
+　・mix deps.get 依存関係を解決する
+　・mix firmware　ファームウェアを作る
+　・mix firmware.gen.script upload.shが作られる
+　・./upload.sh　ファームウェアを書き込む→再起動(30秒ほど時間がかかる)
+
+・ファームウェアを更新したことでiex上でNervesTeamDevice.hello()関数に対して :world が返る
+
+　◆最初にファームを書くとき・・・
+　Nervesのランタイムが入っていないのでnerves.localなどのコマンドを使えないため、SDカードをPCに刺して直接焼く(mix burn)
+
+◆Elixirではmixというコマンドを使ってプロジェクト開発する
+  mix.exsには依存環境を書く
+  ソースコードはlibの中に書く
+  libの中にモジュールと、モジュール名のディレクトリがある
+   (この中にサブモジュールを置く)
+
+■NervesHub
+・NervesHubアカウントを作る
+・X509による認証の設定を行う
+　OTAをセキュアに行うため
+・NervesHubへのデバイスやファームの登録、デプロイメントの作成を行う
+
+
+■NervesTrainingの後ろの方の解説(今回は時間がないためできない)
+・Scenicで画面に表示させる
+・Phoenixチャネルを使ってサーバとクライアントを通信する
+
+■その他の情報の紹介
+・Slack　ツイッター　ElixirForumなどでNervesの質問が可能
+
+・ラズパイカメラ powered by Nervesの紹介
+　カメラのライブラリ、phoenix、グラフQLが入っている
+　リアルタイムでカメラの解像度の変更が可能、スナップショットも取れる
+　画像処理もリアルタイムでできる
+
+
+■まとめ
+・ssh接続できないケースが多かった
+　Nervesホスト開発はmacとLinuxのみ対応
+　WindowsはVMで対応する必要があるが，設定によってうまくいかないことが多い
+
+・NervesHubの途中までできた
+　以降は自習してもらい、ぜひNervesの素晴らしさを体験して欲しい
+　なにか困りごとがあれば講師まで　Twitter等でも受け付けます
+

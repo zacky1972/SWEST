@@ -1,0 +1,142 @@
+<!DOCTYPE html><head><meta charset="UTF-8"><title>s3d_minute</title></head><body><p>
+**********************************************************************
+<br/>
+セッションS3d ワーク
+<br/>
+テーマ：Nerves Training: NervesHubによるOTAデプロイ
+<br/>
+コーディネータ：高瀬 英希 氏(京都大学/JSTさきがけ),
+<br/>
+                菊池 豊 氏(高知工科大学 地域連携機構)
+<br/>
+日時：2019/9/6(金) 10:30～11:40
+<br/>
+参加人数：19名
+<br/>
+**********************************************************************
+<br/>
+
+<br/>
+■概要
+<br/>
+  ・Nerves Trainingを行う
+<br/>
+  ・Elixir.Circuitsでデバイスを制御する(前半)
+<br/>
+  ・mixでNervesアプリを開発する NervesHubでOTAを実行する(後半・本セッション)
+<br/>
+
+<br/>
+(セッションS2dからの続き)
+<br/>
+
+<br/>
+■ホストで開発したファームウェアをUSB接続（ssh経由）でデプロイする
+<br/>
+
+<br/>
+・正解データのGitHubからのclone
+<br/>
+　https://github.com/nerves-training/nerves_team
+<br/>
+  ブランチが14まで切られており、適宜正解の挙動を確認できる
+<br/>
+
+<br/>
+・nerves_training\mynerves_teamに自分のプロジェクトを作る
+<br/>
+　・sshkeyをconfig/target.exsファイル内に書き込む
+<br/>
+　・export MIX_TARGET=rpi0
+<br/>
+　・mix deps.get 依存関係を解決する
+<br/>
+　・mix firmware　ファームウェアを作る
+<br/>
+　・mix firmware.gen.script upload.shが作られる
+<br/>
+　・./upload.sh　ファームウェアを書き込む→再起動(30秒ほど時間がかかる)
+<br/>
+
+<br/>
+・ファームウェアを更新したことでiex上でNervesTeamDevice.hello()関数に対して :world が返る
+<br/>
+
+<br/>
+　◆最初にファームを書くとき・・・
+<br/>
+　Nervesのランタイムが入っていないのでnerves.localなどのコマンドを使えないため、SDカードをPCに刺して直接焼く(mix burn)
+<br/>
+
+<br/>
+◆Elixirではmixというコマンドを使ってプロジェクト開発する
+<br/>
+  mix.exsには依存環境を書く
+<br/>
+  ソースコードはlibの中に書く
+<br/>
+  libの中にモジュールと、モジュール名のディレクトリがある
+<br/>
+   (この中にサブモジュールを置く)
+<br/>
+
+<br/>
+■NervesHub
+<br/>
+・NervesHubアカウントを作る
+<br/>
+・X509による認証の設定を行う
+<br/>
+　OTAをセキュアに行うため
+<br/>
+・NervesHubへのデバイスやファームの登録、デプロイメントの作成を行う
+<br/>
+
+<br/>
+
+<br/>
+■NervesTrainingの後ろの方の解説(今回は時間がないためできない)
+<br/>
+・Scenicで画面に表示させる
+<br/>
+・Phoenixチャネルを使ってサーバとクライアントを通信する
+<br/>
+
+<br/>
+■その他の情報の紹介
+<br/>
+・Slack　ツイッター　ElixirForumなどでNervesの質問が可能
+<br/>
+
+<br/>
+・ラズパイカメラ powered by Nervesの紹介
+<br/>
+　カメラのライブラリ、phoenix、グラフQLが入っている
+<br/>
+　リアルタイムでカメラの解像度の変更が可能、スナップショットも取れる
+<br/>
+　画像処理もリアルタイムでできる
+<br/>
+
+<br/>
+
+<br/>
+■まとめ
+<br/>
+・ssh接続できないケースが多かった
+<br/>
+　Nervesホスト開発はmacとLinuxのみ対応
+<br/>
+　WindowsはVMで対応する必要があるが，設定によってうまくいかないことが多い
+<br/>
+
+<br/>
+・NervesHubの途中までできた
+<br/>
+　以降は自習してもらい、ぜひNervesの素晴らしさを体験して欲しい
+<br/>
+　なにか困りごとがあれば講師まで　Twitter等でも受け付けます
+<br/>
+
+<br/>
+</p></body>

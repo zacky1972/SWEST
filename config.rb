@@ -8,7 +8,7 @@ preview = true
 # allOptions = preview
 allOptions = false
 
-defaultOptions = "p3-s2-i1-r2-R1-S0"
+defaultOptions = "p0-s0-i0-r0-R1-S0"
 
 buildBeforeDeploy = true
 
@@ -41,10 +41,10 @@ $navigation = {
 			:name => '開催案内',
 			:label => 'Guide',
 			:url => 'guide'
-		}, {
-			:name => 'プログラム',
-			:label => 'Program',
-			:url => 'SWEST21/program/',
+#		}, {
+#			:name => 'プログラム',
+#			:label => 'Program',
+#			:url => 'SWEST21/program/',
 #      :new => true,
 #		}, {
 #			:name => '20周年特別企画＠水曜',
@@ -118,7 +118,7 @@ $files = {
   SWEST21: "program-data/SWEST21/lecture/logs/{keynote,s{1,2,3,4,5}*}.dat"
 }
 
-$current = 21
+$current = 22
 
 # セッションデータ
 
