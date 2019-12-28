@@ -1,38 +1,38 @@
-研究発表,,,,
-6,超並列実行処理系 Hastega (ヘイスガ: 改称予定),山崎進、久江 雄喜(北九州市立大学),※1,※2
-9,プログラマが知っているとよい色使い(安全色)とカラーユニバーサルデザイン,小川清(名古屋市工業研究所),※1,※2
-10,プログラマブルSoCのためのROS構築支援フレームワーク,田村爽、新田泰大、高瀬英希(京都大学),,
-11,組合せ生成ツール,細合晋太郎(株式会社チェンジビジョン),※1,
-13,MBDを用いたAUTOSAR対応車載ソフトウェア開発方法の検討,中野亜紀(株式会社テクノプロ)、高田光隆(名古屋大学),,※2
-15,エリアカバレッジタスクにおける回転動作を考慮した移動ロボットの動作計画手法の比較および評価,矢野泰生、高瀬英希(京都大学),,
-16,ROSノード軽量実行環境mROSのTOPPERS/ASP3カーネルへの対応,今西洋偉、高瀬英希(京都大学),※1,
-17,MATLAB/Simulink Benchmark Suite for ROS-based Self-driving Software Platform,三浦啓太(埼玉大学)、徳永翔太(大阪大学)、安積卓也(埼玉大学),※1,
-18,ROS2のためのノードの再利用性を高めるパッケージ設計支援ツール構築に向けて,後藤孝行、井上弘士、倉爪亮(九州大学),※1,
-19,組み込み開発環境でのクラウド IDE 活用方法検討,庭野正義(アイコムシステック)、朴鍾烈(APPIA ENGINEERING)、佐藤惇(クレスコ)、高田光隆(名古屋大学),※1,※2
-20,モデルベース開発におけるメニーコアを対象とした性能見積もり,本多健太郎、安積卓也(埼玉大学),,
-21,組込みコンポーネントシステムにおける「情報取得フレームワーク」と「単体テストフレームワーク」,白田聖人(大阪大学)、大山博司(オークマ株式会社)、安積卓也(埼玉大学),,
-22,ECU Configuration Values生成ツールEcuCGenのご紹介,安井大介(アイコムシステック株式会社),※1,※2
-23,複数の高位合成ツールに対応したシステムレベル設計ツールの拡張,稲石日奈子、山本椋太、本田晋也(名古屋大学大学院),※1,※2
-24,読みにくいソースコードの理解に影響を与える要因の分析,杉山裕一、森崎修司(名古屋大学),※1,※2
-25,TOPPERS BASE PLATFORMのポーティングの検討  ～ USBミドルウェアの解析 ～,伊与田健敏(創価大学),,※2
-26,mruby/cにおける仮想マシンのハードウェア化に関する研究,前田洋征(九州工業大学),,
-31,QCDを実現するための組込ソフトウェア学習キット ” e-NeIRO”を用いた研修の効果,伊藤嘉伸、島田 克樹(イー・バレイ株式会社),※1,※2
+研究発表,,,,,
+6,超並列実行処理系 Hastega (ヘイスガ: 改称予定),山崎進、久江 雄喜(北九州市立大学),※1,※2,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-006.pdf
+9,プログラマが知っているとよい色使い(安全色)とカラーユニバーサルデザイン,小川清(名古屋市工業研究所),※1,※2,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-009.pdf
+10,プログラマブルSoCのためのROS構築支援フレームワーク,田村爽、新田泰大、高瀬英希(京都大学),,,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-010.pdf
+11,組合せ生成ツール,細合晋太郎(株式会社チェンジビジョン),※1,,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-011.pdf
+13,MBDを用いたAUTOSAR対応車載ソフトウェア開発方法の検討,中野亜紀(株式会社テクノプロ)、高田光隆(名古屋大学),,※2,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-013.pdf
+15,エリアカバレッジタスクにおける回転動作を考慮した移動ロボットの動作計画手法の比較および評価,矢野泰生、高瀬英希(京都大学),,,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-015.pdf
+16,ROSノード軽量実行環境mROSのTOPPERS/ASP3カーネルへの対応,今西洋偉、高瀬英希(京都大学),※1,,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-016.pdf
+17,MATLAB/Simulink Benchmark Suite for ROS-based Self-driving Software Platform,三浦啓太(埼玉大学)、徳永翔太(大阪大学)、安積卓也(埼玉大学),※1,,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-017.pdf
+18,ROS2のためのノードの再利用性を高めるパッケージ設計支援ツール構築に向けて,後藤孝行、井上弘士、倉爪亮(九州大学),※1,,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-018.pdf
+19,組み込み開発環境でのクラウド IDE 活用方法検討,庭野正義(アイコムシステック)、朴鍾烈(APPIA ENGINEERING)、佐藤惇(クレスコ)、高田光隆(名古屋大学),※1,※2,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-019.pdf
+20,モデルベース開発におけるメニーコアを対象とした性能見積もり,本多健太郎、安積卓也(埼玉大学),,,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-020.pdf
+21,組込みコンポーネントシステムにおける「情報取得フレームワーク」と「単体テストフレームワーク」,白田聖人(大阪大学)、大山博司(オークマ株式会社)、安積卓也(埼玉大学),,,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-021.pdf
+22,ECU Configuration Values生成ツールEcuCGenのご紹介,安井大介(アイコムシステック株式会社),※1,※2,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-022.pdf
+23,複数の高位合成ツールに対応したシステムレベル設計ツールの拡張,稲石日奈子、山本椋太、本田晋也(名古屋大学大学院),※1,※2,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-023.pdf
+24,読みにくいソースコードの理解に影響を与える要因の分析,杉山裕一、森崎修司(名古屋大学),※1,※2,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-024.pdf
+25,TOPPERS BASE PLATFORMのポーティングの検討  ～ USBミドルウェアの解析 ～,伊与田健敏(創価大学),,※2,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-025.pdf
+26,mruby/cにおける仮想マシンのハードウェア化に関する研究,前田洋征(九州工業大学),,,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-026.pdf
+31,QCDを実現するための組込ソフトウェア学習キット ” e-NeIRO”を用いた研修の効果,伊藤嘉伸、島田 克樹(イー・バレイ株式会社),※1,※2,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-031.pdf
 プロジェクト紹介,,,,
-2,システム開発文書品質研究会(ASDoQ),山本雅基、ASDoQ運営委員一同(ASDoQ),※1,※2
-5,「箱庭ワーキンググループ」立ち上げと活動内容の紹介,森崇((株)永和システムマネジメント),※1,※2
-14,mrubyの現状と今後,三牧弘司(NPO法人軽量Rubyフォーラム),※1,※2
-27,fukuoka.ex 福岡 Elixir コミュニティ,山崎進(北九州市立大学)、森正和 (カラビナテクノロジー),※1,※2
-32,SWEST20 s3c 「mruby の省メモリ化について考える」 その後のご報告,山根ゆりえ(達人出版会),,
+2,システム開発文書品質研究会(ASDoQ),山本雅基、ASDoQ運営委員一同(ASDoQ),※1,※2,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-002.pdf
+5,「箱庭ワーキンググループ」立ち上げと活動内容の紹介,森崇((株)永和システムマネジメント),※1,※2,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-005.pdf
+14,mrubyの現状と今後,三牧弘司(NPO法人軽量Rubyフォーラム),※1,※2,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-014.pdf
+27,fukuoka.ex 福岡 Elixir コミュニティ,山崎進(北九州市立大学)、森正和 (カラビナテクノロジー),※1,※2,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-027.pdf
+32,SWEST20 s3c 「mruby の省メモリ化について考える」 その後のご報告,山根ゆりえ(達人出版会),,,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-032.pdf
 自由工作発表,,,,
-1,Digital Synth VRA8-N mode-VC ― Arduinoを用いたシンセサイザー,石垣良(技術系会社員),,
-3,シースルーグラスで作る新しい絵本の世界,相沢一摩、Phan Le、近藤智子、上原椋(エプソンアヴァシス株式会社),※1,
-7,スマホながら歩き検出システム ～エッジAIからクラウドまでIoTシステムをモデル駆動開発～,石田晴幸(株式会社富士通コンピュータテクノロジーズ),※1,※2
-28,ZytleBot ROSxFPGAを実現するロボット 開発プラットフォーム,新田泰大、田村爽、高瀬英希(京都大学),※1,
-33,実行委員呼び出しボタンを作ってみた！,及川達裕(ポリテクセンター熊本),※1,
+1,Digital Synth VRA8-N mode-VC ― Arduinoを用いたシンセサイザー,石垣良(技術系会社員),,,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-001.pdf
+3,シースルーグラスで作る新しい絵本の世界,相沢一摩、Phan Le、近藤智子、上原椋(エプソンアヴァシス株式会社),※1,,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-003.pdf
+7,スマホながら歩き検出システム ～エッジAIからクラウドまでIoTシステムをモデル駆動開発～,石田晴幸(株式会社富士通コンピュータテクノロジーズ),※1,※2,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-007.pdf
+28,ZytleBot ROSxFPGAを実現するロボット 開発プラットフォーム,新田泰大、田村爽、高瀬英希(京都大学),※1,,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-028.pdf
+33,実行委員呼び出しボタンを作ってみた！,及川達裕(ポリテクセンター熊本),※1,,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-033.pdf
 協賛企業デモ展示,,,,
-4,システム評価向け3Dモデル環境,嶋内宏明(株式会社ヴィッツ),※1,
-12,学生・教育関係者を支援、STのユニバーシティプログラム,木村崇志(STマイクロエレクトロニクス(株)),※1,※2
-29,統合開発環境SOLID紹介,Mamoru Yura(京都マイクロコンピュータ株式会社),※1,
-30,MaaS 時代の System of Systems 開発,兼平靖夫(ダッソー・システムズ株式会社),※1,
-34,IoT開発力スキルアップと関連デモ展示,太田 寛(日本マイクロソフト株式会社),※1,※2
-35,自動運転をする会社「ティアフォー」の紹介,Geoffrey Biggs(株式会社ティアフォー),※1
+4,システム評価向け3Dモデル環境,嶋内宏明(株式会社ヴィッツ),※1,,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-004.pdf
+12,学生・教育関係者を支援、STのユニバーシティプログラム,木村崇志(STマイクロエレクトロニクス(株)),※1,※2,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-012.pdf
+29,統合開発環境SOLID紹介,Mamoru Yura(京都マイクロコンピュータ株式会社),※1,,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-029.pdf
+30,MaaS 時代の System of Systems 開発,兼平靖夫(ダッソー・システムズ株式会社),※1,,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-030.pdf
+34,IoT開発力スキルアップと関連デモ展示,太田 寛(日本マイクロソフト株式会社),※1,※2,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-034.pdf
+35,自動運転をする会社「ティアフォー」の紹介,Geoffrey Biggs(株式会社ティアフォー),※1,,http://swest.toppers.jp/SWEST21/interactive/data/SWEST21-IS-035.pdf
