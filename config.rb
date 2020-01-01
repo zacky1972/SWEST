@@ -735,10 +735,13 @@ helpers do
 
 
   def url2link text
-    pattern = "https?://[a-zA-Z0-9.]{2,}(:[0-9]+)?(/[-_.!~*a-zA-Z0-9;/?:@&=+$,%#]+)?"
-    /#{pattern}/ =~ text
+#    pattern = "https?://[a-zA-Z0-9.]{2,}(:[0-9]+)?(/[-_.!~*a-zA-Z0-9;/?:@&=+$,%#]+)?"
+ #   /#{pattern}/ =~ text
     # $&という変数に格納されるので、それを利用してgsubメソッドで変換する
-    text.gsub(/#{pattern}/,"<a href="+$&.to_s+">"+$&.to_s+"</a>")
+  #  text.gsub(/#{pattern}/,"<a href="+$&.to_s+">"+$&.to_s+"</a>")
+    text.gsub(URI.regexp(['http', 'https'])) do |text|
+      "<a href='#{text}'>#{text}</a>"
+    end
   end
 
   def addSize2Pathname path, number, size
