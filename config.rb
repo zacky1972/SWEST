@@ -28,8 +28,8 @@ $navigation = {
 	:site_name => 'SWEST',
 	:items => [
 		{
-			:name => 'SWEST21について',
-			:label => 'SWEST21',
+			:name => 'SWEST22について',
+			:label => 'SWEST22',
 			:url => '',
 #                        :new => true,
 		}, {
