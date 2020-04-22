@@ -3,12 +3,12 @@ require 'slim'
 require 'csv'
 require 'redcarpet'
 
-preview = false
+preview = true
 
 # allOptions = preview
 allOptions = false
 
-defaultOptions = "p0-s0-i0-r0-R1-S0"
+defaultOptions = "p0-s1-i0-r0-R1-S0"
 
 buildBeforeDeploy = true
 
@@ -64,7 +64,7 @@ $navigation = {
       :label => 'Proposal',
       :url => 'proposal',
       :regist => true,
-#      :new => true,
+      :new => true,
     }, {
       :name => 'インタラクティブセッション募集',
       :label => 'Interactive',
