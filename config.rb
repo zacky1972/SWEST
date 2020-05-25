@@ -3,12 +3,12 @@ require 'slim'
 require 'csv'
 require 'redcarpet'
 
-preview = true
+preview = false
 
 # allOptions = preview
 allOptions = false
 
-defaultOptions = "p0-s1-i0-r0-R1-S0"
+defaultOptions = "p0-s2-i0-r0-R1-S0"
 
 buildBeforeDeploy = true
 
