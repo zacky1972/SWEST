@@ -64,7 +64,7 @@ $navigation = {
       :label => 'Proposal',
       :url => 'proposal',
       :regist => true,
-      :new => true,
+#      :new => true,
     }, {
       :name => 'インタラクティブセッション募集',
       :label => 'Interactive',
