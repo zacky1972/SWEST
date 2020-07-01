@@ -8,7 +8,7 @@ preview = false
 # allOptions = preview
 allOptions = false
 
-defaultOptions = "p0-s2-i0-r0-R1-S0"
+defaultOptions = "p2-s2-i1-r0-R1-S0"
 
 buildBeforeDeploy = true
 
@@ -41,12 +41,12 @@ $navigation = {
 			:name => '開催案内',
 			:label => 'Guide',
 			:url => 'guide',
+#                        :new => true,
+		}, {
+			:name => 'プログラム',
+			:label => 'Program',
+			:url => 'SWEST22/program/',
                         :new => true,
-#		}, {
-#			:name => 'プログラム',
-#			:label => 'Program',
-#			:url => 'SWEST21/program/',
-#      :new => true,
 #		}, {
 #			:name => '20周年特別企画＠水曜',
 #			:label => 'Wednesday',
@@ -71,7 +71,7 @@ $navigation = {
       :label => 'Interactive',
       :url => 'interactive',
       :regist => true,
-#      :new => true,
+      :new => true,
     }, {
       :name => '参加申込み',
       :label => 'Regist',
@@ -116,7 +116,8 @@ CSV.send(:prepend, CSVEncodingExtension)
 $files = {
   SWEST19: "program-data/SWEST19/lecture/logs/{keynote,s{1,2,3,4,5}*}.dat",
   SWEST20: "program-data/SWEST20/lecture/logs/{keynote,s{1,2,3,4,5,s}*}.dat",
-  SWEST21: "program-data/SWEST21/lecture/logs/{keynote,s{1,2,3,4,5}*}.dat"
+  SWEST21: "program-data/SWEST21/lecture/logs/{keynote,s{1,2,3,4,5}*}.dat",
+  SWEST22: "program-data/SWEST22/lecture/logs/{keynote,s{1,2,3,4,5}*}.dat"
 }
 
 $current = 22
@@ -452,6 +453,113 @@ $sessions = {
       fullTitle: "もくもく会",
     }
   },
+  SWEST22: {
+    date: [
+      "8/20(木)",
+      "8/21(金)",
+    ],
+    page: [
+      'index',
+      'keynote',
+      'interactive',
+#      'mokumoku',
+      's1a', 's1b', 's1c', 's1d',
+      's2a', 's2b', 's2c', 's2d',
+      's3a', 's3b', 's3c', 's3d',
+      's4a', 's4b', 's4c', 's4d',
+      's5a', 's5b', 's5c', 's5d', 's5e'
+    ],
+    icebreak: {
+      date: "8/20(木)",
+      time: "12:00～13:00",
+      name: "アイスブレイク ＆ LIVEガイダンス",
+      title: "アイスブレイク ＆ LIVEガイダンス",
+      fullTitle: "アイスブレイク ＆ LIVEガイダンス",
+    },
+    opening: {
+      date: "8/20(木)",
+      time: "13:00～13:20",
+      name: "オープニング",
+      title: "オープニング",
+      fullTitle: "オープニング",
+    },
+    keynote: {
+      date: "8/20(木)",
+      time: "13:20～14:40",
+      name: "特別企画",
+    },
+    shortPresentation: {
+      date: "8/20(木)",
+      time: "14:40～15:00",
+      name: "ショートプレゼンテーション・Discord指南",
+      title: "ショートプレゼンテーション・Discord指南",
+      fullTitle: "ショートプレゼンテーション・Discord指南",
+    },
+    interactive: {
+      date: "8/20(木)",
+      time: "15:00〜17:00",
+      id: "interactive",
+      name: "インタクティブセッション",
+      title: "インタラクティブセッション",
+      fullTitle: "インタラクティブセッション",
+      abst: "研究発表・プロジェクト紹介・自由工作発表・協賛企業デモ展示をポスター形式で行います。",
+    },
+    dinner: {
+      date: "8/20(木)",
+      time: "17:30〜19:30",
+      name: "休憩",
+      title: "休憩",
+      fullTitle: "休憩",
+    },
+    s1: {
+      date: "8/20(木)",
+      time: "19:30〜21:00",
+      name: "セッションS1",
+      title: "夜の分科会",
+    },
+    s2: {
+      date: "8/21(金)",
+      time: "10:00～11:10",
+      name: "セッションS2(70分)",
+    },
+    s3: {
+      date: "8/21(金)",
+      time: "11:30～12:40",
+      name: "セッションS3(70分)",
+    },
+    lunch: {
+      date: "8/21(金)",
+      time: "12:40〜13:40",
+      name: "昼食",
+      title: "昼食",
+      fullTitle: "昼食",
+    },
+    s4: {
+      date: "8/21(金)",
+      time: "13:40～14:50",
+      name: "セッションS4(70分)",
+    },
+    s5: {
+      date: "8/21(金)",
+      time: "15:10～16:20",
+      name: "セッションS5(70分)",
+    },
+    closing: {
+      date: "8/21(金)",
+      time: "16:25〜17:00",
+      name: "クロージング",
+      title: "クロージング",
+      fullTitle: "クロージング",
+    },
+#    mokumoku: {
+#      id: "mokumoku",
+#      name: "もくもく会",
+#      date: "8/21(金)",
+#      time: "9:00～15:20",
+#      title: "もくもく会",
+#      fullTitle: "もくもく会",
+#    }
+  },
 }
 
 # セッションデータの読み込み
@@ -536,6 +644,7 @@ end
 # インタラクティブセッションの読み込み
 
 $interactive = Hash.new
+#(19..22).each do |number|
 (19..21).each do |number|
   SWEST = "SWEST#{number}"
   csv_file = "./program-data/#{SWEST}/interactive-printable.csv"
@@ -669,13 +778,15 @@ end
 # 動的ページの作成
 
 [19, 20].each do |number|
+#[19, 20, 22].each do |number|
   swest = "SWEST#{number.to_s}"
   $sessions[swest.to_sym][:page].each do |name|
     proxy "/#{swest}/program/#{name}.html", "/templates/timetable.html", locals: { session: name,  swest: swest, number: number, interactive: $interactive[swest.to_sym]}, ignore: true
   end
 end
 
-[21].each do |number|
+[21,22].each do |number|
+#[21].each do |number|
   swest = "SWEST#{number.to_s}"
   $sessions[swest.to_sym][:page].each do |name|
     proxy "/#{swest}/program/#{name}.html", "/templates/timetable-#{swest}.html", locals: { session: name,  swest: swest, number: number, interactive: $interactive[swest.to_sym]}, ignore: true

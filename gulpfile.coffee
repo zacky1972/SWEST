@@ -261,6 +261,94 @@ gulp.task 'pre:SWEST21', ['pre:SWEST21-jpg100', 'pre:SWEST21-jpg200', 'pre:SWEST
 
 gulp.task 'pre:images', ['pre:SWEST21'] # 'pre:empty', 'pre:jpg', 'pre:png', 'pre:SWEST20'
 
+gulp.task 'pre:SWEST22-jpg300', () ->
+  gulp.src 'source/images/SWEST22/*.{jpg,JPG,jpeg,JPEG}'
+    .pipe rename({extname: '.300.jpg', dirname:''})
+    .pipe imageResize(resizeOptions300)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWEST22/')
+
+gulp.task 'pre:SWEST22-jpg200', () ->
+  gulp.src 'source/images/SWEST22/*.{jpg,JPG,jpeg,JPEG}'
+    .pipe rename({extname: '.200.jpg', dirname:''})
+    .pipe imageResize(resizeOptions200)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWEST22/')
+
+gulp.task 'pre:SWEST22-jpg100', () ->
+  gulp.src 'source/images/SWEST22/*.{jpg,JPG,jpeg,JPEG}'
+    .pipe rename({extname: '.100.jpg', dirname:''})
+    .pipe imageResize(resizeOptions100)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWEST22/')
+
+gulp.task 'pre:SWEST22-jpg300-2', () ->
+  gulp.src 'program-data/SWEST22/lecture/data/img/*.{jpg,JPG,jpeg,JPEG}'
+    .pipe rename({extname: '.300.jpg', dirname:''})
+    .pipe imageResize(resizeOptions300)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWEST22/')
+
+gulp.task 'pre:SWEST22-jpg200-2', () ->
+  gulp.src 'program-data/SWEST22/lecture/data/img/*.{jpg,JPG,jpeg,JPEG}'
+    .pipe rename({extname: '.200.jpg', dirname:''})
+    .pipe imageResize(resizeOptions200)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWEST22/')
+
+gulp.task 'pre:SWEST22-jpg100-2', () ->
+  gulp.src 'program-data/SWEST22/lecture/data/img/*.{jpg,JPG,jpeg,JPEG}'
+    .pipe rename({extname: '.100.jpg', dirname:''})
+    .pipe imageResize(resizeOptions100)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWEST22/')
+
+gulp.task 'pre:SWEST22-png300', () ->
+  gulp.src 'source/images/SWEST22/*.{png,PNG}'
+    .pipe rename({extname: '.300.png', dirname:''})
+    .pipe imageResize(resizeOptions300)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWEST22/')
+
+gulp.task 'pre:SWEST22-png200', () ->
+  gulp.src 'source/images/SWEST22/*.{png,PNG}'
+    .pipe rename({extname: '.200.png', dirname:''})
+    .pipe imageResize(resizeOptions300)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWEST22/')
+
+gulp.task 'pre:SWEST22-png100', () ->
+  gulp.src 'source/images/SWEST22/*.{png,PNG}'
+    .pipe rename({extname: '.100.png', dirname:''})
+    .pipe imageResize(resizeOptions100)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWEST22/')
+
+gulp.task 'pre:SWEST22-png300-2', () ->
+  gulp.src 'program-data/SWEST22/lecture/data/img/*.{png,PNG}'
+    .pipe rename({extname: '.300.png', dirname:''})
+    .pipe imageResize(resizeOptions300)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWEST22')
+
+gulp.task 'pre:SWEST22-png200-2', () ->
+  gulp.src 'program-data/SWEST22/lecture/data/img/*.{png,PNG}'
+    .pipe rename({extname: '.200.png', dirname:''})
+    .pipe imageResize(resizeOptions200)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWEST22/')
+
+gulp.task 'pre:SWEST22-png100-2', () ->
+  gulp.src 'program-data/SWEST22/lecture/data/img/*.{png,PNG}'
+    .pipe rename({extname: '.100.png', dirname:''})
+    .pipe imageResize(resizeOptions100)
+    .pipe imagemin(imageminOptions)
+    .pipe gulp.dest('program-data/images/SWEST22/')
+
+
+gulp.task 'pre:SWEST22', ['pre:SWEST22-jpg100', 'pre:SWEST22-jpg200', 'pre:SWEST22-jpg300', 'pre:SWEST22-png100', 'pre:SWEST22-png200', 'pre:SWEST22-png300', 'pre:SWEST22-jpg100-2', 'pre:SWEST22-jpg200-2', 'pre:SWEST22-jpg300-2', 'pre:SWEST22-png100-2', 'pre:SWEST22-png200-2', 'pre:SWEST22-png300-2']
+
+gulp.task 'pre:images', ['pre:SWEST22'] # 'pre:empty', 'pre:jpg', 'pre:png', 'pre:SWEST21'
 
 gulp.task 'build:images', ['build:jpg', 'build:png']
 
@@ -279,8 +367,12 @@ gulp.task 'build:pdfs:21', () ->
     .pipe rename({dirname:''})
     .pipe gulp.dest('build/SWEST21/program/pdfs/')
 
+gulp.task 'build:pdfs:22', () ->
+  gulp.src 'program-data/SWEST22/lecture/data/*.pdf'
+    .pipe rename({dirname:''})
+    .pipe gulp.dest('build/SWEST22/program/pdfs/')
 
-gulp.task 'build:pdfs', ['build:pdfs:19', 'build:pdfs:20', 'build:pdfs:21']
+gulp.task 'build:pdfs', ['build:pdfs:19', 'build:pdfs:20', 'build:pdfs:21', 'build:pdfs:22']
 
 gulp.task 'build:txts:19', () ->
   gulp.src 'program-data/SWEST19/lecture/data/*.html'
@@ -297,7 +389,12 @@ gulp.task 'build:txts:21', () ->
     .pipe rename({dirname:''})
     .pipe gulp.dest('build/SWEST21/program/txt/')
 
-gulp.task 'build:txts', ['build:txts:19', 'build:txts:20', 'build:txts:21']
+gulp.task 'build:txts:22', () ->
+  gulp.src 'program-data/SWEST22/lecture/data/*.html'
+    .pipe rename({dirname:''})
+    .pipe gulp.dest('build/SWEST22/program/txt/')
+
+gulp.task 'build:txts', ['build:txts:19', 'build:txts:20', 'build:txts:21', 'build:txts:22']
 
 gulp.task 'build:js', () ->
   gulp.src 'source/javascripts/site.js', {read:false}
