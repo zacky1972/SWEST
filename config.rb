@@ -8,7 +8,7 @@ preview = false
 # allOptions = preview
 allOptions = false
 
-defaultOptions = "p2-s2-i1-r0-R1-S0"
+defaultOptions = "p2-s2-i1-r1-R1-S0"
 
 buildBeforeDeploy = true
 
@@ -77,7 +77,7 @@ $navigation = {
       :label => 'Regist',
       :url => 'regist',
       :regist => true,
-#      :new => true,
+      :new => true,
     }
 	]
 }
