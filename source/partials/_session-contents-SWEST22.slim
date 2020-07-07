@@ -11,7 +11,10 @@
   .day-heading
     h3
       = sessions[:date][1]
-  - (2..4).each do |i|
+  - [2].each do |i|
+  	- (0..2).each do |j|
+		  = partial 'partials/session-section-content', :locals => $navigation.merge({ name: "s#{i}#{'abc'.slice(j)}", sessions: sessions, interactive: interactive})
+  - (3..4).each do |i|
   	- (0..3).each do |j|
 		  = partial 'partials/session-section-content', :locals => $navigation.merge({ name: "s#{i}#{'abcd'.slice(j)}", sessions: sessions, interactive: interactive})
   - [5].each do |i|
