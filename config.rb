@@ -8,7 +8,7 @@ preview = false
 # allOptions = preview
 allOptions = false
 
-defaultOptions = "p2-s2-i1-r1-R1-S0"
+defaultOptions = "p2-s2-i2-r2-R1-S0"
 
 buildBeforeDeploy = true
 
@@ -71,13 +71,13 @@ $navigation = {
       :label => 'Interactive',
       :url => 'interactive',
       :regist => true,
-      :new => true,
+#      :new => true,
     }, {
       :name => '参加申込み',
       :label => 'Regist',
       :url => 'regist',
       :regist => true,
-      :new => true,
+#      :new => true,
     }
 	]
 }
@@ -464,7 +464,7 @@ $sessions = {
       'interactive',
 #      'mokumoku',
       's1a', 's1b', 's1c', 's1d',
-      's2a', 's2b', 's2c', 's2d',
+      's2a', 's2b', 's2c',
       's3a', 's3b', 's3c', 's3d',
       's4a', 's4b', 's4c', 's4d',
       's5a', 's5b', 's5c', 's5d', 's5e'
