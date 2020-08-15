@@ -83,3 +83,4 @@ reward5_travel_id=0
 bikou5=
 session_name=s4d
 totalReward=0
+filepath_proceeding=./data/s4d_proceeding.pdf

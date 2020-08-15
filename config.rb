@@ -3,7 +3,7 @@ require 'slim'
 require 'csv'
 require 'redcarpet'
 
-preview = false
+preview = true
 
 # allOptions = preview
 allOptions = false
@@ -488,16 +488,23 @@ $sessions = {
       time: "13:20～14:40",
       name: "特別企画",
     },
-    shortPresentation: {
+    break: {
       date: "8/20(木)",
       time: "14:40～15:00",
+      name: "休憩",
+      title: "休憩",
+      fullTitle: "休憩",
+    },
+    shortPresentation: {
+      date: "8/20(木)",
+      time: "15:00～15:30",
       name: "ショートプレゼンテーション・Discord指南",
       title: "ショートプレゼンテーション・Discord指南",
       fullTitle: "ショートプレゼンテーション・Discord指南",
     },
     interactive: {
       date: "8/20(木)",
-      time: "15:00〜17:00",
+      time: "15:30〜17:30",
       id: "interactive",
       name: "インタクティブセッション",
       title: "インタラクティブセッション",
@@ -644,8 +651,8 @@ end
 # インタラクティブセッションの読み込み
 
 $interactive = Hash.new
-#(19..22).each do |number|
-(19..21).each do |number|
+(19..22).each do |number|
+#(19..21).each do |number|
   SWEST = "SWEST#{number}"
   csv_file = "./program-data/#{SWEST}/interactive-printable.csv"
   if File.exists?(csv_file) then

@@ -19,6 +19,7 @@
     = partial 'partials/day-section-heading', :locals => $navigation.merge({ name: 'keynote', sessions: sessions, number: number})
     - if session == :keynote
         = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 'keynote', sessions: sessions, interactive: interactive, number: number})
+    = partial 'partials/day-section-heading', :locals => $navigation.merge({ name: 'break', sessions: sessions, number: number})
     = partial 'partials/day-section-heading', :locals => $navigation.merge({ name: 'shortPresentation', sessions: sessions, number: number})
     = partial 'partials/day-section-heading', :locals => $navigation.merge({ name: 'interactive', sessions: sessions, number: number})
     - if session == :interactive
