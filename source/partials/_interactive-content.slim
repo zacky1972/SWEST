@@ -8,9 +8,10 @@
       .session-box.hidden-sm-down.col-md-2 #{[unlessNilOrEmpty('ショートプレゼンあり', poster[3]), unlessNilOrEmpty('継続展示あり', poster[4])].join(' ')}
     -elsif poster.length == 4
      .session-poster.row
-      .session-box.col-6.col-md-5 #{poster[1]}
+      .session-box.col-1.col-md-1 #{poster[0]}
+      .session-box.col-5.col-md-5 #{poster[1]}
       .session-box.col-2.col-md-2 #{poster[2]}
-      .session-box.col-4.col-md-5 #{poster[3]}
+      .session-box.col-4.col-md-4 #{poster[3]}
       /.session-box.hidden-sm-down.col-md-2 #{poster[3]}
     -else
      .session-poster.row
