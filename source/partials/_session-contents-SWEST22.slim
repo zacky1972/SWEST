@@ -14,11 +14,6 @@
   - [2].each do |i|
   	- (0..2).each do |j|
 		  = partial 'partials/session-section-content', :locals => $navigation.merge({ name: "s#{i}#{'abc'.slice(j)}", sessions: sessions, interactive: interactive})
-  - (3..4).each do |i|
+  - (3..5).each do |i|
   	- (0..3).each do |j|
 		  = partial 'partials/session-section-content', :locals => $navigation.merge({ name: "s#{i}#{'abcd'.slice(j)}", sessions: sessions, interactive: interactive})
-  - [5].each do |i|
-  	- (0..4).each do |j|
-		  = partial 'partials/session-section-content', :locals => $navigation.merge({ name: "s#{i}#{'abcde'.slice(j)}", sessions: sessions, interactive: interactive})
-  - if number == 20
-    = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 'ss', sessions: sessions, interactive: interactive})

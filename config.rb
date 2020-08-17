@@ -3,7 +3,7 @@ require 'slim'
 require 'csv'
 require 'redcarpet'
 
-preview = true
+preview = false
 
 # allOptions = preview
 allOptions = false
@@ -467,7 +467,7 @@ $sessions = {
       's2a', 's2b', 's2c',
       's3a', 's3b', 's3c', 's3d',
       's4a', 's4b', 's4c', 's4d',
-      's5a', 's5b', 's5c', 's5d', 's5e'
+      's5a', 's5b', 's5c', 's5d'
     ],
     icebreak: {
       date: "8/20(木)",
