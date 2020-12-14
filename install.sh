@@ -5,4 +5,4 @@ yarn global add svgo
 yarn global add gulp
 rbenv install 2.4.2
 rbenv global 2.4.2
-gem install bundler
+#gem install bundler
