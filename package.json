@@ -31,7 +31,7 @@
     "hoek": "^5.0.3",
     "jquery": "^3.5.0",
     "node-growl": "^0.1.1",
-    "node-sass": "^4.7.2",
+    "node-sass": "^4.13.1",
     "popper.js": "^1.12.9",
     "rev-del": "^1.0.5",
     "run-sequence": "^2.2.0",
