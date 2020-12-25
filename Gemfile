@@ -2,6 +2,8 @@
 # the following line to use 'http://' instead
 source 'https://rubygems.org'
 
+gem 'eventmachine', '>= 1.2.7', :source => 'https://rubygems.org/'
+
 gem 'slim', '>= 3.0'
 
 # For faster file watcher updates on Windows:
@@ -22,3 +24,4 @@ gem "middleman-favicon-maker", "~> 4.1"
 gem 'middleman-iepab'
 
 gem 'redcarpet'
+
