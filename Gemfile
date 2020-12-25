@@ -13,7 +13,7 @@ gem 'wdm', '~> 0.1.0', platforms: [:mswin, :mingw]
 gem 'tzinfo-data', platforms: [:mswin, :mingw]
 
 # Middleman Gems
-gem 'middleman', '>= 4.0.0'
+gem 'middleman', '~> 4.3'
 gem 'middleman-livereload'
 gem 'middleman-deploy', '~> 2.0.0.pre.alpha'
 gem 'middleman-autoprefixer'
@@ -22,6 +22,8 @@ gem 'middleman-ogp'
 gem "middleman-favicon-maker", "~> 4.1"
 
 gem 'middleman-iepab'
+
+gem 'webrick'
 
 gem 'redcarpet'
 

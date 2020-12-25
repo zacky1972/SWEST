@@ -6,6 +6,6 @@ yarn global add gulp
 export PATH=$(brew --prefix openssl)/bin:$PATH
 export CONFIGURE_OPTS="--with-readline-dir=$(brew --prefix readline) --with-openssl-dir=$(brew --prefix openssl)"
 export RUBY_CONFIGURE_OPTS="--with-readline-dir=$(brew --prefix readline) --with-openssl-dir=$(brew --prefix openssl)"
-rbenv install 2.6.6
-rbenv global 2.6.6
+rbenv install 3.0.0
+rbenv global 3.0.0
 #gem install bundler
