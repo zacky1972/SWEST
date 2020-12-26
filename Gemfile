@@ -26,4 +26,3 @@ gem 'middleman-iepab'
 gem 'webrick'
 
 gem 'redcarpet'
-
