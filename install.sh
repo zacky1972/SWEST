@@ -3,6 +3,9 @@ brew install advancecomp gifsicle jhead jpegoptim jpeg optipng pngcrush pngquant
 brew install yarn
 yarn global add svgo
 yarn global add gulp
-rbenv install 2.4.2
-rbenv global 2.4.2
-gem install bundler
+export PATH=$(brew --prefix openssl)/bin:$PATH
+export CONFIGURE_OPTS="--with-readline-dir=$(brew --prefix readline) --with-openssl-dir=$(brew --prefix openssl)"
+export RUBY_CONFIGURE_OPTS="--with-readline-dir=$(brew --prefix readline) --with-openssl-dir=$(brew --prefix openssl)"
+rbenv install 2.6.6
+rbenv global 2.6.6
+#gem install bundler

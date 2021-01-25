@@ -14,7 +14,7 @@
   "homepage": "https://github.com/zacky1972/SWEST#readme",
   "dependencies": {
     "autoprefixer": "^7.2.2",
-    "bootstrap": "^4.0.0-beta.2",
+    "bootstrap": "^4.3.1",
     "chalk": "^2.3.0",
     "del": "^3.0.0",
     "global": "^4.3.2",
@@ -29,9 +29,9 @@
     "gulp-rev-replace": "zacky1972/gulp-rev-replace#master",
     "gulp-sass": "^3.1.0",
     "hoek": "^5.0.3",
-    "jquery": "^3.2.1",
+    "jquery": "^3.5.0",
     "node-growl": "^0.1.1",
-    "node-sass": "^4.7.2",
+    "node-sass": "^4.13.1",
     "popper.js": "^1.12.9",
     "rev-del": "^1.0.5",
     "run-sequence": "^2.2.0",
@@ -44,5 +44,8 @@
     "text": "yarn sec && yarn discuss",
     "sec": "./secretariat.sh",
     "discuss": "convert source/images/blank.jpg +antialias -font ArialUnicode -pointsize 24 -gravity Center -annotate +0+0 \"swest-discuss@swest.toppers.jp\" source/images/discuss.jpg"
+  },
+  "resolutions": {
+    "graceful-fs": "^4.2.4"
   }
 }
