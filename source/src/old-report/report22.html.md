@@ -25,7 +25,7 @@ description: "SWESTとは、大学の研究者や学生、企業の技術者や�
 
 ## 公開情報
 
-- [プログラム・セッション資料・議事録](https://swest.toppers.jp/SWEST22/program/)
+- [プログラム・セッション資料・議事録](../SWEST22/program/)
 - [参加者アンケートの集計結果](https://swest.toppers.jp/SWEST22/SWEST22enq.pdf)
 - [アルバム（開催風景）](https://swest.toppers.jp/SWEST22/album/)
 
