@@ -21,11 +21,7 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     autoprefixer-rails (9.8.6.5)
       execjs
-<<<<<<< Updated upstream
     backports (3.18.2)
-=======
-    backports (3.19.0)
->>>>>>> Stashed changes
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -42,11 +38,7 @@ GEM
     execjs (2.7.0)
     exifr (1.3.9)
     fast_blank (1.0.0)
-<<<<<<< Updated upstream
     fastimage (2.2.0)
-=======
-    fastimage (2.2.1)
->>>>>>> Stashed changes
     favicon_maker (1.3.1)
       docile (~> 1.1)
     ffi (1.14.2)
@@ -184,8 +176,4 @@ DEPENDENCIES
   webrick
 
 BUNDLED WITH
-<<<<<<< Updated upstream
    2.2.3
-=======
-   1.17.2
->>>>>>> Stashed changes
