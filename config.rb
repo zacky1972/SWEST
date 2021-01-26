@@ -101,15 +101,15 @@ set :markdown_engine, :redcarpet
 
 # CSV モジュールにモンキーパッチを当てて Shift JIS の CSV を読み書きできるようにする
 
-module CSVEncodingExtension
-  def initialize(data, options = Hash.new)
-    options.delete(:replace)
-    options.delete(:undef)
-    super
-  end
-end
+#module CSVEncodingExtension
+#  def initialize(data, options = Hash.new)
+#    options.delete(:replace)
+#    options.delete(:undef)
+#    super
+#  end
+#end
 
-CSV.send(:prepend, CSVEncodingExtension)
+# CSV.send(:prepend, CSVEncodingExtension)
 
 # lecture フォルダのデータ
 
