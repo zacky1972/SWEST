@@ -3,12 +3,12 @@ require 'slim'
 require 'csv'
 require 'redcarpet'
 
-preview = true
+preview = false
 
 # allOptions = preview
 allOptions = false
 
-defaultOptions = "p2-s2-i2-r2-R1-S0"
+defaultOptions = "p0-s0-i0-r0-R1-S0"
 
 buildBeforeDeploy = true
 
@@ -28,8 +28,8 @@ $navigation = {
 	:site_name => 'SWEST',
 	:items => [
 		{
-			:name => 'SWEST22について',
-			:label => 'SWEST22',
+			:name => 'SWEST23について',
+			:label => 'SWEST23',
 			:url => '',
 #                        :new => true,
 		}, {
@@ -42,11 +42,11 @@ $navigation = {
 			:label => 'Guide',
 			:url => 'guide',
 #                        :new => true,
-		}, {
-			:name => 'プログラム',
-			:label => 'Program',
-			:url => 'SWEST22/program/',
-                        :new => true,
+#		}, {
+#			:name => 'プログラム',
+#			:label => 'Program',
+#			:url => 'SWEST22/program/',
+#                       :new => true,
 #		}, {
 #			:name => '20周年特別企画＠水曜',
 #			:label => 'Wednesday',
@@ -120,7 +120,7 @@ $files = {
   SWEST22: "program-data/SWEST22/lecture/logs/{keynote,s{1,2,3,4,5}*}.dat"
 }
 
-$current = 22
+$current = 23
 
 # セッションデータ
 
