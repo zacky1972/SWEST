@@ -31,3 +31,5 @@ yarn-error.log
 
 # Ignore program-data　(プログラムページのコンテンツアップロードが完成したらコメントアウトして git add -A する)
 # program-data/
+
+/vendor/
