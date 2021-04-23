@@ -85,4 +85,6 @@ session_name=s5a
 totalReward=0
 filepath_proceeding=./data/s5a_proceeding.pdf
 filepath_public=./data/s5a_public.pdf
-filedata_public=2020/10/8
+filepath_minute=./data/s2c_minute.txt
+filepath_minute=./data/s5a_minute.txt
+filedata_minute=2021/3/21

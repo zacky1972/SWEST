@@ -85,4 +85,5 @@ session_name=s3d
 totalReward=0
 filepath_proceeding=./data/s3d_proceeding.pdf
 filepath_minute=./data/s3d_minute.txt
-filedata_minute=2020/10/5
+filepath_minute=./data/s3d_minute.txt
+filedata_minute=2021/3/21

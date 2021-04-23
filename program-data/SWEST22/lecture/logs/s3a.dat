@@ -85,4 +85,6 @@ session_name=s3a
 totalReward=0
 filepath_proceeding=./data/s3a_proceeding.pdf
 filepath_public=./data/s3a_public.pdf
-filedata_public=2020/8/27
+filepath_minute=./data/s2c_minute.txt
+filepath_minute=./data/s3a_minute.txt
+filedata_minute=2021/3/21

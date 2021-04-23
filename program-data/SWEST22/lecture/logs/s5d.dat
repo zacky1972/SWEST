@@ -83,3 +83,5 @@ reward5_travel_id=0
 bikou5=
 session_name=s5d
 totalReward=0
+filepath_minute=./data/s5d_minute.txt
+filedata_minute=2021/3/21

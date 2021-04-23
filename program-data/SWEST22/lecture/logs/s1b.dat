@@ -85,4 +85,5 @@ session_name=s1b
 totalReward=14250
 filepath_proceeding=./data/s1b_proceeding.pdf
 filepath_public=./data/s1b_public.pdf
-filedata_public=2020/9/24
+filepath_minute=./data/s1b_minute.txt
+filedata_minute=2021/3/21

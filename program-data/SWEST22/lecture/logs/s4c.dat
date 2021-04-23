@@ -84,4 +84,5 @@ bikou5=
 session_name=s4c
 totalReward=0
 filepath_public=./data/s4c_public.pdf
-filedata_public=2020/8/25
+filepath_minute=./data/s4c_minute.txt
+filedata_minute=2021/3/21

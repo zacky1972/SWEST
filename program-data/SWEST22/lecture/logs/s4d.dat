@@ -84,3 +84,6 @@ bikou5=
 session_name=s4d
 totalReward=0
 filepath_proceeding=./data/s4d_proceeding.pdf
+filepath_public=./data/s4c_public.pdf
+filepath_minute=./data/s4d_minute.txt
+filedata_minute=2021/3/21

@@ -85,4 +85,6 @@ session_name=s4a
 totalReward=24250
 filepath_proceeding=./data/s4a_proceeding.pdf
 filepath_public=./data/s4a_public.pdf
-filedata_public=2020/8/27
+filepath_minute=./data/s3d_minute.txt
+filepath_minute=./data/s4a_minute.txt
+filedata_minute=2021/3/21

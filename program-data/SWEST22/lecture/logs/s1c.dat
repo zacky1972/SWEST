@@ -86,4 +86,5 @@ totalReward=0
 filepath_proceeding=./data/s1c_proceeding.pdf
 filepath_public=./data/s1b_public.pdf
 filepath_minute=./data/s1c_minute.txt
-filedata_minute=2020/10/10
+filepath_minute=./data/s1c_minute.txt
+filedata_minute=2021/3/21
