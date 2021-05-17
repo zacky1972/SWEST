@@ -117,7 +117,7 @@ description: "SWESTとは、大学の研究者や学生、企業の技術者や�
 
   * 協力コミュニティ
     * IoT ALGYAN (あるじゃん)
-    * ROS Japan Users Group
+    [](* ROS Japan Users Group)
     * NervesJP
 
   * 協賛企業 (口数順／申込順)
