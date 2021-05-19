@@ -31,7 +31,7 @@ $navigation = {
 			:name => 'SWEST23について',
 			:label => 'SWEST23',
 			:url => '',
-#                        :new => true,
+                        :new => true,
 		}, {
 			:name => 'SWEST(エスウエスト)とは',
 			:label => 'About',
@@ -41,7 +41,7 @@ $navigation = {
 			:name => '開催案内',
 			:label => 'Guide',
 			:url => 'guide',
-#                        :new => true,
+                        :new => true,
 #		}, {
 #			:name => 'プログラム',
 #			:label => 'Program',
@@ -55,7 +55,7 @@ $navigation = {
 			:name => '協賛のご案内',
 			:label => 'Sponsor',
 			:url => 'sponsor',
-#                        :new => true,
+                        :new => true,
 		}, {
 			:name => '過去のSWEST',
 			:label => 'Old-report',
@@ -65,7 +65,7 @@ $navigation = {
       :label => 'Proposal',
       :url => 'proposal',
       :regist => true,
-#      :new => true,
+      :new => true,
     }, {
       :name => 'インタラクティブセッション募集',
       :label => 'Interactive',
