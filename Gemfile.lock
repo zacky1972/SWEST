@@ -156,6 +156,7 @@ GEM
       execjs (>= 0.3.0, < 3)
     webrick (1.7.0)
 
+<<<<<<< HEAD
 GEM
   remote: https://rubygems.org/
   specs:
@@ -303,6 +304,8 @@ GEM
       execjs (>= 0.3.0, < 3)
     webrick (1.7.0)
 
+=======
+>>>>>>> initial commit
 PLATFORMS
   ruby
 
@@ -323,4 +326,8 @@ DEPENDENCIES
   webrick
 
 BUNDLED WITH
+<<<<<<< HEAD
    2.2.10
+=======
+   2.2.19
+>>>>>>> initial commit
