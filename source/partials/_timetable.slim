@@ -1,0 +1,95 @@
+/! timetable
+.container
+  h2.center.margin-top SWEST#{number} タイムテーブル
+  .timetable
+    = link_to :name => 'ESS', :href => ''
+    .day-section-heading.session-heading
+      /.row
+        / = link_to 'ESSのプログラムはこちらを参照ください。', "http://www.sigemb.jp/ESS/2017/組込みシステムシンポジウム2017論文募集/プログラム/"
+        / = link_to 'アルバムのページはこちらです。', "https://swest.toppers.jp/SWEST19/album/"
+    - if number == 20
+      .day-heading
+        h3 8/29(水)
+      = link_to '20周年特別企画', $site_url + rootURL + 'wednesday'
+    .day-heading
+      h3
+        = sessions[:date][0]
+    = partial 'partials/day-section-heading', :locals => $navigation.merge({ name: 'icebreak', sessions: sessions, number: number})
+    = partial 'partials/day-section-heading', :locals => $navigation.merge({ name: 'opening', sessions: sessions, number: number})
+    = partial 'partials/day-section-heading', :locals => $navigation.merge({ name: 'keynote', sessions: sessions, number: number})
+    - if session == :keynote
+        = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 'keynote', sessions: sessions, interactive: interactive, number: number})
+    = partial 'partials/day-section-heading', :locals => $navigation.merge({ name: 'shortPresentation', sessions: sessions, number: number})
+    = partial 'partials/day-section-heading', :locals => $navigation.merge({ name: 'interactive', sessions: sessions, number: number})
+    - if session == :interactive
+        = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 'interactive', sessions: sessions, interactive: interactive, number: number})
+    = partial 'partials/day-section-heading', :locals => $navigation.merge({ name: 'dinner', sessions: sessions, number: number})
+    = partial 'partials/day-section-heading', :locals => $navigation.merge({ name: 's1', sessions: sessions, number: number})
+    = partial 'partials/day-section-content', :locals => $navigation.merge({ name: 's1', sessions: sessions, number: number})
+    .day-heading
+    - if session == :s1a
+        = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 's1a', sessions: sessions, interactive: interactive, number: number})
+    - elsif session == :s1b
+        = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 's1b', sessions: sessions, interactive: interactive, number: number})
+    - elsif session == :s1c
+        = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 's1c', sessions: sessions, interactive: interactive, number: number})
+    - elsif session == :s1d
+        = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 's1d', sessions: sessions, interactive: interactive, number: number})
+    h3
+      = sessions[:date][1]
+    = partial 'partials/day-section-heading', :locals => $navigation.merge({ name: 'mokumoku', sessions: sessions, number: number})
+    - if session == :mokumoku
+        = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 'mokumoku', sessions: sessions, interactive: interactive, number: number})
+    = partial 'partials/day-section-heading', :locals => $navigation.merge({ name: 's2', sessions: sessions, number: number})
+    = partial 'partials/day-section-content', :locals => $navigation.merge({ name: 's2', sessions: sessions, number: number})
+    .day-heading
+    - if session == :s2a
+        = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 's2a', sessions: sessions, interactive: interactive, number: number})
+    - elsif session == :s2b
+        = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 's2b', sessions: sessions, interactive: interactive, number: number})
+    - elsif session == :s2c
+        = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 's2c', sessions: sessions, interactive: interactive, number: number})
+    - elsif session == :s2d
+        = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 's2d', sessions: sessions, interactive: interactive, number: number})
+    = partial 'partials/day-section-heading', :locals => $navigation.merge({ name: 's3', sessions: sessions, number: number})
+    = partial 'partials/day-section-content', :locals => $navigation.merge({ name: 's3', sessions: sessions, number: number})
+    .day-heading
+    - if session == :s3a
+        = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 's3a', sessions: sessions, interactive: interactive, number: number})
+    - elsif session == :s3b
+        = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 's3b', sessions: sessions, interactive: interactive, number: number})
+    - elsif session == :s3c
+        = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 's3c', sessions: sessions, interactive: interactive, number: number})
+    - elsif session == :s3d
+        = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 's3d', sessions: sessions, interactive: interactive, number: number})
+    - if number != 20
+      = partial 'partials/day-section-heading', :locals => $navigation.merge({ name: 'lunch', sessions: sessions, number: number})
+    = partial 'partials/day-section-heading', :locals => $navigation.merge({ name: 's4', sessions: sessions, number: number})
+    = partial 'partials/day-section-content', :locals => $navigation.merge({ name: 's4', sessions: sessions, number: number})
+    .day-heading
+    - if session == :s4a
+        = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 's4a', sessions: sessions, interactive: interactive, number: number})
+    - elsif session == :s4b
+        = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 's4b', sessions: sessions, interactive: interactive, number: number})
+    - elsif session == :s4c
+        = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 's4c', sessions: sessions, interactive: interactive, number: number})
+    - elsif session == :s4d
+        = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 's4d', sessions: sessions, interactive: interactive, number: number})
+    - if number == 20
+      = partial 'partials/day-section-heading', :locals => $navigation.merge({ name: 'lunch', sessions: sessions, number: number})
+    = partial 'partials/day-section-heading', :locals => $navigation.merge({ name: 's5', sessions: sessions, number: number})
+    = partial 'partials/day-section-content', :locals => $navigation.merge({ name: 's5', sessions: sessions, number: number})
+    .day-heading
+    - if session == :s5a
+        = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 's5a', sessions: sessions, interactive: interactive, number: number})
+    - elsif session == :s5b
+        = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 's5b', sessions: sessions, interactive: interactive, number: number})
+    - elsif session == :s5c
+        = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 's5c', sessions: sessions, interactive: interactive, number: number})
+    - elsif session == :s5d
+        = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 's5d', sessions: sessions, interactive: interactive, number: number})
+    - if number == 20
+      = partial 'partials/day-section-heading', :locals => $navigation.merge({ name: 'ss', sessions: sessions, number: number})
+      - if session == :ss
+        = partial 'partials/session-section-content', :locals => $navigation.merge({ name: 'ss', sessions: sessions, interactive: interactive, number: number})        
+    = partial 'partials/day-section-heading', :locals => $navigation.merge({ name: 'closing', sessions: sessions, number: number})

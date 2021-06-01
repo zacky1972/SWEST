@@ -1,0 +1,269 @@
+---
+title: SWEST23 参加申込み
+navigation: Regist
+description: "SWEST23開催概要: 開催日程: 2021年9月2日(木)〜3日(金)，オンライン開催， SWESTとは、大学の研究者や学生、企業の技術者や管理者、その他、組込みシステムに関わる全ての人達が、徹底的に議論できる場を提供することを主な目的とした合宿型のワークショップです。"
+---
+h1 SWEST23 参加申込み
+
+- if locals[:regist] == :disable
+  / 参加申込みの無効表示
+
+  p.red 6月下旬公開予定です。追ってアナウンスします。
+
+- elsif locals[:regist] == :enable
+  / 参加申込みの有効表示
+
+  h2 参加申込みフォーム
+
+  p.red 参加申込みの前に、本ページの内容をご一読ください。
+
+  p
+  <font size="+1">　<a href="https://swest.toppers.jp/SWEST22/regist/submit.html">参加申込みフォーム</a></font>
+
+  p 参加申込み方法および参加費の支払い方法に関するご質問や、申込確認メールが受信できていないなど、不明な点がありましたら下記までお問い合わせください。
+
+  /p.red 参加申込みは締め切りました。多数の申込みありがとうございました。
+
+  /p 参加費の支払い方法に関するご質問や、申込確認メールが受信できていないなど、不明な点がありましたら下記までお問い合わせください。
+
+  = image_tag("secretariat22.jpg", :alt => "事務局")
+
+  h2 参加者募集要項
+
+  ul
+    /li 会場: 下呂温泉 水明館 (岐阜県下呂市幸田1268)
+    li
+      span.red オンライン開催  
+    li
+      span 日程: 2020年8月20日(木)〜21日(金)
+    li
+      span 参加募集期間:
+      span.red 2020年7月1日(水)〜8月5日(水)
+    li
+      span 参加費  
+      ul
+        li 一般: 11,000円
+        li 会員(※): 10,000円
+        li 学生: 2,000円
+
+  p ※ 会員とは、共催団体（SIGEMB, CEST, SESSAME, TOPPERSプロジェクト）の各会員、後援団体の各会員、および、協賛会社の社員を指します。
+
+
+  h3 参加費の支払い方法について
+
+  p 申込みフォームにて「請求書」を「不要」と選択された方は、指定の銀行口座まで参加費をお支払いください。支払期限は8月6日(木)となります。「必要」と選択された方は、事務局より請求書を郵送いたします。
+  /p 支払い方法は後日、請求書を郵送させていただきます。
+
+  p 詳細は参加申込み時に配信されるメールをご参照ください。
+
+  a name="pp"
+
+  h2 ポジションペーパー
+
+  h3 SWEST ポジションペーパーとは
+
+  p ポジションペーパーは、SWESTへ参加するみなさんがSWESTでさらに議論を深めることを目的とする、意思表明文です。具体的には、SWESTへ参加するにあたって、SWESTのテーマ、各分科会テーマに対して、みなさんがどのような立場で、どのようにお考えになっているのかをまとめて表明していただくものです。特に今回は冒頭の特別企画にてみなさんのポジションペーパーを使う予定です。
+
+  p
+  span 講師からのお題は
+  span.red 「私の仕事は○○が大事」の〇〇とは？
+  span です。簡単で結構ですので、理由を添えて〇〇に当てはまる言葉をお書きください。
+  span （逆に言えば、お名前、ご所属、とこのお題の回答を書けば、最低限のポジションペーパーは完成ですね。）
+  span もちろん従来のような意見表明も大歓迎です。もし、各分科会のテーマに類する問題をお持ちであるなら、是非ポジションペーパーにしたためてください。解決のお手伝いができるかもしれません。と言うものの、あまり堅苦しく考えずに「組込みシステム」に関わる話題について、ざっくばらんに書いていただければと思います。
+
+  h3 ポジションペーパー 投稿のご案内
+
+  p SWESTでは、&quot;Give &amp; Take&quot;の精神に則り全ての参加者にワークショップに貢献していただくという趣旨で、原則として全ての参加者にポジションペーパーの提出をお願いしています。  
+
+  p
+  span.red 提出期限は8/5(水)です。  
+  span 組込みシステム開発に関するご自分の意見をA4 1ページにまとめて、「ポジションペーパー投稿フォーム」からアップロードしてください。
+
+  h3 利用目的
+
+  p 提出頂いたポジションペーパーは、次のような目的に使わせて頂きます。あらかじめ、ご了承ください。
+
+  ul
+    li ポジションペーパー集を作成し、SWESTの参加者に電子配布します。（SWEST参加者とSWEST運営関係者以外には配布しません）
+    li SWEST参加者の方に、事前にポジションペーパーを公開します。（SWEST参加者とSWEST運営関係者以外には公開しません）
+    li 分科会において、ポジションペーパーの内容の発表をお願いすることがあります。
+
+  h2 ポジションペーパー投稿フォーム
+
+  p ポジションペーパーは、以下のフォームから投稿できます。投稿にあたり以下3点をご確認ください。
+
+  ul
+    li.red A4サイズ　1ページ　(PDFファイル)
+    li.red 氏名(必須)、所属(省略可)の記載
+    li.red 特別企画のお題『「私の仕事は○○が大事」の○○とは？』の回答とその理由
+  p
+  <font size="+1">　<a href="https://swest.toppers.jp/SWEST22/pp/submit.cgi">投稿フォーム</a></font>
+
+
+  p
+    span アップロードに必要な受付番号（SWEST22-REG-????）は、参加申込み時にお知らせした
+    span.red 4桁の受付番号
+    span です。再投稿は、投稿期間内であれば何回でもできます。
+
+  p ポジションペーパーのカテゴリは、以下のものを用意しています。投稿時にいずれかを選択してください。
+
+  ul
+    li 開発方法論
+    li モデリング
+    li プログラミング言語
+    li システムソフトウェア
+    li ハードウェア
+    li コデザイン
+    li 品質保証技術
+    li 理論
+    li ツール
+    li 教育
+    li その他
+
+  h2 ポジションペーパーの事前閲覧
+
+  p ポジションペーパーを投稿された方は、以下のページから、SWEST23の参加者の皆さまのポジションペーパーを事前に閲覧することができます。 SWEST23の開催前に他の参加者のポジションペーパーを閲覧しておくことで、参加当日におけるセッションの議論の予習や、参加者との話題作りや交流の促進に役立ちます。
+
+  p
+  <font size="+1">　<a href="https://swest.toppers.jp/SWEST22/pp/view.cgi">事前閲覧ページ</a></font>
+
+
+  p 閲覧に必要なIDおよびパスワードは、ポジションペーパー投稿時に配信される確認メールに記載されています。 &quot;Give &amp; Take&quot;の精神で、ぜひご活用ください。
+
+  h3 サンプル
+
+  p 過去のSWESTに提出されたポジションペーパーから、サンプルを提示します。 体裁は自由です。執筆の参考にしていただければ幸いです。
+
+  <ul>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample01.pdf" target="sample_box">組込みソフトウェア開発の課題</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample02.pdf" target="sample_box">SWEST10 Position Paper</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample03.pdf" target="sample_box">2回目</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample04.pdf" target="sample_box">「3Kエンジニアの妻」として</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample05.pdf" target="sample_box">中国は脅威か？</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample06.pdf" target="sample_box">モデリング技術研究者が妄想する未来の組込み開発</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample07.pdf" target="sample_box">「カウンエンジニア」</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample08.pdf" target="sample_box">日本の組込み産業・組込みエンジニアは「凄い」</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample09.pdf" target="sample_box">「思いやること」≠「甘やかすこと」</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample10.pdf" target="sample_box">機能安全への取り組み</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample11.pdf" target="sample_box">「ムダ知識」と言う無かれ。～組込みシステム トリビアの泉～</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample12.pdf" target="sample_box">組込みシステムのソフトウェアテスト工程における課題</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample13.pdf" target="sample_box">組み込みソフトウェア・エンジニアの溜め息・・・</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample15.pdf" target="sample_box">組込みシステム開発力の後退をどう止めるか、組込みシステム開発の楽しさをどう伝えるか</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample15.pdf" target="sample_box">提案「夏の学校」</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample16.pdf" target="sample_box">「技術者教育」に思うこと</a></li>
+  </ul>
+
+- elsif locals[:regist] == :ppOnly
+  / 参加申込みの終了，ポジションペーパー表示
+
+  p.red SWEST22の参加申込みは締め切りました。
+
+  p 参加費の支払い方法に関するご質問や、申込確認メールが受信できていないなど、不明な点がありましたら下記までお問い合わせください。
+
+  = image_tag("secretariat22.jpg", :alt => "事務局")
+
+  a name="pp"
+
+  h2 ポジションペーパー
+
+  h3 SWEST ポジションペーパーとは
+
+  p ポジションペーパーは、SWESTへ参加するみなさんがSWESTでさらに議論を深めることを目的とする、意思表明文です。具体的には、SWESTへ参加するにあたって、SWESTのテーマ、各分科会テーマに対して、みなさんがどのような立場で、どのようにお考えになっているのかをまとめて表明していただくものです。特に今回は冒頭の特別企画にてみなさんのポジションペーパーを使う予定です。
+
+  p
+  span 講師からのお題は
+  span.red 「私の仕事は○○が大事」の〇〇とは？
+  span です。簡単で結構ですので、理由を添えて〇〇に当てはまる言葉をお書きください。
+  span （逆に言えば、お名前、ご所属、とこのお題の回答を書けば、最低限のポジションペーパーは完成ですね。）
+  span もちろん従来のような意見表明も大歓迎です。もし、各分科会のテーマに類する問題をお持ちであるなら、是非ポジションペーパーにしたためてください。解決のお手伝いができるかもしれません。と言うものの、あまり堅苦しく考えずに「組込みシステム」に関わる話題について、ざっくばらんに書いていただければと思います。
+
+  h3 ポジションペーパー 投稿のご案内
+
+  p SWESTでは、&quot;Give &amp; Take&quot;の精神に則り全ての参加者にワークショップに貢献していただくという趣旨で、原則として全ての参加者にポジションペーパーの提出をお願いしています。  
+
+  p
+  span.red 提出期限は8/5(水)です。  
+  span 組込みシステム開発に関するご自分の意見をA4 1ページにまとめて、「ポジションペーパー投稿フォーム」からアップロードしてください。
+
+  h3 利用目的
+
+  p 提出頂いたポジションペーパーは、次のような目的に使わせて頂きます。あらかじめ、ご了承ください。
+
+  ul
+    li ポジションペーパー集を作成し、SWESTの参加者に電子配布します。（SWEST参加者とSWEST運営関係者以外には配布しません）
+    li SWEST参加者の方に、事前にポジションペーパーを公開します。（SWEST参加者とSWEST運営関係者以外には公開しません）
+    li 分科会において、ポジションペーパーの内容の発表をお願いすることがあります。
+
+  h2 ポジションペーパー投稿フォーム
+
+  p ポジションペーパーは、以下のフォームから投稿できます。投稿にあたり以下3点をご確認ください。
+
+  ul
+    li.red A4サイズ　1ページ　(PDFファイル)
+    li.red 氏名(必須)、所属(省略可)の記載
+    li.red 特別企画のお題『「私の仕事は○○が大事」の○○とは？』の回答とその理由
+  p
+  <font size="+1">　<a href="https://swest.toppers.jp/SWEST22/pp/submit.cgi">投稿フォーム</a></font>
+
+
+  p
+    span アップロードに必要な受付番号（SWEST22-REG-????）は、参加申込み時にお知らせした
+    span.red 4桁の受付番号
+    span です。再投稿は、投稿期間内であれば何回でもできます。
+
+  p ポジションペーパーのカテゴリは、以下のものを用意しています。投稿時にいずれかを選択してください。
+
+  ul
+    li 開発方法論
+    li モデリング
+    li プログラミング言語
+    li システムソフトウェア
+    li ハードウェア
+    li コデザイン
+    li 品質保証技術
+    li 理論
+    li ツール
+    li 教育
+    li その他
+
+  h2 ポジションペーパーの事前閲覧
+
+  p ポジションペーパーを投稿された方は、以下のページから、SWEST22の参加者の皆さまのポジションペーパーを事前に閲覧することができます。 SWEST22の開催前に他の参加者のポジションペーパーを閲覧しておくことで、参加当日におけるセッションの議論の予習や、参加者との話題作りや交流の促進に役立ちます。
+
+  p
+  <font size="+1">　<a href="https://swest.toppers.jp/SWEST22/pp/view.cgi">事前閲覧ページ</a></font>
+
+
+  p 閲覧に必要なIDおよびパスワードは、ポジションペーパー投稿時に配信される確認メールに記載されています。 &quot;Give &amp; Take&quot;の精神で、ぜひご活用ください。
+
+  h3 サンプル
+
+  p 過去のSWESTに提出されたポジションペーパーから、サンプルを提示します。 体裁は自由です。執筆の参考にしていただければ幸いです。
+
+  <ul>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample01.pdf" target="sample_box">組込みソフトウェア開発の課題</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample02.pdf" target="sample_box">SWEST10 Position Paper</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample03.pdf" target="sample_box">2回目</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample04.pdf" target="sample_box">「3Kエンジニアの妻」として</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample05.pdf" target="sample_box">中国は脅威か？</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample06.pdf" target="sample_box">モデリング技術研究者が妄想する未来の組込み開発</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample07.pdf" target="sample_box">「カウンエンジニア」</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample08.pdf" target="sample_box">日本の組込み産業・組込みエンジニアは「凄い」</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample09.pdf" target="sample_box">「思いやること」≠「甘やかすこと」</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample10.pdf" target="sample_box">機能安全への取り組み</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample11.pdf" target="sample_box">「ムダ知識」と言う無かれ。～組込みシステム トリビアの泉～</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample12.pdf" target="sample_box">組込みシステムのソフトウェアテスト工程における課題</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample13.pdf" target="sample_box">組み込みソフトウェア・エンジニアの溜め息・・・</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample15.pdf" target="sample_box">組込みシステム開発力の後退をどう止めるか、組込みシステム開発の楽しさをどう伝えるか</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample15.pdf" target="sample_box">提案「夏の学校」</a></li>
+  <li><a href="https://swest.toppers.jp/SamplePP/PPsample16.pdf" target="sample_box">「技術者教育」に思うこと</a></li>
+  </ul>
+
+- else
+  / 参加申込みの終了表示
+
+  p.red SWEST23の参加申込み，ポジションペーパー投稿は締め切りました。
+
+  p 参加費の支払い方法に関するご質問や、申込確認メールが受信できていないなど、不明な点がありましたら下記までお問い合わせください。
+
+  = image_tag("secretariat22.jpg", :alt => "事務局")

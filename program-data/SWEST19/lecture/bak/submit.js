@@ -1,0 +1,334 @@
+var ext_ok_array = ["pdf", "txt", "png", "jpg", "PNG", "jpeg", "JPG"];
+
+function view_reset(){
+	//ファイルへのリンクを表示するタグを削除
+	document.getElementById('filelink_proceeding').textContent = "ファイルなし";
+	document.getElementById('filelink_public').textContent = "ファイルなし";
+	document.getElementById('filelink_public2').textContent = "ファイルなし";
+	document.getElementById('filelink_minute').textContent = "ファイルなし";
+	//謝金の合計表示を削除
+    document.getElementById('totalRewardDisplay').textContent = "合計金額:";
+	//フォームを初期化
+    document.submit.reset();
+}
+
+function send_get_fname(name) {
+	//画面を初期化
+	view_reset();
+	//編集中のファイルを表示
+	document.getElementById('displayName').textContent = name + "の編集画面";
+	//セッション名を更新
+	document.getElementById('session_name').value = name;
+
+	var url = "./logs/"+name+".dat";
+	var request = new XMLHttpRequest();
+	request.open("GET", url, true);
+	request.onreadystatechange = function() {
+		if (request.readyState == 4 && request.status == 200) {
+			//受信完了時の処理
+			var text = document.createTextNode(decodeURI(request.responseText));
+			update(text.data);
+		}
+	}
+	request.send("");
+}
+
+//フォームタイプに従い更新
+function update(str) {
+	msg_clear();
+        for(var i = 1; i <= 5; i += 1){
+	  	document.getElementById("filepath_pic" + i + "__img").src = "/img/dummy.png";
+	}
+	var array = str.split("\n");
+	for(var i = 0; i < array.length; i++){
+		var elem = array[i].split("=")[0];
+		var val = array[i].split("=")[1];
+		if(elem.indexOf("filepath_pic") == 0 && val != ""){
+			document.getElementById(elem + "__img").src = "./data/img/" + val;
+		}
+		if((elem != null) && (val != null)){
+			var result = document.getElementsByName(elem);
+			//フォームの処理(サーバから取得したデータを表示)
+			if(result[0] != null){
+				if(result[0].type == "radio"){
+					//radio
+					for(j=0;j<result.length;j++){
+						if(result[j].value == val){
+							result[j].checked = true;
+							break;
+						}
+					}
+				}else if(result[0].type == "checkbox"){
+      				//checkbox
+					for(j=0;j<result.length;j++){
+						if(result[j].value == val){
+							result[j].checked = true;
+						}
+					}
+				}else if(result[0].type == "textarea"){
+					//textarea
+					//特殊文字の処理
+					val = val.replace(/<<enter>>/g, "\n");
+					val = val.replace(/<<equal>>/g, "=");
+					val = val.replace(/<<squot>>/g, "\'");
+					val = val.replace(/<<dquot>>/g, "\"");
+					result[0].value = val
+				}else if(result[0].type == "text"){
+					//text
+					result[0].value = val;
+				}else if(result[0].type == "hidden"){
+					//hidden
+					result[0].value = val;
+				}	
+			}
+			//フォーム以外の処理
+			//ファイルへのリンクを表示
+			if((elem == "filepath_proceeding") && (val != "")){
+				document.getElementById('filelink_proceeding').innerHTML = "<a href=" + val + ">保存済みファイルを表示</a>";
+			}else if((elem == "filepath_public") && (val != "")){
+				document.getElementById('filelink_public').innerHTML = "<a href=" + val + ">保存済みファイルを表示</a>";
+			}else if((elem == "filepath_public2") && (val != "")){
+				document.getElementById('filelink_public2').innerHTML = "<a href=" + val + ">保存済みファイルを表示</a>";
+			}else if((elem == "filepath_minute") && (val != "")){
+				document.getElementById('filelink_minute').innerHTML = "<a href=" + val + ">保存済みファイルを表示</a>";
+			}
+		}
+	}
+	//謝金の合計を計算して表示
+	calTotalReward();
+	//ブロックの表示を変更
+	upfile_public_check();
+
+
+}
+
+//ファイルの拡張子を取得
+function get_ext(fname){
+	var ret = "";
+	if (!fname){
+		return ret;
+	}
+	var fileTypes = fname.split(".");
+	var len = fileTypes.length;
+	if (len === 0){
+		return ret;
+	}
+	ret = fileTypes[len - 1];
+	return ret;
+}
+
+function check_ext(fname){
+	ext = get_ext(fname);
+	for(var i = 0; i < ext_ok_array.length; i++){
+		if(ext == ext_ok_array[i]){
+			return true;
+		}
+	}
+	return false;
+}
+
+function check(){
+	var fnameArray = new Array;
+	fnameArray.push(document.submit.upfile_proceeding.value);
+	fnameArray.push(document.submit.upfile_public.value);
+	fnameArray.push(document.submit.upfile_minute.value);
+	for(var i = 1; i <= 5; i++){
+		fnameArray.push(document.submit["pic" + i].value);
+	}
+	for(var i = 0; i < fnameArray.length; i++){
+		if(fnameArray[i] != ""){
+			if(!check_ext(fnameArray[i])){
+				window.alert("不正なファイル形式です: " + fnameArray[i]);
+				return false;
+			}
+		}
+	}
+	return true;
+}
+
+function confirmation(){
+	var str = "保存しますか?";
+	return confirm(str);
+}
+
+function mysubmit(){
+	if(check()){
+		flag = confirmation();
+		if(flag){
+			calTotalReward();
+			// サブミットするフォームを取得
+			var f = document.forms["submit"];
+
+			//textareaの特殊文字対策
+			for(var i = 0; i < f.length; i++){
+				if(f[i].type == "textarea"){
+					val = f[i].value;
+					val = val.replace(/\n/g,"<<enter>>");
+					val = val.replace(/\'/g,"<<squot>>");
+					val = val.replace(/\"/g,"<<dquot>>");
+					val = val.replace(/\=/g,"<<equal>>");
+					f[i].value = val;
+				}
+			}
+			
+			f.method = "POST"; // method(GET or POST)を設定する
+			f.enctype = "multipart/form-data"
+			f.action = "./submit.cgi";    // action(遷移先URL)を設定する
+			f.submit(); // submit する
+			return false;
+		}
+	}
+}
+
+function treeInit()//　ツリーメニューの初期設定
+{
+	if(!document.getElementsByTagName){return;}//　DOMをサポートしていなければ実行しないで抜けます
+	var objs=document.getElementsByTagName("div");//　HTML中の「div」タグを取得
+	for(var i=3;i<objs.length;i++)//　クラスネーム「titem」を探して非表示にします
+	{
+		if(objs[i].className=="titem")
+		{
+			objs[i].style.display="none";
+		}
+	}
+}
+
+function treeFunc(id)//　ツリーを消したり表示したりする関数です
+{
+	if(!document.getElementsByTagName){return false;}//　DOMをサポートしていなければ実行しないで抜けます
+	var obj=document.getElementById(id);//　ツリーのオブジェクトを取得
+	if(obj.style.display=="block")//　表示←→非表示の処理
+	{
+		obj.style.display="none";
+	}else{
+		obj.style.display="block";
+	}
+	return false;
+}
+
+function get_radio_checked(name){
+	for(var i = 0; i < name.length; i++){
+		if(name[i].checked == true){
+			return i;
+		}
+	}
+	return -1;
+}
+
+function upfile_public_check(){
+	if(!document.getElementsByTagName){return false;}//　DOMをサポートしていなければ実行しないで抜けます
+    if(get_radio_checked(document.submit.publish) == 2){
+		document.getElementById("upfile_public_div").style.display="block";
+	}else{
+		document.getElementById("upfile_public_div").style.display="none";
+	}
+	return false;
+
+}
+
+//足し込みたい項目のname要素を追加
+var rewardArray = new Array;
+rewardArray.push("reward1");
+rewardArray.push("reward2");
+rewardArray.push("reward3");
+rewardArray.push("reward4");
+rewardArray.push("reward5");
+
+function msg(text){
+ 	var el = document.getElementsByClassName('msg')[0];
+	el.textContent = text;
+ 	el.style = "display: inline-block;"
+}
+
+
+function msg_clear(){
+ 	var el = document.getElementsByClassName('msg')[0];
+	el.textContent = "";
+ 	el.style = ""
+}
+
+function calTotalReward(){
+	var total = 0;
+	//謝金の数値計算
+
+	document.getElementById('totalRewardDisplay').innerHTML = "hoge"; 
+	for(i=0;i < rewardArray.length; i++){
+		//計算開始
+
+		document.getElementById('totalRewardDisplay').innerHTML = document.getElementById(rewardArray[i]+"_freefee").checked; 
+		if(document.getElementById(rewardArray[i]+"_no").checked){
+			//不要	
+			document.getElementById(rewardArray[i]+"_money_id").value = 0;
+			document.getElementById(rewardArray[i]+"_travel_id").value = 0;
+		}
+
+		if(document.getElementById(rewardArray[i]+"_unconfirm").checked){
+			//未確認
+			document.getElementById(rewardArray[i]+"_money_id").value = 0;
+			document.getElementById(rewardArray[i]+"_travel_id").value = 0;
+		}
+		if(document.getElementById(rewardArray[i]+"_money").checked){
+			var money = document.getElementById(rewardArray[i]+"_money_id").value;
+			if((money != null) && isNaN(money)){
+				//数値でない場合にtrue
+				var num = rewardArray[i].slice(-1);//最後の1文字を切り出す
+				alert(num+"番目の講師の謝礼情報に数値以外が入力されています");
+				return false;
+			}
+			//数値化して足す
+			total = total + Number(money);
+			//0にする
+			document.getElementById(rewardArray[i]+"_travel_id").value = 0;
+		}
+		if(document.getElementById(rewardArray[i]+"_freefee").checked){
+			var money = document.getElementById(rewardArray[i]+"_travel_id").value;
+			if((money != null) && isNaN(money)){
+				//数値でない場合にtrue
+				var num = rewardArray[i].slice(-1);//最後の1文字を切り出す
+				alert(num+"番目の講師の謝礼情報に数値以外が入力されています");
+				return false;
+			}
+			//数値化して足す
+			total = total + Number(money) + 14250;//参加費無料は14250円で固定
+			//0にする
+			document.getElementById(rewardArray[i]+"_money_id").value = 0;
+		}
+		else{
+			document.getElementById(rewardArray[i]+"_money_id").value = 0;
+			document.getElementById(rewardArray[i]+"_travel_id").value = 0;
+		}
+	}
+	if(document.getElementById('session_name').value != 'keynote'){
+	var check=document.getElementById('check_ok');
+	if(total < 30001 || check.checked){
+		//謝金の合計金額を表示
+		document.getElementById('totalRewardDisplay').innerHTML = "合計金額: " + String(total) + " 円";
+	}else{
+		//謝金の合計金額を表示
+		msg("セッション当たりの謝金の上限は3万円です");
+		var str = "合計金額: " + String(total) + " 円．<font color=\"#cc4444\">上限は3万円です</font>"
+		document.getElementById('totalRewardDisplay').innerHTML = str;
+	}
+    }
+	//金額を更新
+	document.getElementById('totalReward').value = total;
+}
+
+function read_hash_and_apply(){
+	var hash = location.hash;
+	if(hash.length > 0){
+		hash = hash.replace('#','');
+		send_get_fname(hash);
+	}
+}
+
+//ページ読込み時に実行
+function init(){
+	treeInit();
+	//表示の初期化
+	view_reset();
+	//謝金の合計を計算して表示
+	calTotalReward();
+        // location/hash読み取り
+	read_hash_and_apply();
+}

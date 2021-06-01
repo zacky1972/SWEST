@@ -1,0 +1,22 @@
+- interactive.each do |poster|
+  - if poster[0].match(/[0-9]+/)
+    -if poster.length == 6
+     .session-poster.row
+      .session-box.col-8.col-md-5
+       = link_to "#{poster[1]}", poster[5]
+      .session-box.col-4.col-md-5 #{poster[2]}
+      .session-box.hidden-sm-down.col-md-2 #{[unlessNilOrEmpty('ショートプレゼンあり', poster[3]), unlessNilOrEmpty('継続展示あり', poster[4])].join(' ')}
+    -elsif poster.length == 4
+     .session-poster.row
+      .session-box.col-1.col-md-1 #{poster[0]}
+      .session-box.col-5.col-md-5 #{poster[1]}
+      .session-box.col-2.col-md-2 #{poster[2]}
+      .session-box.col-4.col-md-4 #{poster[3]}
+      /.session-box.hidden-sm-down.col-md-2 #{poster[3]}
+    -else
+     .session-poster.row
+      .session-box.col-8.col-md-5 #{poster[1]}
+      .session-box.col-4.col-md-5 #{poster[2]}
+      .session-box.hidden-sm-down.col-md-2 #{[unlessNilOrEmpty('ショートプレゼンあり', poster[3]), unlessNilOrEmpty('継続展示あり', poster[4])].join(' ')}
+  - else
+    .session-interactive-title #{poster[0]}

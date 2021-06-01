@@ -1,0 +1,164 @@
+<!DOCTYPE html><head><meta charset="UTF-8"><title>s2d_minute</title></head><body><p>
+**********************************************************************
+<br/>
+セッションS2d ワーク
+<br/>
+テーマ：Nerves Training: Elixir.Circuitsによる外部デバイスの制御
+<br/>
+コーディネータ：高瀬 英希 氏(京都大学/JSTさきがけ),
+<br/>
+                菊池 豊 氏(高知工科大学 地域連携機構)
+<br/>
+日時：2019/9/6(金) 9:00～10:10
+<br/>
+参加人数：21名
+<br/>
+**********************************************************************
+<br/>
+
+<br/>
+■概要
+<br/>
+  ・Nerves Trainingを行う
+<br/>
+  ・Elixir.Circuitsでデバイスを制御する(前半・本セッション)
+<br/>
+  ・mixでNervesアプリを開発する NervesHubでOTAを実行する(後半)
+<br/>
+
+<br/>
+■自己紹介(講師・TA)
+<br/>
+　・高瀬 英希 (京都大学/JSTさきがけ)
+<br/>
+　・菊池 豊 (高知工科大学 地域連携機構)
+<br/>
+　・山崎 進 (北九州市立大学 国際環境工学部)
+<br/>
+　・Justin Schneck (Nerves Project)
+<br/>
+
+<br/>
+■準備と概念の説明
+<br/>
+・Nerves Training：本家のTrainingは6時間掛かりのボリュームがある
+<br/>
+      今回は2.5時間しか無いため、Elixir.Circutsを使うところ、
+<br/>
+      mixコマンドでプロジェクトを開発してNervesHubでOTAデプロイを行うところまでを行う
+<br/>
+
+<br/>
+・資料：(一般には非公開)
+<br/>
+　・Google Spreadsheetで進捗を管理する
+<br/>
+
+<br/>
+・NervesKeyが取り付けられたラズパイ0をUSBケーブルでPCに接続する
+<br/>
+　ラズパイの外側のポートは使用しない
+<br/>
+　内側のGadget Portを使用
+<br/>
+
+<br/>
+・Host：開発用のPC
+<br/>
+・Target：ラズパイ
+<br/>
+・SDカードからファームをブートする
+<br/>
+
+<br/>
+・NervesHub：ネットワーク通信によりクラウド越しにHostとTargetを繋ぐ
+<br/>
+
+<br/>
+・Trainingのポリシー：極力コピペは控えて、コードやコマンドは手打ちすること。そのほうが実際の身につく
+<br/>
+
+<br/>
+■Nervesのブートとホストからの接続、実行
+<br/>
+
+<br/>
+・zipファイル内のnerves_training_id_rsaを~/.sshに配置しchmod 600で権限を付与
+<br/>
+
+<br/>
+・ラズパイをUSBケーブルでPCに接続して、ssh nerves.localでssh接続→iexが立ち上がる
+<br/>
+  iexはelixirのインタプリタで、通常Ctrl+Cを2回押すと終了するがラズパイ上で
+<br/>
+  起動しているiexはexitコマンドで終了することになっている
+<br/>
+
+<br/>
+  RingLogger.next：これまでのログを表示する
+<br/>
+  RingLogger.attach:これからシステムログを表示する
+<br/>
+  RingLogger.detach:システムログを表示しない
+<br/>
+ 
+<br/>
+◆トラブル：ssh接続できない
+<br/>
+  ・virtualboxの場合、拡張プラグインを入れる必要がある可能性がある
+<br/>
+    device usbをboxに全部渡さないとethernetが使えない
+<br/>
+  ・USBケーブルが壊れているorパワー不足が原因であることも多い
+<br/>
+
+<br/>
+
+<br/>
+■Elixir.Circuitsを使う
+<br/>
+・GPIOは簡単だが遅い
+<br/>
+  LEDやボタンを検知するには向いている(ので今回はCircuits.GPIOを使う)
+<br/>
+
+<br/>
+・Hex: Elixirのライブラリやパッケージを配布するシステム
+<br/>
+
+<br/>
+・GPIOの割り当て：ボタン2つ、方向キー５つ
+<br/>
+　・Circuits.GPIO.open関数でGPIOをopenしpin番号、inputかoutputか、pullupか
+<br/>
+　  pulldownかを指定する
+<br/>
+　・Circuits.GPIO.read関数でGPIOの状態を読むことができる
+<br/>
+　・Circuits.GPIO.set_interruptsでボタンの状態を表示する
+<br/>
+　　(ボタンを押すと0,離すと1)
+<br/>
+
+<br/>
+　・GenServer:Elixirの、プロセスを生成してこのプロセスにデータを送る、プロセス生成の機能
+<br/>
+
+<br/>
+  ・ボタンの値が変わればそれを表示する関数を持つモジュールを定義し、実行してみる
+<br/>
+
+<br/>
+・i2c：組み込みは色々な通信規格がある
+<br/>
+  i2cのライブラリ：Circuits.I2C・・・バスの名前を探すことなどができる
+<br/>
+
+<br/>
+
+<br/>
+(セッションS3dに続く)
+<br/>
+
+<br/>
+</p></body>

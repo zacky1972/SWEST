@@ -1,0 +1,314 @@
+<!DOCTYPE html><head><meta charset="UTF-8"><title>s2b_minute</title></head><body><p>
+**********************************************************************
+<br/>
+セッション：s2b
+<br/>
+テーマ　　：North America MaaS Business Development by Vehicle Edge Computing
+<br/>
+講師　　　：佐藤洋介　Denso International America, INC.
+<br/>
+　　　　　　　　　　　Seattle Innovation Lab Director (Lab Leader
+<br/>
+　　　　　　Shazaan Bahrainwala  Denso International America, INC. 
+<br/>
+　　　　　　　　　　　Seattle Innovation Lab Senior Manager
+<br/>
+日時　　　：2020/08/21(金) 10:00～11:10
+<br/>
+参加人数　：22名
+<br/>
+**********************************************************************
+<br/>
+
+<br/>
+
+<br/>
+■概要
+<br/>
+Your car has numerous cameras and sensors that continuously record the world around it.
+<br/>
+Amazon and Denso are developing a new Mobility as a Service platform that will enable 
+<br/>
+edge computing directly inside the vehicle to allow machine learning algorithms to 
+<br/>
+make sense of the vast amount of data being generated. This talk will show how machine 
+<br/>
+learning is being used for the following: to identify unsafe driving behavior 
+<br/>
+like rolling stops and red lights; to provide dynamic road condition updates to mapping 
+<br/>
+service providers; and even seek detect when a baby has been left inside a vehicle accidentally. 
+<br/>
+Denso will demonstrate AWS Greengrass running Machine Learning Inference models deployed in 
+<br/>
+Docker containers in a real vehicle and how they leveraged the AWS Connected Mobility Solution 
+<br/>
+to keep millions of drivers safe with connectivity and continuously updated machine learning algorithms.
+<br/>
+
+<br/>
+
+<br/>
+■目次
+<br/>
+ 1. Introduction of Denso Seattle Innovation Lab(SIL)
+<br/>
+ 2. CES review from January
+<br/>
+ 3. What's Denso Product with AWS
+<br/>
+ 4. How can Denso collaborate with AWS?
+<br/>
+
+<br/>
+
+<br/>
+■1. Introduction of Denso Seattle Innovation Lab(SIL)
+<br/>
+　　　- DENSO-SILは北アメリカのシアトルが拠点のラボ(西海岸に位置)
+<br/>
+      - Connected Carにフォーカスして研究
+<br/>
+　　　- 拠点をシアトルに置く理由
+<br/>
+　　　　　シアトルはシリコンバレーの北側
+<br/>
+　　　　　　-> しかし，シリコンバレーのオフィス費用は高騰している
+<br/>
+　　　　　シリコンバレーでは新しいビジネスが創出されている
+<br/>
+　　　　　　-> getaroundなどの新たなMaaSも誕生している．スタートアップが多い
+<br/>
+          シアトル周辺はamzonやmicrosoftのオフィスがあるのでビジネスチャンスが多い！
+<br/>
+      - Amazon AWSの仕事がメインのため、Amazon社員(Amazonia)の周辺にオフィスをレンタル
+<br/>
+
+<br/>
+　　　- 従来は研究開発から事業化までに従来は5、6年かかっていた
+<br/>
+　　　　　 -> スタートアップは3か月程度で新サービスを立ち上げている
+<br/>
+　　　　　　　　-> 従来の開発スピードではキャッチアップできない
+<br/>
+                    -> rapid development (アジャイル開発、2週間単位で開発)
+<br/>
+　　　- Officeデザインコンセプト
+<br/>
+　　　　　スタートアップがでたり入ったりしやすい大部屋スタイル
+<br/>
+　　　　　コードレビューしやすいブースも
+<br/>
+　　　　　壁ホワイトボード、ガレージに開発用の車もあり
+<br/>
+　　　　　
+<br/>
+
+<br/>
+■2. CES2020 Exhibition review from January
+<br/>
+　　　CES2020の一角でデンソーブースを出展
+<br/>
+　　　AWSとDENSOが進めるsharing Connected Vehicleのreference アーキテクチャで関係構築をアピール　　　
+<br/>
+　　　- Collaboration activity of Connected Mobility Solution(CMS)
+<br/>
+　　　　　-> 最初のパートナーとして”保険会社”を選択　->　詳細は後述
+<br/>
+　　　- Archtecture
+<br/>
+      - Verification test of Live demo
+<br/>
+
+<br/>
+
+<br/>
+■3. What's Denso Product with AWS
+<br/>
+　　〇 注力しているサービス(狙い)
+<br/>
+　　    エンドユーザ向け
+<br/>
+    　 　|- Car Security
+<br/>
+         |- Deliverly
+<br/>
+         |    車のトランク等を利用した宅配．
+<br/>
+         |    現状はアンロック信号をクラウドから送るとトランク以外も全てアンロックされてしまう課題あり
+<br/>
+         |- Insurance(保険)
+<br/>
+ 　　　　　　 通常は保険は年間単位の契約.カーシェアで貸す際は別途追加の保険料算出が必要
+<br/>
+　　　　　　　Uberの配達員が自動車を運転中にガソリンスタンドに行ったとする．この時に事故が起きたら業務扱いなのか？
+<br/>
+　　　　　　　私用扱いなのか？この判断1つで使用される保険が異なる．-> 柔軟な契約はできない. 今後望まれる.
+<br/>
+                -> ドライブレコーダーなどで保険会社が判断？
+<br/>
+   　　プラットフォーム向け
+<br/>
+         |- Location Based Service
+<br/>
+         |- Device Life Cycle Management
+<br/>
+         |- App Store
+<br/>
+
+<br/>
+    〇 Denso's contribution
+<br/>
+        現在は各会社ごとに独自の仕様(プラットフォーム)
+<br/>
+　　　　　-> AWSなどと協力して”共通の”プラットフォームとつくりたい
+<br/>
+　　　　現在の車両データはカーメーカ視点のデータのみが出力されており、保険会社などサービス提供者が
+<br/>
+　　　　欲しいデータになっていない. サービス提供者(サードパーティ)が使いやすいデータ形式を自由に実装できるようにする.
+<br/>
+
+<br/>
+　　〇Archtecture on AWA Connected Mobility Solution
+<br/>
+　　　　AWSを介していろいろなビジネスモデル(Feet, Insurance,,,)が使えるフリーのテンプレートとして公開する
+<br/>
+　　　　-> 既にCMSはWeb上に公開されている．AWSのアカウントを持っていれば今もすぐdeployできる
+<br/>
+
+<br/>
+      　- Concept: Vehicle Edge Computing
+<br/>
+            車両への要求はビジネスモデルに応じていつ、なんの、どの程度のデータが必要か劇的に変化する
+<br/>
+　　　　　　Edge Computinｇは新しいビジネスモデルやつながっている技術にキャッチアップして成長できる
+<br/>
+
+<br/>
+       E2E(End to End) System Challenge
+<br/>
+        - データモデルとインターフェースの標準化
+<br/>
+            車両情報辞典へのRESTfullAPI(※)の提供
+<br/>
+　　　　　　(※) https://qiita.com/NagaokaKenichi/items/0647c30ef596cedf4bf2
+<br/>
+
+<br/>
+        - コストと高信頼性を両立する通信
+<br/>
+　　　　　　アップロード周期と車両データをカスタマイズ
+<br/>
+　　　　　　(必要に応じて)同期
+<br/>
+　　　　　　　　-> 基本は車両上でデータ生成、できるだけクラウド上のリソースを使わない
+<br/>
+
+<br/>
+        - Edge Computing 
+<br/>
+　　　　　　cloud technologyの適用
+<br/>
+
+<br/>
+　　〇Proof of Tecnology
+<br/>
+      - Fleet(デモ1)とInsurance(デモ2)のユースケースでアーキテクチャを評価
+<br/>
+      - デモカーでシアトル内を運転し, リアルタイムで状態をみせる
+<br/>
+
+<br/>
+　　　デモ1：Fleet
+<br/>
+        車両状態：IGN = ON, Driver Scoring Algorithm = ON, Suspicious Detections = OFF
+<br/>
+　　　　目的；車両運転中、リアルタイムに周辺オジェクトを標識、car, bus等に分類マッピング、運転を評価するアプリ(保険会社のニーズ)
+<br/>
+         
+<br/>
+　　　デモ2：Insurance
+<br/>
+        車両状態：IGN = OFF, Driver Scoring Algorithm = OFF, Suspicious Detections = ON
+<br/>
+　　　　目的：エンジン停止中、周辺の監視し、危険な人間等を認識するアプリ(セキュリティ観点のニーズ)
+<br/>
+
+<br/>
+
+<br/>
+■4. How can Denso collaborate with AWS?
+<br/>
+ 〇Amazon　Connected Mobility Solution(CMS)の紹介
+<br/>
+　(参考1から抜粋)
+<br/>
+ 　アマゾン ウェブ サービス (AWS) を使用すると、自動車メーカーとそのサプライヤーは、インフラストラクチャの
+<br/>
+　管理を必要とせずにサーバーレス IoT アプリケーションが構築できます。それにより、コネクテッドカーのデータを
+<br/>
+　収集、処理、分析し、その結果への対応を取ることができるようになります。AWS IoT を使用するとお客様は、
+<br/>
+　自動車やデバイスを、低レイテンシかつ低いオーバーヘッドで安全に AWS クラウドに接続できます。
+<br/>
+　 参考1 https://docs.aws.amazon.com/solutions/latest/connected-vehicle-solution/welcome.html
+<br/>
+ 　参考2 https://pages.awscloud.com/rs/112-TZM-766/images/2-AWS%20Connected%20Mobility%20Solution%20%28CMS%29%20%E3%81%AE%E3%81%93%E3%82%99%E7%B4%B9%E4%BB%8B.pdf
+<br/>
+
+<br/>
+　- フォルクスワーゲン，BMW，AVIS，DENSO,TOYOTA等でアーキテクチャを作っている
+<br/>
+　- ライフサイクルまで管理：出荷からオーナーに渡るまで、オーナーが売却する場合
+<br/>
+　- S3やDynamoDB等をそのまま使うには面倒なので
+<br/>
+　　-> 使い方を限定して，車の挙動解析・異常検知・位置把握などモビリティ向けのフレームワークを提供
+<br/>
+　- AWS Connected Vehicle Solution
+<br/>
+　  -> アーキテクチャパターンをAWSのWebサイトにてドキュメントで公開している(PDFもアリ)
+<br/>
+　　   https://docs.aws.amazon.com/solutions/latest/connected-vehicle-solution/welcome.html
+<br/>
+
+<br/>
+
+<br/>
+
+<br/>
+■Q&A
+<br/>
+  Q1. P17 mobility IoTアーキテクチャの実現具体例
+<br/>
+      通常処理はLinux状のPOSIXで処理、安全処理はほかのファームウェアで処理している.
+<br/>
+      1マシン１OSだとどのように実現しているかわからない
+<br/>
+  A1. メモリプロテクション、スケジュールプロテクションがポイント.
+<br/>
+　　　linux上にDockerコンテナをたてて実現. linuxではリアルタイム制御が難しいのでDocker上の別OSで実現する
+<br/>
+　　　-> オーバーヘッドが大きいのが課題
+<br/>
+
+<br/>
+　Q2. Dockerからデバイスにアクセスする方法
+<br/>
+  A2. 手間なのでやめた。POSIXファイルシステムで実現(リアルタイム処理は諦めた)
+<br/>
+　　　車種ごとのハードウェアの差異はSystemwareでファイルシステムの構成を変更することで対処
+<br/>
+　
+<br/>
+　Q3. ソフトウェアをデプロイする際にハードウェアもデプロイする方法はあるのか？
+<br/>
+  A3. ない
+<br/>
+
+<br/>
+　Q4. ハードウェアアクセラレーションはFPGAを意識しているのか？
+<br/>
+　A4. GPUを想定
+<br/>
+</p></body>

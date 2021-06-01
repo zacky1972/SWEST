@@ -1,0 +1,52 @@
+{
+  "name": "swest",
+  "version": "1.0.0",
+  "description": "SWEST Home Page",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zacky1972/SWEST.git"
+  },
+  "author": "Susumu Yamazaki",
+  "bugs": {
+    "url": "https://github.com/zacky1972/SWEST/issues"
+  },
+  "homepage": "https://github.com/zacky1972/SWEST#readme",
+  "dependencies": {
+    "autoprefixer": "^7.2.2",
+    "bootstrap": "^4.3.1",
+    "chalk": "^2.3.0",
+    "del": "^3.0.0",
+    "global": "^4.3.2",
+    "graceful-fs": "^4.2.4",
+    "gulp": "^3.9.1",
+    "gulp-coffee": "^2.3.5",
+    "gulp-filesinstream": "^0.9.3",
+    "gulp-image-resize": "^0.13.0",
+    "gulp-imagemin": "^4.0.0",
+    "gulp-parcel": "^0.2.8",
+    "gulp-rename": "^1.2.2",
+    "gulp-rev": "^8.1.0",
+    "gulp-rev-replace": "zacky1972/gulp-rev-replace#master",
+    "gulp-sass": "^3.1.0",
+    "hoek": "^5.0.3",
+    "jquery": "^3.5.0",
+    "node-growl": "^0.1.1",
+    "node-sass": "^4.13.1",
+    "popper.js": "^1.12.9",
+    "rev-del": "^1.0.5",
+    "run-sequence": "^2.2.0",
+    "svgo": "^1.0.3",
+    "vinyl-paths": "^2.1.0"
+  },
+  "scripts": {
+    "build": "yarn text && yarn gulp build",
+    "watch": "yarn text && yarn gulp watch",
+    "text": "yarn sec && yarn discuss",
+    "sec": "./secretariat.sh",
+    "discuss": "convert source/images/blank.jpg +antialias -font ArialUnicode -pointsize 24 -gravity Center -annotate +0+0 \"swest-discuss@swest.toppers.jp\" source/images/discuss.jpg"
+  },
+  "resolutions": {
+    "graceful-fs": "^4.2.4"
+  }
+}

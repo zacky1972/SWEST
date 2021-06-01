@@ -1,0 +1,55 @@
+doctype html
+html lang="ja-jp"
+  head
+    meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"
+
+    - if defined? current_page.data.title
+      title = "#{current_page.data.title} | SWEST「組込みシステム技術に関するサマーワークショップ」"
+    - else
+      title = "SWEST「組込みシステム技術に関するサマーワークショップ」"
+
+    - ogp_tags do |name, value|
+      meta property=name content=value
+    - if defined? current_page.data.image
+      meta property="og:image" content="#{image_path(current_page.data.image)}"
+    - else
+      meta property="og:image" content="#{image_path('SWEST_logo_Facebook.png')}"    
+    meta property="og:type" content='website'
+
+    meta content='summary_large_image' name='twitter:card'
+    meta content='@SWEST_JP' name='twitter:site'
+
+    link href=url_for('apple-touch-icon-180x180-precomposed.png') rel='apple-touch-icon' sizes='180x180' /
+    link href=url_for('apple-touch-icon-152x152-precomposed.png') rel='apple-touch-icon' sizes='152x152' /
+    link href=url_for('apple-touch-icon-144x144-precomposed.png') rel='apple-touch-icon' sizes='144x144' /
+    link href=url_for('apple-touch-icon-114x114-precomposed.png') rel='apple-touch-icon' sizes='114x114' /
+    link href=url_for('apple-touch-icon-72x72-precomposed.png') rel='apple-touch-icon' sizes='72x72' /
+    link href=url_for('apple-touch-icon-precomposed.png') rel='apple-touch-icon' /
+    link href=url_for('favicon.png') rel=('shortcut icon') /
+    link href=url_for('favicon.ico') rel='icon' type='image/ico' /
+    meta name='msapplication-TileImage' content=url_for('mstile-144x144.png')
+
+    link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'
+
+    == stylesheet_link_tag :site
+    == javascript_include_tag  :site, async: 'async'
+
+    - if current_page.data.navigation.nil?
+      = partial 'partials/navbar', :locals => locals
+      .container-fluid
+        .row
+          = partial 'partials/sidebar', :locals => locals
+          main.col-12.col-lg-9.pt-3.ml-auto role="main"
+            == yield
+            = partial 'partials/footnote', :locals => locals
+    - else
+      = partial 'partials/navbar', :locals => nav_add(locals, current_page.data.navigation, :active, true)
+      .container-fluid
+        .row
+          = partial 'partials/sidebar', :locals => nav_add(locals, current_page.data.navigation, :active, true)
+          main.col-12.col-lg-9.pt-3.ml-auto role="main"
+            .container
+              == yield
+            = partial 'partials/footnote', :locals => nav_add(locals, current_page.data.navigation, :active, true)

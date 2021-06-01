@@ -1,0 +1,14 @@
+- unless $number == $current
+  - unless session[:publish].nil?
+    p &nbsp;
+    - if session[:publish].eql?('予稿集用ファイルを公開')
+      = link_to "セッション資料", $site_url + rootURL + "#{swest}/program/pdfs/#{name}_proceeding.pdf", class: "btn btn-primary"
+    - elsif session[:publish].eql?('一般公開用ファイルを公開')
+      = link_to "セッション資料", $site_url + rootURL + "#{swest}/program/pdfs/#{name}_public.pdf", class: "btn btn-primary"
+    - elsif session[:publish].eql?('複数の一般公開用ファイルを公開')
+      = link_to "セッション資料1", $site_url + rootURL + "#{swest}/program/pdfs/#{name}_public.pdf", class: "btn btn-primary"
+      span &nbsp;
+      = link_to "セッション資料2", $site_url + rootURL + "#{swest}/program/pdfs/#{name}_public2.pdf", class: "btn btn-primary"      
+  span &nbsp;
+  - unless session[:filepath_minute].nil? || session[:filepath_minute].empty?
+    = link_to "議事録", $site_url + rootURL + "#{swest}/program/txt/#{name}_minute.html", class: "btn btn-primary"

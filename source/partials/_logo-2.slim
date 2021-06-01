@@ -1,0 +1,9 @@
+.col-10.col-lg-8
+	.img-logo.center
+		= image_tag("https://swest.toppers.jp/company/gradation440.png", {width: "100%"})
+		- if defined?(href)
+			a href="#{href}" target="_blank"
+				img src=image width="#{imgsz}%" alt="#{alt}"
+		- else
+			img src=image width="#{imgsz}%" alt="#{alt}"
+		= image_tag("https://swest.toppers.jp/company/gradation440.png", {width: "100%"})

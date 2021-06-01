@@ -1,0 +1,2 @@
+for num in {1..20} ; do convert source/images/blank.jpg +antialias -font ArialUnicode -pointsize 24 -gravity Center -annotate +0+0 "secretariat${num}@swest.toppers.jp" "source/images/secretariat${num}.jpg"; done
+for num in {20..20} ; do convert source/images/blank.jpg +antialias -font ArialUnicode -pointsize 24 -gravity Center -annotate +0+0 "interactive${num}@swest.toppers.jp" "source/images/interactive${num}.jpg"; done

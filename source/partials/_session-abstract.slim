@@ -1,0 +1,7 @@
+.session-abstract
+  p #{textConvert(presenceNowPlanning(session[:abst]))}
+- if session[:recommend].present?
+  p &nbsp;
+  .session-introduction-title 実行委員からの推薦文:
+  .session-introduction
+    p #{textConvert(session[:recommend])}
