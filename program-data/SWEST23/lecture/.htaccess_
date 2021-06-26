@@ -1,0 +1,25 @@
+<Files submit.html>
+AuthType        Basic
+AuthName        SWEST
+AuthGroupFile   /dev/null
+AuthUserFile    /var/.htpasswd
+require valid-user
+</Files>
+
+<Files ~ "(\.cgi)$">
+    # AllowOverride All
+    # Require all granted
+    Options +ExecCGI 
+</Files>
+
+<Files ~ "(\.cgi|submit\.html)$">
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+</IfModule>
+</Files>
+
+<Files "(readme.txt|\.rb)$">
+Deny from all
+</FILES>
