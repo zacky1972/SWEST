@@ -3,12 +3,12 @@ require 'slim'
 require 'csv'
 require 'redcarpet'
 
-preview = true
+preview = false
 
 # allOptions = preview
 allOptions = false
 
-defaultOptions = "p2-s2-i0-r1-R1-S0"
+defaultOptions = "p2-s2-i1-r1-R1-S0"
 
 buildBeforeDeploy = true
 
@@ -42,11 +42,11 @@ $navigation = {
 			:label => 'Guide',
 			:url => 'guide',
 #                        :new => true,
-#		}, {
-#			:name => 'プログラム',
-#			:label => 'Program',
-#			:url => 'SWEST23/program/',
- #                       :new => true,
+		}, {
+			:name => 'プログラム',
+			:label => 'Program',
+			:url => 'SWEST23/program/',
+                        :new => true,
 #		}, {
 #			:name => '20周年特別企画＠水曜',
 #			:label => 'Wednesday',
@@ -71,7 +71,7 @@ $navigation = {
       :label => 'Interactive',
       :url => 'interactive',
       :regist => true,
-#      :new => true,
+      :new => true,
     }, {
       :name => '参加申込み',
       :label => 'Regist',
@@ -581,7 +581,7 @@ $sessions = {
       's1a', 's1b', 's1c',
       's2a', 's2b', 's2c',
       's3a', 's3b', 's3c',
-      's4a', 's4b', 's4c', 's4d',
+      's4a', 's4b', 's4c',
       's5a', 's5b', 's5c', 's5d'
     ],
     icebreak: {
@@ -613,9 +613,9 @@ $sessions = {
     shortPresentation: {
       date: "9/2(木)",
       time: "15:00～15:30",
-      name: "ショートプレゼンテーション・Discord指南",
-      title: "ショートプレゼンテーション・Discord指南",
-      fullTitle: "ショートプレゼンテーション・Discord指南",
+      name: "ショートプレゼンテーション・Gather.townの歩き方",
+      title: "ショートプレゼンテーション・Gather.townの歩き方",
+      fullTitle: "ショートプレゼンテーション・Gather.townの歩き方",
     },
     interactive: {
       date: "9/2(木)",
@@ -766,7 +766,7 @@ end
 # インタラクティブセッションの読み込み
 
 $interactive = Hash.new
-(19..22).each do |number|
+(19..23).each do |number|
 #(19..21).each do |number|
   SWEST = "SWEST#{number}"
   csv_file = "./program-data/#{SWEST}/interactive-printable.csv"
