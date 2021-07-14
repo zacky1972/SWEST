@@ -126,6 +126,24 @@ CSV_ARRAY.push "reward5_travel_id"
 #CSV_ARRAY.push "reward5_travel"
 #CSV_ARRAY.push "recommend5"
 CSV_ARRAY.push "bikou5"
+CSV_ARRAY.push "name6"
+CSV_ARRAY.push "inst_kind6"
+CSV_ARRAY.push "affi6"
+CSV_ARRAY.push "email6"
+CSV_ARRAY.push "reward6_no"
+CSV_ARRAY.push "reward6_unconfirm"
+CSV_ARRAY.push "reward6_money"
+CSV_ARRAY.push "reward6_money_id"
+CSV_ARRAY.push "reward6_freefee"
+CSV_ARRAY.push "reward6_travel"
+CSV_ARRAY.push "reward6_travel_id"
+#CSV_ARRAY.push "reward6_money"
+#CSV_ARRAY.push "reward6_travel"
+#CSV_ARRAY.push "reward6_radio"
+#CSV_ARRAY.push "reward6_money"
+#CSV_ARRAY.push "reward6_travel"
+#CSV_ARRAY.push "recommend6"
+CSV_ARRAY.push "bikou6"
 
 CSV_ARRAY1 = Array::new
 CSV_ARRAY1.push "name1"
@@ -218,6 +236,25 @@ CSV_ARRAY5.push "reward5_travel_id"
 #CSV_ARRAY5.push "reward5_travel"
 #CSV_ARRAY5.push "recommend5"
 CSV_ARRAY5.push "bikou5"
+
+CSV_ARRAY6 = Array::new
+CSV_ARRAY6.push "name6"
+CSV_ARRAY6.push "inst_kind6"
+CSV_ARRAY6.push "pic6"
+CSV_ARRAY6.push "affi6"
+CSV_ARRAY6.push "email6"
+CSV_ARRAY6.push "reward6_no"
+CSV_ARRAY6.push "reward6_unconfirm"
+CSV_ARRAY6.push "reward6_money"
+CSV_ARRAY6.push "reward6_money_id"
+CSV_ARRAY6.push "reward6_freefee"
+CSV_ARRAY6.push "reward6_travel"
+CSV_ARRAY6.push "reward6_travel_id"
+#CSV_ARRAY6.push "reward6_radio"
+#CSV_ARRAY6.push "reward6_money"
+#CSV_ARRAY6.push "reward6_travel"
+#CSV_ARRAY6.push "recommend6"
+CSV_ARRAY6.push "bikou6"
 
 # for secretary
 CSV_ARRAY_HEAD = Array::new
@@ -343,6 +380,24 @@ RENAME_HASH["reward5_travel_id"]="講演者5金額"
 #RENAME_HASH["reward5_travel"]="講演者5旅費"
 #RENAME_HASH["recommend5"]="講演者5推薦文"
 RENAME_HASH["bikou5"]="講演者5備考"
+RENAME_HASH["name6"]="講演者6氏名"
+RENAME_HASH["inst_kind6"]="講演者6種別"
+RENAME_HASH["pic6"]="講演者6顔写真"
+RENAME_HASH["affi6"]="講演者6所属"
+RENAME_HASH["email6"]="講演者6連絡先"
+RENAME_HASH["reward6_no"]="講演者6謝金等不要"
+RENAME_HASH["reward6_unconfirm"]="講演者6未確認"
+RENAME_HASH["reward6_money"]="講演者6謝金"
+RENAME_HASH["reward6_money_id"]="講演者6謝金金額"
+RENAME_HASH["reward6_freefee"]="講演者6参加費無料"
+RENAME_HASH["reward6_travel"]="講演者6旅費"
+RENAME_HASH["reward6_travel_id"]="講演者6金額"
+#RENAME_HASH["reward6_radio"]="講演者6謝礼の種類"
+#RENAME_HASH["reward6_money"]="講演者6謝金"
+#RENAME_HASH["reward6_travel"]="講演者6旅費"
+#RENAME_HASH["recommend6"]="講演者6推薦文"
+RENAME_HASH["bikou6"]="講演者6備考"
+
 
 RENAME_HASH1 = Hash::new
 RENAME_HASH1["name"]="講演者氏名"
@@ -473,6 +528,11 @@ def get_csv_item1(fname)
     str += "\"#{hash[item]}\","
   }
   str += "\n"
+  CSV_ARRAY6.each{|item|
+    str += "\"#{hash[item]}\","
+  }
+  str += "\n"
+
   fin.close
   return str
 end

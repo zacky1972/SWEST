@@ -36,7 +36,7 @@ function send_get_fname(name) {
 //フォームタイプに従い更新
 function update(str) {
 	msg_clear();
-        for(var i = 1; i <= 5; i += 1){
+        for(var i = 1; i <= 6; i += 1){
 	  	document.getElementById("filepath_pic" + i + "__img").src = "/img/dummy.png";
 	}
 	var array = str.split("\n");
@@ -132,7 +132,7 @@ function check(){
 	fnameArray.push(document.submit.upfile_proceeding.value);
 	fnameArray.push(document.submit.upfile_public.value);
 	fnameArray.push(document.submit.upfile_minute.value);
-	for(var i = 1; i <= 5; i++){
+	for(var i = 1; i <= 6; i++){
 		fnameArray.push(document.submit["pic" + i].value);
 	}
 	for(var i = 0; i < fnameArray.length; i++){
@@ -233,6 +233,7 @@ rewardArray.push("reward2");
 rewardArray.push("reward3");
 rewardArray.push("reward4");
 rewardArray.push("reward5");
+rewardArray.push("reward6");
 
 function msg(text){
  	var el = document.getElementsByClassName('msg')[0];

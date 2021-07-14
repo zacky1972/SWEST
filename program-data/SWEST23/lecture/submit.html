@@ -606,6 +606,80 @@
   </table>
   </table>
 </div>
+
+<div Align="center"><a href="#" onclick="return treeFunc('instructor6')">講師6の情報入力</a></div>
+<div class="titem" id="instructor6">
+  <table border="0" width="600" align="center">
+  <table border="0" cellpadding="0" cellspacing="0" align="center">
+    <tr><td bgcolor="#000000">
+    <table border="0" cellpadding="4" cellspacing="1"><!-- width="600" -->
+      <tr>
+      <td class="itemkey" align="right">名前</td>
+      <td class="itemval"><input type="text" name="name6" value="" size="30">
+      <input type="radio" name="inst_kind6" checked="checked" value="講師">講師
+      <input type="radio" name="inst_kind6" value="コーディネータ">コーデ>ィネータ
+      <input type="radio" name="inst_kind6" value="パネラ">パネラ
+      </td>
+      </tr>
+            <tr>
+      <td class="itemkey" align-"right">顔写真<br>(200x200以上推奨・正方サ
+イズ推奨)</td>
+                        <td class="itemval"><img src="img/dummy.png" id="filepath_pic6__img" width="100px"/>
+      <input type="file" name="pic6" value="" size="">
+                        <input type="hidden" name="filepath_pic6" value="">
+      </td>
+      </tr>
+      <tr>
+      <td class="itemkey" align="right">所属</td>
+      <td class="itemval"><input type="text" name="affi6" value="" size="30"></td>
+      </tr>
+      <tr>
+      <td class="itemkey" align="right">連絡先(e-mail)</td>
+      <td class="itemval"><input type="text" name="email6" value="" size="30"></td>
+      </tr>
+      <tr>
+      <td class="itemkey" align="right">謝礼</td>
+      <td class="itemval">
+<!--
+        <input type="radio" name="reward6_radio" id="reward6_no" value="不
+要">不要(実行委員及び、謝礼辞退者)<br>
+        <input type="radio" name="reward6_radio" checked="checked" id="reward6_money" value="謝金">謝金
+        <input type="text" name="reward6_money" id="reward6_money_id" value="0" size="30"><br>
+        <input type="radio" name="reward6_radio" id="reward6_freefee" value="参加費無料">参加費無料(14250円)+交通費<input type="text" name="reward6_travel" id="reward6_travel_id" value="0" size="30">
+-->
+
+      <input type="checkbox" name="reward6_no" id="reward6_no" value="不要
+">不要 (実行委員または謝礼辞退者)<br>
+      <input type="hidden" name="reward6_no" value="必要" />
+      <input type="checkbox" name="reward6_unconfirm" id="reward6_unconfirm" value="未確認">未確認<br>
+      <input type="hidden" name="reward6_unconfirm" value="確認済み" />
+      <input type="checkbox" name="reward6_money" id="reward6_money" value="謝金">謝金
+      <input type="hidden" name="reward6_money" value="不要" />
+      <input type="textbox" name="reward6_money_id" id="reward6_money_id" value="0" size="30"><br>
+      <input type="checkbox" name="reward6_freefee" id="reward6_freefee" value="参加費無料">参加費無料(14250円)<br>
+      <input type="hidden" name="reward6_freefee" value="要参加費" />
+      <input type="checkbox" name="reward6_travel"  id="reward6_travel" value="支給">交通費(概算)
+      <input type="hidden" name="reward6_travel" value="不要" />
+      <input type="textbox" name="reward6_travel_id" id="reward6_travel_id" value="0"><br>
+      </td>
+      </tr>
+      <!--<tr>
+      <td class="itemkey" align="right">推薦文</td>
+      <td class="itemval">
+        <textarea name="recommend6" cols="40" rows="3"></textarea>
+      </td>
+      </tr>-->
+      <tr>
+      <td class="itemkey" align="right">備考</td>
+      <td class="itemval">
+        <textarea name="bikou6" cols="40" rows="3"></textarea>
+      </td>
+      </tr>
+    </table>
+    </tr></td>
+  </table>
+  </table>
+</div>
 <br>
 <br>
 <br>
